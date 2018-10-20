@@ -29,9 +29,11 @@ $ trio new myscifi
 *** myscifi created
 ```
 
-Within moments she was informed that "myscifi" was created. Betty thought, "Wow, that was kind of fast!" Intriged again, Betty decided to open up her favorite code editor, VSCode, to explore what was created. She noticed one folder in the root of her project named `source` so she expanded it which revealed a number of child folders. "Hmm, now what? I better check the docs to see what I should do next."
+Within moments she was informed that "myscifi" was created. Betty thought, "Wow, that was kind of fast!" Intriged again, Betty decided to open up her favorite code editor, VSCode, to explore what was created. She noticed one folder in the root of her project named `source` so she expanded it which revealed a number of child folders.
 
-Reading the docs Betty learned that to create a web page with Trio she needs to create a `page template` in the source/templates folder, which is an HTML file that defines the overall structure of a webpage and a `page fragment` in the source/fragments folder, which can be either an HTML file or a markdown file and which is used to create variants of a particular webpage using the same page template. Furthermore, Betty learned that every webpage requires these 2 things at a minim and that Trio merges their content together to create a webpage.
+![image of empty project file structure after creating a new project from the command line](../media/empty-project-file-structure.png)
+
+"Hmm, now what? I better check the docs to see what I should do next." Reading the docs Betty learned that to create a web page with Trio she needs to create a `page template` in the source/templates folder, which is an HTML file that defines the overall structure of a webpage and a `page fragment` in the source/fragments folder, which can be either an HTML file or a markdown file and which is used to create variants of a particular webpage using the same page template. Furthermore, Betty learned that every webpage requires these 2 things at a minim and that Trio merges their content together to create a webpage.
 
 Intriged again, Betty decided to create the ubiquitous "Hello, World!" webpage thinking that if it takes her more than a few minutes, not including reading some docs, she'll dump Trio and continue her search for some other static site generator to use.
 
@@ -186,3 +188,7 @@ Starting browser-sync
 ```
 
 and lo and behold, her browser suddenly appeared and was pleased to see that her page rendered correctly.
+
+![image of Betty's page rendered in the browser](../media/hello-world.png)
+
+Betty was thrilled!
