@@ -8,8 +8,8 @@ appendToTarget: true
 
 * [ In the beginning... ](#in-the-beginning-)
 * [ Hello, World! ](#hello-world-)
-* Connecting pages with links
-* Using JavaScript and front matter to customize pages
+* [ Connecting pages with links ](#connecting-pages-with-links)
+* [ Using JavaScript and front matter to customize pages ](#using-javascript-and-front-matter-to-customize-pages)
 * Using includes to add common content across pages
 * Blogging 
 
@@ -93,16 +93,20 @@ template: default.html
 # Hello, World!
 ```
 
-Betty's now thinking, "OK, I've created the page template and the page fragment, so what do I have to do now to actually generate the website?" Betty goes back to the docs and learns that all she has to do is run the command  `trio build` in the terminal and Trio will create a new folder named `public` in which is the generated website. So Betty opens her terminal again, makes sure that the current directory is `myscifi`, runs the `trio build` command and gets the following feedback:
+Betty's now thinking, "OK, I've created the page template and the page fragment, so what do I have to do now to actually generate the website?" Betty goes back to the docs and learns that all she has to do is run the command `trio build` in the terminal and Trio will generate the website in a folder named `public`. So Betty opens her terminal again, makes sure that the current directory is `myscifi`, runs the `trio build` command and gets the following feedback:
 
 ```
 $ trio build
 building public folder for development
 ```
 
-Wondering why it said "for development" Betty goes back to the docs and learns that Trio also has something called a `release build` but that she will investigate that later as right now she just wants to know what the command she just ran actually did.
+Wondering why it said "building public folder for development" Betty goes back to the docs and learns that Trio also has something called a `release build` but she decides she will investigate that later as right now she just wants to know what the command she just ran actually did.
 
-So Betty now goes back to VSCode and notices that there is now a new folder named `public` in the project explorer and in it is a file named `index.html` as well as three empty folders - `css`, `media`, and `scripts`. Curious as to what Trio actually generated for the `index.html` file, she opens that up in an editor window as sees the following:
+So Betty now goes back to VSCode and notices that there is now a new folder named `public` in the root folder of her project and in it is a file named `index.html` as well as three empty folders - `css`, `media`, and `scripts`.
+
+![image of newly generated public folder](../media/generated-public-folder.png)
+
+Curious as to what Trio actually generated for the `index.html` file, she opens that up in an editor window and sees the following:
 
 ```html
 <!DOCTYPE html>
@@ -117,13 +121,12 @@ So Betty now goes back to VSCode and notices that there is now a new folder name
 
 <body>
     <h1 id="hello-world-">Hello, World!</h1>
-
 </body>
 
 </html>html
 ```
 
-"Wow! That was really easy and I didn't have to configure anything and look, my output!" Betty said to herself. Then she noticed that the `<main></main>` tag in the page template was missing, having been replaced by the content from the page fragment. Wondering if there's a way to tell Trio, "Hey, Trio! Don't replace the tag I added the `data-trio-fragment` attribute to. I want you to append the content to that tag instead." So back to the docs she goes and quickly learns that all she has to do is add `appendToTarget: true` to the front matter in the page fragment and Trio will then append the content to the tag instead of replacing it. Betty goes back and edits source/fragments/index.md which now looks like the following:
+"Wow! That was really easy and I didn't have to configure anything and look, my output!", Betty said to herself. Then she noticed that the `<main></main>` tag in the page template was missing from the generated page, having been replaced by the content from the page fragment. Wondering if there's a way to tell Trio to append the content to that tag instead she goes back to the docs and quickly learns that all she has to do is add `appendToTarget: true` to the front matter in the page fragment and Trio will then append the content to the tag instead of replacing it. Betty goes back and edits source/fragments/index.md, which now looks like the following:
 
 ```markdown
 <!-- 
@@ -157,9 +160,9 @@ Betty then goes back to the terminal and runs the build command `trio build` aga
 </html>
 ```
 
-"Awesome! But how do I run what Trio just created for me in the browser?" Betty though to herself. So Betty goes back to the docs and learns that to actually run the website in the browser all she has to do is run `trio serve` from the command line and that will not only launch the website in the browser but will also refresh the browser anytime she changes something in the source folder.
+"Awesome! But how do I run what Trio just created for me in the browser?" Betty asked. So Betty goes back to the docs and learns that to actually run the website in the browser all she has to do is run `trio serve` from the command line and that will not only launch the website in the browser but will also refresh the browser anytime she changes something in the source folder.
 
-Once again, Betty opens up her terminal applications, makes sure that the current directory is `myscifi` and runs the command `trio serve` which produces the following output (some of which is abbreviated as it can be quite verbose):
+Once again, Betty opens up her terminal applications, makes sure that the current directory is `myscifi` and runs the command `trio serve`, which produces the following output (some of which is abbreviated as it can be quite verbose):
 
 ```
 launching browser, serving application and watching source folder for changes
@@ -187,8 +190,73 @@ Starting browser-sync
 [Browsersync] Serving files from: ./public
 ```
 
-and lo and behold, her browser suddenly appeared and was pleased to see that her page rendered correctly.
+and lo and behold, her browser suddenly appeared and she was pleased to see that her page rendered correctly.
 
 ![image of Betty's page rendered in the browser](../media/hello-world.png)
 
-Betty was thrilled!
+Wondering what happens if she makes a change to the page fragment source/fragments/index.md, Betty edits the file to look like the following:
+
+```html
+<!-- 
+title: Welcome
+template: default.html
+appendToTarget: true
+-->
+# Hello, World!
+
+## This isn't just la di da!
+```
+
+and notices that her page in the browser was refreshed to reflect the change she made:
+
+![image of browser with refreshed page after Betty made changes to the page fragment](../media/browser-refreshed-with-changes.png)
+
+Betty is thrilled that she was able to install Trio and in just a few short minutes easily generate a website, even if it was only the ubiquitous "hello world" sort of thing.
+
+## Connecting pages with links
+
+Having created a website with a default index page was certainly easy but Betty wondered how to add more pages to her site and how to link one page to another. Betty learns from reading the docs that Trio generates permalinks for all the pages it generates based upon, with the exception of blog related pages, which Trio handles differently, the name of the page fragment. So, for example, if a non blog related page fragment is named source/fragments/about.md, Trio will generate the page as public/about/index.html. Betty likes that Trio generates links like that because they are very clean and SEO friendly and easy to share on social media and all that.
+
+In addition, Betty also learns that `inter page links` (i.e. links from one page to another page hosted by the website) should always start with a forward slash followed by the path to the linked file.
+
+So Betty goes back to her project in VSCode and creates a new page fragment named source/fragments/about.md, which looks like the following:
+
+```html
+<!-- 
+title: About
+template: default.html
+appendToTarget: true
+-->
+# About
+```
+
+She also notices that Trio recognized she added a new page fragment to the project and has already generated the new About page in the public folder:
+
+![image of public folder with new about page](../media/about-page-added-to-public-folder.png)
+
+Betty then adds a link to the new about page in page fragment source/index.md, which now looks like the following:
+
+```html
+<!-- 
+title: Welcome
+template: default.html
+appendToTarget: true
+-->
+# Hello, World!
+
+## This isn't just la di da!
+
+### [About](/about)
+```
+
+Betty notices that the browser has already refreshed her index page, which now looks like the following:
+
+![image of index page with a link to the about page](../media/index-page-with-about-link.png)
+
+She then clicks the `About` link on the page and the browser renders her About page:
+
+![image of About page](../media/about-page.png)
+
+## Using JavaScript and front matter to customize pages
+
+
