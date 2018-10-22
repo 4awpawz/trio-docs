@@ -1,9 +1,10 @@
 <!--
 title: Blogging
 template: default.html
-appendToTarget: true
+callback: breadcrumbs.js
+breadcrumbs:
+    - <a data-trio-link href="/">Home</a>
+    - <a data-trio-link href="/userstories">User Stories</a>
 -->
-
-<a data-trio-link href="/">Home</a> : <a data-trio-link href="/userstories">User Stories</a>
 
 # Blogging...
