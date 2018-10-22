@@ -21,7 +21,7 @@ One day Betty was checking her Twitter feed and noticed someone tweeting about a
 
 Intrigued by what she read, Betty installed Trio, which she learned is a Node package, globally on her 2009 late model white Macbook laptop. She's used other Node packages before so she felt quite comfortable doing that. The documentation said that after installing Trio she could run `trio new <path/to/folder/>` from the command line to create a new project. So Betty fired up her terminal application and ran `trio new myscifi`.
 
-```
+```shell
 $ trio new myscifi
 *** trio-new ***
 *** The target folder is "myscifi"
@@ -95,7 +95,7 @@ template: default.html
 
 Betty's now thinking, "OK, I've created the page template and the page fragment, so what do I have to do now to actually generate the website?" Betty goes back to the docs and learns that all she has to do is run the command `trio build` in the terminal and Trio will generate the website in a folder named `public`. So Betty opens her terminal again, makes sure that the current directory is `myscifi`, runs the `trio build` command and gets the following feedback:
 
-```
+```shell
 $ trio build
 building public folder for development
 ```
@@ -164,7 +164,7 @@ Betty then goes back to the terminal and runs the build command `trio build` aga
 
 Once again, Betty opens up her terminal applications, makes sure that the current directory is `myscifi` and runs the command `trio serve`, which produces the following output (some of which is abbreviated as it can be quite verbose):
 
-```
+```shell
 launching browser, serving application and watching source folder for changes
 Starting chokidar
 Now watching:
