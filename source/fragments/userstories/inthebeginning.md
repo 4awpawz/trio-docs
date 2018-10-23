@@ -33,7 +33,7 @@ $ trio new myscifi
 
 Within moments she was informed that "myscifi" was created. Betty thought, "Wow, that was kind of fast!" Intrigued again, Betty decided to open up her favorite code editor, VSCode, to explore what was created. She noticed one folder in the root of her project named `source` so she expanded it which revealed a number of child folders.
 
-![image of empty project file structure after creating a new project from the command line](../media/empty-project-file-structure.png)
+![image of empty project file structure after creating a new project from the command line](../../media/empty-project-file-structure.png)
 
 "Hmm, now what? I better check the docs to see what I should do next." Reading the docs Betty learned that to create a web page with Trio she needs to create a `page template` in the source/templates folder, which is an HTML file that defines the overall structure of a webpage and a `page fragment` in the source/fragments folder, which can be either an HTML file or a markdown file and which is used to create variants of a particular webpage using the same page template. Furthermore, Betty learned that every webpage requires these 2 things at a minim and that Trio merges their content together to create a webpage.
 
@@ -106,7 +106,7 @@ Wondering why it said "building public folder for development" Betty goes back t
 
 So Betty now goes back to VSCode and notices that there is now a new folder named `public` in the root folder of her project and in it is a file named `index.html` as well as three empty folders - `css`, `media`, and `scripts`.
 
-![image of newly generated public folder](../media/generated-public-folder.png)
+![image of newly generated public folder](../../media/generated-public-folder.png)
 
 Curious as to what Trio actually generated for the `index.html` file, she opens that up in an editor window and sees the following:
 
@@ -194,7 +194,7 @@ Starting browser-sync
 
 and lo and behold, her browser suddenly appeared and she was pleased to see that her page rendered correctly.
 
-![image of Betty's page rendered in the browser](../media/hello-world.png)
+![image of Betty's page rendered in the browser](../../media/hello-world.png)
 
 Wondering what happens if she makes a change to the page fragment source/fragments/index.md, Betty edits the file to look like the following:
 
@@ -211,7 +211,7 @@ appendToTarget: true
 
 and notices that her page in the browser was refreshed to reflect the change she made:
 
-![image of browser with refreshed page after Betty made changes to the page fragment](../media/browser-refreshed-with-changes.png)
+![image of browser with refreshed page after Betty made changes to the page fragment](../../media/browser-refreshed-with-changes.png)
 
 Betty is thrilled that she was able to install Trio and in just a few short minutes easily generate a website, even if it was only the ubiquitous "hello world" sort of thing.
 
@@ -234,7 +234,7 @@ appendToTarget: true
 
 She also notices that Trio recognized she added a new page fragment to the project and has already generated the new About page in the public folder:
 
-![image of public folder with new about page](../media/about-page-added-to-public-folder.png)
+![image of public folder with new about page](../../media/about-page-added-to-public-folder.png)
 
 Betty then adds a link to the new about page in page fragment source/index.md, which now looks like the following:
 
@@ -253,11 +253,11 @@ appendToTarget: true
 
 Betty notices that the browser has already refreshed her index page, which now looks like the following:
 
-![image of index page with a link to the about page](../media/index-page-with-about-link.png)
+![image of index page with a link to the about page](../../media/index-page-with-about-link.png)
 
 She then clicks the `About` link on the page and the browser renders her About page:
 
-![image of About page](../media/about-page.png)
+![image of About page](../../media/about-page.png)
 
 ## Using JavaScript and front matter to customize pages
 
