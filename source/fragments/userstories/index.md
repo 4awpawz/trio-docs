@@ -13,13 +13,15 @@ User stories are a great way to learn something new. These stories make you an a
 Follow along with Betty as she learns the basic concepts of using Trio.
 
 Topics Covered:
+* Installing Trio
 * Creating A New Project
-* Page Templates
-* Page Fragments
-* Front Matter
-* Page Links
-* Metadata
-* Customizing Pages With Metadata and JavaScript
+* Creating Web Pages Using
+    * Page Templates
+    * Page Fragments
+    * Front Matter
+* Building And Running The Website In The Browser
+* Linking To Pages
+* Metadata And Customizing Web Pages With JavaScript
 
 ## <a data-trio-link href="/userstories/blogging">Blogging...</a>
 Follow along with Betty as she learns how to implement her Sci-Fi blog using Trio.
