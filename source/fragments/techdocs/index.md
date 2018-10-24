@@ -595,14 +595,14 @@ The total number of blog articles.
                     tag: "html",
                     related: [
                         {
-                            date: "2018-08-01",
+                            articleDate: "2018-08-01",
                             url: "/trioblog/Web Development/2018/08/01/skyisthelimit/",
                             title: "The Sky's The Limit",
                             id: 4,
                             excerpt: "Esse ea sint magna occaecat occaecat veniam. Dolore ex pariatur ullamco minim dolor laboris ipsum. Laboris cillum esse incididunt est est irure officia ipsum duis sit. Est voluptate eiusmod sit adipisicing aute.\n"
                         },
                         {
-                            date: "2018-07-14",
+                            articleDate: "2018-07-14",
                             url: "/trioblog/Web Development/Trio/2018/07/14/thepowerofthree/",
                             title: "The Power of Three",
                             id: 3,
@@ -613,14 +613,14 @@ The total number of blog articles.
             ],
             relatedArticlesByTagFlattened: [
                 {
-                    date: "2018-08-01",
+                    articleDate: "2018-08-01",
                     url: "/trioblog/Web Development/2018/08/01/skyisthelimit/",
                     title: "The Sky's The Limit",
                     id: 4,
                     excerpt: "Esse ea sint magna occaecat occaecat veniam. Dolore ex pariatur ullamco minim dolor laboris ipsum. Laboris cillum esse incididunt est est irure officia ipsum duis sit. Est voluptate eiusmod sit adipisicing aute."
                 },
                 {
-                    date: "2018-07-14",
+                    articleDate: "2018-07-14",
                     url: "/trioblog/Web Development/Trio/2018/07/14/thepowerofthree/",
                     title: "The Power of Three",
                     id: 3,
@@ -631,7 +631,7 @@ The total number of blog articles.
                 category: "web development",
                 related: [
                     {
-                        date: "2018-08-01",
+                        articleDate: "2018-08-01",
                         url: "/trioblog/Web Development/2018/08/01/skyisthelimit/",
                         title: "The Sky's The Limit",
                         id: 4,
@@ -716,14 +716,14 @@ sortedTagCatalog:
         tag: "css",
         related: [
             {
-                date: "2018-08-01",
+                articleDate: "2018-08-01",
                 url: "/trioblog/Web%20Development/2018/08/01/skyisthelimit/",
                 title: "The Sky's The Limit",
                 id: 4,
                 excerpt: "Esse ea sint magna occaecat occaecat veniam. Dolore ex pariatur ullamco minim dolor laboris ipsum. Laboris cillum esse incididunt est est irure officia ipsum duis sit. Est voluptate eiusmod sit adipisicing aute.\n"
             },
             {
-                date: "2018-07-14",
+                articleDate: "2018-07-14",
                 url: "/trioblog/Web%20Development/Trio/2018/07/14/thepowerofthree/",
                 title: "The Power of Three",
                 id: 3,
@@ -775,14 +775,14 @@ categoriesCatalog: [
         category: "web development",
         related: [
             {
-                date: "2018-08-02",
+                articleDate: "2018-08-02",
                 url: "/trioblog/Web%20Development/2018/08/02/unlockyourimagination/",
                 title: "Unlock Your Imagination",
                 id: 5,
                 excerpt: "Esse ea sint magna occaecat occaecat veniam. Dolore ex pariatur ullamco minim dolor laboris ipsum. Laboris cillum esse incididunt est est irure officia ipsum duis sit. Est voluptate eiusmod sit adipisicing aute.\n"
             },
             {
-                date: "2018-08-01",
+                articleDate: "2018-08-01",
                 url: "/trioblog/Web%20Development/2018/08/01/skyisthelimit/",
                 title: "The Sky's The Limit",
                 id: 4,
