@@ -7,7 +7,7 @@ breadcrumbs:
 -->
 
 # User Stories
-User stories are a great way to learn something new. These stories make you an active observer, learning along with the subject of each story, as new topics are introduced. It is highly recommended that you read these stories before reading the main documentation.
+User stories are a great way to learn something new. These stories make you an active observer, learning along with the subject of each story as new topics are introduced. It is highly recommended that you read these stories before reading the [ technical documentation ](../techdocs).
 
 ## <a data-trio-link href="/userstories/inthebeginning">In The Beginning...</a>
 Follow along with Betty as she learns the basic concepts of using Trio.
