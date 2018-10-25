@@ -1,0 +1,140 @@
+$opacity-animation-duration: .3s;
+$color: #000;
+
+.header-hamburger {
+    animation: animate-opacity $opacity-animation-duration;
+    position: absolute;
+    top: -15px;
+    left: 10px;
+}
+
+.header {
+    padding-top: 20px;
+    background-color: #fff;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.header--fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    border-bottom: 1px solid rgba(green, .06);
+    box-shadow: 0 1px rgba(green, .02);
+}
+
+.header__promo {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+}
+
+.header__promo-text {
+    font-family: $serif-font;
+    font-size: 2rem;
+    line-height: 2rem;
+    display: inline-block;
+    color: $secondary-text-color;
+}
+
+.header__nav {
+    display: none;
+    animation: animate-opacity $opacity-animation-duration;
+    width: 100%;
+}
+
+.header__nav-items {
+    font-weight: 600;
+    list-style: none;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.header__nav-item {
+    display: block;
+    width: 100%;
+    color: green;
+    position: relative;
+}
+
+.header__nav-item--active::after {
+    content: "";
+    display: block;
+    overflow: hidden;
+    position: absolute;
+    border-radius: 5px;
+    width: 2px;
+    height: 100%;
+    margin: auto 0;
+    background-color: $secondary-text-color;
+    top: 0;
+    right: 0;
+}
+
+.header__nav-item:hover {
+    border-radius: 5px;
+    background-color: $hover-background-color;
+    color: white;
+    font-weight: bold;
+}
+
+.header__nav-item-link {
+    text-transform: initial;
+    color: inherit;
+    display: inline-block;
+    padding: 10px 0 10px 5px;
+    width: 100%;
+    height: 100%;
+    font-size: .9em;
+    font-weight: bold;
+}
+
+@keyframes animate-opacity {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@include media-query-up(md) {
+    .header__promo {
+        display: inline-block;
+        width: initial;
+        text-align: initial;
+    }
+    .header__nav {
+        display: block;
+        overflow: hidden;
+        width: initial;
+        position: relative;
+        float: right;
+        top: -1px;
+        animation: animate-opacity $opacity-animation-duration;
+    }
+    .header__nav-items {
+        display: block;
+        margin: 0;
+        overflow: hidden;
+        text-align: center;
+        width: 100%;
+    }
+    .header__nav-item {
+        display: inline-block;
+        width: initial;
+    }
+
+    .header__nav-item--active::after {
+        width: 100%;
+        height: 2px;
+        top: initial;
+        bottom: 0;
+    }
+    .header__nav-item-link {
+        padding: 10px 30px;
+    }
+}

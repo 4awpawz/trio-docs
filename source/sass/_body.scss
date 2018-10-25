@@ -1,18 +1,12 @@
 .markdown-body {
-    padding: 15px;
+    display: block;
+    // color: rgba(#000, 0.6);
 }
 
 .markdown-body img {
+    width: 100%;
     padding: 5px;
     border-radius: 3px;
     border: solid 1px #cecece;
-}
-
-@media (min-width: 766px) {
-    .markdown-body {
-        min-width: 200px;
-        max-width: 980px;
-        margin: 0 auto;
-        padding: 45px;
-    }
+    box-sizing: border-box;
 }

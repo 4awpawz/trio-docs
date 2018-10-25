@@ -1,0 +1,43 @@
+// fix for in page anchor targets hidden under fixed top navbar
+// note: see http://darktef.github.io/posts/2017-03-offset-html-anchors-for-fixed-header-with-css
+:target::before {
+    content: "";
+    display: block;
+    height: 76px;
+    margin-top: -76px;
+}
+
+.docs__sidebar {
+    ul {
+        list-style: square outside;
+        color: green;
+        padding-left: 1rem;
+        margin-bottom: .7rem;
+        font-size: 1rem;
+    }
+    li a:hover {
+        background-color: $hover-background-color;
+    }
+}
+
+@include media-query-up(md) {
+    .docs {
+        display: flex;
+        flex-flow: row nowrap;
+    }
+    .docs__sidebar {
+        flex: 0 0 25%;
+        .docs__sidebar-toc {
+            position: sticky;
+            top: 151px;
+            // ul {
+            //     position: sticky;
+            //     top: 151px;
+            // }
+        }
+    }
+    .docs__content {
+        flex: 0 0 75%;
+        overflow: hidden;
+    }
+}

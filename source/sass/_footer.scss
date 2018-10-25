@@ -1,0 +1,33 @@
+$background-color: green;
+
+.footer {
+    display: block;
+    width: 100%;
+    height: 300px;
+    margin-top: 150px;
+    padding: 40px 0;
+    background-color: $background-color;
+    color: $lightest-text-color;
+    font-size: .9rem;
+    line-height: 1;
+    text-align: center;
+    .copyright {
+        display: inline-block;
+    }
+    strong {
+        font-weight: 550;
+        color: white;
+        font-style: normal;
+    }
+    .heart {
+        color: red;
+        font-weight: bold;
+        font-size: 1.5rem;
+    }
+}
+
+@include media-query-up(md) {
+    .footer {
+        text-align: initial;
+    }
+}
