@@ -1,5 +1,4 @@
 $background-color: green;
-
 .footer {
     display: block;
     width: 100%;
@@ -19,11 +18,12 @@ $background-color: green;
         color: white;
         font-style: normal;
     }
-    .heart {
-        color: red;
-        font-weight: bold;
-        font-size: 1.5rem;
-    }
+}
+
+.footer__heart {
+    color: red;
+    font-weight: bold;
+    font-size: 1rem;
 }
 
 @include media-query-up(md) {

@@ -1,19 +1,18 @@
 .card-deck {
     display: block;
     width: 100%;
-    padding: 20px;
+    padding: 10px;
     border: solid 1px rgba(green, 0.1);
     border-radius: 3px;
     box-shadow: 1px 1px 5px rgba(green, 0.175);
 }
 
 %card {
-    width: 100%;
     list-style: none;
     font-size: 1.1rem;
     background-color: rgba(lightgreen, 0.08);
-    // margin: 0 0 20px 0;
-    padding: 20px;
+    margin: 20px 10px;
+    padding: 10px;
     border-radius: 3px;
     box-shadow: 1px 1px 5px rgba($secondary-text-color, 0.375);
 }
@@ -24,7 +23,6 @@
         display: inline-block;
         color: $darker-text-color;
         font-size: 1rem;
-        margin-bottom: 1rem;
     }
     h2 {
         font-size: 1.8rem;
@@ -60,11 +58,8 @@
         align-content: space-between;
     }
     .get-started-card {
-        // max-width: 40%; // <- uncomment this if you don't want the flowed item to streatch along its cross axis
-        flex: 1 0 33.3333%;
-    }
-    %card:last-child {
-        margin-right: 0;
+        flex: 1 1 40%;
+        margin: 10px;
     }
     .get-started-card--creative {
         display: flex;
@@ -78,7 +73,4 @@
             font-size: 1.2rem;
         }
     }
-    // .get-started-card--creative:last-child {
-    //     flex: 0 1 33.3333%;
-    // }
 }
