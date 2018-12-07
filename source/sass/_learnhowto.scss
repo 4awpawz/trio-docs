@@ -22,4 +22,56 @@
         height: auto;
         margin: 20px 0 20px;
     }
+    
+    table.dev-vs-release-build {
+        display: initial;
+        th, td {
+            padding: .5rem;
+            text-align: center;
+        }
+        th, td:first-child {
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        tbody tr td .check, tbody tr td .cross {
+            font-size: 1rem;
+            font-weight: bold;
+        }
+        tbody tr td .check {
+            color: $secondary-text-color;
+        }
+        tbody tr td .cross {
+            color: darkred;
+        }
+        tbody tr td:first-child {
+            color: black;
+            font-size: initial;
+            font-weight: bold;
+            text-align: left;
+        }
+        tbody tr:nth-child(even) {
+            background-color: lightgreen;
+        }
+        tbody tr:nth-child(odd) {
+            background-color: $background-color;
+        }
+        thead {
+            background-color: $lighter-text-color;
+            color: white;
+        }
+        th:first-child {
+            border-top-left-radius: 3px;
+        }
+        th:last-child {
+            border-top-right-radius: 3px;
+        }
+        tr:last-child {
+            td:first-child {
+                border-bottom-left-radius: 3px;
+            }
+            td:last-child {
+                border-bottom-right-radius: 3px;
+            }
+        }
+    }
 }

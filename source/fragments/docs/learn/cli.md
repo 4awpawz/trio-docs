@@ -43,23 +43,14 @@ $ trio n|new [path/to/new/project]
 ```shell
 $ trio b|build
 ``` 
+__!__ see [ below ](#building-project-for-development-vs-for-release) for the difference between building project for development and for release
 
 ### Build project for release
 
 ```shell
 $ trio r|release
 ``` 
-
-When building your project for release, Trio performs the following additional steps:
-
-* Prefixes all URLs found in HTML tags that have a `data-trio-link` data attribute with the value assigned to the baseUrl property found in the source/trio.json configuration file.
-
-* Removes all `data-trio-*` data attributes from the generated markup.
-
-* Removes all HTML comments from the generated markup.
-
-* Cache busts the generated files in place after they have been saved to the public folder.
-
+__!__ see [ below ](#building-project-for-development-vs-for-release) for the difference between building project for development and for release
 
 ### Serve project
 
@@ -78,3 +69,38 @@ $ trio b|build && trio s|serve
 ```shell
 $ trio r|release && trio s|serve
 ```
+
+## Building project for development vs. for release
+
+The below table describes the different actions Trio takes when building for `development` and building for `release`:
+
+<table class="dev-vs-release-build">
+  <thead>
+    <tr>
+        <th></th> <th>development</th> <th>release</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+        <td>Beautify HTML</td> <td><span class="check">&check;</td> <td><span class="check">&check;</td>
+    </tr>
+    <tr>
+        <td>Generate CSS Vendor Prefixes</td> <td><span class="check">&check;</td> <td><span class="check">&check;</td>
+    </tr>
+    <tr>
+        <td>Generate CSS Map</td> <td><span class="check">&check;</td> <td><span class="cross">&cross;</td>
+    </tr>
+    <tr>
+        <td>Remove data-trio-* Attributes</td> <td><span class="cross">&cross;</td> <td><span class="check">&check;</td>
+    </tr>
+    <tr>
+        <td>Remove HTML Comments</td> <td><span class="cross">&cross;</td> <td><span class="check">&check;</td>
+    </tr>
+    <tr>
+        <td>Prefix URLS</td> <td><span class="cross">&cross;</td> <td><span class="check">&check;</td>
+    </tr>
+    <tr>
+        <td>Cache Bust Files</td> <td><span class="cross">&cross;</td> <td><span class="check">&check;</td>
+    </tr>
+  </tbody>
+</table>

@@ -8,7 +8,7 @@ callback: showCurrentPageInHeader.js
 
 # Building A Blog 
 
-__Important!__ A sample blogging project complete with categories and tags <a target="_blank" href="https://github.com/4awpawz/trio-blog-example">is available on Github</a> and a live version of the sample blog project <a target="_blank" href="https://4awpawz.github.io/trio-blog-example-pages/">can be viewed here</a>.
+__!__ A sample blogging project complete with categories and tags <a target="_blank" href="https://github.com/4awpawz/trio-blog-example">is available on Github</a> and a live version of the sample blog project <a target="_blank" href="https://4awpawz.github.io/trio-blog-example-pages/">can be viewed here</a>.
 
 Blogs typically have the following assortment and relationship of pages:
 

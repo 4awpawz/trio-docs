@@ -612,7 +612,7 @@ Let's take a closer look at what our callback is doing.
 
 5. We then iterate over the countries list, appending each country to our ordered list.
 
-Now that we have our callback coded we no longer need the include, we need to remove the `<section data-trio-include="countries.md"></section>` tag from the page template source/templates/default.html, which should then look like this:
+We can now remove the `<section data-trio-include="countries.md"></section>` tag from the page template source/templates/default.html as it is no longer needed. Our page template should now like this:
 
 ```html
 <!DOCTYPE html>

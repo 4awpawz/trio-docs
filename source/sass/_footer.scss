@@ -1,11 +1,10 @@
-$background-color: green;
 .footer {
     display: block;
     width: 100%;
     height: 300px;
     margin-top: 150px;
     padding: 40px 0;
-    background-color: $background-color;
+    background-color: $darkest-background-color;
     color: $lightest-text-color;
     font-size: .9rem;
     line-height: 1;
