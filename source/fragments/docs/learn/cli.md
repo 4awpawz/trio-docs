@@ -14,63 +14,63 @@ While developing your web site you will frequently engage with the command line 
 
 ## Commands
 
-### Get the current version
+### Get The Current Version
 
 ```shell
 $ trio -v|--version
 ```
 
-### Get general help
+### Get General Help
 
 ```shell
 $ trio -h|--help
 ```
 
-### Get command specific help
+### Get Command Specific Help
 
 ```shell
 $ trio -h|--help <command>
 ```
 
-### Create a new project
+### Create A New Project
 
 ```shell
 $ trio n|new [path/to/new/project]
 ```
 
-### Build project for development
+### Build Project For Development
 
 ```shell
 $ trio b|build
 ``` 
 __!__ see [ below ](#building-project-for-development-vs-for-release) for the difference between building project for development and for release
 
-### Build project for release
+### Build Project For Release
 
 ```shell
 $ trio r|release
 ``` 
-__!__ see [ below ](#building-project-for-development-vs-for-release) for the difference between building project for development and for release
+__!__ see [ below ](#building-project-for-development-and-for-release) for the difference between building project for development and for release
 
-### Serve project
+### Serve Project
 
 ```shell
 $ trio -s|--serve
 ```
 
-### Build project for development and serve it
+### Build Project For Development And Serve It
 
 ```shell
 $ trio b|build && trio s|serve
 ```
 
-### Build project for release and serve it
+### Build Project For Release And Serve It
 
 ```shell
 $ trio r|release && trio s|serve
 ```
 
-## Building project for development vs. for release
+## Building Project For Development And For Release
 
 The below table describes the different actions Trio takes when building for `development` and building for `release`:
 

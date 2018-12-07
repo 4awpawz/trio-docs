@@ -16,7 +16,7 @@ A web page without style isn't much to look at. Lets add some styling to the pag
 
 Trio supports both plain CSS and Sass, including both the indented and modern Sass syntaxes. Whether you prefer CSS or Sass, indented or modern syntaxes, is of course entirely up to you but for the purpose of this exercise we are going to use Sass and its modern syntax to add some styling to our page.
 
-## 1. Create our stylesheet
+## 1. Create Our Stylesheet
 
 In the source/sass folder create a new file named _helloworld.scss and using your editor of choice, open it and copy/paste the following into it.
 
@@ -70,7 +70,7 @@ trio build
 
 When the build is complete you should see 2 new files in your project's public/css folder - app-map.css.map and app.css.
 
-## 2. Link to the stylesheet
+## 2. Link To The Stylesheet
 
 Now we need to add a link to our stylesheet in our web page. Open the file source/templates/default.html in your editor and add the following to the bottom of the head section
 
@@ -90,7 +90,7 @@ which should then look like this:
 </head>
 ```
 
-## 3. Build and run
+## 3. Build And Run
 
 Now lets build and run our website. From the project's root folder run the following from the command line.
 
@@ -102,4 +102,13 @@ After Trio has built and rendered the page in the browser you should see our Hel
 
 <img data-trio-link src="/media/hello-world-styled.png">
 
-**Note:** For those who prefer to work with plain CSS, create a new file named source/css/app.css and copy and paste the styling into the file. When you build the project and open the public/css folder you will see a new file there named app.css.
+## But I Don't Want To Use Sass
+
+For those who prefer to work with plain CSS, you can use one of the following methods. The one you use depends on if you want Trio to generate vendor prefixes for you or not:
+
+### You Want Trio To Generate Vendor Prefixes
+Since CSS is fully compatible with Sass, just develop you CSS in the source/sass folder but use the `.scss` file extension for your CSS files instead of `.css`.
+
+### You Don't Want Trio To Generate Vendor Prefixes
+Develop your CSS in the source/css folder and Trio will copy its content to public/css whenever the project is built.
+

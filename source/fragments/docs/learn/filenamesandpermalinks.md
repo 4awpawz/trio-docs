@@ -14,7 +14,7 @@ a permalink is:
 
 > "a URL that is intended to remain unchanged for many years into the future, yielding a hyperlink that is less susceptible to link rot. Permalinks are often rendered simply, that is, as friendly URLs, so as to be easy for people to type and remember. Most modern blogging and content-syndication software systems support such links. Sometimes URL shortening is used to create them."
 
-## Naming and linking conventions for non blog article pages
+## Naming And Linking Conventions For Non Blog Article Pages
 
 The file name and linking conventions that Trio employs for non blog article pages is as follows:
 
@@ -26,7 +26,7 @@ The file name and linking conventions that Trio employs for non blog article pag
 
 * File source/fragments/abc/contact.md would be generated as public/abc/contact/index.html and its permalink would be /abc/contact/.
 
-## Naming and linking conventions for blog article pages
+## Naming And Linking Conventions For Blog Article Pages
 
 Trio requires that blog article page file names be of the form `yyyy-mm-dd-articlename.md|.html` and the file name and linking conventions that Trio employs for blog article pages is as follows:
 
