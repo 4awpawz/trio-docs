@@ -29,10 +29,6 @@
             padding: .5rem;
             text-align: center;
         }
-        th, td:first-child {
-            font-weight: bold;
-            font-size: 1.2rem;
-        }
         tbody tr td .check, tbody tr td .cross {
             font-size: 1rem;
             font-weight: bold;
@@ -43,11 +39,16 @@
         tbody tr td .cross {
             color: darkred;
         }
-        tbody tr td:first-child {
-            color: black;
-            font-size: initial;
+        th, tbody tr td:first-child {
+            font-size: 110%;
             font-weight: bold;
             text-align: left;
+        }
+        tbody tr td:first-child {
+            color: black;
+        }
+        th {
+            color: white;
         }
         tbody tr:nth-child(even) {
             background-color: lightgreen;
