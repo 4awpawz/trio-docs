@@ -33,3 +33,5 @@ Trio requires that blog article page file names be of the form `yyyy-mm-dd-artic
 * File source/fragments/blog/articles/2018-11-18-articlename.md would be generated as public/blog/2018/11/18/articlename/index.html and its permalink would be /blog/2018/11/18/articlename/.
 
 * File source/fragments/blog/articles/2018-11-18-articlename.md declares `category: abc` in its front matter and would be generated as public/blog/abc/2018/11/18/articlename/index.html and its permalink would be /blog/abc/2018/11/18/articlename/.
+
+__!__ Prepending a blog article's name with an underscore ("\_") marks the article as a "work in progress" and Trio will ignore all such articles during release builds. This allows you to develop new articles without impacting your release builds. For example, during a release build blog article `source/fragments/blog/articles/_2019-01-01-about2019.md` would be ignored.

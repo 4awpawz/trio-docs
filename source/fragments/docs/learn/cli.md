@@ -82,6 +82,9 @@ The below table describes the different actions Trio takes when building for `de
   </thead>
   <tbody>
     <tr>
+        <td>Ignore "work in progress" blog articles</td> <td><span class="cross">&cross;</td> <td><span class="check">&check;</td>
+    </tr>
+    <tr>
         <td>Beautify HTML</td> <td><span class="check">&check;</td> <td><span class="check">&check;</td>
     </tr>
     <tr>
