@@ -51,13 +51,23 @@
     }
 }
 
+.doc-card {
+    @extend %card;
+    text-align: center;
+    a {
+        text-decoration: underline;
+        color: green;
+        font-weight: bold;
+    }
+}
+
 @include media-query-up(md) {
     .card-deck {
         display: flex;
         flex-flow: row wrap;
         align-content: space-between;
     }
-    .get-started-card {
+    .get-started-card, .doc-card {
         flex: 1 1 40%;
         margin: 10px;
     }
