@@ -51,9 +51,9 @@ matter: {
 }
 ```
 
-__!__ _Trio uses the resilient and performant gray-matter library to implement its front matter support. If you aren't already familiar with front matter you are urged to follow the link to this library and read its excellent documentation._
+__!__ Trio uses the resilient and performant <a href="https://www.npmjs.com/package/gray-matter" target="_blank">gray-matter</a> library to implement its front matter support. If you aren't already familiar with front matter you are urged to follow the link to this library and read its excellent documentation.
 
-__!__ _Trio uses the open and close HTML comment tags (i.e. &lt;!--, --&gt;) as YAML front matter open and close delimiters, so front matter will not create formatting issues in your .html and .md files._
+__!__ Trio uses the open and close HTML comment tags (i.e. &lt;!--, --&gt;) as YAML front matter open and close delimiters, so front matter will not create formatting issues in your .html and .md files.
 
 ## Front Matter Properties Predefined By Trio
 
