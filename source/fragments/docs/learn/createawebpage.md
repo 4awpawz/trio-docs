@@ -8,7 +8,7 @@ callback: showCurrentPageInHeader.js
 
 # Create A Web Page
 
-__Important__ Please review <a data-trio-link href="/docs/learn/howpagesarecomposed">How Pages Are Composed</a>, <a data-trio-link href="/docs/learn/frontmatter">Front Matter</a>, <a data-trio-link href="/docs/learn/metadata">Metadata</a> and <a href="/docs/learn/javascriptcallbacks">JavaScript Callbacks</a> before proceeding with this exercise.
+__Important:__ Please review <a data-trio-link href="/docs/learn/howpagesarecomposed">How Pages Are Composed</a>, <a data-trio-link href="/docs/learn/frontmatter">Front Matter</a>, <a data-trio-link href="/docs/learn/metadata">Metadata</a> and <a href="/docs/learn/javascriptcallbacks">JavaScript Callbacks</a> before proceeding with this exercise.
 
 ## 1. Create A Page Template
 
@@ -86,7 +86,7 @@ Now we will tell Trio how we want it to merge our page fragment's content into o
 
 What we want is for Trio to append the content to the page template's main tag which we adorned with the data-trio-fragment attribute.
 
-**Note: If we don't do this, Trio, by default, will replace the main tag with the page fragment's content.**
+**Important:** If we don't do this, Trio, by default, will replace the main tag with the page fragment's content.
 
 Lets do this by adding the "appendToTarget" property to the front matter with a boolean value of true.
 
@@ -612,7 +612,7 @@ Let's take a closer look at what our callback is doing.
 
 5. We then iterate over the countries list, appending each country to our ordered list.
 
-We can now remove the `<section data-trio-include="countries.md"></section>` tag from the page template source/templates/default.html as it is no longer needed. Our page template should now like this:
+We can now remove the `<section data-trio-include="countries.md"></section>` tag from the page template source/templates/default.html as it is no longer needed. Our page template should now look like this:
 
 ```html
 <!DOCTYPE html>
@@ -639,7 +639,7 @@ To wire up our callback we have to add it to our page fragment's front matter. O
 ```YAML
 callback: countries
 ```
-so that the file now looks like this
+so that the file now looks like this:
 
 ```YAML
 <!--
@@ -663,6 +663,6 @@ and once again you should see the page rendered but this time with an ordered li
 
 ### Summary
 
-Being able to work our composites using just JavaScript and metadata is perhaps one of the best and most empowering features of Trio. The code responsible for dynamically working our composites are neatly encapsulated in their own JavaScript modules and our markup remains clean, uncluttered and free of template tags peppered throughout. This separation of concerns leads to a project that is easier to reason about and more maintainable.
+Being able to compose web pages using just JavaScript and metadata is perhaps one of the best and most empowering features of Trio. The code responsible for dynamically composing web pages are neatly encapsulated in their own JavaScript modules and our markup remains clean, uncluttered and free of template tags peppered throughout. This separation of concerns leads to a project that is easier to reason about and more maintainable.
 
-We've only just scratched the surface with this exercise. There is no end to what you can achieve with Trio's approach to working composites using JavaScript and metadata. Thinking about creating a portfolio? Callbacks and JSON data catalogs will make it a snap. Thinking about creating a kick ass blog for yourself or your company, well Trio has you covered there as well as it has an extensive array of blog-specific metadata to help you build out your blog which we will explore next in detail in the [Building A Blog] exercise.
+We've only just scratched the surface with this exercise. There is no end to what you can achieve with Trio's approach to composing web pages using JavaScript and metadata. Thinking about creating a portfolio? Callbacks and JSON data catalogs will make it a snap. Thinking about creating a kick ass blog for yourself or your company, well Trio has you covered there as well as it has an extensive array of blog-specific metadata to help you build out your blog which we will explore in the <a href="/docs/learn/buildingablog" data-trio-link>Building A Blog</a> guide.

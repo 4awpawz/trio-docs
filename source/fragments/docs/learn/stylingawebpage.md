@@ -104,7 +104,7 @@ After Trio has built and rendered the page in the browser you should see our Hel
 
 ## But I Don't Want To Use Sass
 
-For those who prefer to work with plain CSS, you can use one of the following methods. The one you use depends on if you want Trio to generate vendor prefixes for you or not:
+For those who prefer to use plain CSS, you can use one of the following methods. The one you use depends on if you want Trio to generate vendor prefixes for you or not:
 
 ### You Want Trio To Generate Vendor Prefixes
 Since CSS is fully compatible with Sass, just develop you CSS in the source/sass folder but use the `.scss` file extension for your CSS files instead of `.css`.

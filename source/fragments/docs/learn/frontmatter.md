@@ -8,7 +8,7 @@ callback: showCurrentPageInHeader.js
 
 # Front Matter
 
-Trio projects make extensive use of YAML front matter to customize their web pages. You can define your own custom front matter properties to build out your web pages and Trio has several front matter properties predefined for you to use as well.
+Trio projects make extensive use of YAML front matter when composing web pages. You can define your own custom front matter properties to build out your web pages and Trio has several front matter properties predefined for you to use as well.
 
 ## Front Matter Example
 

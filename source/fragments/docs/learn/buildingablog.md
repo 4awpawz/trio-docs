@@ -6,7 +6,7 @@ activeHeaderItem: 2
 callback: showCurrentPageInHeader.js
 -->
 
-# Building a blog 
+# Building A blog 
 
 __!__ A sample blogging project complete with categories and tags <a target="_blank" href="https://github.com/4awpawz/trio-blog-example">is available on Github</a> and a live version of the sample blog project <a target="_blank" href="https://4awpawz.github.io/trio-blog-example-pages/">can be viewed here</a>.
 
@@ -39,6 +39,4 @@ As can be seen from the above, "stitching together" the assortment of pages requ
 
 * site.sortedTagCatalog: if 1 or more articles are categorized.
 
-**Note:** Article lists are sorted in descending date and title order.
-
-## Create An 
+__!__ Article lists are sorted in descending date and title order.

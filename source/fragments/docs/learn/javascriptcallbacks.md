@@ -8,16 +8,14 @@ callback: showCurrentPageInHeader.js
 
 # JavaScript Callbacks
 
-**Important:** Please review <a data-trio-link href="/docs/learn/metadata">Metadata</a> before continuing with this exercise.
+**Important:** Please review <a data-trio-link href="/docs/learn/metadata">Metadata</a> before continuing with this guide.
 
-The ability to work with includes and composites (see <a data-trio-link href="/docs/learn/howpagesarecomposed">How Pages Are Composed</a>) using just JavaScript and the extensive collection of metadata that Trio generates is certainly one of Trio's best features, especially for those of us who love working with JavaScript. 
+Unlike other static site generators that require you to pepper your markup with template tags, Trio lets you keep your markup clean and use JavaScript along with <a href=" https://github.com/cheeriojs/cheerio" target="_blank">cheerio</a>, a JavaScript implementation of core jQuery designed specifically for the server, to compose web pages.
 
-Unlike other static site generators that require you to pepper your markup with template tags, Trio lets you keep your markup clean and use JavaScript along with <a href=" https://github.com/cheeriojs/cheerio" target="_blank">cheerio</a>, a JavaScript implementation of core jQuery designed specifically for the server, to work a composite's content.
+The ability to compose web pages using JavaScript and the extensive collection of metadata that Trio generates is certainly one of Trio's best features, especially for those of us who love working with JavaScript. 
 
-In the following sections we will cover everything you need to know about working composites, including:
-
-* Declaring JavaScript Callbacks In Front Matter
-* JavaScript Callback Modules and the Context Argument
+__!__ Please see <a data-trio-link href="/docs/learn/createawebpage">Create A Web Page</a> for a hands 
+on exercise that includes using JavaScript and metadata to compose a web page.
 
 ## Declaring JavaScript Callbacks In Front Matter
 

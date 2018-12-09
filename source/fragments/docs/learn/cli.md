@@ -43,7 +43,7 @@ $ trio n|new [path/to/new/project]
 ```shell
 $ trio b|build
 ``` 
-__!__ see [ below ](#building-project-for-development-vs-for-release) for the difference between building project for development and for release
+__!__ see [ below ](#building-project-for-development-and-for-release) for the difference between building project for development and for release
 
 ### Build Project For Release
 

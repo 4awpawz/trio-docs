@@ -32,7 +32,7 @@ The folder where CSS files live.
 
 ## `root/source/data/`
 
-The folder where JSON data files, exposed as "file name": [file content] in the site metadata object passed to JavaScript callbacks, live.
+The folder where JSON data files, exposed as "file name": [file content] in the site.dataCatalog metadata object passed to JavaScript callbacks, live.
 
 For example, the content of the file /source/data/personalization.json would be exposed as:
 ```json
@@ -44,6 +44,8 @@ For example, the content of the file /source/data/personalization.json would be 
     "someotherfile" {...}
 }
 ```
+
+__!__ See <a data-trio-link href="/docs/learn/metadata/#datacatalog">dataCatalog</a> for more information.
 
 ## `root/source/fragments/`
 
