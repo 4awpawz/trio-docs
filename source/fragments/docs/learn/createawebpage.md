@@ -8,7 +8,7 @@ callback: showCurrentPageInHeader.js
 
 # Create A Web Page
 
-__Important:__ Please review <a data-trio-link href="/docs/learn/howpagesarecomposed">How Pages Are Composed</a>, <a data-trio-link href="/docs/learn/frontmatter">Front Matter</a>, <a data-trio-link href="/docs/learn/metadata">Metadata</a> and <a href="/docs/learn/javascriptcallbacks">JavaScript Callbacks</a> before proceeding with this exercise.
+__Important:__ Please review <a data-trio-link href="/docs/learn/howpagesarecomposed">How Pages Are Composed</a>, <a data-trio-link href="/docs/learn/frontmatter">Front Matter</a>, <a data-trio-link href="/docs/learn/metadata">Metadata</a> and <a data-trio-link href="/docs/learn/javascriptcallbacks">JavaScript Callbacks</a> before proceeding with this exercise.
 
 ## 1. Create A Page Template
 

@@ -22,7 +22,7 @@ This attribute is used in page templates and instructs Trio to target this HTML 
 
 __!__ _data-trio-fragment can be omitted if the page template is designed to be used by page fragments that do not contribute content._
 
-By default, Trio replaces the HTML tag with the content from the page fragment. To append the content to this HTML tag, declare `appendToTarget: true` in your page fragment's front matter. For more information see <a data-trio-link href="/docs/learn/frontmatter">Front Matter</a>.
+By default, Trio replaces the HTML tag with the content from the page fragment. To append the content to this HTML tag, declare `appendToTarget: true` in your page fragment's front matter. For more information see <a data-trio-link href="/docs/learn/frontmatter/#appendtotarget">appendToTarget</a>.
 
 ## `data-trio-include`
 
@@ -32,7 +32,7 @@ By default, Trio replaces the HTML tag with the content from the page fragment. 
 
 This attribute, which can be used in page fragments and page templates, instructs Trio to target this HTML tag when merging the specified include file's content.
 
-By default, Trio replaces the HTML tag with the content from the include file. To append the content to this HTML tag, declare `appendToTarget: true` in your include file front matter. For more information see [appendToTarget](#appendtotarget).
+By default, Trio replaces the HTML tag with the content from the include file. To append the content to this HTML tag, declare `appendToTarget: true` in your include file front matter. For more information see <a data-trio-link href="/docs/learn/frontmatter/#appendtotarget">appendToTarget</a>.
 
 ### Static vs Dynamic Includes
 
