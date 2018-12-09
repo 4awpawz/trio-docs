@@ -40,3 +40,17 @@ As can be seen from the above, "stitching together" the assortment of pages requ
 * site.sortedTagCatalog: if 1 or more articles are categorized.
 
 __!__ Article lists are sorted in descending date and title order.
+
+## Configuring The Blog Folder Name
+
+By default, when generating your web site, Trio will host your blog in the `public/blog` folder. If you would prefer to use a different name for the folder you can by setting the `blogFolderName` property in your root/trio.json configuration file.
+
+For example, using the configuration below
+
+```json
+{
+    "blogFolderName": "differentblogname"
+}
+```
+
+Trio will, when generating your web site, host your blog in the `public/differentblogname` folder.
