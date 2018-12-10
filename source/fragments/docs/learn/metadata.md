@@ -293,6 +293,26 @@ Similar to [relatedArticlesByTag](#relatedarticlesbytag) above, it is a flatenen
 
 Similar to [relatedArticlesByTag](#relatedarticlesbytag) above, it is a list of articles related to this article in descending chronological order, grouped by category.
 
+## `wipsCount`
+
+```js
+{
+    wipsCount: 1
+}
+```
+
+When building for release, reports the total number of ignored work in progress blog articles.
+
+## `wips`
+
+```json
+    "wips": [
+        "source/fragments/blog/articles/_2018-11-17-mydevenvironment.md"
+    ]
+```
+
+When building for release, reports the file paths of ignored work in progress blog articles.
+
 ## `sortedTagCatalog`
 
 ```js
