@@ -12,7 +12,7 @@ Trio generates an extensive amount of  metadata while building your project's so
 
 Each time Trio builds your project it saves the metadata to a file named source/trio.manifest.json. Being able to actually see all the data makes it easier to reason about how best to use it in your project's JavaScript callbacks and because much of this metadata is organized as lists they are simple to iterate over with JavaScript. Please see the topic <a data-trio-link href="/docs/learn/javascriptcallbacks">JavaScript Callbacks</a> to learn about using metadata in your project's JavaScript callbacks.
 
-**Important:** File source/trio.manifest.json is used internally by Trio when serving your project and should not be deleted though it is perfectly acceptable to include it in .gitignore. If it does get deleted for some reason just run either `trio build` or `trio release` to generate it.
+__!__ File source/trio.manifest.json is used internally by Trio when serving your project and should not be deleted though it is perfectly acceptable to include it in .gitignore. If it does get deleted for some reason just run either `trio build` or `trio release` to generate it.
 
 Below is a list of the metadata that Trio generates, including their key names and their descriptions:
 

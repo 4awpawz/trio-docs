@@ -92,7 +92,7 @@ Both page fragments are associated with the same page template yet each page fra
 
 This attribute, which can be used in includes, page fragments and page templates, instructs Trio to prepend a *base url* to this tag's `src` or `href` attribute's value when you run a *release build*. You declare your site's base url in your project's `root/trio.json` configuration file.
 
-**Important:** Some static site hosting services, such as Github for example, may require this.
+__!__ Some static site hosting services, such as Github for example, may require this.
 
 For example, if you declare `baseUrl` in your root/trio.json configuration file as follows
 

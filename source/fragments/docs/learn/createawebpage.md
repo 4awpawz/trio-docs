@@ -86,7 +86,7 @@ Now we will tell Trio how we want it to merge our page fragment's content into o
 
 What we want is for Trio to append the content to the page template's main tag which we adorned with the data-trio-fragment attribute.
 
-**Important:** If we don't do this, Trio, by default, will replace the main tag with the page fragment's content.
+__!__ If we don't do this, Trio, by default, will replace the main tag with the page fragment's content.
 
 Lets do this by adding the "appendToTarget" property to the front matter with a boolean value of true.
 

@@ -8,7 +8,7 @@ callback: showCurrentPageInHeader.js
 
 # JavaScript Callbacks
 
-**Important:** Please review <a data-trio-link href="/docs/learn/metadata">Metadata</a> before continuing with this guide.
+__!__ Please review <a data-trio-link href="/docs/learn/metadata">Metadata</a> before continuing with this guide.
 
 Unlike other static site generators that require you to pepper your markup with template tags, Trio lets you keep your markup clean and use JavaScript along with <a href=" https://github.com/cheeriojs/cheerio" target="_blank">cheerio</a>, a JavaScript implementation of core jQuery designed specifically for the server, to compose web pages.
 
