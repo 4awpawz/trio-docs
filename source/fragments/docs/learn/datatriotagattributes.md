@@ -90,11 +90,11 @@ Both page fragments are associated with the same page template yet each page fra
 <img data-trio-link src="/media/mist-niagara-falls-river.jpg">
 ```
 
-This attribute, which can be used in includes, page fragments and page templates, instructs Trio to prepend a *base url* to this tag's `src` or `href` attribute's value when you run a *release build*. For more information see [release build]. You declare your site's base url in your project's `trio.json` configuration file. For more information see [configuration].
+This attribute, which can be used in includes, page fragments and page templates, instructs Trio to prepend a *base url* to this tag's `src` or `href` attribute's value when you run a *release build*. You declare your site's base url in your project's `root/trio.json` configuration file.
 
-**Important:** Some static site hosting services, such as Github's for instance, may require this.
+**Important:** Some static site hosting services, such as Github for example, may require this.
 
-For example, if in your trio.json configuration file you declare `baseUrl` as follows:
+For example, if you declare `baseUrl` in your root/trio.json configuration file as follows
 
 ```json
 {
