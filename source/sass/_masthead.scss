@@ -4,6 +4,10 @@
     h1 {
         font-size: $huge-font-size;
         color: $secondary-text-color;
+        span {
+            font-weight: bold;
+            font-size: .5em;
+        }
     }
 }
 
