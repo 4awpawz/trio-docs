@@ -17,6 +17,15 @@
         color: white;
         font-style: normal;
     }
+    a {
+        font-weight: 550;
+        font-style: normal;
+        color: #fff;
+        text-decoration: none;
+    }
+    a:hover {
+        text-decoration: underline;
+    }
 }
 
 .footer__heart {
