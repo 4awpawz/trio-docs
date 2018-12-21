@@ -1,6 +1,4 @@
 # Documentation For 4awpawz/trio.
-Hosted on Github Pages at https://github.com/4awpawz/trio-docs-iopages
+Github Pages site is hosted at https://github.com/4awpawz/trio-docs-pages.
 
-## Uses
-* github-css from https://github.com/sindresorhus/github-markdown-css
-* code syntax highlighting from https://highlightjs.org/
+Live version can be viewed <a href="https://4awpawz.github.io/trio-docs-pages/">here</a>.
