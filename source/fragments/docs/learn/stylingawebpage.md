@@ -10,7 +10,7 @@ callback: showCurrentPageInHeader.js
 
 <br>
 
-A web page without style isn't much to look at. Lets add some styling to the page we created in <a href="/docs/learn/createawebpage">Create A Web Page</a>.
+A web page without style isn't much to look at. Lets add some styling to the page we created in <a data-trio-link href="/docs/learn/createawebpage">Create A Web Page</a>.
 
 ## CSS Or Sass
 
