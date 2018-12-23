@@ -127,7 +127,7 @@ context: includes and page fragments
 
 required: no
 
-It is used to declare one or more names of JavaScript modules that Trio will synchronously call. For more information see JavaScript Callbacks.
+It is used to declare one or more names of JavaScript modules that Trio will synchronously call. For more information see <a data-trio-link href="/docs/learn/javascriptcallbacks">JavaScript Callbacks</a>.
 
 ### `tag`
 

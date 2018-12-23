@@ -16,7 +16,7 @@ Trio uses the following project assets to compose web pages:
 
 1. Page Templates, located in the source/templates folder, are HTML files that provide the overall structure of the web pages you create with Trio.
 
-__!__ Besides the above, Trio unleashes the full power of JavaScript to empower you to further compose your web pages through its <a data-trio-link href="/docs/learn/javascriptcallbacks">callback mechanism</a>.
+__!__ Besides the above, Trio unleashes the full power of JavaScript to empower you to further compose your web pages through its <a data-trio-link href="/docs/learn/javascriptcallbacks">JavaScript callback mechanism</a>.
 
 ## Includes
 

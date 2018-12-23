@@ -21,7 +21,7 @@ Blogs typically have the following assortment and relationship of pages:
 * One tag page for each tag used by the blog on which all articles with the same tag are listed.
 
 ## Blog Related Metadata
-As can be seen from the above, "stitching together" the assortment of pages required by a typical blog can be intimidating if not somewhat complex. To make building out a blog easier to reason about, Trio generates numerous blog specific metadata collections that can make implementing a typical blog much easier. Trio also saves this collection of metadata to root/trio.manifest.json after every build or release is run. Below is a list of the blog specific metadata items and collections that Trio makes available to JavaScript callbacks:
+As can be seen from the above, "stitching together" the assortment of pages required by a typical blog can be intimidating if not somewhat complex. To make building out a blog easier to reason about, Trio generates numerous blog specific metadata collections that can make implementing a typical blog much easier. Trio also saves this collection of metadata to root/trio.manifest.json after every build or release is run. Below is a list of the blog specific metadata items and collections that Trio makes available to <a data-trio-link href="/docs/learn/javascriptcallbacks">JavaScript callbacks</a>:
 
 * articlesCount: total number of articles
 

@@ -24,7 +24,7 @@ The development folder.
 
 ## `root/source/callbacks/`
 
-The folder where JavaScript callback modules, which are referenced by page fragments and includes, live.
+The folder where JavaScript callback modules, which are referenced by page fragments and includes, live. See <a data-trio-link href="/docs/learn/javascriptcallbacks">JavaScript Callbacks</a> for more information.
 
 ## `root/source/css/`
 
