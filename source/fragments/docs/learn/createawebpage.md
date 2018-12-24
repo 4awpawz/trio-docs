@@ -84,7 +84,7 @@ title: Hello World
 
 Now we will tell Trio how we want it to merge our page fragment's content into our page template's markup.
 
-What we want is for Trio to append the content to the page template's main tag which we adorned with the data-trio-fragment attribute.
+What we want is for Trio to append the content to the page template's section tag which we previously adorned with the data-trio-fragment attribute.
 
 __!__ If we don't do this, Trio, by default, will replace the main tag with the page fragment's content.
 
