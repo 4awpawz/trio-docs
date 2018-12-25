@@ -72,12 +72,12 @@ $ trio r|release && trio s|serve
 
 ## Building Project For Development And For Release
 
-The below table describes the different actions Trio takes when building for `development` and building for `release`:
+The table below describes the different actions that Trio takes when building for `development` and building for `release`:
 
 <table class="dev-vs-release-build">
   <thead>
     <tr>
-        <th></th> <th>development</th> <th>release</th>
+        <th></th> <th>Development</th> <th>Release</th>
     </tr>
   </thead>
   <tbody>
