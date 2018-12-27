@@ -91,6 +91,11 @@ The folder where .html page templates live.
 
 The project's configuration file.
 
+There are currently only 2 configuration options:
+
+1. "baseUrl" - see <a data-trio-link href="/docs/learn/datatriotagattributes/#data-trio-link">data-trio-link</a>
+2. "blogFolderName" - see <a data-trio-link href="/docs/learn/buildingablog/#configuring-the-blog-folder-name">Configuring The Blog Folder Name</a>
+
 ## `root/trio.manifest.json`
 
 File which contains collections of metadata that are generated every time Trio builds the project.
