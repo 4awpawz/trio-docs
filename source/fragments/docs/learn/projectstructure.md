@@ -91,10 +91,11 @@ The folder where .html page templates live.
 
 The project's configuration file.
 
-There are currently only 2 configuration options:
+There are currently 3 configuration options:
 
-1. "baseUrl" - see <a data-trio-link href="/docs/learn/datatriotagattributes/#data-trio-link">data-trio-link</a>
-2. "blogFolderName" - see <a data-trio-link href="/docs/learn/buildingablog/#configuring-the-blog-folder-name">Configuring The Blog Folder Name</a>
+1. "baseUrl" - see <a data-trio-link href="/docs/learn/datatriotagattributes/#data-trio-link">data-trio-link</a>.
+2. "blogFolderName" - see <a data-trio-link href="/docs/learn/buildingablog/#configuring-the-blog-folder-name">Configuring The Blog Folder Name</a>.
+3. "nojekyll" - defaults to `false`, if set to `true` instructs Trio to write a `.nojekyll` file to the public folder during release builds to completely bypass Jekyll processing on GitHub Pages.
 
 ## `root/trio.manifest.json`
 

@@ -1,3 +1,4 @@
 {
-    "baseUrl": "/trio-docs-pages"
+    "baseUrl": "/trio-docs-pages",
+    "nojekyll": true
 }
