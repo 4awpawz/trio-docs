@@ -4,8 +4,8 @@ module.exports = ({ $, site }) => {
     if (site.articlesCount) {
         const $target = $("#articles");
         $target.after("<ul class=\"articles-list\"></ul>");
+        const $articlesList = $("ul.articles-list");
         site.articlesCatalog.forEach(item => {
-            const $articlesList = $("ul.articles-list");
             const data = item.matter.data;
             $articlesList.append(/* html */`
                 <li>
