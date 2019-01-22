@@ -91,6 +91,9 @@ The table below describes the different actions that Trio takes when building fo
         <td>Generate CSS Vendor Prefixes</td> <td><span class="check">&check;</td> <td><span class="check">&check;</td>
     </tr>
     <tr>
+        <td>Copies files found in source/etc to root of<br>public folder</td> <td><span class="check">&check;</td> <td><span class="check">&check;</td>
+    </tr>
+    <tr>
         <td>Generate CSS Map</td> <td><span class="check">&check;</td> <td><span class="cross">&cross;</td>
     </tr>
     <tr>
@@ -101,6 +104,9 @@ The table below describes the different actions that Trio takes when building fo
     </tr>
     <tr>
         <td>Prefix URLS</td> <td><span class="cross">&cross;</td> <td><span class="check">&check;</td>
+    </tr>
+    <tr>
+        <td>Writes .nojekyll file to public folder if config<br>option "nojekyll" is declared in trio.json</td> <td><span class="cross">&cross;</td> <td><span class="check">&check;</td>
     </tr>
     <tr>
         <td>Cache Bust Files</td> <td><span class="cross">&cross;</td> <td><span class="check">&check;</td>
