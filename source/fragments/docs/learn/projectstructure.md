@@ -41,13 +41,15 @@ For example, the content of the file /source/data/personalization.json would be 
         "name": "John Doe",
         "twitter": "@johndoe"
     },
-    "someotherfile" {...}
+    "someotherfile": {...}
 }
 ```
 
 __!__ See <a data-trio-link href="/docs/learn/metadata/#datacatalog">dataCatalog</a> for more information.
 
 ## `root/source/etc/`
+
+_Introduced in v0.0.4._
 
 The folder where files like favicon.ico, robots.txt, sitemaps, .etc live. Files contained in this folder are copied as is to the root of the public folder.
 

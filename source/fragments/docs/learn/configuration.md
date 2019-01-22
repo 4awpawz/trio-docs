@@ -20,4 +20,6 @@ A string whose default value is `"blog"`. Used to set the name of the `public bl
 
 ## nojekyll
 
+_Introduced in v0.0.3._
+
 A boolean whose default value is `false`. Used to instruct Trio to write a `.nojekyll` file to the public folder during release builds to completely bypass Jekyll processing  and is only relevant when hosting your website on GitHub Pages. See <a target="_blank" href="https://github.blog/2009-12-29-bypassing-jekyll-on-github-pages/">Bypassing Jekyll on GitHub Pages</a> for more information.
