@@ -47,6 +47,10 @@ For example, the content of the file /source/data/personalization.json would be 
 
 __!__ See <a data-trio-link href="/docs/learn/metadata/#datacatalog">dataCatalog</a> for more information.
 
+## `root/source/etc/`
+
+The folder where files like robots.txt, sitemaps, .etc live. Files contained in this folder are copied as is to the root of the public folder.
+
 ## `root/source/fragments/`
 
 The folder where .md and .html page fragments live.
