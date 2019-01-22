@@ -49,7 +49,7 @@ __!__ See <a data-trio-link href="/docs/learn/metadata/#datacatalog">dataCatalog
 
 ## `root/source/etc/`
 
-The folder where files like robots.txt, sitemaps, .etc live. Files contained in this folder are copied as is to the root of the public folder.
+The folder where files like favicon.ico, robots.txt, sitemaps, .etc live. Files contained in this folder are copied as is to the root of the public folder.
 
 ## `root/source/fragments/`
 
