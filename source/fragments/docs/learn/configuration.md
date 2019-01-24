@@ -22,4 +22,6 @@ A string whose default value is `"blog"`. Used to set the name of the `public bl
 
 _Introduced in v0.0.3._
 
+_!_ With the introduction of support for the `etc` folder (see <a data-trio-link href="/docs/learn/projectstructure/#root-source-etc-">root/source/etc</a>) this option isn't explicitly necessary anymore and **will be deprecated in a future release**. Therefore it is advisable to just create an empty file named `.nojekyll` in the root/source/etc folder and Trio will copy it to the root of the public folder whenever you build your project.
+
 A boolean whose default value is `false`. Used to instruct Trio to write a `.nojekyll` file to the public folder during release builds to completely bypass Jekyll processing  and is only relevant when hosting your website on GitHub Pages. See <a target="_blank" href="https://github.blog/2009-12-29-bypassing-jekyll-on-github-pages/">Bypassing Jekyll on GitHub Pages</a> for more information.

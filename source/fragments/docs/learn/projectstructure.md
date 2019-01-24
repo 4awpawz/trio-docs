@@ -51,7 +51,7 @@ __!__ See <a data-trio-link href="/docs/learn/metadata/#datacatalog">dataCatalog
 
 _Introduced in v0.0.4._
 
-The folder where files like favicon.ico, robots.txt, sitemaps, .etc live. Files contained in this folder are copied as is to the root of the public folder.
+The folder where files like `favicon.ico, robots.txt, sitemaps, .nojekyll, .etc` live. Files contained in this folder are copied as is to the root of the public folder whenever you build your project.
 
 ## `root/source/fragments/`
 
