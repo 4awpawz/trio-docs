@@ -1,6 +1,4 @@
-exports.dependencies = () => [];
-
-exports.render = ({ $, page }) => {
+module.exports = ({ $, page }) => {
     const activeHeaderItem = page.matter.data.activeHeaderItem;
     if (!activeHeaderItem) {
         throw new Error("Error: \"activeHeaderItem\" property not found in fragment");

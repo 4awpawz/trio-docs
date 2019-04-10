@@ -1,8 +1,9 @@
+/*
+dependencies: ./lib/capitalize
+*/
 const capitalize = require("./lib/capitalize");
 
-exports.dependencies = () => ["./lib/capitalize"];
-
-exports.render = ({ $, site }) => {
+module.exports = ({ $, site }) => {
     if (site.articlesCount) {
         const $target = $("#articles");
         $target.after("<ul class=\"articles-list\"></ul>");

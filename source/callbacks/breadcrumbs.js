@@ -4,9 +4,7 @@ const breadcrumbs = (page) => {
     }, "");
 };
 
-exports.dependencies = () => [];
-
-exports.render = ({ $, page }) => {
+module.exports = ({ $, page }) => {
     // add breadcrumbs navigation
     $("div.breadcrumbs").append(breadcrumbs(page));
 };

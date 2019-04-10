@@ -1,5 +1,3 @@
-exports.dependencies = () => [];
-
-exports.render = ({$, site}) => {
+module.exports = ({$, site}) => {
     $(".container p:last-child").append(`${site.timestamp}.`);
 };
