@@ -1,0 +1,46 @@
+<!--
+template: docpage.html
+title: Fragment - Trio
+appendToTarget: true
+activeHeaderItem: 2
+activeDocIndexItem: 9
+-->
+
+
+<h1>Fragment</h1>
+
+<p>A fragment is a required asset that is associated with a single <a data-trio-link href="/docs/v1/template"><em>template</em></a> asset. The association between a template and a fragment is made by the fragment, using the predefined "template" <a data-trio-link href="/docs/v1/frontmatter"><em>front matter</em></a> property, and assigning it the name of the template it is associated with.</p>
+
+<p><mark>When composing a page, Trio merges the fragment's content with the tag in the template that is decorated with the <a data-trio-link href="/docs/v1/tagattributes"><em>data-trio-fragment</em></a> attribute. The merging of content from a single template with a single fragment, followed by the merging of any content from any <a data-trio-link href="/docs/v1/include"><em>include</em></a> assets that either asset may declare, forms the basis of a composite, which Trio saves as a page.</mark></p> 
+
+<figure>
+<pre><code class="html">&lt;!--
+template: docpage.html
+title: Fragment
+appendToTarget: true
+--&gt;
+
+&lt;h1&gt;Fragment&lt;/h1&gt;
+
+&lt;p&gt;Lorem ipsum dolor sit amet consectetur adipisicing elit. In, aut laboriosam accusantium nam voluptatum architecto earum! Quasi dolor doloremque quibusdam dolore fugit impedit vel dolorem enim. Aut optio omnis doloribus.&lt;/p&gt;</code></pre>
+<figcaption>Fragment With Front Matter Example</figcaption>
+</figure>
+
+<ul>
+    <li><strong>file location</strong>: root/source/fragments</li>
+    <li><strong>file type/content</strong>: .html/HTML or .md/Markdown</li>
+    <li><strong>front matter required</strong>: yes</li>
+    <li><strong>required predefined front matter properties</strong>: template, title</li>
+    <li><strong>optional predefined front matter properties</strong>: appendToTarget</li>
+    <li><strong>applicable data-trio-* attributes</strong>: data-trio-include, data-trio-callback, data-trio-link</li>
+</ul>
+
+<h2>See Also</h2>
+
+<ul>
+    <li><a data-trio-link href="/docs/v1/template">Template</a></li> 
+    <li><a data-trio-link href="/docs/v1/include">Include</a></li> 
+    <li><a data-trio-link href="/docs/v1/tagbasedcallbacks">Tag-Based Callbacks</a></li> 
+    <li><a data-trio-link href="/docs/v1/frontmatter">Front Matter</a></li> 
+    <li><a data-trio-link href="/docs/v1/tagattributes">Tag Attributes</a></li> 
+</ul>

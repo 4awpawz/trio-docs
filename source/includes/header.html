@@ -1,33 +1,40 @@
-<header class="header header--fixed">
-    <div class="container">
-        <div class="header__promo">
-            <div class="header__promo-text">Trio</div>
-        </div>
-        <label class="hamburger-helper" for="hamburger-checkbox">
-            <div class="hamburger header-hamburger">
-                <div class="hamburger__bun">
-                    <div class="hamburger__patty"></div>
-                    <div class="hamburger__patty"></div>
-                    <div class="hamburger__patty"></div>
-                </div>
+<!--
+appendToTarget: true
+-->
+<!-- <header class="header header--fixed"> -->
+<section class="container header__container">
+    <input class="hamburger-checkbox header__hamburger-checkbox" type="checkbox" id="hamburger-checkbox" autocomplete="off">
+    <label class="hamburger-helper header__hamburger-container" for="hamburger-checkbox">
+        <div class="hamburger">
+            <div class="hamburger__bun">
+                <div class="hamburger__patty"></div>
+                <div class="hamburger__patty"></div>
+                <div class="hamburger__patty"></div>
             </div>
-        </label>
-        <input class="hamburger-checkbox" type="checkbox" id="hamburger-checkbox" autocomplete="off">
-        <nav class="header__nav">
-            <ul class="header__nav-items">
-                <li class="header__nav-item">
-                    <a data-trio-link class="header__nav-item-link" href="/">
-                        <i class="fas fa-home header__nav-item-icon"></i>Home</a>
-                </li>
-                <li class="header__nav-item">
-                    <a data-trio-link class="header__nav-item-link" href="/docs">
-                        <i class="fas fa-file header__nav-item-icon"></i>Docs</a>
-                </li>
-                <li class="header__nav-item">
-                    <a id="trio-blog-link" data-trio-link class="header__nav-item-link" href="/blog">
-                        <i class="fas fa-columns header__nav-item-icon"></i>Blog</a>
-                </li>
-            </ul>
-        </nav>
+        </div>
+    </label>
+    <div class="header__promo">
+        <img data-trio-link class="header__promo-image" src="/media/brand.svg" alt="Trio Icon">
+        <div class="header__promo-text">Trio
+            <span class="header__promo-text-version" data-trio-callback="version"></span>
+            <span class="header__promo-text-version-name">(Ikigai)</span>
+        </div>
     </div>
-</header>
+    <nav class="header__nav">
+        <ul data-trio-callback="showCurrentPageInHeader" class="header__nav-items">
+            <li class="header__nav-item">
+                <a data-trio-link class="header__nav-item-link" href="/">Home</a>
+            </li>
+            <li class="header__nav-item">
+                <a data-trio-link class="header__nav-item-link" href="/docs/v1/">Docs</a>
+            </li>
+            <!-- <li class="header__nav-item">
+                <a data-trio-link class="header__nav-item-link" href="/expo">Expo</a>
+            </li> -->
+            <li class="header__nav-item">
+                <a data-trio-link class="header__nav-item-link" target="_blank" href="/blog">Blog</a>
+            </li>
+        </ul>
+    </nav>
+</section>
+<!-- </header> -->

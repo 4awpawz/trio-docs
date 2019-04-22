@@ -1,0 +1,76 @@
+<!--
+template: docpage.html
+title: Page Generation - Trio
+appendToTarget: true
+activeHeaderItem: 2
+activeDocIndexItem: 5
+-->
+
+<h1>Page Generation</h1>
+
+<p>When Trio outputs pages to the file system, either to the public or to the release folders, it employs a folder structure and file naming convention that results in URLs that are <a href="https://en.wikipedia.org/wiki/Permalink" target="_blank">permalink</a> friendly and easy to share externally, such as on social media or via email.</p>
+
+<p>For the remainder of this discussion, the folder named <em>target</em> is used to represent both the public and the release folders that Trio writes to. In both instances, Trio employs the same conventions which are explained below.</p>
+
+<h2>For Non Blog Article Pages</h2> 
+
+<ul>
+    <li>File <em>source/fragments/index.md</em> would be output to <em>target/index.html</em> and its URL would be <em>/</em>.</li>
+    <li>File <em>source/fragments/about.md</em> would be output to <em>target/about/index.html</em> and its URL would be <em>/about</em>.</li>
+    <li>File <em>source/fragments/abc/index.md</em> would be output to <em>target/abc/index.html</em> and its URL would be <em>/abc</em>.</li>
+    <li>File <em>source/fragments/abc/contact.md</em> would be output to <em>target/abc/contact/index.html</em> and its URL would be <em>/abc/contact</em>.</li>
+</ul>
+
+<p><mark>As the examples above demonstrate, when Trio creates your non blog-related pages, Trio will create the appropriate parent folders for the page if they don't already exist.</mark></p>
+
+<h2 id="forblogarticlepages">For Blog Article Pages</h2>
+
+<ul>
+    <li>When naming your blog article, use the form <em>yyyy-mm-dd-articlename.md|.html</em>, where:</li>
+    <ul>
+        <li><strong>yyyy</strong>: is the 4 digit year</li>
+        <li><strong>mm</strong>: is the 2 digit month</li>
+        <li><strong>dd</strong>: is the 2 digit day</li>
+    </ul>
+    <li>File <em>source/fragments/blog/articles/2018-11-18-articlename.md</em> would be output to <em>target/blog/2018/11/18/articlename/index.html</em> and its URL would be <em>/blog/2018/11/18/articlename/</em>.
+    </li>
+    <li>File <em>source/fragments/blog/articles/2018-11-18-articlename.md</em> declares <em>category: abc</em> in its front matter and would be output to <em>target/blog/abc/2018/11/18/articlename/index.html</em> and its URL would be <em>/blog/abc/2018/11/18/articlename/</em>.</li>
+</ul>
+
+<p><mark>As the examples above demonstrate, when Trio creates your blog-related pages, Trio will create the appropriate parent folders for the page if they don't already exist.</mark></p>
+
+<p><mark>If you would rather name your public blog folder to something other than "blog", you can by simply adding the configuration property "blogFolderName" to your project's configuration file, which is root/trio.json, and assign it the name you prefer.</mark></p>
+
+<h2>Linking Conventions</h2>
+
+<p>The following linking conventions are supported:</p>
+
+<ul>
+    <li><strong>Absolute URLs</strong>: <em>https://4awpawz.github.io/trio-docs-pages/docs/</em> is appropriate to use when linking to remote/non-internal resource but inappropriate to use when linking to your site's internal resources because it is brittle; a change in the sites domain would require a global refactoring of your site to change each occurrence.</li>
+    <li><strong>Root Relative URLs</strong>: <em>/docs</em> is appropriate for internal links; the beginning <em>/</em> means that the link is relative to the root of your site.</li>
+    <li><strong>Relative URLs</strong>: <em>../docs</em> is appropriate for internal links; it is relative to the page in which it is being used.</li>
+</ul>
+
+<h2 id="baseurl">Base URL</h2>
+
+<p>Some Web hosting services that host your site in a subfolder will require that your site's <em>root relative</em> URLs begin with the subfolder's name. For example, the site at <em>https://4awpawz.github.io/trio-docs-pages</em> is hosted on Github Pages and linking with <em>&lt;a href="/docs/v1"&gt;Documentation&lt;/a&gt;</em> wouldn't work but linking with <em>&lt;a href="/trio-docs-pages/docs/v1"&gt;Documentation&lt;/a&gt;</em> would work.</p>
+
+<p>In this case, you can decorate your links using the <em>data-trio-link</em> attribute (e.g <em>&lt;a data-trio-link href="/docs/v1"&gt;Documentation&lt;/a&gt;</em>) along with a base URL, such as <em>/trio-docs-pages</em>, that you define in your project's <em>root/trio.js</em> configuration file and Trio will prepend it to your link's URL to produce <em>&lt;a href="/trio-docs-pages/docs/v1"&gt;Documentation&lt;/a&gt;</em>.</p>
+
+<h2>WIP Pages</h2>
+
+<p>Fragment file name's that you prepend with an underscore (i.e. "_") marks them as a "<em>work in progress</em>" and will be ignored during a release build of your project. This allows you to develop new pages without impacting your release builds.</p>
+
+<p><mark>For example, during a release build, article `source/fragments/blog/articles/_2019-01-01-about2019.md` would be ignored.</mark></p>
+
+<h2>See Also</h2>
+
+<ul>
+    <li><a data-trio-link href="/docs/v1/projectstructure">Project Structure</a></li>
+    <li><a data-trio-link href="/docs/v1/template">Template</a></li>
+    <li><a data-trio-link href="/docs/v1/fragment">Fragment</a></li>
+    <li><a data-trio-link href="/docs/v1/include">Include</a></li>
+    <li><a data-trio-link href="/docs/v1/tagbasedcallbacks">Tag-Based Callbacks</a></li>
+    <li><a data-trio-link href="/docs/v1/blogging">Blogging</a></li>
+    <li><a data-trio-link href="/docs/v1/configuration">Configuration</a></li>
+</ul>

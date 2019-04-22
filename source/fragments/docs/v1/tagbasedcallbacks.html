@@ -1,0 +1,200 @@
+<!--
+template: docpage.html
+title: Tag-Based Callbacks - Trio
+appendToTarget: true
+activeHeaderItem: 2
+activeDocIndexItem: 13
+-->
+
+<h1>Tag-Based Callbacks</h1>
+
+<p>Trio scans your composites for tags decorated with the <em>data-trio-callback</em> attribute and calls the modules they name in the root/source/callbacks folder <em>asynchronously</em> with a single object whose properties can be used along with cheerio to manipulate the composite <em>as if you were actually using jQuery to manipulate the DOM</em>.</p>
+
+<p><mark>Internally Trio treats all you assets' markup as simple text, and parses it using jQuery-like selector syntax using the awesome OS library called <a class="doc-page__decorated-link" target="_blank" href="https://www.npmjs.com/package/cheerio"><em>cheerio</em></a>. If you have ever used jQuery then you should already know how to use cheerio's selector syntax. If you have never used jQuery then you can learn its selector syntax by visiting <a href="https://jquery.com/">jquery.com</a>.</mark></p>
+
+<figure>
+<pre><code class="JavaScript">/*
+moduleDependencies: ./lib/capitalize
+*/
+const capitalize = require("./lib/capitalize");
+
+module.exports = ({ $tag, site }) => {
+    site.articlesCount && site.articlesCatalog.forEach(item => {
+        const data = item.matter.data;
+        $tag.append(`
+                &lt;li&gt;
+                    &lt;a data-trio-link href="${item.url}"&gt;
+                        ${data.title} - Posted to ${capitalize(data.category[0])} - ${item.articleDate}
+                    &lt;/a&gt;
+                &lt;/li&gt;
+            `);
+    });
+};</code></pre>
+<figcaption>Tag-Based Callback Example</figcaption>
+</figure>
+
+<ul>
+    <li><strong>file location</strong>: root/source/callbacks</li>
+    <li><strong>file type/content</strong>: .js/JavaScript</li>
+</ul>
+
+<h2>Declaring Tag-Based Callbacks</h2>
+
+<p>Declaring a tag-based callback is as simple as picking any tag in a template, fragment or include asset and decorating it with the <em>data-trio-callback</em> attribute and assigning it the name of a callback in the <em>root/source/callbacks</em> folder:</p>
+
+<figure>
+    <pre><code class="html">&lt;ul data-trio-callback="blogtaglist"&gt;&lt;/ul&gt;</code></pre>
+    <figcaption>Declaring A Tag-Based Callback Example</figcaption>
+</figure>
+
+<h2>Implementing Callbacks</h2>
+
+<p>Each module must export a single function which, when called by Trio, is passed a single argument which can be destructured to access its properties.</p>
+
+<p>Callbacks can be implemented to run <em>synchronously</em></p>
+
+<figure>
+    <pre><code class="js">module.exports = ({ $tag, site }) => {
+    site.tagsCatalog.forEach(item => {
+        $tag.append(`
+            &lt;li class="tag__list-item"&gt;
+                &lt;a data-trio-link class="tag__list-item-link"
+                href="/blog/tag/${item.tag.toLowerCase()}"&gt;${item.tag}&lt;/a&gt;
+            &lt;/li&gt;
+        `);
+    });
+};</code></pre>
+<figcaption>Synchronous JavaScript Callback Example</figcaption>
+</figure>
+
+<p>or <em>asynchronously</em>, using async/await.</p>
+
+<figure>
+    <pre><code class="js">module.exports = async ({ $tag, site }) => {
+    const catalog = await getCatalogFromCloud(...);
+    catalog.forEach(item => {
+        $tag.append(`
+            &lt;li class="catalog-item__list-item"&gt;
+                &lt;a data-trio-link class="catalog-item__list-item-link"
+                href="/catalog/item/${item.name}"&gt;${item.price.toFixed(2)}&lt;/a&gt;
+            &lt;/li&gt;
+        `)
+    });
+};</code></pre>
+<figcaption>Asynchronous JavaScript Callback Example</figcaption>
+</figure>
+
+<h2>Argument Properties</h2>
+
+<h3>$</h3>
+<p>A <em>cheerio wrapper</em> around the composite. Use when targeting the composite's content.</p>
+<figure>
+    <pre><code class="js">module.exports = ({ $, site }) => {
+    site.tagsCatalog.forEach(item => {
+        $.find("ul.tag__list").append(`
+            &lt;li class="tag__list-item"&gt;
+                &lt;a data-trio-link class="tag__list-item-link"
+                href="/blog/tag/${item.tag.toLowerCase()}"&gt;${item.tag}&lt;/a&gt;
+            &lt;/li&gt;
+        `);
+    });
+    $.find("div.page-modified-date").append(new Date().toDateString());
+};</code></pre>
+<figcaption>Targeting A Composite's Content Using $tag Example</figcaption>
+</figure>
+
+<h3>$tag</h3>
+<p>A <em>cheerio wrapper</em> around the tag. Use when targeting the tag and its content.</p>
+<figure>
+    <pre><code class="js">module.exports = ({ $tag }) => {
+    $tag.append(new Date().toDateString());
+};</code></pre>
+<figcaption>Targeting A Tag's Content Using $tag Example</figcaption>
+</figure>
+
+<h3>site</h3>
+<p>Contains the complete collection of metadata</p>
+<figure>
+    <pre><code class="js">module.exports = ({ $tag, site }) => {
+    site.tagsCatalog.forEach(item => {
+        $tag.append(`
+            &lt;li class="tag__list-item"&gt;
+                &lt;a data-trio-link class="tag__list-item-link"
+                href="/blog/tag/${item.tag.toLowerCase()}"&gt;${item.tag}&lt;/a&gt;
+            &lt;/li&gt;
+        `);
+    });
+};</code></pre>
+<figcaption>Targeting A Tag's Content Using $tag Example</figcaption>
+</figure>
+
+<h3>asset</h3>
+<p>Contains the fragment's metadata.</p>
+<figure>
+    <pre><code class="js">module.exports = ({ $tag, asset }) => {
+    const data = asset.matter.data;
+    $tag.find("h1.article__title").append(data.title);
+    $tag.find("span.article__category").append(`"${data.category}"`);
+    $tag.find("span.article__date").append(asset.articleDate);
+    $tag.find("img.article__img").attr("src", `/media/${asset.matter.data.image}`);
+};</code></pre>
+<figcaption>Targeting A Tag's Content Using $tag Example</figcaption>
+</figure>
+
+<h2 id="declaringinternaldependencies">Declaring Internal Dependencies To Trigger Incremental Builds</h2>
+
+<p>When using incremental build, Trio will detect that you have made modifications to your tag-based callbacks, and it will trigger a build to regenerate only those composites whose assets relate by way of their chains of dependencies to the modified callback. However, Trio will not automatically trigger a build when:</p>
+
+<ul>
+    <li> it detects that you have made modifications to modules that your tag-based callbacks might requires, such as to a library that you created in root/source/callbacks/lib</li>
+    <li> it detects that you have made modifications to JSON files in the root/source/data folder that your tag-based callbacks might require</li>
+</ul>
+
+<p>To remedy these 2 situations, you can optionally add front matter to your tag-based callbacks, and include in them the properties discussed below, that will inform Trio to trigger a build whenever these internal dependencies are modified.</p>
+
+<h3>Declaring Your Module Dependencies</h3>
+<p>Declare your module dependencies using the <mark>moduleDependencies</mark> property.</p>
+<figure>
+<pre><code class="js">/*
+moduleDependencies:
+- ./lib/getDate
+- ./lib/getTime
+*/</code></pre>
+<figcaption>Declaring Module Dependencies Example</figcaption>
+</figure>
+
+<h3>Declaring Your JSON Data File Dependencies</h3>
+<p>Declare your JSON file dependencies using the <mark>dataDependencies</mark> property.</p>
+<figure>
+<pre><code class="js">/*
+dataDependencies:
+- contactInfo
+- portfolio
+*/</code></pre>
+<figcaption>Declaring JSON File Dependencies Example</figcaption>
+</figure>
+
+<h2 id="declaringexternaldependencies">Declaring External Dependencies On Metadata To Trigger Incremental Builds</h2>
+
+<p>When using incremental build, Trio will detect that you have made modifications to your fragment, include, template and tag-based callback assets, and it will trigger a build to regenerate only those composites whose assets relate by way of their chains of dependencies to those modified assets. However, Trio will not regenerate composites whose own assets haven't changed but which consume the metadata generated from modified assets unrelated to these composites, such as when generating pages that contain lists of other pages (e.g. blog pages, tag pages, category pages, catalog pages, portfolio pages, etc.).</p>
+
+<p>To remedy this situation, you can add the front matter <em>alwaysBuild</em> property to your fragment's front matter, which will cause Trio to always regenerate the composite related to the fragment.</p>
+
+<figure>
+<pre><code class="html">&lt;!--
+template: blogpage.html
+title: Trio Blog | Official blog for Trio static site generator.
+alwaysBuild: true
+--&gt;</code></pre>
+<figcaption>Using The Front Matter alwaysBuild Property Example</figcaption>
+</figure>
+<h2>See Also</h2>
+
+<ul>
+    <li><a data-trio-link href="/docs/v1/fragment">Fragment</a></li>
+    <li><a data-trio-link href="/docs/v1/tagattributes">Tag Attributes</a></li>
+    <li><a data-trio-link href="/docs/v1/frontmatter">Front Matter</a></li>
+    <li><a data-trio-link href="/docs/v1/metadata">Metadata</a></li>
+    <li><a data-trio-link href="/docs/v1/incrementalbuild">Incremental Build</a></li>
+    <li><a target="_blank" href="https://www.npmjs.com/package/cheerio">cheerio</a></li>
+</ul>

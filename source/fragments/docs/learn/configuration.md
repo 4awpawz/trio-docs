@@ -3,7 +3,6 @@ template: learnhowto.html
 title: Configuration
 appendToTarget: true
 activeHeaderItem: 2
-callback: showCurrentPageInHeader.js
 -->
 
 # Configuration

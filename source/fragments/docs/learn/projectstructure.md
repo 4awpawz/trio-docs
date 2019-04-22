@@ -3,7 +3,6 @@ title: Project Structure
 template: learnhowto.html
 appendToTarget: true
 activeHeaderItem: 2
-callback: showCurrentPageInHeader.js
 -->
 
 # Project Structure
@@ -59,7 +58,7 @@ The folder where .md and .html page fragments live.
 
 ## `root/source/fragments/blog`
 
-The folder where blog specific .md and .html page fragments live.
+The folder where blog-specific .md and .html page fragments live.
 
 ## `root/source/fragments/blog/articles`
 

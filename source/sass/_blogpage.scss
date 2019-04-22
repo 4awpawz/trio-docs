@@ -1,0 +1,74 @@
+.blog {
+    &-masthead {
+        @extend %masthead;
+        font-family: $sans-serif-font;
+        padding: 1.5rem 0 5rem;
+        text-align: center;
+        color: white;
+
+        &__icon {
+            color: inherit;
+            text-decoration: none;
+            display: inline-block;
+            font-family: Lora serif;
+            font-size: 4.5rem;
+            margin: 2rem;
+            padding: 2.2rem 1.5rem;
+            border: 1px solid #fff;
+            border-radius: 50px;
+
+            &::before {
+                content: "T";
+            }
+
+        }
+
+        &__title {
+            font-size: 1.7rem;
+            font-weight: 700;
+        }
+
+        &__subtitle {
+            font-size: 1.2rem;
+            color: rgba(#fff, 0.65);
+        }
+    }
+
+    &-container {
+        width: 40rem;
+        // max-width: 40rem;
+    }
+
+    &-posts {}
+
+    &-post {
+
+        margin-bottom: 3rem;
+
+        &__link {
+            color: inherit;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+
+        &__articleTitle {
+            font-size: 2rem;
+            margin-bottom: .4rem;
+        }
+
+        &__articleDate {
+            font-size: 1.2rem;
+            color: rgba(#000, 0.55);
+            margin-bottom: 1rem;
+        }
+
+        p {
+            font-size: 1.15rem;
+            opacity: .8;
+            margin-bottom: 1rem;
+        }
+    }
+
+}

@@ -3,7 +3,6 @@ title: Learn How To Create A Web Page
 template: learnhowto.html
 appendToTarget: true
 activeHeaderItem: 2
-callback: showCurrentPageInHeader.js
 -->
 
 # Create A Web Page

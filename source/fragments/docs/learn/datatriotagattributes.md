@@ -3,7 +3,6 @@ template: learnhowto.html
 title: data-trio-* Tag Attributes
 appendToTarget: true
 activeHeaderItem: 2
-callback: showCurrentPageInHeader.js
 -->
 
 # data-trio-* Tag Attributes

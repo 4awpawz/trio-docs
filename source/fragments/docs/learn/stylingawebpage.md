@@ -3,7 +3,6 @@ title: Permalinks And File Structure
 template: learnhowto.html
 appendToTarget: true
 activeHeaderItem: 2
-callback: showCurrentPageInHeader.js
 -->
 
 # Styling A Web Page

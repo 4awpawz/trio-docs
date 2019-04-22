@@ -3,7 +3,6 @@ template: learnhowto.html
 title: How Pages Are Created
 appendToTarget: true
 activeHeaderItem: 2
-callback: showCurrentPageInHeader.js
 -->
 
 # How Pages Are Composed

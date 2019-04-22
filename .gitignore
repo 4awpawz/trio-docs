@@ -1,4 +1,5 @@
 node_modules
 public
+release
 trio.manifest.json
 .cache

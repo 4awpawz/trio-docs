@@ -1,8 +1,8 @@
-module.exports = ({ $, page }) => {
-    const activeHeaderItem = page.matter.data.activeHeaderItem;
+module.exports = ({ $tag, asset }) => {
+    const activeHeaderItem = asset.matter.data.activeHeaderItem;
     if (!activeHeaderItem) {
         throw new Error("Error: \"activeHeaderItem\" property not found in fragment");
     }
-    $(`li.header__nav-item:nth-child(${activeHeaderItem})`)
+    $tag.find(`li:nth-child(${activeHeaderItem})`)
         .addClass("header__nav-item--active");
 };

@@ -1,0 +1,140 @@
+<!--
+template: docpage.html
+title: Front Matter - Trio
+appendToTarget: true
+activeHeaderItem: 2
+activeDocIndexItem: 6
+-->
+
+<h1>Front Matter</h1>
+
+<p>The inclusion of front matter is required for <a data-trio-link href="/docs/v1/fragment"><em>fragment</em></a> assets and is optional for <a data-trio-link href="/docs/v1/include"><em>include</em></a> and <a data-trio-link href="/docs/v1/tagbasedcallbacks">tag-based callback</a> assets.</p>
+
+<p>Front matter must be placed at the very top of the file and it must be surrounded by opening and closing delimiters that are appropriate for the asset's file type.</p>
+
+<p><mark>Excerpts are supported in fragment assets but are not supported in include and tag-based callback assets.</mark></p>
+
+<p>Below is an example of front matter used in a fragment asset</p>
+
+<figure>
+<pre><code class="html">&lt;!--
+template: helloworld.html
+title: Hello, World!
+appendToTarget: true
+--&gt;
+This will be in the excerpt.
+&lt;!-- end --&gt;
+
+&lt;h1&gt;Hello, World!&lt;/h1&gt;</code></pre>
+<figcaption>Front Matter Example</figcaption>
+</figure>
+
+<p>and below is the JavaScript object that it is converted to.</p> 
+
+<figure>
+<pre><code class="js">matter: {
+    content: "&lt;h1&gt;Hello, World!&lt;/h1&gt;",
+    data: {
+        template: "helloworld.html",
+        title: "Hello, World!",
+        appendToTarget: true
+    },
+    isEmpty: false,
+    excerpt: "This will be in the excerpt."
+}</code></pre>
+<figcaption>JavaScript Object Converted From Front Matter Example</figcaption>
+</figure>
+
+<h2>Appropriate Delimiters By Asset Type</h2>
+
+<p>Fragment and include assets use opening and closing HTML comment tags <code><em>"&lt;!--", "--&gt;"</em></code> as their front matter delimiters.</p>
+
+<p>Tag-Based callbacks use opening and closing JavaScript block comment tags <code><em>"/*", "*/"</em></code> as their front matter delimiters.</p>
+
+<h2>Predefined Front Matter Properties</h2>
+
+<p>Trio predefines numerous required and optional front matter properties for you to use in your fragment and include asset's front matter.</p>
+
+<h3>All Fragments</h3>
+
+<ul>
+    <li><strong>template</strong>: <em>required</em>, type <em>string</em> and is used to name the <a data-trio-link href="/docs/v1/template">template</a> that the fragment is associated with</li>
+    <li><strong>title</strong>: <em>required</em>, type <em>string</em> and is used to set the title tag of the page</li>
+    <li><strong>appendToTarget</strong>: <em>optional</em>, type <em>boolean</em>, default value <em>false</em></li>
+    <ul>
+        <li>if <em>true</em> Trio appends the fragment's content to the tag in the template that is decorated with the <em>data-trio-fragment</em> attribute</li>
+        <li>if <em>false</em> Trio replaces the tag in the template that is decorated with the <em>data-trio-fragment</em> attribute with the fragment's content</li>
+    </ul>
+    <li><strong>alwaysBuild</strong>: <em>optional</em>, type <em>boolean</em>, default value <em>false</em></li>
+    <ul>
+        <li>if <em>true</em> then Trio will always treat this fragment as if it is <em>stale</em> when building your project incrementally</li>
+        <li>this should be used when generating composites that consume the metadata generated from assets that are <em>unrelated to this composite</em>, such as when generating pages that contain lists of other pages (e.g. blog pages, tag pages, category pages, catalog pages, portfolio pages, etc.)</li>
+        <li>see <a href="/docs/v1/tagbasedcallbacks#declaringexternaldependencies" data-trio-link>Declaring External Dependencies To Trigger Incremental Builds</a> for details</li>
+    </ul>
+    <li><strong>custom properties</strong>: <em>supported</em>, type <em>any supported front matter data type</em></li>
+</ul>
+
+<h3 id="blogspecific">Blog Specific Fragments</h3>
+
+<p>In addition to the above, <a data-trio-link href="/docs/v1/blogging">blog-specific fragment assets</a> - <em>tag</em>, <em>category</em> and <em>article</em> - support the following additional front matter properties.</p>
+
+<h4>Tag Fragments</h4>
+
+<ul>
+    <li><strong>forTag</strong>: <em>optional</em>, type <em>string</em>, default value <em>none</em> and can be used in tag-based callbacks to filter blog articles by their <em>tag property</em>.</li>
+</ul>
+
+<h4>Category Fragments</h4>
+
+<ul>
+    <li><strong>forCategory</strong>: <em>optional</em>, type <em>string</em>, default value <em>none</em> and can be used in tag-based callbacks to filter articles by their <em>category property</em>.</li>
+</ul>
+
+<h4>Article Fragments</h4>
+
+<ul>
+    <li><strong>tag</strong>: <em>optional</em>, type <em>string</em>, default value <em>none</em> and can be used in tag-based callbacks to find all matching blog articles by their <em>tag property</em>.</li>
+    <li><strong>category</strong>: <em>optional</em>, type <em>string</em>, default value <em>none</em> and can be used in tag-based callbacks to find all matching blog articles by their <em>category property</em>.</li>
+</ul>
+
+<h3>Includes</h3>
+
+<ul>
+    <li><strong>appendToTarget</strong>: <em>optional</em>, type <em>boolean</em>, default value <em>false</em></li>
+    <ul>
+        <li>if <em>true</em> Trio appends the include's content to the tag in the fragment or template that is decorated with the <em>data-trio-include</em> attribute that names the include</li>
+        <li>if <em>false</em> Trio replaces the tag in the fragment or template that is decorated with the <em>data-trio-include</em> attribute that names the include with the include's content</li>
+    </ul>
+    <li><strong>custom properties</strong>: <em>not supported</em></li>
+</ul>
+
+<h3>Tag-Based Callbacks</h3>
+<ul>
+    <li><strong>dataDependencies</strong>: <em>optional</em>, type <em>list</em>, default value <em>none</em></li>
+    <ul>
+        <li>a list of JSON data file dependencies</li>
+        <li>see <a href="/docs/v1/tagbasedcallbacks#declaringinternaldependencies" data-trio-link="">Declaring Internal Dependencies To Trigger Incremental Builds</a> for details</li>
+    </ul>
+    <li><strong>moduleDependencies</strong>: <em>optional</em>, type <em>list</em>, default value <em>none</em></li>
+    <ul>
+        <li>a list of Node module dependencies.</li>
+        <li>see <a href="/docs/v1/tagbasedcallbacks#declaringinternaldependencies" data-trio-link="">Declaring Internal Dependencies To Trigger Incremental Builds</a> for details</li>
+    </ul>
+    <li><strong>custom properties</strong>: <em>not supported</em></li>
+</ul>
+
+<h3 id="blogrelateddatacatalogs">Blog Related Data Catalogs For Implementing Sophisticated Blog Sites</h3>
+
+<p>Trio uses the above blog-specific front matter properties to generate numerous blog related data catalogs for you. You can access these data catalogs in your tag-based callbacks and you can view them in file <em>root/trio.manifest.json</em>.</p>
+
+<p>There are many ways you can take advantage of these data catalogs, such as using them to create lists of articles grouped by tags in your tag pages or lists of articles grouped by category in your category pages, for instance. These are common elements in many sophisticated blog sites and Trio makes it easy for you to implement them in your site.</p>
+
+<h2>See Also</h2>
+
+<ul>
+    <li><a data-trio-link href="/docs/v1/fragment">Fragment</a></li>
+    <li><a data-trio-link href="/docs/v1/include">Include</a></li>
+    <li><a data-trio-link href="/docs/v1/tagbasedcallbacks">Tag-Based Callbacks</a></li>
+    <li><a data-trio-link href="/docs/v1/blogging">Blogging</a></li>
+    <li><a data-trio-link href="/docs/v1/incrementalbuild">Incremental Build</a></li>
+</ul>

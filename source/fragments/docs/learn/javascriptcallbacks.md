@@ -3,7 +3,6 @@ template: learnhowto.html
 title: JavaScript Callbacks
 appendToTarget: true
 activeHeaderItem: 2
-callback: showCurrentPageInHeader.js
 -->
 
 # JavaScript Callbacks

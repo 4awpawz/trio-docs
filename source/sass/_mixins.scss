@@ -1,6 +1,15 @@
+// 100% width viewport margins
+@mixin  full-width-margins {
+    margin: 0 calc(-100vw / 2 + #{$container-width} / 2);
+}
+
 // dynamically sized media queries - inspired by Bootstrap 4
 @mixin media-query-up($size) {
-    @if $size == sm {
+    @if $size == xs {
+        @media (min-width: 400px) {
+            @content;       
+        }
+    } @else if $size == sm {
         @media (min-width: 576px) {
             @content;       
         }

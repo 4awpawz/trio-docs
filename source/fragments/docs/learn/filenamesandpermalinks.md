@@ -3,7 +3,6 @@ title: Permalinks And File Names
 template: learnhowto.html
 appendToTarget: true
 activeHeaderItem: 2
-callback: showCurrentPageInHeader.js
 -->
 
 # Permalinks, URLS And File Names

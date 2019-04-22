@@ -1,22 +1,14 @@
-/*
-dependencies: ./lib/capitalize
-*/
-const capitalize = require("./lib/capitalize");
-
-module.exports = ({ $, site }) => {
-    if (site.articlesCount) {
-        const $target = $("#articles");
-        $target.after("<ul class=\"articles-list\"></ul>");
-        const $articlesList = $("ul.articles-list");
-        site.articlesCatalog.forEach(item => {
-            const data = item.matter.data;
-            $articlesList.append(/* html */`
-                <li>
-                    <a data-trio-link href="${item.url}">
-                        ${data.title} - Posted to ${capitalize(data.category[0])} - ${item.articleDate}
+module.exports = ({ $tag, site }) => {
+    site.articlesCount && site.articlesCatalog.forEach(item => {
+        const data = item.matter.data;
+        $tag.append(/* html */`
+                <article class="blog-post">
+                    <a data-trio-link class="blog-post__link" href="${item.url}">
+                        <h2 class="blog-post__articleTitle">${data.articleTitle}</h2>
                     </a>
-                </li>
+                    <div class="blog-post__articleDate">${item.articleDate}</div>
+                    <p class="blog-post__articleExcerpt">${item.matter.excerpt}</p>
+                </article>
             `);
-        });
-    }
+    });
 };

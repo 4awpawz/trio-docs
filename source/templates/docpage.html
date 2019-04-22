@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <script data-trio-include="analytics.html"></script>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <meta data-trio-include="metatags.html">
+        <title>Document</title>
+        <link data-trio-link rel="shortcut icon" type="image/x-icon" href="/favicon.png">
+        <link href="https://fonts.googleapis.com/css?family=Lora|Open+Sans" rel="stylesheet">
+        <link data-trio-link rel="stylesheet" href="/css/libs/highlight/github.css">
+        <link data-trio-link rel="stylesheet" href="/css/main.css">
+        <script data-trio-link src="/scripts/highlight.pack.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+    </head>
+
+    <body>
+        <header data-trio-include="header.html" class="header header--fixed header--green"></header>
+        <main class="container doc-page">
+            <aside class="doc-page-index">
+                <section class="doc-page-index__container">
+                    <h2 class="doc-page-index__container-header">Trio <span class="doc-page-index__container-header-version" data-trio-callback="version"></span></h2>
+                    <!-- <label class="doc-page-index__container-header-version" for="versions">
+                        <select class="doc-page__header-version" name="versions" id="versions">
+                            <option value="v1">v1</option>
+                            <option value="prior v1">prior v1</option>
+                        </select>
+                    </label> -->
+                    <aside class="doc-page-index__list-container">
+                        <ul data-trio-callback="showCurrentPageInDocIndex" class="doc-page-index__list">
+                            <li class="doc-page-index__list-item">
+                                <a data-trio-link class="doc-page-index__list-item-link" href="/docs/v1">About</a>
+                            </li>
+                            <li class="doc-page-index__list-item">
+                                <a data-trio-link class="doc-page-index__list-item-link" href="/docs/v1/gettingstarted">Getting
+                                    Started</a>
+                            </li>
+                            <li class="doc-page-index__list-item">
+                                <a data-trio-link class="doc-page-index__list-item-link" href="/docs/v1/keyconcepts">Key
+                                    Concepts</a>
+                            </li>
+                            <!-- <li class="doc-page-index__list-item">
+                                <a data-trio-link class="doc-page-index__list-item-link" href="/docs/v1/guides">Guides</a>
+                            </li>
+                            <li class="doc-page-index__list-item">
+                                <a data-trio-link class="doc-page-index__list-item-link" href="/docs/v1/tutorials">Tutorials</a>
+                            </li> -->
+                            <li class="doc-page-index__list-item">
+                                <a data-trio-link class="doc-page-index__list-item-link" href="/docs/v1/projectstructure">Project Structure</a>
+                            </li>
+                            <li class="doc-page-index__list-item">
+                                <a data-trio-link class="doc-page-index__list-item-link" href="/docs/v1/pagegeneration">Page Generation</a>
+                            </li>
+                            <li class="doc-page-index__list-item">
+                                <a data-trio-link class="doc-page-index__list-item-link" href="/docs/v1/frontmatter">Front Matter</a>
+                            </li>
+                            <li class="doc-page-index__list-item">
+                                <a data-trio-link class="doc-page-index__list-item-link" href="/docs/v1/tagattributes">Tag Attributes</a>
+                            </li>
+                            <li class="doc-page-index__list-item">
+                                <a data-trio-link class="doc-page-index__list-item-link" href="/docs/v1/template">Template</a>
+                            </li>
+                            <li class="doc-page-index__list-item">
+                                <a data-trio-link class="doc-page-index__list-item-link" href="/docs/v1/fragment">Fragment</a>
+                            </li>
+                            <li class="doc-page-index__list-item">
+                                <a data-trio-link class="doc-page-index__list-item-link" href="/docs/v1/include">Include</a>
+                            </li>
+                            <li class="doc-page-index__list-item">
+                                <a data-trio-link class="doc-page-index__list-item-link" href="/docs/v1/jsondata">JSON Data</a></li>
+                            <li class="doc-page-index__list-item">
+                                <a data-trio-link class="doc-page-index__list-item-link" href="/docs/v1/metadata">Metadata</a></li>
+                            <li class="doc-page-index__list-item">
+                                <a data-trio-link class="doc-page-index__list-item-link" href="/docs/v1/tagbasedcallbacks">Tag-Based Callbacks</a>
+                            </li>
+                            <li class="doc-page-index__list-item">
+                                <a data-trio-link class="doc-page-index__list-item-link" href="/docs/v1/scsssasscss">SCSS/SASS/CSS</a>
+                            </li>
+                            <li class="doc-page-index__list-item">
+                                <a data-trio-link class="doc-page-index__list-item-link" href="/docs/v1/blogging">Blogging</a>
+                            </li>
+                            <li class="doc-page-index__list-item">
+                                <a data-trio-link class="doc-page-index__list-item-link" href="/docs/v1/commandline">Command Line</a>
+                            </li>
+                            <li class="doc-page-index__list-item">
+                                <a data-trio-link class="doc-page-index__list-item-link" href="/docs/v1/incrementalbuild">Incremental Build</a>
+                            </li>
+                            <li class="doc-page-index__list-item">
+                                <a data-trio-link class="doc-page-index__list-item-link" href="/docs/v1/configuration">Configuration</a>
+                            </li>
+                        </ul>
+
+                    </aside>
+                </section>
+            </aside>
+            <article class="doc-page-content">
+                <section class="notification">Documentation is evolving and is a WIP</section>
+                <section data-trio-fragment class="doc-page-content__copy"></section>
+                <footer data-trio-include="docpagefooter.html"></footer>
+            </article>
+        </main>
+        <!-- <footer data-trio-include="footer.html"></footer> -->
+    </body>
+
+</html>

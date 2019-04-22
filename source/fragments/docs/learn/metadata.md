@@ -3,12 +3,11 @@ template: learnhowto.html
 title: Metadata
 appendToTarget: true
 activeHeaderItem: 2
-callback: showCurrentPageInHeader.js
 -->
 
 # Metadata
 
-Trio generates an extensive amount of  metadata while building your project's source folder. During the build process, for example, Trio accumulates data about each page fragment, including their front matter. If the project includes a blog, Trio also generates blog specific metadata.
+Trio generates an extensive amount of  metadata while building your project's source folder. During the build process, for example, Trio accumulates data about each page fragment, including their front matter. If the project includes a blog, Trio also generates blog-specific metadata.
 
 Each time Trio builds your project it saves the metadata to a file named source/trio.manifest.json. Being able to actually see all the data makes it easier to reason about how best to use it in your project's JavaScript callbacks and because much of this metadata is organized as lists they are simple to iterate over with JavaScript. Please see the topic <a data-trio-link href="/docs/learn/javascriptcallbacks">JavaScript Callbacks</a> to learn about using metadata in your project's JavaScript callbacks.
 

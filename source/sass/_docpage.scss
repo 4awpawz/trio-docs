@@ -1,0 +1,372 @@
+$docpageheadercolor: darkgreen;
+$highlightcolor: peru;
+$normalcolor: rgba(black, 0.8);
+$linkcolor: rgb(63, 93, 255);
+
+.doc-page {
+
+    &__decorated-link,
+    a {
+        color: $linkcolor;
+        text-decoration: underline;
+    }
+
+    &-index {
+
+        &__container {
+            width: 100%;
+
+            &-header {
+                display: inline-block;
+                color: $docpageheadercolor;
+                margin-top: 2rem;
+                font-size: 200%;
+                text-transform: uppercase;
+
+                &-version {
+                    text-transform: lowercase;
+                }
+            }
+        }
+
+        &__list-container {
+            height: 100%;
+            width: 100%;
+        }
+
+        &__list {
+            list-style: none;
+            padding-right: 1rem;
+
+            &-item {
+                padding-left: .5rem;
+
+                &-link {
+                    display: block;
+                    width: calc(100% - 2rem);
+                    font-size: .9rem;
+                    color: $linkcolor;
+                    margin-left: .5rem;
+                    margin-bottom: 1px;
+                    padding: 0 .333rem;
+                    // text-decoration: none;
+                    border: 1px solid transparent;
+                }
+            }
+
+            &-item:before {
+                content: "▪";
+                float: left;
+                margin-right: .5rem;
+                color: $linkcolor;
+            }
+
+            &-item-link:hover,
+            &-item-link:focus {
+                background-color: rgba($linkcolor, 0.1);
+                color: $linkcolor;
+                border-radius: 5px;
+                font-weight: bold;
+                border-color: $linkcolor;
+            }
+
+            &-item-link--current {
+                background-color: rgba($linkcolor, 0.1);
+                border-radius: 5px;
+                color: $linkcolor;
+                font-weight: bold;
+            }
+        }
+    }
+
+    &-content {
+        margin-top: 2rem;
+
+        &__copy {
+            margin-top: 3rem;
+
+            blockquote {
+                font-style: italic;
+                margin: 1rem;
+                color: $highlightcolor;
+            }
+
+            h1,
+            h2,
+            h3,
+            h4,
+            h5,
+            h6 {
+                color: $docpageheadercolor;
+                word-break: break-all;
+            }
+
+            p {
+                word-break: break-all;
+            }
+
+            p+p,
+            ul+p,
+            p+pre,
+            p+figure,
+            pre+p,
+            // p+pre,
+            p+ul {
+                margin-top: 1rem;
+            }
+
+            li {
+                margin-top: .5rem;
+            }
+
+            pre+h3,
+            pre+h4,
+            pre+h5,
+            pre+h6,
+            h2+h3,
+            h3+h4,
+            h4+h5,
+            h5+h6 {
+                margin-top: 1.5rem;
+            }
+
+            figure+ul,
+            figure+h2,
+            figure+h3,
+            figure+h4,
+            figure+h5,
+            figure+h6,
+            figure+p,
+            ul+h2,
+            p+h2,
+            p+h3 {
+                margin-top: 3rem;
+            }
+
+            ul+h3,
+            ul+h4,
+            ul+h5,
+            ul+h6,
+            p+h4,
+            p+h5,
+            p+h6 {
+                // margin-top: 1.5rem;
+                margin-top: 2rem;
+            }
+
+            h1 {
+                font-size: 3rem;
+            }
+
+            h2 {
+                font-size: 2.333rem;
+            }
+
+            h3 {
+                font-size: 2rem;
+            }
+
+            h4 {
+                font-size: 1.666rem;
+            }
+
+            h5 {
+                font-size: 1.333rem;
+            }
+
+            h6 {
+                font-size: 1rem;
+            }
+
+            em {
+                font-style: normal;
+                font-weight: bold;
+                background-color: rgba(#000, 0.05);
+                padding: 0 .5rem;
+                text-shadow: 1px 0 10px rgba($highlightcolor, 0.15);
+            }
+
+            li a {
+                text-decoration: underline;
+            }
+
+            li,
+            p {
+                color: $normalcolor;
+
+                mark {
+                    padding: 0 .5rem;
+                    color: $docpageheadercolor;
+                    background-color: rgba($highlightcolor, 0.2);
+                    font-weight: bold;
+
+                    em {
+                        background-color: rgba(transparent, 0.1);
+                        padding: 0 0.5rem;
+                    }
+
+                }
+
+                strong {
+                    background-color: rgba($docpageheadercolor, .7);
+                    color: white;
+                    font-weight: bold;
+                    padding: 0 .5rem;
+                    margin-right: .1rem;
+                    border-radius: 3px;
+                }
+
+            }
+
+            ul {
+                list-style: none;
+            }
+
+            ul>ul {
+                margin-left: 1rem;
+            }
+
+            li:before {
+                content: "▪";
+                float: left;
+                margin-right: .5rem;
+                color: $darkest-background-color;
+                font-size: 1.3rem;
+            }
+
+            &-header {
+                color: $docpageheadercolor;
+            }
+
+            figure {
+                // width: 100%;
+                display: block;
+
+                img {
+                    display: block;
+                    width: 100%;
+                    height: auto;
+                    border-top-left-radius: 3px;
+                    border-top-right-radius: 3px;
+                }
+
+                figcaption {
+                    text-align: center;
+                    background-color: #000;
+                    color: #fff;
+                    font-weight: bold;
+                    border-bottom-left-radius: 5px;
+                    border-bottom-right-radius: 5px;
+                    box-shadow: 0 5px 5px rgba(black, 0.2);
+                }
+            }
+
+            pre {
+                // margin: 1rem 0;
+                display: block;
+                white-space: pre;
+                // margin: 1rem 0;
+                // padding: 0;
+                // overflow: hidden;
+                margin: 0;
+                border: 1px solid rgba(#000, 0.1);
+
+                code {
+                    padding: 1rem;
+                }
+            }
+        }
+
+        &__footer {
+            margin-top: 100px;
+            border-top: 2px solid rgba(black, 0.25);
+            padding: 1.5rem 0;
+            font-size: .8rem;
+
+            &-heart {
+                color: red;
+            }
+
+            &-container {
+                padding: 1rem 10px;
+                background-color: rgba(#aaa, 0.1);
+                text-align: center;
+
+                a {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}
+
+@include media-query-up(md) {
+    .doc-page {
+        display: flex;
+        flex-flow: row nowrap;
+
+        &-index {
+            flex: 0 0 25%;
+
+            &__container {
+                position: fixed;
+                overflow-y: auto;
+                z-index: 9999;
+                width: calc(25% - 2rem);
+                max-height: 100%;
+                padding-bottom: 4rem;
+            }
+        }
+
+        &-content {
+            flex: 0 0 75%;
+            margin-left: 4rem;
+            max-width: calc(75% - 4rem);
+
+            &__copy {
+
+                p,
+                h1,
+                h2,
+                h3,
+                h4,
+                h5,
+                h6 {
+                    word-break: normal;
+                }
+
+                margin-top: 0;
+
+                &-under-construction {
+                    font-size: 3.5rem;
+                }
+
+            }
+
+        }
+
+    }
+
+}
+
+@include media-query-up(sm) {
+    .doc-page {
+        &-content {
+
+            &__copy {
+                p,
+                h1,
+                h2,
+                h3,
+                h4,
+                h5,
+                h6 {
+                    word-break: normal;
+                }
+            }
+
+        }
+
+    }
+
+}

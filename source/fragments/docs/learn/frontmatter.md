@@ -3,7 +3,6 @@ title: Front Matter
 template: learnhowto.html
 appendToTarget: true
 activeHeaderItem: 2
-callback: showCurrentPageInHeader.js
 -->
 
 # Front Matter

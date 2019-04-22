@@ -3,7 +3,6 @@ title: Using The Command Line
 template: learnhowto.html
 appendToTarget: true
 activeHeaderItem: 2
-callback: showCurrentPageInHeader.js
 -->
 
 # Using The Command Line

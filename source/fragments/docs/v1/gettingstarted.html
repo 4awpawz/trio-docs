@@ -1,0 +1,94 @@
+<!--
+template: docpage.html
+title: Getting Started - Trio
+appendToTarget: true
+activeHeaderItem: 2
+activeDocIndexItem: 2
+-->
+<h1>Getting Started</h1>
+
+<p>Please follow the steps below to instal Trio on your computer.</p>
+
+<h2>Install Node</h2>
+
+<p>If you don't already have Node installed, please go to <a class="doc-page__decorated-link" target="_blank" href="https://nodejs.org/en/">Node.js</a> and follow the directions you find there to install Node on your computer.</p>
+
+<h2>Install Trio</h2>
+
+<p>Once Node is installed on your computer, please open your <em>terminal application</em> and run the following command:</p>
+
+<pre><code class="hljs shell">npm i -g @4awpawz/trio</code></pre>
+
+<p>After installing Trio you can verify your installation by running the following command:</p>
+
+<pre><code class="shell">trio -v</code></pre>
+
+<p>After running the above command you should see the version number of Trio output to the terminal.</p>
+
+<pre><code class="shell">1.0.0</code></pre>
+
+<p><mark>Please note that the actual version number that you see may differ from that of the above example and is dependent on the version of Trio at the time that you install it.</mark></p>
+
+<h2>Create A Project</h2>
+
+<p>In your terminal application, run the following command to create a new static site project:</p>
+
+<pre><code class="shell">$ trio new path/to/new/project/</code></pre>
+
+<h3>Create A Template</h3>
+
+<p>In your terminal application, make the folder you created the project in the current folder.</p>
+
+<p>In the project's <em>root/source/templates</em> folder, create a new file named <em>default.html</em>, and copy the following content into it:</p>
+
+<figure>
+    <pre><code class="html">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;meta http-equiv="X-UA-Compatible" content="ie=edge"&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;main data-trio-fragment&gt;&lt;/main&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;</code></pre>
+<figcaption>Copy this to your template</figcaption>
+</figure>
+
+<h3>Create A Fragment</h3>
+<p>In the project's <em>root/source/fragments</em> folder, create a new file named <em>index.md</em>, and copy the following content into it:</p>
+
+<figure>
+    <pre><code>&lt;!--
+template: default.html
+title: My First Trio Static Site
+appendToTarget: true
+--&gt;
+
+# It works!</code></pre>
+<figcaption>Copy this to your fragment</figcaption>
+</figure>
+
+<h3>Build And Run The Project</h3>
+
+<p>You are now ready to build your very first Trio static site project and run it in your default browser. In your terminal application, run the following command:</p>
+
+<pre><code class="shell">$ trio build -iws</code></pre>
+
+<p><mark>After running the above command, your default browser should open and display <em>It works!</em></mark></p>
+
+<h2>Where To Go From Here</h2>
+
+<p>Now that you have gotten your feet wet by installing Trio and creating your first static site with it, take a few minutes to learn more about the topics that were touched on here:</p>
+
+<ul>
+    <li><a href="/docs/v1/keyconcepts" data-trio-link>Key Concepts</a></li>
+    <li><a href="/docs/v1/template" data-trio-link>Template</a></li>
+    <li><a href="/docs/v1/fragment" data-trio-link>Fragment</a></li>
+    <li><a href="/docs/v1/commandline" data-trio-link>Command Line</a></li>
+</ul>

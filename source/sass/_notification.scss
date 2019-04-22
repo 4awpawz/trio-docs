@@ -1,0 +1,9 @@
+.notification {
+    max-width: 75%;
+    border: 1px solid rgba($secondary-text-color, 0.35);
+    border-radius: $border-radius;
+    box-shadow: 3px 3px 20px 5px rgba(lightgreen, 0.55);
+    margin: 0 auto 3rem auto;
+    padding: .333rem;
+    text-align: center;
+}

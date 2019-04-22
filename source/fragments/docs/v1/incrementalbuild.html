@@ -1,0 +1,25 @@
+<!--
+template: docpage.html
+title: Incremental Build - Trio
+appendToTarget: true
+activeHeaderItem: 2
+activeDocIndexItem: 17
+-->
+
+<h1>Incremental Build</h1>
+
+<p>Using Trio's incremental build feature can significant reduce the amount of time that it takes to build your site. The actual performance gains that you experience, though, for your own projects, greatly depends on a number of arbitrary factors, such as the hardware that you are running it on, the number of pages that need to be built, the amount of time that it takes your tag-based callbacks to complete, etc.</p>
+
+<p>The incremental build feature does incur some additional overhead of its own, so  smaller projects may not experience as much of a performance advantage as do larger projects.</p>
+
+<p>As an anecdotal example, building a site having 44 pages without incremental build took approximately 4.5 seconds. Building the same site with one stale fragment using incremental build took approximately 1.2 seconds, and of that 1.2 seconds, approximately 30 milliseconds seconds of that can be attributed directly to the overhead incurred by the incremental build process itself.</p>
+
+<p>These tests were repeated 10 times on a late model 13 inch 2009 classic white 2.26 GHz Intel Core 2 Duo MacBook with 8 gigabytes of memory and a spinning hard drive. Had these tests been performed running on a more modern hardware setup, one with quad core processors, faster internal memory and an SSD, the actual performance gains realized would obviously have been significantly greater.</p>
+
+<h2>See Also</h2>
+
+<ul>
+    <li><a data-trio-link href="/docs/v1/commandline">Command Line</a></li>
+    <li><a data-trio-link href="/docs/v1/projectstructure">Project Structure</a></li>
+    <li><a data-trio-link href="/docs/v1/tagbasedcallbacks#declaringinternaldependencies">Tag-Based Callbacks</a></li>
+</ul>

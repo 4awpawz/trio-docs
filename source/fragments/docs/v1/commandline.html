@@ -1,0 +1,45 @@
+<!--
+template: docpage.html
+title: Command Line - Trio
+appendToTarget: true
+activeHeaderItem: 2
+activeDocIndexItem: 16 
+-->
+
+<h1>Command Line</h1>
+
+<p>Help is available to you in your terminal application:</p>
+
+<ul>
+    <li><strong>trio -h</strong>: display general help information</li>
+    <li><strong>trio -h &lt;command&gt;</strong>: display command specific help information</li>
+</ul>
+
+<p>The following commands are available to you in your terminal application:</p>
+
+<ul>
+    <li><strong>trio new &lt;path/to/project&gt;</strong>: creates an empty project in path/to/project</li>
+    <li><strong>trio build | b</strong>: builds your site targeting the public folder</li>
+    <li><strong>trio build | b -i</strong>: incrementally builds your site targeting the public folder</li>
+    <li><strong>trio build | b -w</strong>: builds your site targeting the public folder any time a change is made to a file in the root/source folder</li>
+    <li><strong>trio build | b -iw</strong>: incrementally builds your site targeting the public folder any time a change is made to a file in the root/source folder</li>
+    <li><strong>trio build | b -ws</strong>: builds your site targeting the public folder any time a change is made to a file in the root/source folder and serves it in the default browser</li>
+    <li><strong>trio build | b -iws</strong>: incrementally builds your site targeting the public folder any time a change is made to a file in the root/source folder and serves it in the default browser</li>
+    <li><strong>trio release | r</strong>: builds your site for release targeting the release folder</li>
+    <li><strong>trio release | r -b</strong>: builds your site for release targeting the release folder with cache busting applied</li>
+    <li><strong>trio serve | s</strong>: serves your site from the public folder in the default browser</li>
+    <li><strong>trio serve | s -r</strong>: serves your site from the release folder in the default browser</li>
+</ul>
+
+<h2>Build Vs. Release</h2>
+
+<p>Running <code><em>build</em></code> targets the root/public folder, and is what you do while you are developing your site. Trio generate a CSS map file and generate pages whose fragments were marked as a WIP.</p>
+
+<p>Running <code><em>release</em></code> targets the root/release folder, and is what you do prior to deploying your site to its server. Trio doesn't generate a CSS map file, doesn't generate pages whose fragments were marked as a WIP, cleans your site's pages of all their <em>data-trio-*</em> tag attributes and provides the option to cache bust the generated site.</p>
+
+<h2>See Also</h2>
+
+<ul>
+    <li><a data-trio-link href="/docs/v1/projectstructure">Project Structure</a></li>
+    <li><a data-trio-link href="/docs/v1/incrementalbuild">Incremental Build</a></li>
+</ul>

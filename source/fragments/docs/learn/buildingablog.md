@@ -3,7 +3,6 @@ title: Building A Blog
 template: learnhowto.html
 appendToTarget: true
 activeHeaderItem: 2
-callback: showCurrentPageInHeader.js
 -->
 
 # Building A blog 

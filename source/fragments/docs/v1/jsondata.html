@@ -1,0 +1,36 @@
+<!--
+template: docpage.html
+title: JSON Data - Trio
+appendToTarget: true
+activeHeaderItem: 2
+activeDocIndexItem: 11
+-->
+
+<h1>JSON Data</h1>
+
+<p>At time of build, Trio creates the <em>dataCatalog</em> metadata object from the individual JSON files it finds in folder <em>root/source/data</em> and exposes the dataCatalog to tag-based callbacks.</p>
+
+<p>As an example, the file <em>root/source/data/personalization.json</em> would be exposed to tag-based callbacks as:</p>
+
+<figure>
+<pre><code class="js">dataCatalog: {
+    personalization: {
+        name: "John Doe",
+        twitter: "@johndoe"
+    },
+}</code></pre>
+<figcaption>dataCatalog Example</figcaption>
+</figure>
+
+<ul>
+    <li><strong>file location</strong>: root/source/data</li>
+    <li><strong>file type/content</strong>: .json</li>
+</ul>
+
+<h2>See Also</h2>
+
+<ul>
+    <li><a data-trio-link href="/docs/v1/metadata">Metadata</a></li> 
+    <li><a data-trio-link href="/docs/v1/tagbasedcallbacks">Tag-Based Callbacks</a></li> 
+    <li><a data-trio-link href="/docs/v1/tagattributes">Tag Attributes</a></li> 
+</ul>

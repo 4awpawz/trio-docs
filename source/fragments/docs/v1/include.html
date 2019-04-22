@@ -1,0 +1,49 @@
+<!--
+template: docpage.html
+title: Include - Trio
+appendToTarget: true
+activeHeaderItem: 2
+activeDocIndexItem: 10
+-->
+
+<h1>Include</h1>
+
+<p>An include is an optional asset that is inserted into <a data-trio-link href="/docs/v1/fragment"><em>fragment</em></a> and <a data-trio-link href="/docs/v1/template"><em>template</em></a> assets.</p>
+
+<p><mark>When composing a page, Trio merges the fragment's content with the tag in the template that is decorated with the <a data-trio-link href="/docs/v1/tagattributes"><em>data-trio-fragment</em></a> attribute. The merging of content from a single template with a single fragment, followed by the merging of any content from any include assets that either asset may declare, forms the basis of a composite, which Trio saves as a page.</mark></p> 
+
+<figure>
+<pre><code class="html">&lt;!--
+appendToTarget: true
+--&gt;
+
+&lt;footer&gt;Copyright &copy;2019 All Rights Reserved&lt;/footer&gt;</code></pre>
+<figcaption>Include With Front Matter Example</figcaption>
+</figure>
+
+<p>To insert an include asset, you decorate the tag that you are targeting as the insertion point with a <em>data-trio-include attribute</em>, and assign it the name of the include file (or a reference to a front matter property to be found in the fragment asset whose value is the name of the file) as the attributes value.</p>
+
+<figure>
+<pre><code class="html">
+&lt;main&gt;data-trio-include="footer"&lt;/main&gt;</code></pre>
+<figcaption>Include Asset Targeting An Asset's Main Tag Example</figcaption>
+</figure>
+
+<ul>
+    <li><strong>file location</strong>: root/source/includes</li>
+    <li><strong>file type/content</strong>: .html/HTML or .md/Markdown</li>
+    <li><strong>front matter required</strong>: no</li>
+    <li><strong>required predefined front matter properties</strong>: none</li>
+    <li><strong>optional predefined front matter properties</strong>: appendToTarget</li>
+    <li><strong>applicable data-trio-* attributes</strong>: data-trio-callback, data-trio-link</li>
+</ul>
+
+<h2>See Also</h2>
+
+<ul>
+    <li><a data-trio-link href="/docs/v1/template">Template</a></li> 
+    <li><a data-trio-link href="/docs/v1/fragment">Fragment</a></li> 
+    <li><a data-trio-link href="/docs/v1/tagbasedcallbacks">Tag-Based Callbacks</a></li> 
+    <li><a data-trio-link href="/docs/v1/frontmatter">Front Matter</a></li> 
+    <li><a data-trio-link href="/docs/v1/tagattributes">Tag Attributes</a></li> 
+</ul>

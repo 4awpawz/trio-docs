@@ -1,0 +1,204 @@
+%benefit {
+    @include full-width-margins;
+    padding: 75px 0;
+    font-size: $larger-font-size;
+    text-align: left;
+}
+
+.benefit-hero {
+    @extend %benefit;
+    padding: 100px 0;
+    // margin-top: 0;
+    background-image: url("../media/celebration.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #fff;
+
+    &__title,
+    &__subtitle {
+        font-family: Lora, serif;
+        letter-spacing: 1px;
+        text-align: center;
+    }
+
+    &__title {
+        font-size: $huge-font-size;
+        // padding-top: 4.5rem;
+        font-weight: bold;
+    }
+
+    &__subtitle {
+        font-size: $even-larger-font-size;
+        padding-bottom: 4.5rem;
+        line-height: 2.6rem;
+    }
+
+}
+
+.benefit-1,
+.benefit-3 {
+    @extend %benefit;
+
+    section {
+        h2 {
+            font-size: $medium-font-size;
+            letter-spacing: 1px;
+            font-weight: lighter;
+            color: rgba($secondary-text-color, 0.65);
+            line-height: 2.6rem;
+            margin-bottom: 2rem;
+        }
+    }
+
+    background-color: $lightest-text-color;
+    color: $darkest-text-color;
+}
+
+.benefit-3 {
+    background-color: #640064;
+
+    section {
+
+        h2,
+        p {
+            color: $lightest-text-color;
+        }
+    }
+}
+
+.benefit-2 {
+    @extend %benefit;
+
+    background-color: rgb(218, 161, 96);
+
+    &__copy-container {
+        .benefit-2__copy-title {
+            font-size: $medium-font-size;
+            letter-spacing: 1px;
+            font-weight: bold;
+            line-height: 2.8rem;
+            margin-bottom: 2rem;
+            color: #640064;
+        }
+
+        .benefit-2__copy {
+            font-weight: bold;
+            color: #fff;
+        }
+
+        .benefit-2__copy--special {
+            padding-top: 1.5rem;
+        }
+    }
+
+    &__sample {
+        width: 100%;
+        margin: 3rem auto 0 auto;
+
+        img {
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        &-title,
+        &-example {
+            text-align: left;
+            font-size: 1rem;
+        }
+
+        &-title {
+            margin: 1.5rem 0 1rem 0;
+            letter-spacing: .75px;
+            font-size: 1.3rem;
+            color: #640064;
+        }
+
+        &-example {
+            margin-top: 0;
+            background-color: #fff;
+            overflow-x: auto;
+
+            &-code {
+                background-color: #fff;
+                font-size: $normal-font-size;
+                border-radius: 3px;
+                margin-bottom: 2rem;
+            }
+        }
+
+    }
+}
+
+.benefit-4 {
+    @extend %benefit;
+    // background-color: #640064;
+    background-color: rgba(#000, 0.8);
+    color: #fff;
+    text-align: center;
+
+    &__title {
+        font-size: $medium-font-size;
+        font-weight: bold;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+    }
+
+    .benefit-card-deck {
+        .benefit-card-deck__card {
+            .benefit-deck__card-icon {
+                width: 64px;
+                margin-top: 2rem;
+                margin-bottom: .666rem;
+            }
+
+            .benefit-card-deck__card-title {
+                font-size: $even-larger-font-size;
+                font-weight: lighter;
+                text-transform: uppercase;
+            }
+
+            .benefit-card-deck__card-copy {
+                font-size: $normal-font-size;
+                display: inline-block;
+                margin-top: 1rem;
+                margin-bottom: 2rem;
+            }
+        }
+
+        .benefit-card-deck__card:nth-child(2) {
+            border-top: 1px solid black;
+            border-bottom: 1px solid black;
+        }
+
+        .benefit-card-deck__card:last-child .benefit-card-deck__card-copy  {
+            margin-bottom: 0;
+        }
+    }
+
+}
+
+@include media-query-up(lg) {
+    .benefit-4 {
+        .benefit-card-deck {
+            display: flex;
+            flex-direction: row;
+
+            .benefit-card-deck__card {
+                flex: 1 1 .333%;
+                padding: 0 1.333rem;
+
+                &:nth-child(2) {
+                    border-left: 1px solid black;
+                    border-right: 1px solid black;
+                    border-top: 0;
+                    border-bottom: 0;
+                }
+
+                .benefit-deck__card-icon {
+                    margin-bottom: .666rem;
+                }
+            }
+        }
+    }
+}

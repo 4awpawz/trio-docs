@@ -3,7 +3,7 @@ $bgcolor: #fff;
 $width: 32px;
 $height: 19px;
 
-.hamburer {
+.hamburger {
     display: initial;
 }
 
@@ -30,7 +30,7 @@ $height: 19px;
     display: block;
 }
 
-@include media-query-up(md) {
+@include media-query-up(sm) {
     .hamburger-helper {
         display: none;
     }

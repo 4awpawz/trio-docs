@@ -1,3 +1,3 @@
-module.exports = ({$, site}) => {
-    $(".container p:last-child").append(`${site.timestamp}.`);
+module.exports = ({$tag, site}) => {
+    $tag.append(`${site.timestamp}.`);
 };

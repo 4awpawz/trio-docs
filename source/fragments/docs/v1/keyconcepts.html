@@ -1,0 +1,121 @@
+<!--
+template: docpage.html
+title: Key Concepts - Trio
+appendToTarget: true
+activeHeaderItem: 2
+activeDocIndexItem: 3
+-->
+<h1>Key Concepts</h1>
+
+<p>While Trio is rather an easy application to learn and use, to truly take advantage of all its features does require that you understand the following key concepts.</p>
+
+<h2>Project Assets</h2>
+
+<p>Creating sites with Trio involves the use of the project assets describe below. Project assets are used to "compose" your site's pages. A composite's content is ultimately saved to your computer's file system as an HTML file. The following is a list of the project assets available to you.</p>
+
+<ul>
+    <li><strong>Templates</strong>
+        <p>Templates are .html file types that you create in the root/source/templates folder. They define the general structure and content of your site's pages. They have the required !DOCTYPE document preamble, html, head and body sections.</p>
+    </li>
+    <li><strong>Fragments</strong>
+        <p>Fragments are either .html or .md file types that you create in the root/source/fragments folder. They define their own structure and content that is inserted into templates. They must always include front matter at the very top of the file.</p>
+    </li>
+    <li><strong>Includes</strong>
+        <p>Includes are either .html or .md file types that you create in the root/source/includes folder. They define reusable blocks of common structure and content that are shared across multiple pages on your site. Their structure and content are inserted into the composites created from template and fragment assets. They can optionally include front matter at the very top of the file.</p>
+    </li>
+    <li><strong>JSON data files</strong>
+        <p>JSON data files are .json file types that you create in the root/source/data folder. Their content is used by tag-based callbacks.</p>
+    </li>
+    <li><strong>Metadata</strong>
+        <p>Metadata is the collection of structured data that Trio derives from your project's assets each time you build your site. Trio uses this metadata internally to build your site and can also be used by tag-based callbacks.</p>
+    </li>
+    <li><strong>Tag-Based callbacks</strong>
+        <p>Tag-base JavaScript Callbacks are Node modules that you create in the root/source/callbacks folder. They must export a single function which Trio calls to further extend composites.</p>
+    </li>
+</ul>
+
+<h2>Page Composition</h2>
+
+<figure>
+    <img data-trio-link src="/media/composite.png" alt="composite image">
+    <figcaption>A Composite Of Project Assets</figcaption>
+</figure>
+
+<h3>Basic Page Composition</h3>
+
+<p>At a minimum, every page that Trio generates is composed of a single template asset and single fragment asset.</p>
+
+<p>Basic page composition allows template assets to provide the basic structure and content of pages, and fragment assets to extend those pages with their own unique structure and content.</p>
+
+<p>Trio saves composites to your computer's file system as HTML files.</p>
+
+<h4>Templates</h4>
+<p>A template asset can be associated with multiple fragment assets.</p>
+<p>You decorate a single HTML tag within the template asset with a <em>data-trio-fragment attribute</em>. Trio will target this tag when inserting a fragment asset's content.</p>
+
+<h4>Fragments</h4>
+<p>A fragment asset can only be associated with a single template asset.</p>
+<p>At the top of the file you add front matter, and a "template" property whose value names the template the fragment associates with.</p>
+
+<h3>Advanced Page Composition</h3>
+
+<p>Basic page composition produces pages that don't vary much in the way of structure and content other than what each fragment provides, and you will often find that your pages, though similar, require a greater degree of refinement. That additional degree of refinement is what advanced page composition provides, through the use of include and tag-based callback assets.</p>
+
+<h4>Includes</h4>
+
+<p>Include assets are used to add blocks of commonly repeated structure and content to your composites. Their use-case is similar in nature to reusing common blocks of code in programming languages by wrapping them in functions.</p>
+
+<p>For example, many sites use the same page headers and footers in most, if not all, their pages. Include assets make using these common blocks of structure and content in your composites simple.</p>
+
+<p>You can insert as many include assets as needed into template and fragment assets by decorating their tags you are targeting with <em>data-trio-include="name of include file"</em> attributes, and assigning them the names of the include files. Instead of directly assigning them the names of the actual include files, you can also assign them the names of properties declared in fragments' front matter that resolve to the names of the include files.</p>
+
+<h4 id="tagbasedcallbacks">Tag-Based Callbacks</h4>
+
+<p>Unlike other static site generators, Trio doesn't require you to use a framework or a templating engine, such as Handlebars or Liquid Templates, for example, for extending your composites. Instead, Trio provides you the ability to use JavaScript Node modules to extend your composites using its tag-based callback mechanism, which is kind of awesome if you think about it.</p>
+
+<p>Since Trio is built on top of Node (it is currently using v10 LTS), you have all the latest ES6+ goodies at your disposal without having to transpile. In addition, and this is a biggie, your markup stays clean and readable because it isn't littered with scattered bits of templating engine statements.</p>
+
+<p>You can insert as many tag-based callback assets as needed into template, fragment and include assets by decorating their tags you are targeting with <em>data-trio-callback="name of module"</em> attributes, and assigning them the names of their Node modules in root/source/callbacks.</p>
+
+<h2>Tag Attributes</h2>
+
+<p>As you may have noticed while reading this page, numerous data-trio-* tag attributes were discussed, such as <em>data-trio-fragment</em>, <em>data-trio-include</em> and <em>data-trio-callback</em>. Tag attributes are markers that indicate to Trio that it should take certain actions when it encounters them, such as targeting the tag with an include asset's content.</p>
+
+<h2>Front Matter</h2>
+
+<p>YAML is a human readable data serialization language (don't let that intimidate you -- it is actually very simple to use) that is used to add configuration data properties to your project's fragment and include assets. Because it's required to be added to the very top of a file, it can also just be called "front matter", which is a convention that you will often see used here in the documentation.</p>
+
+<p>Trio predefines numerous front matter properties that it expects to find in your assets, which it uses internally when composing your pages.</p>
+
+<p>For example, Trio expects to retrieve the name of the template that the fragment is associated with from the fragment's front matter predefined <em>template</em> property.</p>
+
+<p>You can also define your own custom front matter properties in fragment assets as need requires. Both Trio's predefined front matter properties and any custom front matter properties that you define are exposed to your tag-based callbacks.</p>
+
+<p>Trio uses the awesome OS library called <a class="doc-page__decorated-link" target="_blank" href="https://www.npmjs.com/package/gray-matter"><em>gray-matter</em></a> to implement its front matter support.</p>
+
+<h2>JSON Data</h2>
+
+<p>You can create any number of JSON data-files in the root/source/data folder and use their data in your tag-based callbacks.</p>
+
+<p><mark>You can hand-code these data files or you can create NPM tasks that retrieve the data from a database or from a remote service.</mark></p>
+
+<h2>Metadata</h2>
+
+<p>Trio collects metadata from your project's assets and configuration file and uses it internally to build your site. Trio also makes this data accessible to your project's tag-based callbacks.</p>
+
+<p><mark>Trio organizes its metadata in a structured format that makes using it easier to reason about.</mark></p>
+
+<p>For example, you can use this metadata in your tag-based callbacks to:</p>
+
+<ul>
+    <li>Create links to other pages on your web site.</li>
+    <li>Generate content based on JSON data or from custom front matter properties.</li>
+    <li>Make lists of blog articles related by their categories and tags.</li>
+    <li>Construct links to the next and and previous blog article based on their published dates.</li>
+</ul>
+
+
+<p>After each build of your project, Trio persists most of the metadata that it collects to a file named <em>root/trio.manifest.json</em>. You can view the contents of this file to assist you when you are coding your tag-based callbacks.</p>
+
+<h2>Summary</h2>
+<p><mark>Trio's use of common metaphors for its project assets, its approach to page composition, its organized collections of metadata and its tag-based callback mechanism serve to create a powerful but easy to learn and use platform upon which to create your static sites.</mark></p>
