@@ -114,33 +114,41 @@ $color-purple: rgba($purple, 1);
 
 }
 
-.header--purple .header__promo {
-    &-text {
-        color: $color-purple;
+.header--purple {
+    .hamburger__patty {
+        background-color: $color-purple;
+        outline: 1px solid $color-purple;
     }
-}
 
-.header--purple .header__nav {
-    &-item {
-        color: $color-purple;
-
-        &--active {
-            background-color: rgba($purple, .1);
+    .header__promo {
+        &-text {
+            color: $color-purple;
         }
+    }
 
-        &:hover {
-            background-color: rgba($hoverbgcolor-purple, $menuhoveropacity);
-            color: $bgcolor-white;
-        }
+    .header__nav {
+        &-item {
+            color: $color-purple;
 
-        &-link {
-            &:focus {
+            &--active {
+                background-color: rgba($purple, .1);
+            }
+
+            &:hover {
                 background-color: rgba($hoverbgcolor-purple, $menuhoveropacity);
                 color: $bgcolor-white;
-                border-radius: 3px;
+            }
+
+            &-link {
+                &:focus {
+                    background-color: rgba($hoverbgcolor-purple, $menuhoveropacity);
+                    color: $bgcolor-white;
+                    border-radius: 3px;
+                }
             }
         }
     }
+
 }
 
 @include media-query-up(sm) {
