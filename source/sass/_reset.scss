@@ -11,13 +11,7 @@ body {
     font-family: $sans-serif-font;
     font-size: 100%;
     line-height: 150%;
-    // margin: 50px 0 0 0;
-    // margin: 75px 0 0 0;
 }
-
-// * {
-//     box-sizing: border-box;
-// }
 
 html {
     $min_width: 320px;
@@ -27,14 +21,6 @@ html {
     // @include fluid-type($min_width, $max_width, $min_font, $max_font);
 }
 
-// body {
-//     font-size: 100%;
-//     line-height: 1.5;
-//     margin: 75px 0 0 0;
-//     font-family: $sans-serif-font;
-//     color: $default-text-color;
-// }
-
 h1,
 h2,
 h3,
@@ -43,17 +29,13 @@ h5,
 h6 {
     margin: 0 0 $normal-font-size 0;
     line-height: 1;
-    word-wrap: break-word;
+    overflow-wrap: break-word;
     white-space: normal;
 }
 
 h1 {
     font-size: 2rem;
 }
-
-// p {
-//     margin: 0 0 $normal-font-size 0;
-// }
 
 button {
     all: unset;
@@ -70,9 +52,3 @@ strong {
     font-style: italic;
     color: rgba(#000, 0.9);
 }
-
-// // @include media-query-up(md) {
-// //     body {
-// //         padding-top: 67px;
-// //     }
-// // }
