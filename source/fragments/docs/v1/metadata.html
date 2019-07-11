@@ -14,6 +14,8 @@ activeDocIndexItem: 12
 
 <p>Below is a full inventory of all the metadata that is available to you.</p>
 
+<p><mark>Please note that, beginning with v1.0.0-rc.5, the <em>id</em> property is no longer supported. Please use the `url` property in its place.</mark></p>
+
 <h2 id="fragment">fragment</h2>
 <p><em>fragment</em> is an object containing all the metadata associated with a fragment.</p>
 
@@ -44,8 +46,8 @@ activeDocIndexItem: 12
 <h4>fragment.matter.excerpt</h4>
 <p>The <em>matter.excerpt</em> property is a string which contains the HTML, if any, from the front matter's excerpt.</p>
 
-<h3>fragment.id</h3>
-<p>The <em>id</em> property is an integer whose value is the unique ID. It is used internally by Trio. It can be used to filter for fragments from frags, articlesCatalog, categoriesCatalog, tagsCatalog, fragment.relatedArticlesByCategory, fragment.relatedArticlesByTag and fragmentRelatedArticlesByTagFlattened. Do not rely on this value to remain constant from one build to next. <mark>Always retrieve it from the front matter directly</mark>.</p> 
+<!-- <h3>fragment.id</h3>
+<p>The <em>id</em> property is an integer whose value is the unique ID. It is used internally by Trio. It can be used to filter for fragments from frags, articlesCatalog, categoriesCatalog, tagsCatalog, fragment.relatedArticlesByCategory, fragment.relatedArticlesByTag and fragmentRelatedArticlesByTagFlattened. Do not rely on this value to remain constant from one build to next. <mark>Always retrieve it from the front matter directly</mark>.</p>  -->
 
 <h3>fragment.destPath</h3>
 <p>The <em>destPath</em> property contains the path to the page in the the public folder.</p> 
@@ -80,8 +82,8 @@ activeDocIndexItem: 12
 <h5>fragment.relatedArticlesByCategory.related[n].title</h5>
 <p>The <em>related[n].title</em> property is the related article's title.</p> 
 
-<h5>fragment.relatedArticlesByCategory.related[n].id</h5>
-<p>The <em>related[n].id</em> property is an integer whose value is the unique ID. It is used internally by Trio. It can be used to filter for fragments from frags, articlesCatalog, categoriesCatalog, tagsCatalog, fragment.relatedArticlesByCategory, fragment.relatedArticlesByTag and fragmentRelatedArticlesByTagFlattened. Do not rely on this value to remain constant from one build to next. <mark>Always retrieve it from the front matter directly</mark>.</p> 
+<!-- <h5>fragment.relatedArticlesByCategory.related[n].id</h5>
+<p>The <em>related[n].id</em> property is an integer whose value is the unique ID. It is used internally by Trio. It can be used to filter for fragments from frags, articlesCatalog, categoriesCatalog, tagsCatalog, fragment.relatedArticlesByCategory, fragment.relatedArticlesByTag and fragmentRelatedArticlesByTagFlattened. Do not rely on this value to remain constant from one build to next. <mark>Always retrieve it from the front matter directly</mark>.</p>  -->
 
 <h5>fragment.relatedArticlesByCategory.related[n].excerpt</h5>
 <p>The <em>related[n].excerpt</em> property is a string which contains the HTML, if any, from the front matter's excerpt.</p> 
@@ -104,8 +106,8 @@ activeDocIndexItem: 12
 <h5>fragment.relatedArticlesByTag[n].related[n].title</h5>
 <p>The <em>related[n].title</em> property is the related article's title.</p> 
 
-<h5>fragment.relatedArticlesByTag[n].related[n].id</h5>
-<p>The <em>related[n].id</em> property is an integer whose value is the unique ID. It is used internally by Trio. It can be used to filter for fragments from frags, articlesCatalog, categoriesCatalog, tagsCatalog, fragment.relatedArticlesByCategory, fragment.relatedArticlesByTag and fragmentRelatedArticlesByTagFlattened. Do not rely on this value to remain constant from one build to next. <mark>Always retrieve it from the front matter directly</mark>.</p> 
+<!-- <h5>fragment.relatedArticlesByTag[n].related[n].id</h5>
+<p>The <em>related[n].id</em> property is an integer whose value is the unique ID. It is used internally by Trio. It can be used to filter for fragments from frags, articlesCatalog, categoriesCatalog, tagsCatalog, fragment.relatedArticlesByCategory, fragment.relatedArticlesByTag and fragmentRelatedArticlesByTagFlattened. Do not rely on this value to remain constant from one build to next. <mark>Always retrieve it from the front matter directly</mark>.</p>  -->
 
 <h5>fragment.relatedArticlesByTag[n].related[n].excerpt</h5>
 <p>The <em>related[n].excerpt</em> property is a string which contains the HTML, if any, from the front matter's excerpt.</p> 
@@ -125,8 +127,8 @@ activeDocIndexItem: 12
 <h5>fragment.relatedArticlesByTagFlattened[n].related[n].title</h5>
 <p>The <em>related[n].title</em> property is the related article's title.</p> 
 
-<h5>fragment.relatedArticlesByTagFlattened[n].related[n].id</h5>
-<p>The <em>related[n].id</em> property is an integer whose value is the unique ID. It is used internally by Trio. It can be used to filter for fragments from frags, articlesCatalog, categoriesCatalog, tagsCatalog, fragment.relatedArticlesByCategory, fragment.relatedArticlesByTag and fragmentRelatedArticlesByTagFlattened. Do not rely on this value to remain constant from one build to next. <mark>Always retrieve it from the front matter directly</mark>.</p> 
+<!-- <h5>fragment.relatedArticlesByTagFlattened[n].related[n].id</h5>
+<p>The <em>related[n].id</em> property is an integer whose value is the unique ID. It is used internally by Trio. It can be used to filter for fragments from frags, articlesCatalog, categoriesCatalog, tagsCatalog, fragment.relatedArticlesByCategory, fragment.relatedArticlesByTag and fragmentRelatedArticlesByTagFlattened. Do not rely on this value to remain constant from one build to next. <mark>Always retrieve it from the front matter directly</mark>.</p>  -->
 
 <h5>fragment.relatedArticlesByTagFlattened.related[n].excerpt</h5>
 <p>The <em>related[n].excerpt</em> property is a string which contains the HTML, if any, from the front matter's excerpt.</p> 
@@ -176,8 +178,8 @@ activeDocIndexItem: 12
 <h5>categoriesCatalog.related[n].title</h5>
 <p>The <em>related[n].title</em> property is the related article's title.</p> 
 
-<h5>categoriesCatalog.related[n].id</h5>
-<p>The <em>related[n].id</em> property is an integer whose value is the unique ID. It is used internally by Trio. It can be used to filter for fragments from frags, articlesCatalog, categoriesCatalog, tagsCatalog, fragment.relatedArticlesByCategory, fragment.relatedArticlesByTag and fragmentRelatedArticlesByTagFlattened. Do not rely on this value to remain constant from one build to next. <mark>Always retrieve it from the front matter directly</mark>.</p> 
+<!-- <h5>categoriesCatalog.related[n].id</h5>
+<p>The <em>related[n].id</em> property is an integer whose value is the unique ID. It is used internally by Trio. It can be used to filter for fragments from frags, articlesCatalog, categoriesCatalog, tagsCatalog, fragment.relatedArticlesByCategory, fragment.relatedArticlesByTag and fragmentRelatedArticlesByTagFlattened. Do not rely on this value to remain constant from one build to next. <mark>Always retrieve it from the front matter directly</mark>.</p>  -->
 
 <h5>categoriesCatalog.related[n].excerpt</h5>
 <p>The <em>related[n].excerpt</em> property is a string which contains the HTML, if any, from the front matter's excerpt.</p> 
@@ -200,8 +202,8 @@ activeDocIndexItem: 12
 <h5>tagsCatalog.related[n].title</h5>
 <p>The <em>related[n].title</em> property is the related article's title.</p> 
 
-<h5>tagsCatalog.related[n].id</h5>
-<p>The <em>related[n].id</em> property is an integer whose value is the unique ID. It is used internally by Trio. It can be used to filter for fragments from frags, articlesCatalog, categoriesCatalog, tagsCatalog, fragment.relatedArticlesByCategory, fragment.relatedArticlesByTag and fragmentRelatedArticlesByTagFlattened. Do not rely on this value to remain constant from one build to next. <mark>Always retrieve it from the front matter directly</mark>.</p> 
+<!-- <h5>tagsCatalog.related[n].id</h5>
+<p>The <em>related[n].id</em> property is an integer whose value is the unique ID. It is used internally by Trio. It can be used to filter for fragments from frags, articlesCatalog, categoriesCatalog, tagsCatalog, fragment.relatedArticlesByCategory, fragment.relatedArticlesByTag and fragmentRelatedArticlesByTagFlattened. Do not rely on this value to remain constant from one build to next. <mark>Always retrieve it from the front matter directly</mark>.</p>  -->
 
 <h5>tagsCatalog.related[n].excerpt</h5>
 <p>The <em>related[n].excerpt</em> property is a string which contains the HTML, if any, from the front matter's excerpt.</p> 

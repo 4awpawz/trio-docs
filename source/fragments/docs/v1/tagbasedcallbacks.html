@@ -86,10 +86,11 @@ module.exports = ({ $tag, site }) => {
 
 <h2>Argument Properties</h2>
 
-<h3>$</h3>
+<h3>$page</h3>
+<p><mark>Please note that this property was originally named <em>$</em> but was renamed to <em>$page</em> in v1.0.0-rc.5.</mark></p>
 <p>A <em>cheerio wrapper</em> around the composite. Use when targeting the composite's content.</p>
 <figure>
-    <pre><code class="js">module.exports = ({ $, site }) => {
+    <pre><code class="js">module.exports = ({ $page, site }) => {
     site.tagsCatalog.forEach(item => {
         $.find("ul.tag__list").append(`
             &lt;li class="tag__list-item"&gt;
@@ -100,7 +101,7 @@ module.exports = ({ $tag, site }) => {
     });
     $.find("div.page-modified-date").append(new Date().toDateString());
 };</code></pre>
-<figcaption>Targeting A Composite's Content Using $tag Example</figcaption>
+<figcaption>Targeting A Composite's Content Using $page Example</figcaption>
 </figure>
 
 <h3>$tag</h3>
