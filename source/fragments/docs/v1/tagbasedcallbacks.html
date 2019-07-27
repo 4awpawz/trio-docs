@@ -92,7 +92,7 @@ module.exports = ({ $tag, site }) => {
 <figure>
     <pre><code class="js">module.exports = ({ $page, site }) => {
     site.tagsCatalog.forEach(item => {
-        $.find("ul.tag__list").append(`
+        $page.find("ul.tag__list").append(`
             &lt;li class="tag__list-item"&gt;
                 &lt;a data-trio-link class="tag__list-item-link"
                 href="/blog/tag/${item.tag.toLowerCase()}"&gt;${item.tag}&lt;/a&gt;
