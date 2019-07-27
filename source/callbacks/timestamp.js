@@ -1,3 +1,3 @@
-module.exports = ({$tag, site}) => {
+module.exports = ({ $tag, site }) => {
     $tag.append(`${site.timestamp}.`);
 };
