@@ -67,17 +67,24 @@
             }
         }
 
-        &__articleTitle {
+        &__article-title {
             font-size: 2rem;
             margin-bottom: .4rem;
         }
 
-        &__articleDate {
+        &__meta-container {
             font-size: 1.2rem;
-            color: rgba(#000, 0.55);
+            color: rgba(#000, 0.45);
             margin-bottom: 1rem;
         }
 
+        &__article-category {
+            text-transform: uppercase;
+        }
+
+        &__article-date, &__article-category {
+            color: rgba(#000, 0.70);
+        }
         p {
             font-size: 1.15rem;
             opacity: .8;

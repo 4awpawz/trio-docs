@@ -1,0 +1,2 @@
+module.exports = (articleCategory, articleDate) =>
+    `Posted under <span class="blog-post__article-category">${articleCategory}</span> on <span class="blog-post__article-date">${articleDate}</span> </div>`;
