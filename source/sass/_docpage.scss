@@ -109,8 +109,9 @@ $linkcolor: rgb(63, 93, 255);
             ul+p,
             p+pre,
             p+figure,
+            ul+figure,
+            figure+figure,
             pre+p,
-            // p+pre,
             p+ul {
                 margin-top: 1rem;
             }
@@ -258,6 +259,7 @@ $linkcolor: rgb(63, 93, 255);
                     border-bottom-left-radius: 5px;
                     border-bottom-right-radius: 5px;
                     box-shadow: 0 5px 5px rgba(black, 0.2);
+                    padding: .5rem;
                 }
             }
 

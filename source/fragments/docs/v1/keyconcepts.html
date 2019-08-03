@@ -36,6 +36,14 @@ activeDocIndexItem: 3
 
 <h2>Page Composition</h2>
 
+When composing pages, Trio executes the following steps for each page:
+
+<ul>
+    <li>Content from fragment assets are inserted into their associated templates to create a composite.</li>
+    <li>The composites are then searched for any include assets that may be declared. If found, Trio inserts the content from each include in the order in which the includes are declared in the composite.</li>
+    <li>The composite is then searched for any tag-based callbacks that may be declared. If found, Trio calls each tag-based callback asynchronously in the order in which they are declared in the composite.</li>
+</ul>
+
 <figure>
     <img data-trio-link src="/media/composite.png" alt="composite image">
     <figcaption>A Composite Of Project Assets</figcaption>

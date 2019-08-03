@@ -8,25 +8,55 @@ activeDocIndexItem: 10
 
 <h1>Include</h1>
 
-<p>An include is an optional asset that is inserted into <a data-trio-link href="/docs/v1/fragment"><em>fragment</em></a> and <a data-trio-link href="/docs/v1/template"><em>template</em></a> assets.</p>
+<p>An include is an optional asset that can be inserted into <a data-trio-link href="/docs/v1/fragment"><em>fragment</em></a> and <a data-trio-link href="/docs/v1/template"><em>template</em></a> assets.</p>
 
-<p><mark>When composing a page, Trio merges the fragment's content with the tag in the template that is decorated with the <a data-trio-link href="/docs/v1/tagattributes"><em>data-trio-fragment</em></a> attribute. The merging of content from a single template with a single fragment, followed by the merging of any content from any include assets that either asset may declare, forms the basis of a composite, which Trio saves as a page.</mark></p> 
+<!-- <p><mark>When composing a page, Trio merges the fragment's content with the tag in the template that is decorated with the <a data-trio-link href="/docs/v1/tagattributes"><em>data-trio-fragment</em></a> attribute. Then merging of content from a single template with a single fragment, followed by the merging of any content from any include assets that either asset may declare, forms the basis of a composite, which Trio saves as a page.</mark></p>  -->
+
+<h2>Inclusion By File Name</h2>
+
+<p>To insert an include asset by its file name, you decorate the tag that you are targeting as the insertion point with a <em>data-trio-include attribute</em>, and assign it the name of the include file, including its file.extension (i.e. <em>.html</em> or <em>.md</em>).</p>
+
+<p>File root/source/includes/footer.html:</p>
+
+<figure>
+<pre><code class="html">&lt;footer&gt;Copyright &copy;2019 All Rights Reserved&lt;/footer&gt;</code></pre>
+<figcaption>Include File Example</figcaption>
+</figure>
+
+<p>File root/source/templates/default.html:</p>
+
+<figure>
+<pre><code class="html">&lt;footer&gt;data-trio-include="footer.html"&lt;/footer&gt;</code></pre>
+<figcaption>Insertion Of Include Asset By File Name Example</figcaption>
+</figure>
+
+<h2>Inclusion By Indirect Value</h2>
+
+<p>Inclusion by indirect value allows fragments to name the include files whose content is to be inserted into their associated templates.</p>
+
+<p>To insert an include asset by indirect value, you decorate the tag in the template that you are targeting as the insertion point with a <em>data-trio-include attribute</em>, and assign it the name of a front matter property that is declared in the template's associated fragment whose value is the name of the include file.</p>
+
+<p>File root/source/includes/footer.html:</p>
+
+<figure>
+<pre><code class="html">&lt;footer&gt;Copyright &copy;2019 All Rights Reserved&lt;/footer&gt;</code></pre>
+<figcaption>Include File Example</figcaption>
+</figure>
+
+<p>File root/source/fragments/index.html:</p>
 
 <figure>
 <pre><code class="html">&lt;!--
-appendToTarget: true
---&gt;
-
-&lt;footer&gt;Copyright &copy;2019 All Rights Reserved&lt;/footer&gt;</code></pre>
-<figcaption>Include With Front Matter Example</figcaption>
+myfooter: footer.html
+--&gt; </code></pre>
+<figcaption>Fragment File Declaring Include File Name Example</figcaption>
 </figure>
 
-<p>To insert an include asset, you decorate the tag that you are targeting as the insertion point with a <em>data-trio-include attribute</em>, and assign it the name of the include file (or a reference to a front matter property to be found in the fragment asset whose value is the name of the file) as the attributes value.</p>
+<p>File root/source/templates/default.html:</p>
 
 <figure>
-<pre><code class="html">
-&lt;main&gt;data-trio-include="footer"&lt;/main&gt;</code></pre>
-<figcaption>Include Asset Targeting An Asset's Main Tag Example</figcaption>
+<pre><code class="html">&lt;footer&gt;data-trio-include="myfooter"&lt;/footer&gt;</code></pre>
+<figcaption>Insertion Of Include Asset By Indirect Value Example</figcaption>
 </figure>
 
 <ul>
