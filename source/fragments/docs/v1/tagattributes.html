@@ -1,5 +1,5 @@
 <!--
-template: docpage.html
+template: docpage
 title: Tag Attributes - Trio
 appendToTarget: true
 activeHeaderItem: 2
@@ -13,8 +13,8 @@ activeDocIndexItem: 7
 
 <ul>
     <li><strong>data-trio-fragment</strong>: Applicable in template assets and is used to indicate that the HTML tag is the target of a fragment asset's content</li>
-    <li><strong>data-trio-include="name of include"</strong>: Applicable in template and fragment assets and is used to indicate that the HTML tag is the target of the named include asset's content.</li>
-    <li><strong>data-trio-callback="name of tag-based callback"</strong>: Applicable in template, fragment and include assets and is used to indicate that the HTML tag is requesting that Trio call the named tag-based callback.</li>
+    <li><strong>data-trio-include="name of include"</strong>: Must include a file extension (e.g. <em>.html | .md</em>). Applicable in template and fragment assets and is used to indicate that the HTML tag is the target of the named include asset's content.</li>
+    <li><strong>data-trio-callback="name of tag-based callback"</strong>: File extension is not required; it is assumed that it is <em>.js</em>. Applicable in template, fragment and include assets and is used to indicate that the HTML tag is requesting that Trio call the named tag-based callback.</li>
     <li><strong>data-trio-link</strong>: Applicable when your Web hosting services hosts your site in a subfolder and requires that your URLs be prepended with a base URL. See <em>Base URL</em> in <a data-trio-link href="/docs/v1/pagegeneration">Page Generation</a> for more information.</li>
 </ul>
 

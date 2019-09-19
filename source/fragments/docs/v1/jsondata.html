@@ -1,36 +1,43 @@
 <!--
-template: docpage.html
+template: docpage
 title: JSON Data - Trio
 appendToTarget: true
 activeHeaderItem: 2
 activeDocIndexItem: 11
 -->
-
 <h1>JSON Data</h1>
 
-<p>At time of build, Trio creates the <em>dataCatalog</em> metadata object from the individual JSON files it finds in folder <em>root/source/data</em> and exposes the dataCatalog to tag-based callbacks.</p>
+<p>Trio exposes the individual JSON files it finds in the <em>root/source/data</em> folder to your project's tag-based callbacks through the metadata <em>site.dataCatalog</em> object.</p>
 
-<p>As an example, the file <em>root/source/data/personalization.json</em> would be exposed to tag-based callbacks as:</p>
+<p>As an example, the file <em>root/source/data/personalization.json</em></p>
 
 <figure>
-<pre><code class="js">dataCatalog: {
-    personalization: {
-        name: "John Doe",
-        twitter: "@johndoe"
-    },
+<pre><code class="json">{
+	"name": "John Doe",
+	"socialMedia": "@johndoe"
 }</code></pre>
-<figcaption>dataCatalog Example</figcaption>
+<figcaption>JSON Data File personalization.json Example</figcaption>
+</figure>
+
+<p>would be exposed to tag-based callbacks as <em>site.dataCatalog.personalization</em>:</p>
+
+<figure>
+<pre><code class="js"> module.exports = ({ $page, site }) => {
+	$page("#name").append(site.dataCatalog.personalization.name);
+	$page("#social-media").append(site.dataCatalog.personalization.socialMedia);
+}; </code></pre>
+<figcaption>Tag-based Callback Using dataCatalog Example</figcaption>
 </figure>
 
 <ul>
-    <li><strong>file location</strong>: root/source/data</li>
-    <li><strong>file type/content</strong>: .json</li>
+	<li><strong>file location</strong>: root/source/data</li>
+	<li><strong>file type/content</strong>: .json/JSON</li>
 </ul>
 
 <h2>See Also</h2>
 
 <ul>
-    <li><a data-trio-link href="/docs/v1/metadata">Metadata</a></li> 
-    <li><a data-trio-link href="/docs/v1/tagbasedcallbacks">Tag-Based Callbacks</a></li> 
-    <li><a data-trio-link href="/docs/v1/tagattributes">Tag Attributes</a></li> 
+	<li><a data-trio-link href="/docs/v1/metadata">Metadata</a></li> 
+	<li><a data-trio-link href="/docs/v1/tagbasedcallbacks">Tag-Based Callbacks</a></li> 
+	<li><a data-trio-link href="/docs/v1/tagattributes">Tag Attributes</a></li> 
 </ul>

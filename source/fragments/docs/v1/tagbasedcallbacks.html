@@ -1,5 +1,5 @@
 <!--
-template: docpage.html
+template: docpage
 title: Tag-Based Callbacks - Trio
 appendToTarget: true
 activeHeaderItem: 2
@@ -47,7 +47,7 @@ module.exports = ({ $tag, site }) => {
     <figcaption>Declaring A Tag-Based Callback Example</figcaption>
 </figure>
 
-<h2>Implementing Callbacks</h2>
+<h2>Implementing Tag-Based Callbacks</h2>
 
 <p>Each module must export a single function which, when called by Trio, is passed a single argument which can be destructured to access its properties.</p>
 
@@ -88,18 +88,18 @@ module.exports = ({ $tag, site }) => {
 
 <h3>$page</h3>
 <p><mark>Please note that this property was originally named <em>$</em> but was renamed to <em>$page</em> in v1.0.0-rc.5.</mark></p>
-<p>A <em>cheerio wrapper</em> around the composite. Use when targeting the composite's content.</p>
+<p>The <em>cheerio function</em> (equivalent to the <em>$</em> in jQuery). Use when targeting the composite's content.</p>
 <figure>
     <pre><code class="js">module.exports = ({ $page, site }) => {
     site.tagsCatalog.forEach(item => {
-        $page.find("ul.tag__list").append(`
+        $page("ul.tag__list").append(`
             &lt;li class="tag__list-item"&gt;
                 &lt;a data-trio-link class="tag__list-item-link"
                 href="/blog/tag/${item.tag.toLowerCase()}"&gt;${item.tag}&lt;/a&gt;
             &lt;/li&gt;
         `);
     });
-    $.find("div.page-modified-date").append(new Date().toDateString());
+    $page("div.page-modified-date").append(new Date().toDateString());
 };</code></pre>
 <figcaption>Targeting A Composite's Content Using $page Example</figcaption>
 </figure>
@@ -183,7 +183,7 @@ dataDependencies:
 
 <figure>
 <pre><code class="html">&lt;!--
-template: blogpage.html
+template: blogpage
 title: Trio Blog | Official blog for Trio static site generator.
 alwaysBuild: true
 --&gt;</code></pre>
