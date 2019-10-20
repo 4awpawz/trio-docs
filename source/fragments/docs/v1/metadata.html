@@ -20,167 +20,167 @@ activeDocIndexItem: 12
 <p>An object that contains all the metadata associated with a fragment.</p>
 <p><mark>You can access the current fragment in your tag-based callbacks using the callback's <em>asset</em> parameter. You can access all non article fragments in your tag-based callbacks using the callback's <em>site</em> parameter's <em>frags</em> property. You can access all article fragments in your tag-based callbacks using the callback's <em>site</em> parameter's <em>articlesCatalog</em> property.</mark></p>
 
-<h3>fragment.path</h3>
+<h3>.path</h3>
 <p>The path to the fragment file in the source/fragment folder. It is used internally by Trio during page generation.</p>
 
-<h3>fragment.mtimeMs</h3>
+<h3>.mtimeMs</h3>
 <p>The timestamp that represent the time, in milliseconds, when the fragment was last modified. It is used internally by Trio to determine the files to be included when building incrementally. See <a href="/docs/v1/incrementalbuild">Incremental Build</a> for more information.</p>
 
-<h3>fragment.type</h3>
+<h3>.type</h3>
 <p>A string that indicates the type of the fragment. It is used internally by Trio for determining the paths of dependencies between project assets when building incrementally.</p>
 
-<h3>fragment.isStale</h3>
+<h3>.isStale</h3>
 <p>A boolean that indicates if the fragment was marked as stale. It is used internally by Trio when building incrementally.</p>
 
-<h3>fragment.matter</h3>
+<h3>.matter</h3>
 <p>The fragment's front matter. See <a href="/docs/v1/frontmatter">Front Matter</a> for more information.</p>
 
-<h3>fragment.destPath</h3>
+<h3>.destPath</h3>
 <p><mark>Please note that, beginning with v1.0.0-rc.5, <em>destPath</em> is now generated in all lowercase.</mark></p>
 <p>The path to the page in the the public folder.</p> 
 
-<h3>fragment.url</h3>
+<h3>.url</h3>
 <p>The URL of the page.</p> 
 
-<h3>fragment.collection</h3>
+<h3>.collection</h3>
 <p>Only relevant for fragments that are part of a collection. See <a href="/docs/v1/collections">Collections</a> for more information. <mark>Introduced in v2.0.0.</mark></p> 
 
-<h3>fragment.articleDate</h3>
+<h3>.articleDate</h3>
 <p>Only relevant for articles, is a string which contains the date of the article in "YYYY-MM-DD" format.</p> 
 
-<h3>fragment.nextArticleUrl</h3>
+<h3>.nextArticleUrl</h3>
 <p>Only relevant for articles, is the URL to the next article.</p> 
 
-<h3>fragment.previousArticleUrl</h3>
+<h3>.previousArticleUrl</h3>
 <p>Only relevant for articles, is the URL to the previous article.</p> 
 
-<h3>fragment.relatedArticlesByCategory</h3>
+<h3>.relatedArticlesByCategory</h3>
 <p>Only relevant for articles that have categories, is an object that catalogs other articles related to this article by its category.</p> 
 
-<h4>fragment.relatedArticlesByCategory.category</h4>
+<h3>.relatedArticlesByCategory<br>.category</h3>
 <p>The article's category.</p> 
 
-<h4>fragment.relatedArticlesByCategory.related</h4>
+<h3>.relatedArticlesByCategory<br>.related</h3>
 <p>An array of articles related to this article in descending alphabetical order by article date and article title.</p> 
 
-<h5>fragment.relatedArticlesByCategory.related[n].articleDate</h5>
+<h3>.relatedArticlesByCategory<br>.related[nth].articleDate</h3>
 <p>The date of the article in "YYYY-MM-DD" format.</p> 
 
-<h5>fragment.relatedArticlesByCategory.related[n].url</h5>
+<h3>.relatedArticlesByCategory<br>.related[nth].url</h3>
 <p>The article's URL.</p> 
 
-<h5>fragment.relatedArticlesByCategory.related[n].title</h5>
+<h3>.relatedArticlesByCategory<br>.related[nth].title</h3>
 <p>The article's title.</p> 
 
-<h5>fragment.relatedArticlesByCategory.related[n].excerpt</h5>
+<h3>.relatedArticlesByCategory<br>.related[nth].excerpt</h3>
 <p>The article's front matter's excerpt.</p> 
 
-<h3>fragment.relatedArticlesByTag</h3>
+<h3>.relatedArticlesByTag</h3>
 <p>Only relevant for articles that have tags. Is an array that catalogs other articles related to this article by its tags. Catalog items are in ascending alphabetical order by tag.</p> 
 
-<h4>fragment.relatedArticlesByTag[n].tag</h4>
+<h3>.relatedArticlesByTag[nth]<br>.tag</h3>
 <p>The tag.</p> 
 
-<h4>fragment.relatedArticlesByTag[n].related</h4>
-<p>An array of articles related to this article by fragment.relatedArticlesByTag[n].tag in descending alphabetical order by article date and article title.</p> 
+<h3>.relatedArticlesByTag[nth]<br>.related</h3>
+<p>An array of articles related to this article by fragment.relatedArticlesByTag[nth].tag in descending alphabetical order by article date and article title.</p> 
 
-<h5>fragment.relatedArticlesByTag[n].related[n].articleDate</h5>
+<h3>.relatedArticlesByTag[nth]<br>.related[nth].articleDate</h3>
 <p>The date of the article in "YYYY-MM-DD" format.</p> 
 
-<h5>fragment.relatedArticlesByTag[n].related[n].url</h5>
+<h3>.relatedArticlesByTag[nth]<br>.related[nth].url</h3>
 <p>The article's URL.</p> 
 
-<h5>fragment.relatedArticlesByTag[n].related[n].title</h5>
+<h3>.relatedArticlesByTag[nth]<br>.related[nth].title</h3>
 <p>The article's title.</p> 
 
-<h5>fragment.relatedArticlesByTag[n].related[n].excerpt</h5>
+<h3>.relatedArticlesByTag[nth]<br>.related[nth].excerpt</h3>
 <p>The article's excerpt.</p> 
 
-<h3>fragment.relatedArticlesByTagFlattened</h3>
+<h3>.relatedArticlesByTagFlattened</h3>
 <p>An array that catalogs all other articles related to this article and is similar to <em>fragment.relatedArticlesByTag</em> but flattened for when you aren't concerned about each related article's tag.</p> 
 
-<h5>fragment.relatedArticlesByTagFlattened[n].articleDate</h5>
+<h3>.relatedArticlesByTagFlattened[nth]<br>.articleDate</h3>
 <p>The date of the article in "YYYY-MM-DD" format.</p> 
 
-<h5>fragment.relatedArticlesByTagFlattened[n].url</h5>
+<h3>.relatedArticlesByTagFlattened[nth]<br>.url</h3>
 <p>The article's URL.</p> 
 
-<h5>fragment.relatedArticlesByTagFlattened[n].title</h5>
+<h3>.relatedArticlesByTagFlattened[nth]<br>.title</h3>
 <p>The article's title.</p> 
 
-<h5>fragment.relatedArticlesByTagFlattened[n].excerpt</h5>
+<h3>.relatedArticlesByTagFlattened[nth]<br>.excerpt</h3>
 <p>The article's excerpt.</p> 
 
-<h3>timestamp</h3>
+<h2>timestamp</h2>
 <p>The date and time of the current build in "YYYY-MM-DD HH:MM:SS" format.</p>
 
-<h3>version</h3>
+<h2>version</h2>
 <p>The version of Trio used to build the project in semantic versioning format.</p>
 
-<h3>buildType</h3>
+<h2>buildType</h2>
 <p>Either "development" or "release".</p>
 
-<h3>userConfig</h3>
+<h2>userConfig</h2>
 <p>A copy of the project's <em>trio.json</em> file.</p>
 
-<h3>frags</h3>
+<h2>frags</h2>
 <p>An array of all non article fragments. See <a class="doc-page__decorated-link" href="./#fragment">Property fragment</a> above for information pertaining to each array item's format.</p>
 
-<h3>wipsCount</h3>
+<h2>wipsCount</h2>
 <p>An integer, the site's total number of "work in progress" fragments.</p>
 
-<h3>wips</h3>
+<h2>wips</h2>
 <p>An array of all the "work in progress" fragments. See <a class="doc-page__decorated-link" href="./#fragment">Property fragment</a> above for information pertaining to each array item's format.</p>
 
-<h3>articlesCount</h3>
+<h2>articlesCount</h2>
 <p>An integer, the total number of blog articles.</p>
 
-<h3>articlesCatalog</h3>
+<h2>articlesCatalog</h2>
 <p>Only relevant for projects that have articles. Is an array that catalogs the site's blog article's in ascending alphabetical order by article date and article title. See <a class="doc-page__decorated-link" href="./#fragment">Property fragment</a> above for information pertaining to each array item's format.</p>
 
-<h3>categoriesCatalog</h3>
+<h2>categoriesCatalog</h2>
 <p>Only relevant for projects that have articles that have categories. Is an array that catalogs the site's blog articles in ascending alphabetical order by category.</p>
 
-<h4>categoriesCatalog[n].category</h4>
+<h3>categoriesCatalog[nth]<br>.category</h3>
 <p>The article's category.</p> 
 
-<h4>categoriesCatalog[n].related</h4>
+<h3>categoriesCatalog[nth]<br>.related</h3>
 <p>An array of related articles in descending alphabetical order by article date and article title.</p> 
 
-<h5>categoriesCatalog[n].related[n].articleDate</h5>
+<h3>categoriesCatalog[nth]<br>.related[nth].articleDate</h3>
 <p>The date of the article in "YYYY-MM-DD" format.</p> 
 
-<h5>categoriesCatalog[n].related[n].url</h5>
+<h3>categoriesCatalog[nth]<br>.related[nth].url</h3>
 <p>The article's URL.</p> 
 
-<h5>categoriesCatalog.related[n].title</h5>
+<h3>categoriesCatalog<br>.related[nth].title</h3>
 <p>The article's title.</p> 
 
-<h5>categoriesCatalog.related[n].excerpt</h5>
+<h3>categoriesCatalog<br>.related[nth].excerpt</h3>
 <p>The article's excerpt.</p> 
 
-<h3>tagsCatalog</h3>
+<h2>tagsCatalog</h2>
 <p>Only relevant for projects that have articles that have tags. Is an array that catalogs the site's blog articles in ascending alphabetical order by tag.</p>
 
-<h4>tagsCatalog[n].tag</h4>
+<h3>tagsCatalog[nth]<br>.tag</h3>
 <p>The tag.</p> 
 
-<h4>tagsCatalog[n].related</h4>
+<h3>tagsCatalog[nth]<br>.related</h3>
 <p>An array of related articles in descending alphabetical order by article date and article title.</p> 
 
-<h5>tagsCatalog[n].related[n].articleDate</h5>
+<h3>tagsCatalog[nth]<br>.related[nth].articleDate</h3>
 <p>The date of the article in "YYYY-MM-DD" format.</p> 
 
-<h5>tagsCatalog[n].related[n].url</h5>
+<h3>tagsCatalog[nth]<br>.related[nth].url</h3>
 <p>The article's URL.</p> 
 
-<h5>tagsCatalog.related[n].title</h5>
+<h3>tagsCatalog<br>.related[nth].title</h3>
 <p>The article's title.</p> 
 
-<h5>tagsCatalog.related[n].excerpt</h5>
+<h3>tagsCatalog<br>.related[nth].excerpt</h3>
 <p>The article's excerpt.</p> 
 
-<h3>dataCatalog</h3>
+<h2>dataCatalog</h2>
 <p>A hash that catalogs the site's JSON data files in root/source/data along with their content. Each property in the hash represents a single JSON data file. You can access any JSON data file in your tag-based callbacks using the callback's <em>site</em> parameter's <em>dataCatalog</em> property. See <a class="doc-page__decorated-link" data-trio-link href="/docs/v1/jsondata">JSON Data</a> for more information.</p>
 
 <h2>See Also</h2>
