@@ -156,27 +156,35 @@ $linkcolor: rgb(63, 93, 255);
             }
 
             h1 {
-                font-size: 3rem;
+                font-size: 2.5rem;
             }
 
             h2 {
-                font-size: 2.333rem;
+                font-size: 1.25rem;
+                &:before {
+                    content: "";
+                    display: block;
+                    width: 100%;
+                    height: 1px;
+                    background-color: rgba($color: #000000, $alpha: 0.25);
+                    margin-bottom: 3rem;
+                }
             }
 
             h3 {
-                font-size: 2rem;
+                font-size: 1.17rem;
             }
 
             h4 {
-                font-size: 1.666rem;
+                font-size: 1.17rem;
             }
 
             h5 {
-                font-size: 1.333rem;
+                font-size: 1.17rem;
             }
 
             h6 {
-                font-size: 1rem;
+                font-size: 1.17rem;
             }
 
             em {
