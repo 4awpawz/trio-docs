@@ -12,7 +12,7 @@ activeDocIndexItem: 6
 
 <p>Front matter must be placed at the very top of the file and it must be surrounded by opening and closing delimiters that are appropriate for the asset's file type.</p>
 
-<p><mark>Excerpts are supported in fragment assets but are not supported in include and tag-based callback assets.</mark></p>
+<blockquote class="note-important"><p>Excerpts are supported in fragment assets but are not supported in include and tag-based callback assets.</p></blockquote>
 
 <p>Below is an example of front matter used in a fragment asset</p>
 
@@ -29,7 +29,7 @@ This will be in the excerpt.
 <figcaption>Front Matter Example</figcaption>
 </figure>
 
-<p>and below is the JavaScript object that it is converted to.</p> 
+<p>and below is the JavaScript object that it is converted to.</p>
 
 <figure>
 <pre><code class="js">matter: {
@@ -41,8 +41,7 @@ This will be in the excerpt.
     },
     isEmpty: false,
     excerpt: "This will be in the excerpt."
-}</code></pre>
-<figcaption>JavaScript Object Converted From Front Matter Example</figcaption>
+}</code></pre><figcaption>JavaScript Object Converted From Front Matter Example</figcaption>
 </figure>
 
 <h2>Appropriate Delimiters By Asset Type</h2>

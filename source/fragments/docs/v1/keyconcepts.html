@@ -36,12 +36,18 @@ activeDocIndexItem: 3
 
 <h2>Page Composition</h2>
 
-When composing pages, Trio executes the following for each page that it generates:
+When generating pages, Trio executes the following for each fragment:
 
 <ul>
-    <li>Content from fragment assets are inserted into their associated template assets to create composites.</li>
-    <li>The composites are then searched for any include assets that may be declared. If found, Trio inserts the content from the include assets into the composites in the order in which they are declared.</li>
-    <li>The composites are then searched for any tag-based callback assets that may be declared. If found, Trio calls each tag-based callback asset asynchronously in the order in which they are declared.</li>
+    <li>
+        <p>Trio first creates a composite by merging the <a href="/docs/v1/fragment"><em>fragment</em></a>'s content with the content in the <a href="/docs/v1/template"><em>template</em>'s</a> tag that is decorated with the <a href="/docs/v1/tagattributes"><em>data-trio-fragment</em></a> attribute.</p>
+    </li>
+    <li>
+        <p>Then Trio searches the composite for any tags that are decorated with the <a href="/docs/v1/tagattributes"><em>data-trio-include</em></a> attribute, and merges their associated <a href="/docs/v1/include"><em>include</em></a>'s content with the content in their respective tags in the order in which they are declared.</p>
+    </li>
+    <li>
+        <p>Finally, Trio seaches the composite for any tags decorated with the <a href="/docs/v1/tagattributes"><em>data-trio-callback</em></a> attribute, and calls their respective <a href="/docs/v1/tagbasedcallbacks"><em>callbacks</em></a> asynchronously in the order in which they are declared.</p>
+    </li>
 </ul>
 
 <figure>
@@ -103,7 +109,7 @@ When composing pages, Trio executes the following for each page that it generate
 
 <p>You can create any number of JSON data-files in the root/source/data folder and use their data in your tag-based callbacks.</p>
 
-<p><mark>You can hand-code these data files or you can create NPM tasks that retrieve the data from a database or from a remote service.</mark></p>
+<blockquote class="note-tip"><p>You can <em>hand-code</em> these data files yourself or you can <em>create NPM tasks</em> that retrieve the data from a database or from a remote service.</p></blockquote>
 
 <h2>Metadata</h2>
 

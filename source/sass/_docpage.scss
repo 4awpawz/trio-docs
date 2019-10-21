@@ -4,7 +4,6 @@ $normalcolor: rgba(black, 0.8);
 $linkcolor: rgb(63, 93, 255);
 
 .doc-page {
-
     &__decorated-link,
     a {
         color: $linkcolor;
@@ -12,7 +11,6 @@ $linkcolor: rgb(63, 93, 255);
     }
 
     &-index {
-
         &__container {
             width: 100%;
 
@@ -39,16 +37,16 @@ $linkcolor: rgb(63, 93, 255);
             padding-right: 1rem;
 
             &-item {
-                padding-left: .5rem;
+                padding-left: 0.5rem;
 
                 &-link {
                     display: block;
                     width: calc(100% - 2rem);
-                    font-size: .9rem;
+                    font-size: 0.9rem;
                     color: $linkcolor;
-                    margin-left: .5rem;
+                    margin-left: 0.5rem;
                     margin-bottom: 1px;
-                    padding: 0 .333rem;
+                    padding: 0 0.333rem;
                     // text-decoration: none;
                     border: 1px solid transparent;
                 }
@@ -57,7 +55,7 @@ $linkcolor: rgb(63, 93, 255);
             &-item:before {
                 content: "▪";
                 float: left;
-                margin-right: .5rem;
+                margin-right: 0.5rem;
                 color: $linkcolor;
             }
 
@@ -105,52 +103,52 @@ $linkcolor: rgb(63, 93, 255);
                 word-break: break-all;
             }
 
-            p+p,
-            ul+p,
-            p+pre,
-            p+figure,
-            ul+figure,
-            figure+figure,
-            pre+p,
-            p+ul {
+            p + p,
+            ul + p,
+            p + pre,
+            p + figure,
+            ul + figure,
+            figure + figure,
+            pre + p,
+            p + ul {
                 margin-top: 1rem;
             }
 
             li {
-                margin-top: .5rem;
+                margin-top: 0.5rem;
             }
 
-            pre+h3,
-            pre+h4,
-            pre+h5,
-            pre+h6,
-            h2+h3,
-            h3+h4,
-            h4+h5,
-            h5+h6 {
+            pre + h3,
+            pre + h4,
+            pre + h5,
+            pre + h6,
+            h2 + h3,
+            h3 + h4,
+            h4 + h5,
+            h5 + h6 {
                 margin-top: 1.5rem;
             }
 
-            figure+ul,
-            figure+h2,
-            figure+h3,
-            figure+h4,
-            figure+h5,
-            figure+h6,
-            figure+p,
-            ul+h2,
-            p+h2,
-            p+h3 {
+            figure + ul,
+            figure + h2,
+            figure + h3,
+            figure + h4,
+            figure + h5,
+            figure + h6,
+            figure + p,
+            ul + h2,
+            p + h2,
+            p + h3 {
                 margin-top: 3rem;
             }
 
-            ul+h3,
-            ul+h4,
-            ul+h5,
-            ul+h6,
-            p+h4,
-            p+h5,
-            p+h6 {
+            ul + h3,
+            ul + h4,
+            ul + h5,
+            ul + h6,
+            p + h4,
+            p + h5,
+            p + h6 {
                 // margin-top: 1.5rem;
                 margin-top: 2rem;
             }
@@ -190,9 +188,9 @@ $linkcolor: rgb(63, 93, 255);
             em {
                 font-style: normal;
                 font-weight: bold;
-                background-color: rgba(#000, 0.05);
-                padding: 0 .5rem;
-                text-shadow: 1px 0 10px rgba($highlightcolor, 0.15);
+                background-color: rgba($secondary-text-color, 0.08);
+                padding: 0 0.5rem;
+                // text-shadow: 1px 0 10px rgba($highlightcolor, 0.15);
             }
 
             li a {
@@ -204,41 +202,40 @@ $linkcolor: rgb(63, 93, 255);
                 color: $normalcolor;
 
                 mark {
-                    padding: 0 .5rem;
+                    padding: 0 0.5rem;
                     color: $docpageheadercolor;
-                    background-color: rgba($highlightcolor, 0.2);
+                    // background-color: rgba($highlightcolor, 0.2);
+                    background-color: rgba(yellow, 0.1);
                     font-weight: bold;
 
-                    em {
-                        background-color: rgba(transparent, 0.1);
-                        padding: 0 0.5rem;
-                    }
-
+                    // em {
+                    //     background-color: rgba(transparent, 0.1);
+                    //     padding: 0 0.5rem;
+                    // }
                 }
 
                 strong {
-                    background-color: rgba($docpageheadercolor, .7);
+                    background-color: rgba($docpageheadercolor, 0.7);
                     color: white;
                     font-weight: bold;
-                    padding: 0 .5rem;
-                    margin-right: .1rem;
+                    padding: 0 0.5rem;
+                    margin-right: 0.1rem;
                     border-radius: 3px;
                 }
-
             }
 
             ul {
                 list-style: none;
             }
 
-            ul>ul {
+            ul > ul {
                 margin-left: 1rem;
             }
 
             li:before {
                 content: "▪";
                 float: left;
-                margin-right: .5rem;
+                margin-right: 0.5rem;
                 color: $darkest-background-color;
                 font-size: 1.3rem;
             }
@@ -267,7 +264,7 @@ $linkcolor: rgb(63, 93, 255);
                     border-bottom-left-radius: 5px;
                     border-bottom-right-radius: 5px;
                     box-shadow: 0 5px 5px rgba(black, 0.2);
-                    padding: .5rem;
+                    padding: 0.5rem;
                 }
             }
 
@@ -285,13 +282,47 @@ $linkcolor: rgb(63, 93, 255);
                     padding: 1rem;
                 }
             }
+
+            %note {
+                display: block;
+                width: 100%;
+                border-left: 10px solid rgba($secondary-text-color, 0.35);
+                border-radius: 3px;
+                margin: 2rem 0;
+                padding: 20px;
+                background-color: rgba(yellow, 0.1);
+                font-style: normal;
+            }
+
+            .note-important {
+                @extend %note;
+                &:before {
+                    content: "Important";
+                    display: block;
+                    color: black;
+                    font-weight: bold;
+                    font-size: 1.1rem;
+                    margin-bottom: .5rem;
+                }
+            }
+            .note-tip {
+                @extend %note;
+                &:before {
+                    content: "Tip";
+                    display: block;
+                    color: black;
+                    font-weight: bold;
+                    font-size: 1.1rem;
+                    margin-bottom: .5rem;
+                }
+            }
         }
 
         &__footer {
             margin-top: 100px;
             border-top: 2px solid rgba(black, 0.25);
             padding: 1.5rem 0;
-            font-size: .8rem;
+            font-size: 0.8rem;
 
             &-heart {
                 color: red;
@@ -334,7 +365,6 @@ $linkcolor: rgb(63, 93, 255);
             max-width: calc(75% - 4rem);
 
             &__copy {
-
                 p,
                 h1,
                 h2,
@@ -350,19 +380,14 @@ $linkcolor: rgb(63, 93, 255);
                 &-under-construction {
                     font-size: 3.5rem;
                 }
-
             }
-
         }
-
     }
-
 }
 
 @include media-query-up(sm) {
     .doc-page {
         &-content {
-
             &__copy {
                 p,
                 h1,
@@ -374,9 +399,6 @@ $linkcolor: rgb(63, 93, 255);
                     word-break: normal;
                 }
             }
-
         }
-
     }
-
 }

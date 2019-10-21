@@ -10,15 +10,15 @@ activeDocIndexItem: 12
 
 <p>When building your site, Trio creates an organized collection of metadata objects that it creates from your <a href="/docs/v1/keyconcepts">project's assets</a>. Trio makes this metadata available to you through the various arguments that it passes to your project's <a href="/docs/v1/tagbasedcallbacks">tag-based callbacks</a>.</p>
 
-<p><mark>After each build of your project, Trio persists most of the metadata that it has collected to a file named <em>root/trio.manifest.json</em>. You can view the contents of this file to assist you when coding tag-based callbacks.</mark></p>
+<blockquote class="note-tip"><p>After each build of your project, Trio persists most of the metadata that it has collected to a file named <em>root/trio.manifest.json</em>. You can view the contents of this file to assist you when coding tag-based callbacks.</p></blockquote>
 
 <p>Below is an inventory of the metadata that is available to you.</p>
 
-<p><mark>Please note that beginning with v1.0.0-rc.5, Trio no longer generates a unique <em>id</em> property for fragments due to the expense in terms of the development time required to maintain their integrity during incremental builds. In its place, you should now use the fragment's <em>url</em> property, which is guaranteed to always be intrinsically unique per fragment.</mark></p>
+<blockquote class="note-important"><p>Please note that beginning with v1.0.0-rc.5, Trio no longer generates a unique <em>id</em> property for fragments due to the expense in terms of the development time required to maintain their integrity during incremental builds. In its place, you should now use the fragment's <em>url</em> property, which is guaranteed to always be intrinsically unique per fragment.</p></blockquote>
 
 <h2 id="fragment">fragment</h2>
 <p>An object that contains all the metadata associated with a fragment.</p>
-<p><mark>You can access the current fragment in your tag-based callbacks using the callback's <em>asset</em> parameter. You can access all non article fragments in your tag-based callbacks using the callback's <em>site</em> parameter's <em>frags</em> property. You can access all article fragments in your tag-based callbacks using the callback's <em>site</em> parameter's <em>articlesCatalog</em> property.</mark></p>
+<blockquote class="note-tip"><p>You can access the current fragment in your tag-based callbacks using the callback's <em>asset</em> parameter. You can access all non article fragments in your tag-based callbacks using the callback's <em>site</em> parameter's <em>frags</em> property. You can access all article fragments in your tag-based callbacks using the callback's <em>site</em> parameter's <em>articlesCatalog</em> property.</p></blockquote>
 
 <h3>.path</h3>
 <p>The path to the fragment file in the source/fragment folder. It is used internally by Trio during page generation.</p>
@@ -36,8 +36,8 @@ activeDocIndexItem: 12
 <p>The fragment's front matter. See <a href="/docs/v1/frontmatter">Front Matter</a> for more information.</p>
 
 <h3>.destPath</h3>
-<p><mark>Please note that, beginning with v1.0.0-rc.5, <em>destPath</em> is now generated in all lowercase.</mark></p>
 <p>The path to the page in the the public folder.</p>
+<blockquote class="note-important"><p>Beginning with v1.0.0-rc.5, <em>destPath</em> is now generated in all lowercase.</p></blockquote>
 
 <h3>.url</h3>
 <p>The URL of the page.</p>
