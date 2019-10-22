@@ -14,23 +14,23 @@ activeDocIndexItem: 3
 <p>Creating web pages with Trio involves the use of project <em>assets</em>, which are used to create <em>composites</em>, which Trio saves to your computer's file system as HTML files. The following project assets are available to you to compose your web pages:</p>
 
 <ul>
-    <li><strong>Templates</strong>
-        <p>Templates are .html file types that you create in the root/source/templates folder. They define the general structure and content of your site's pages. They have the required !DOCTYPE document preamble, html, head and body sections.</p>
-    </li>
     <li><strong>Fragments</strong>
-        <p>Fragments are either .html or .md file types that you create in the root/source/fragments folder. They define their own structure and content that is inserted into templates. They must always include front matter at the very top of the file.</p>
+        <p><a href="/docs/v1/fragment"><em>Fragments</em></a> are either .html or .md file types that you create in the root/source/fragments folder. They can, though it isn't required, define their own structure and content that is inserted into templates. They must always include front matter at the very top of the file.</p>
+    </li>
+    <li><strong>Templates</strong>
+        <p><a href="/docs/v1/template"><em>Templates</em></a> are .html file types that you create in the root/source/templates folder. They define the general structure and content of your site's pages. They have the required !DOCTYPE document preamble, html, head and body sections.</p>
     </li>
     <li><strong>Includes</strong>
-        <p>Includes are either .html or .md file types that you create in the root/source/includes folder. They define reusable blocks of common structure and content that are shared across multiple pages on your site. Their structure and content are inserted into the composites created from template and fragment assets. They can optionally include front matter at the very top of the file.</p>
+        <p><a href="/docs/v1/include"><em>Includes</em></a> are either .html or .md file types that you create in the root/source/includes folder. They define reusable blocks of common structure and content that are shared across multiple pages on your site. Their structure and content are inserted into the composites created from template and fragment assets. They can optionally include front matter at the very top of the file.</p>
     </li>
     <li><strong>JSON data files</strong>
-        <p>JSON data files are .json file types that you create in the root/source/data folder. Their content is used by tag-based callbacks.</p>
+        <p><a href="/docs/v1/jsondata"><em>JSON data files</em></a> are .json file types that you create in the root/source/data folder. Their content is used by tag-based callbacks.</p>
     </li>
     <li><strong>Metadata</strong>
-        <p>Metadata is the collection of structured data that Trio derives from your project's assets each time you build your site. Trio uses this metadata internally to build your site and can also be used by tag-based callbacks.</p>
+        <p><a href="/docs/v1/metadata"><em>Metadata</em></a> is the collection of structured data that Trio derives from your project's assets each time you build your site. Trio uses this metadata internally to build your site and can also be used by tag-based callbacks.</p>
     </li>
     <li><strong>Tag-Based callbacks</strong>
-        <p>Tag-based JavaScript Callbacks are Node modules that you define in the root/source/callbacks folder. Each module must export a single function, which takes a single argument, which Trio calls to further extend composites.</p>
+        <p><a href="/docs/v1/tagbasedcallbacks"><em>Tag-based JavaScript Callbacks</em></a> are Node modules that you define in the root/source/callbacks folder. Each module must export a single function, which takes a single argument, which Trio calls to further extend composites.</p>
     </li>
 </ul>
 
@@ -133,8 +133,8 @@ When generating pages, Trio executes the following for each fragment:
 <h2>See Also</h2>
 
 <ul>
-    <li><a href="/docs/v1/template" data-trio-link>Template</a></li>
     <li><a href="/docs/v1/fragment" data-trio-link>Fragment</a></li>
+    <li><a href="/docs/v1/template" data-trio-link>Template</a></li>
     <li><a href="/docs/v1/include" data-trio-link>Include</a></li>
     <li><a href="/docs/v1/jsondata" data-trio-link>JSON Data</a></li>
     <li><a href="/docs/v1/metadata" data-trio-link>Metadata</a></li>
