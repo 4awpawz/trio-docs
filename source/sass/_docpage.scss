@@ -118,6 +118,10 @@ $linkcolor: rgb(63, 93, 255);
                 margin-top: 0.5rem;
             }
 
+            h3 + p,
+            h4 + p,
+            h5 + p,
+            h6 + p,
             pre + h3,
             pre + h4,
             pre + h5,
@@ -172,6 +176,7 @@ $linkcolor: rgb(63, 93, 255);
             h3, h4, h5, h6 {
                 margin-bottom: 0;
             }
+
             h3 {
                 font-size: 1.17rem;
             }

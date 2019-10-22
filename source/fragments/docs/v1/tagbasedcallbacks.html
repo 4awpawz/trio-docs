@@ -10,6 +10,11 @@ activeDocIndexItem: 13
 
 <p>Trio scans your composites for tags decorated with the <em>data-trio-callback</em> attribute and calls the modules they name in the root/source/callbacks folder <em>asynchronously</em> with a single object whose properties can be used along with cheerio to manipulate the composite <em>as if you were actually using jQuery to manipulate the DOM</em>.</p>
 
+<ul>
+    <li><strong>file location</strong>: root/source/callbacks</li>
+    <li><strong>file type/content</strong>: .js/JavaScript</li>
+</ul>
+
 <blockquote class="note-tip"><p>Trio treats all you assets' markup as simple text, and parses it using jQuery-like selector syntax with the awesome OS library called <a class="doc-page__decorated-link" target="_blank" href="https://www.npmjs.com/package/cheerio"><em>cheerio</em></a>. If you have ever used jQuery then you should already know how to use cheerio's selector syntax. If you have never used jQuery then you can learn its selector syntax by visiting <a href="https://jquery.com/">jquery.com</a>.</p></blockquote>
 
 <figure>
@@ -32,11 +37,6 @@ module.exports = ({ $tag, site }) => {
 };</code></pre>
 <figcaption>Tag-Based Callback Example</figcaption>
 </figure>
-
-<ul>
-    <li><strong>file location</strong>: root/source/callbacks</li>
-    <li><strong>file type/content</strong>: .js/JavaScript</li>
-</ul>
 
 <h2>Declaring Tag-Based Callbacks</h2>
 
@@ -114,7 +114,7 @@ module.exports = ({ $tag, site }) => {
 </figure>
 
 <h3>site</h3>
-<p>Contains the complete collection of metadata</p>
+<p>Contains the site's complete collection of <a href="/docs/v1/metadata"><em>metadata</em></a>.</p>
 <figure>
     <pre><code class="js">module.exports = ({ $tag, site }) => {
     site.tagsCatalog.forEach(item => {
@@ -130,7 +130,7 @@ module.exports = ({ $tag, site }) => {
 </figure>
 
 <h3>asset</h3>
-<p>Contains the fragment's metadata.</p>
+<p>Contains the <a href="/docs/v1/fragment"><em>fragment</em></a>'s metadata.</p>
 <figure>
     <pre><code class="js">module.exports = ({ $tag, asset }) => {
     const data = asset.matter.data;

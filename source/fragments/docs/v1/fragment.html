@@ -11,6 +11,15 @@ activeDocIndexItem: 9
 
 <p>A fragment is a required asset that is associated with a single <a data-trio-link href="/docs/v1/template"><em>template</em></a> asset. The association between a template and a fragment is made by the fragment, using the predefined "template" <a data-trio-link href="/docs/v1/frontmatter"><em>front matter</em></a> property, and assigning it the name of the template it is associated with.</p>
 
+<ul>
+    <li><strong>file location</strong>: root/source/fragments</li>
+    <li><strong>file type/content</strong>: .html/HTML or .md/Markdown</li>
+    <li><strong>front matter required</strong>: yes</li>
+    <li><strong>required predefined front matter properties</strong>: template, title</li>
+    <li><strong>optional predefined front matter properties</strong>: appendToTarget</li>
+    <li><strong>applicable data-trio-* attributes</strong>: data-trio-include, data-trio-callback, data-trio-link</li>
+</ul>
+
 <figure>
 <pre><code class="html">&lt;!--
 template: docpage
@@ -23,15 +32,6 @@ appendToTarget: true
 &lt;p&gt;Lorem ipsum dolor sit amet consectetur adipisicing elit. In, aut laboriosam accusantium nam voluptatum architecto earum! Quasi dolor doloremque quibusdam dolore fugit impedit vel dolorem enim. Aut optio omnis doloribus.&lt;/p&gt;</code></pre>
 <figcaption>Fragment With Front Matter Example</figcaption>
 </figure>
-
-<ul>
-    <li><strong>file location</strong>: root/source/fragments</li>
-    <li><strong>file type/content</strong>: .html/HTML or .md/Markdown</li>
-    <li><strong>front matter required</strong>: yes</li>
-    <li><strong>required predefined front matter properties</strong>: template, title</li>
-    <li><strong>optional predefined front matter properties</strong>: appendToTarget</li>
-    <li><strong>applicable data-trio-* attributes</strong>: data-trio-include, data-trio-callback, data-trio-link</li>
-</ul>
 
 <h2>See Also</h2>
 

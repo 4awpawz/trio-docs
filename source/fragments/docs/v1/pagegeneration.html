@@ -14,30 +14,33 @@ activeDocIndexItem: 5
 
 <h2>For Non Blog Article Pages</h2>
 
-<ul>
-    <li>File <em>source/fragments/index.md</em> would be output to <em>target/index.html</em> and its URL would be <em>/</em>.</li>
-    <li>File <em>source/fragments/about.md</em> would be output to <em>target/about/index.html</em> and its URL would be <em>/about</em>.</li>
-    <li>File <em>source/fragments/abc/index.md</em> would be output to <em>target/abc/index.html</em> and its URL would be <em>/abc</em>.</li>
-    <li>File <em>source/fragments/abc/contact.md</em> would be output to <em>target/abc/contact/index.html</em> and its URL would be <em>/abc/contact</em>.</li>
-</ul>
+<p>File <em>source/fragments/index.md</em> would be written to <em>target/index.html</em> and its URL would be <em>/</em>.</p>
+
+<p>File <em>source/fragments/about.md</em> would be written to <em>target/about/index.html</em> and its URL would be <em>/about</em>.</p>
+
+<p>File <em>source/fragments/abc/index.md</em> would be written to <em>target/abc/index.html</em> and its URL would be <em>/abc</em>.</p>
+
+<p>File <em>source/fragments/abc/contact.md</em> would be written to <em>target/abc/contact/index.html</em> and its URL would be <em>/abc/contact</em>.</p>
 
 <p><mark>As the examples above demonstrate, when Trio creates your non blog-related pages, Trio will create the appropriate parent folders for the page if they don't already exist.</mark></p>
 
 <h2 id="forblogarticlepages">For Blog Article Pages</h2>
 
-<ul>
-    <li>When naming your blog article, use the form <em>yyyy-mm-dd-articlename.md|.html</em>, where:</li>
+<blockquote class="note-important">
+    <p>When naming your blog article, use the form <em>yyyy-mm-dd-articlename.md|.html</em>, where:</p>
     <ul>
         <li><strong>yyyy</strong>: is the 4 digit year</li>
         <li><strong>mm</strong>: is the 2 digit month</li>
         <li><strong>dd</strong>: is the 2 digit day</li>
     </ul>
-    <li>File <em>source/fragments/blog/articles/2018-11-18-articlename.md</em> would be output to <em>target/blog/2018/11/18/articlename/index.html</em> and its URL would be <em>/blog/2018/11/18/articlename/</em>.
-    </li>
-    <li>File <em>source/fragments/blog/articles/2018-11-18-articlename.md</em> declares <em>category: abc</em> in its front matter and would be output to <em>target/blog/abc/2018/11/18/articlename/index.html</em> and its URL would be <em>/blog/abc/2018/11/18/articlename/</em>.</li>
-</ul>
+</blockquote>
 
-<p><mark>As the examples above demonstrate, when Trio creates your blog-related pages, Trio will create the appropriate parent folders for the page if they don't already exist.</mark></p>
+<p>File <em>source/fragments/blog/articles/2018-11-18-articlename.md</em> would be written to <em>target/blog/2018/11/18/articlename/index.html</em> and its URL would be <em>/blog/2018/11/18/articlename/</em>.
+</p>
+
+<p>File <em>source/fragments/blog/articles/2018-11-18-articlename.md</em> declares <em>category: abc</em> in its front matter and would be written to <em>target/blog/abc/2018/11/18/articlename/index.html</em> and its URL would be <em>/blog/abc/2018/11/18/articlename/</em>.</p>
+
+<p><mark>As the examples above demonstrate, when Trio creates your blog article pages, Trio will create the appropriate parent folders for the page if they don't already exist.</mark></p>
 
 <blockquote class="note-tip"><p>You can change the name of the public blog folder to something other than "blog" by adding the <em>"blogFolderName"</em> property to your project's <em>root/trio.json</em> configuration file, and assign it a different name.</p></blockquote>
 
@@ -45,11 +48,15 @@ activeDocIndexItem: 5
 
 <p>The following linking conventions are supported:</p>
 
-<ul>
-    <li><strong>Absolute URLs</strong>: <em>https://4awpawz.github.io/trio-docs-pages/docs/</em> is appropriate to use when linking to remote/non-internal resource but inappropriate to use when linking to your site's internal resources because it is brittle; a change in the sites domain would require a global refactoring of your site to change each occurrence.</li>
-    <li><strong>Root Relative URLs</strong>: <em>/docs</em> is appropriate for internal links; the beginning <em>/</em> means that the link is relative to the root of your site.</li>
-    <li><strong>Relative URLs</strong>: <em>../docs</em> is appropriate for internal links; it is relative to the page in which it is being used.</li>
-</ul>
+    <h3>Absolute URLs</h3>
+    <p><em>https://4awpawz.github.io/trio-docs-pages/docs/</em> is appropriate to use when linking to remote/non-internal resource but inappropriate to use when linking to your site's internal resources because it is brittle; a change in the sites domain would require a global refactoring of your site to change each occurrence.
+Root Relative</p>
+
+    <h3>Root Relative URLs</h3>
+    <p><em>/docs</em> is appropriate for internal links; `/` means that the link is relative to the root of your site.</p>
+
+    <h3>Relative URLs</h3>
+    <p><em>../docs</em> is appropriate for internal links; `..` means it is relative to the page in which it is being used.</p>
 
 <h2 id="baseurl">Base URL</h2>
 
