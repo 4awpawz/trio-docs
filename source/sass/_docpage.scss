@@ -47,7 +47,6 @@ $linkcolor: rgb(63, 93, 255);
                     margin-left: 0.5rem;
                     margin-bottom: 1px;
                     padding: 0 0.333rem;
-                    // text-decoration: none;
                     border: 1px solid transparent;
                 }
             }
@@ -57,6 +56,7 @@ $linkcolor: rgb(63, 93, 255);
                 float: left;
                 margin-right: 0.5rem;
                 color: $linkcolor;
+                line-height: 100%;
             }
 
             &-item-link:hover,
@@ -96,11 +96,6 @@ $linkcolor: rgb(63, 93, 255);
             h5,
             h6 {
                 color: $docpageheadercolor;
-                word-break: break-all;
-            }
-
-            p {
-                word-break: break-all;
             }
 
             p + p,
@@ -153,7 +148,6 @@ $linkcolor: rgb(63, 93, 255);
             p + h4,
             p + h5,
             p + h6 {
-                // margin-top: 1.5rem;
                 margin-top: 2rem;
             }
 
@@ -198,7 +192,6 @@ $linkcolor: rgb(63, 93, 255);
                 font-weight: bold;
                 background-color: rgba($secondary-text-color, 0.08);
                 padding: 0 0.5rem;
-                // text-shadow: 1px 0 10px rgba($highlightcolor, 0.15);
             }
 
             li a {
@@ -212,14 +205,8 @@ $linkcolor: rgb(63, 93, 255);
                 mark {
                     padding: 0 0.5rem;
                     color: $docpageheadercolor;
-                    // background-color: rgba($highlightcolor, 0.2);
                     background-color: rgba(yellow, 0.1);
                     font-weight: bold;
-
-                    // em {
-                    //     background-color: rgba(transparent, 0.1);
-                    //     padding: 0 0.5rem;
-                    // }
                 }
 
                 strong {
@@ -253,7 +240,6 @@ $linkcolor: rgb(63, 93, 255);
             }
 
             figure {
-                // width: 100%;
                 display: block;
 
                 img {
@@ -277,12 +263,8 @@ $linkcolor: rgb(63, 93, 255);
             }
 
             pre {
-                // margin: 1rem 0;
                 display: block;
                 white-space: pre;
-                // margin: 1rem 0;
-                // padding: 0;
-                // overflow: hidden;
                 margin: 0;
                 border: 1px solid rgba(#000, 0.1);
 
@@ -373,38 +355,10 @@ $linkcolor: rgb(63, 93, 255);
             max-width: calc(75% - 4rem);
 
             &__copy {
-                p,
-                h1,
-                h2,
-                h3,
-                h4,
-                h5,
-                h6 {
-                    word-break: normal;
-                }
-
                 margin-top: 0;
 
                 &-under-construction {
                     font-size: 3.5rem;
-                }
-            }
-        }
-    }
-}
-
-@include media-query-up(sm) {
-    .doc-page {
-        &-content {
-            &__copy {
-                p,
-                h1,
-                h2,
-                h3,
-                h4,
-                h5,
-                h6 {
-                    word-break: normal;
                 }
             }
         }

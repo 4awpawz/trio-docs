@@ -4,6 +4,8 @@
     padding: 0;
     border: 0;
     vertical-align: baseline;
+    overflow-wrap: break-word;
+    word-break: break-word;
 }
 
 html,
@@ -13,14 +15,6 @@ body {
     line-height: 150%;
 }
 
-html {
-    $min_width: 320px;
-    $max_width: 1200px;
-    $min_font: 12px;
-    $max_font: 16px;
-    // @include fluid-type($min_width, $max_width, $min_font, $max_font);
-}
-
 h1,
 h2,
 h3,
@@ -28,8 +22,8 @@ h4,
 h5,
 h6 {
     margin: 0 0 $normal-font-size 0;
-    overflow-wrap: break-word;
     white-space: normal;
+    line-height: 110%;
 }
 
 h1 {
