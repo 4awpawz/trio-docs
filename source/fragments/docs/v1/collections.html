@@ -53,10 +53,17 @@ appendToTarget: true
 <h3 id="filter-functions">Filter Functions</h3>
 
 <p>Filter functions are passed a single parameter which you destructure to access its two properties:</p>
+
+<h4>collection</h4>
 <ul>
-    <li><strong>collection</strong>: An alias of the collection hash defined in the fragment.</li>
-    <li><strong>site</strong>: The global metadata object.</li>
+    <li>An alias of the collection hash defined in the fragment.</li>
 </ul>
+
+<h4>site</h4>
+<ul>
+    <li>The global metadata object.</li>
+</ul>
+
 <p>Your collection's filter function should return an array with one item for each page that is to be generated. Each item must include the name of the page, which you assign to to the item's <em>pageName</em> property, and the data for the page, which you can assign to a property that you name and which you can access in your composite's <em>tag-based callback</em> (see Tag-Based Callbacks below).</p>
 
 <figure>
@@ -69,11 +76,25 @@ appendToTarget: true
 <h3>Tag-Based Callbacks</h3>
 
 <p>In tag-based callbacks for collection pages, the <em>asset.collection</em> property exposes the follow properties:</p>
+
+<h4>[data-property-name]</h4>
 <ul>
-    <li><strong>[data-property-name]</strong>: The data associated with this collection item.</li>
-    <li><strong>pageName</strong>: The name of this page associated with this collection item.</li>
-    <li><strong>index</strong>: The zero-based index of this collection item.</li>
-    <li><strong>totalItems</strong>: The total number of collection items.</li>
+    <li>The data associated with this collection item.</li>
+</ul>
+
+<h4>pageName</h4>
+<ul>
+    <li>The name of this page associated with this collection item.</li>
+</ul>
+
+<h4>index</h4>
+<ul>
+    <li>The zero-based index of this collection item.</li>
+</ul>
+
+<h4>totalItems</h4>
+<ul>
+    <li>The total number of collection items.</li>
 </ul>
 
 <figure>

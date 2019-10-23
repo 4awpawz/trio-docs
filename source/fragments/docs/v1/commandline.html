@@ -3,36 +3,54 @@ template: docpage
 title: Command Line - Trio
 appendToTarget: true
 activeHeaderItem: 2
-activeDocIndexItem: 17 
+activeDocIndexItem: 17
 -->
 
 <h1>Command Line</h1>
 
-<p>Help is available to you in your terminal application:</p>
+<h2>General Help Information</h2>
+<pre><code class="hljs shell">trio --help | -h</code></pre>
+<h2>Command Specific Help Information</h2>
+<pre><code class="hljs shell">trio --help | -h &lt;command&gt;</code></pre>
 
-<ul>
-    <li><strong>trio --help | -h</strong>: display general help information</li>
-    <li><strong>trio --help | -h &lt;command&gt;</strong>: display command specific help information</li>
-</ul>
+<!-- <p>The following commands are available to you in your terminal application:</p> -->
 
-<p>The following commands are available to you in your terminal application:</p>
+<h2>Create A Bare Project In Path</h2>
+<pre><code class="hljs shell">trio new | n &lt;path/to/project&gt;</code></pre>
+<h2>Create A Project In Path With Scaffolding</h2>
+<pre><code class="hljs shell">trio new | n -s &lt;path/to/project&gt;</code></pre>
 
-<ul>
-    <li><strong>trio new | n &lt;path/to/project&gt;</strong>: creates a new bare project in path/to/project</li>
-    <li><strong>trio new | n -s &lt;path/to/project&gt;</strong>: creates a new  project with scaffolding in path/to/project <mark>introduced in v1.0.0</mark></li>
-    <li><strong>trio build | b</strong>: builds your site targeting the public folder</li>
-    <li><strong>trio build | b -i</strong>: incrementally builds your site targeting the public folder</li>
-    <li><strong>trio build | b -w</strong>: builds your site targeting the public folder any time a change is made to a file in the root/source folder</li>
-    <li><strong>trio build | b -iw</strong>: incrementally builds your site targeting the public folder any time a change is made to a file in the root/source folder</li>
-    <li><strong>trio build | b -ws</strong>: builds your site targeting the public folder any time a change is made to a file in the root/source folder and serves it in the default browser</li>
-    <li><strong>trio build | b -iws</strong>: incrementally builds your site targeting the public folder any time a change is made to a file in the root/source folder and serves it in the default browser</li>
-    <li><strong>trio release | r</strong>: builds your site for release targeting the release folder</li>
-    <li><strong>trio release | r -b</strong>: builds your site for release targeting the release folder with cache busting applied</li>
-    <li><strong>trio serve | s</strong>: serves your site from the public folder in the default browser</li>
-    <li><strong>trio serve | s -r</strong>: serves your site from the release folder in the default browser</li>
-</ul>
+<h2>Build Your Site For Development</h2>
+<pre><code class="hljs shell">trio build | b</code></pre>
 
-<h2>Build Vs. Release</h2>
+<h2>Build Your Site For Development Incrementally</h2>
+<pre><code class="hljs shell">trio build | b -i</code></pre>
+
+<h2>Build Your Site For Development With Watch</h2>
+<pre><code class="hljs shell">trio build | b -w</code></pre>
+
+<h2>Build Your Site For Development Incrementally With Watch</h2>
+<pre><code class="hljs shell">trio build | b -iw</code></pre>
+
+<h2>Build Your Site For Development With Watch And Serve It In The Default Browser</h2>
+<pre><code class="hljs shell">trio build | b -ws</code></pre>
+
+<h2>Build Your Site For Development Incrementally With Watch And Serve It In The Default Browser</h2>
+<pre><code class="hljs shell">trio build | b -iws</code></pre>
+
+<h2>Build Your Site For Release</h2>
+<pre><code class="hljs shell">trio release | r</code></pre>
+
+<h2>Build Your Site For Release With Cache Busting</h2>
+<pre><code class="hljs shell">trio release | r -b</code></pre>
+
+<h2>Serve Your Site From The Public Folder</h2>
+<pre><code class="hljs shell">trio serve | s</code></pre>
+
+<h2>Serve Your Site From The Release Folder</h2>
+<pre><code class="hljs shell">trio serve | r</code></pre>
+
+<h2>Build Vs. Build For Release</h2>
 
 <p>Running <code><em>build</em></code> targets the root/public folder, and is what you do while you are developing your site. Trio generate a CSS map file and generate pages whose fragments were marked as a WIP.</p>
 
