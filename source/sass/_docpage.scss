@@ -109,7 +109,8 @@ $linkcolor: rgb(63, 93, 255);
                 margin-top: 1rem;
             }
 
-            li, li p {
+            li,
+            li p {
                 margin-top: 0.5rem;
             }
 
@@ -162,7 +163,6 @@ $linkcolor: rgb(63, 93, 255);
             }
 
             h2 {
-                font-size: 1.25rem;
                 &:before {
                     content: "";
                     display: block;
@@ -173,24 +173,22 @@ $linkcolor: rgb(63, 93, 255);
                 }
             }
 
-            h3, h4, h5, h6 {
+            h3,
+            h4,
+            h5,
+            h6 {
                 margin-bottom: 0;
             }
 
+            h2,
             h3 {
-                font-size: 1.17rem;
+                font-size: initial;
             }
 
-            h4 {
-                font-size: 1.17rem;
-            }
-
-            h5 {
-                font-size: 1.17rem;
-            }
-
+            h4,
+            h5,
             h6 {
-                font-size: 1.17rem;
+                font-size: 1rem;
             }
 
             em {
@@ -298,7 +296,7 @@ $linkcolor: rgb(63, 93, 255);
                     color: black;
                     font-weight: bold;
                     font-size: 1.1rem;
-                    margin-bottom: .5rem;
+                    margin-bottom: 0.5rem;
                 }
             }
             .note-tip {
@@ -309,7 +307,7 @@ $linkcolor: rgb(63, 93, 255);
                     color: black;
                     font-weight: bold;
                     font-size: 1.1rem;
-                    margin-bottom: .5rem;
+                    margin-bottom: 0.5rem;
                 }
             }
         }
