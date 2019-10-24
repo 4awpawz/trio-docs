@@ -43,7 +43,7 @@ When generating pages, Trio executes the following for each fragment:
         <p>Trio then searches the composite for any tags that are decorated with the <a href="/docs/v1/tagattributes"><em>data-trio-include</em></a> attribute, and merges their associated <a href="/docs/v1/include"><em>include</em></a>'s content with the content in their respective tags in the order in which they are declared.</p>
     </li>
     <li>
-        <p>Trio then seaches the composite for any tags decorated with the <a href="/docs/v1/tagattributes"><em>data-trio-callback</em></a> attribute, and calls their respective <a href="/docs/v1/tagbasedcallbacks"><em>callbacks</em></a> asynchronously in the order in which they are declared.</p>
+        <p>Trio then searches the composite for any tags decorated with the <a href="/docs/v1/tagattributes"><em>data-trio-callback</em></a> attribute, and calls their respective <a href="/docs/v1/tagbasedcallbacks"><em>callbacks</em></a> asynchronously in the order in which they are declared.</p>
     </li>
     <li>
         <p>Finally, Trio saves the composite to your computer's file system as an HTML file.</p>
@@ -60,7 +60,7 @@ When generating pages, Trio executes the following for each fragment:
 
 <p>At a minimum, every page that Trio generates is composed of a single fragment asset and a single template asset and optionally one or more include assets.</p>
 
-<p>Basic page composition allows template assets to provide the overall structure and content of pages, fragment assets to extend those pages with their own unique structure and content, and includes to add blocks of commonly repeated structure and content.</p>
+<p>Basic page composition allows template assets to provide the overall structure and content of pages, fragment assets to extend those pages with their own unique structure and content, and include assets to add blocks of commonly repeated structure and content.</p>
 
 <h3>Fragments</h3>
 <p>A fragment asset can only be associated with a single template asset.</p>
@@ -71,7 +71,7 @@ When generating pages, Trio executes the following for each fragment:
 <p>You decorate a single HTML tag within the template asset with a <em>data-trio-fragment attribute</em>. Trio will target this tag when inserting a fragment asset's content.</p>
 
 <h3>Includes</h3>
-<p>Include assets are used to add blocks of commonly repeated structure and content to your composites. Their use-case is similar in nature to reusing common blocks of code in programming languages by wrapping them in functions.</p>
+<p>Include assets are used to add reusable blocks of common structure and content that can be shared across multiple pages. Their use-case is similar in nature to reusing common blocks of code in programming languages by wrapping them in functions.</p>
 
 <p>For example, many sites use the same page headers and footers in most, if not all, their pages. Include assets make adding these common blocks of structure and content to your composites simple.</p>
 
@@ -91,7 +91,7 @@ When generating pages, Trio executes the following for each fragment:
 
 <h2>Tag Attributes</h2>
 
-<p>As you may have noticed while reading this page, numerous data-trio-* tag attributes were discussed, such as <em>data-trio-fragment</em>, <em>data-trio-include</em> and <em>data-trio-callback</em>. Tag attributes are markers that indicate to Trio that it should take certain actions when it encounters them, such as targeting the tag with an include or fragment asset's content or calling a JavaScript callback module.</p>
+<p>As you may have noticed while reading this page that numerous data-trio-* tag attributes were discussed, such as <em>data-trio-fragment</em>, <em>data-trio-include</em> and <em>data-trio-callback</em>. These tag attributes are markers that indicate to Trio that it should take certain actions when it encounters them, such as targeting the tag with an include or fragment asset's content or calling a JavaScript Node module to augment the composite with metadata.</p>
 
 <h2>Front Matter</h2>
 
