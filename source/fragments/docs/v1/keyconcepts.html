@@ -37,13 +37,13 @@ When generating pages, Trio executes the following for each fragment:
 
 <ul>
     <li>
-        <p>Trio creates a composite by merging the <a href="/docs/v1/fragment"><em>fragment</em></a>'s content with the content in the <a href="/docs/v1/template"><em>template</em>'s</a> tag that is decorated with the <a href="/docs/v1/tagattributes"><em>data-trio-fragment</em></a> attribute.</p>
+        <p>Trio creates a composite by merging the <a href="/docs/v1/fragment"><em>fragment</em></a>'s content with the content in the <a href="/docs/v1/template"><em>template</em>'s</a> tag that is decorated with the <a href="/docs/v1/tagattributes"><em>data-trio-fragment</em></a> tag attribute.</p>
     </li>
     <li>
-        <p>Trio then searches the composite for any tags that are decorated with the <a href="/docs/v1/tagattributes"><em>data-trio-include</em></a> attribute, and merges their associated <a href="/docs/v1/include"><em>include</em></a>'s content with the content in their respective tags in the order in which they are declared.</p>
+        <p>Trio then searches the composite for any tags that are decorated with the <a href="/docs/v1/tagattributes"><em>data-trio-include</em></a> tag attribute, and merges their associated <a href="/docs/v1/include"><em>include</em></a>'s content with the content in their respective tags in the order in which they are declared.</p>
     </li>
     <li>
-        <p>Trio then searches the composite for any tags decorated with the <a href="/docs/v1/tagattributes"><em>data-trio-callback</em></a> attribute, and calls their respective <a href="/docs/v1/tagbasedcallbacks"><em>callbacks</em></a> asynchronously in the order in which they are declared.</p>
+        <p>Trio then searches the composite for any tags decorated with the <a href="/docs/v1/tagattributes"><em>data-trio-callback</em></a> tag attribute, and calls their respective <a href="/docs/v1/tagbasedcallbacks"><em>callbacks</em></a> asynchronously in the order in which they are declared.</p>
     </li>
     <li>
         <p>Finally, Trio saves the composite to your computer's file system as an HTML file.</p>
@@ -60,7 +60,7 @@ When generating pages, Trio executes the following for each fragment:
 
 <p>At a minimum, every page that Trio generates is composed of a single fragment asset and a single template asset and optionally one or more include assets.</p>
 
-<p>Basic page composition allows template assets to provide the overall structure and content of pages, fragment assets to extend those pages with their own unique structure and content, and include assets to add blocks of commonly repeated structure and content.</p>
+<p>Basic page composition allows template assets to provide the overall structure and content of pages, fragment assets to augments those pages with their own unique structure and content, and include assets to add blocks of commonly repeated structure and content.</p>
 
 <h3>Fragments</h3>
 <p>A fragment asset can only be associated with a single template asset.</p>
@@ -75,19 +75,19 @@ When generating pages, Trio executes the following for each fragment:
 
 <p>For example, many sites use the same page headers and footers in most, if not all, their pages. Include assets make adding these common blocks of structure and content to your composites simple.</p>
 
-<p>You can add as many include assets as needed into both template and fragment assets by decorating the tags you are targeting with <em>data-trio-include="name of include file | name of the fragment's front matter property whose value names the include file"</em> attributes.</p>
+<p>You can add as many include assets as needed into both template and fragment assets by decorating the tags you are targeting with the <em>data-trio-include="name of include file | front matter property whose value names the include file"</em> tag attribute.</p>
 
 <h2>Advanced Page Composition</h2>
 
 <p>Basic page composition produces pages that don't vary much in the way of structure and content other than what each fragment, template and include asset contributes. Often you will find that your pages require a greater degree of refinement, which is what advanced page composition provides through the use of tag-based callback assets and metadata.</p>
 
-<h3 id="tagbasedcallbacks">Tag-Based Callbacks</h3>
+<h3 id="tagbasedcallbacks">Tag-Based Callbacks And Metadata</h3>
 
-<p>Unlike other static site generators, Trio doesn't use a framework (e.g. React, etc.) or a templating engine  (e.g. Handlebars, Liquid Templates, etc.) for augmenting your composites with metadata. Instead, Trio uses JavaScript Node modules to extend your composites through its tag-based callback mechanism, which is kind of awesome if you think about it.</p>
+<p>Unlike other static site generators, Trio doesn't use a framework (e.g. React, etc.) or a templating engine  (e.g. Handlebars, Liquid Templates, etc.) to dynamically augment your composites with metadata. Instead, Trio uses JavaScript Node modules to dynamically augment your composites with metadata through its tag-based callback mechanism, which is kind of awesome if you think about it.</p>
 
 <p>Since Trio is built on top of Node (it is currently using v10 LTS), you have all the latest <em>ES6+</em> goodies at your disposal without having to transpile. In addition, and this is a biggie, your markup and markdown remain "clean" and readable and are easy to reason about and maintain because they aren't littered with scattered bits of framework api calls or with templating engine statements.</p>
 
-<p>You can add as many tag-based callback assets as needed to template, fragment and include assets by decorating their tags that you are targeting with <em>data-trio-callback="name of module"</em> attributes.</p>
+<p>You can add as many tag-based callback assets as needed to a template, fragment and include assets by decorating the tags you are targeting with the <em>data-trio-callback="name of module"</em> tag attribute.</p>
 
 <h2>Tag Attributes</h2>
 
