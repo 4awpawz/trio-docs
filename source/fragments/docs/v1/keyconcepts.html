@@ -54,23 +54,7 @@ activeDocIndexItem: 3
 <blockquote class="note-tip"><p>Trio compresses the trio.manifest.json file to limit its file size. To view the content you will have to use your editor to format the content so that it is readable.</p></blockquote>
 
 <h3>Tag-Based callbacks</h3>
-<p><a href="/docs/v1/tagbasedcallbacks"><em>Tag-based JavaScript Callbacks</em></a> are JavaScript Node modules that you define in the <em>root/source/callbacks</em> folder that Trio calls to augment your composites with dynamic content residing in the metadata that is passed to them. Each module must export a single function which takes a single argument.</p>
-
-<h2>Basic Page Composition</h2>
-
-<p>At a minimum, every page that Trio generates is composed of a single fragment asset and a single template asset and optionally one or more include assets.</p>
-
-<p>Basic page composition allows template assets to provide the overall layout of pages, fragment assets to augments those pages with their own unique content, and include assets to add blocks of commonly repeated content.</p>
-
-<p>Basic page composition produces pages that don't vary much in the way of content other than what each fragment, template and include asset contributes. Often you will find that your pages require <em>dynamic content</em>, which is what advanced page composition provides through the use of tag-based callback assets and metadata.</p>
-
-<h2>Advanced Page Composition</h2>
-
-<p>Trio doesn't use a framework (e.g. React, etc.) or a templating engine  (e.g. Handlebars, Liquid Templates, etc.) to augment your composites with dynamic content. Instead, Trio uses JavaScript Node modules to augment your composites with dynamic content through its tag-based callback mechanism, which is kind of awesome if you think about it.</p>
-
-<p>Since Trio is built on top of Node (it is currently using v10 LTS), you have all the latest <em>ES6+</em> goodies at your disposal without having to transpile. In addition, and this is a biggie, your markup and markdown remain "clean" and readable and are easy to reason about and maintain because they aren't littered with scattered bits of framework api calls or with templating engine statements.</p>
-
-<p>You can add as many tag-based callback assets as needed to a template, fragment and include assets by decorating the tags you are targeting with the <em>data-trio-callback="name of module"</em> tag attribute.</p>
+<p><a href="/docs/v1/tagbasedcallbacks"><em>Tag-based JavaScript Callbacks</em></a> are JavaScript Node modules that you define in the <em>root/source/callbacks</em> folder that Trio calls to augment your composites with dynamic content residing in the metadata that is passed to them. Each module must export a single function which takes a single argument. See <a href="#advanced-page-composition">Advanced Page Composition</a> below for more information.</p>
 
 <h2>Page Composition Overview</h2>
 
@@ -95,6 +79,22 @@ When generating pages, Trio executes the following for each fragment and its ass
     <img data-trio-link src="/media/composite.png" alt="composite image">
     <figcaption>A Composite Of Project Assets</figcaption>
 </figure>
+
+<h2>Basic Page Composition</h2>
+
+<p>At a minimum, every page that Trio generates is composed of a single fragment asset and a single template asset and optionally one or more include assets.</p>
+
+<p>Basic page composition allows template assets to provide the overall layout of pages, fragment assets to augments those pages with their own unique content, and include assets to add blocks of commonly repeated content.</p>
+
+<p>Basic page composition produces pages that don't vary much in the way of content other than what each fragment, template and include asset contributes. Often you will find that your pages require <em>dynamic content</em>, which is what advanced page composition provides through the use of tag-based callback assets and metadata.</p>
+
+<h2 id="advanced-page-composition">Advanced Page Composition</h2>
+
+<p>Trio doesn't use a framework (e.g. React, etc.) or a templating engine  (e.g. Handlebars, Liquid Templates, etc.) to augment your composites with dynamic content. Instead, Trio uses JavaScript Node modules to augment your composites with dynamic content through its tag-based callback mechanism, which is kind of awesome if you think about it.</p>
+
+<p>Since Trio is built on top of Node (it is currently using v10 LTS), you have all the latest <em>ES6+</em> goodies at your disposal without having to transpile. In addition, and this is a biggie, your markup and markdown remain "clean" and readable and are easy to reason about and maintain because they aren't littered with scattered bits of framework api calls or with templating engine statements.</p>
+
+<p>You can add as many tag-based callback assets as needed to a template, fragment and include assets by decorating the tags you are targeting with the <em>data-trio-callback="name of module"</em> tag attribute.</p>
 
 <h2>Tag Attributes</h2>
 
