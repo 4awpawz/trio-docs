@@ -65,8 +65,7 @@ appendToTarget: true
         &lt;span&gt;Name&lt;/span&gt;
         &lt;span&gt;Price &lt;span class="product-in-stock-heading--smaller"&gt;(US$)&lt;/span&gt;&lt;/span&gt;
     &lt;/li&gt;
-&lt;/ul&gt;
-        </code></pre>
+&lt;/ul&gt;</code></pre>
             <h3 class="benefit-2__sample-title">Template asset source/templates/products.html:</h3>
             <pre class="benefit-2__sample-example"><code class="html benefit-2__sample-example-code">&lt;!DOCTYPE html&gt;
 &lt;html lang="en"&gt;
@@ -82,8 +81,7 @@ appendToTarget: true
         &lt;article data-trio-fragment&gt;&lt;/article&gt;
     &lt;/main&gt;
 &lt;/body&gt;
-&lt;/html&gt;
-        </code></pre>
+&lt;/html&gt;</code></pre>
             <h3 class="benefit-2__sample-title">JSON asset source/data/productsByCategory.json:</h3>
             <pre class="benefit-2__sample-example"><code class="json benefit-2__sample-example-code">[
     {
@@ -121,8 +119,7 @@ appendToTarget: true
                 &lt;span&gt;${prod.name}&lt;/span&gt;
                 &lt;span&gt;${prod.price.toFixed(2)}&lt;/span&gt;
             &lt;/li&gt;
-        `));
-        </code></pre>
+        `));</code></pre>
             <h3 class="benefit-2__sample-title">Trio creates a composite from the above template and fragment assets. It then calls the tag-based callback declared in the fragment asset. The tag-based callback then extends the composite using the data from the productsByCategory.json file to produce the "Product List By Category" report.</h3>
             <img data-trio-link src="/media/homepage_demoProductsByCategory.png" alt="demo products by category image">
         </aside>
