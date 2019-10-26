@@ -54,7 +54,7 @@ activeDocIndexItem: 12
 <h3>.previousArticleUrl</h3>
 <p>Only relevant for articles, is the URL to the previous article.</p>
 
-<h3>.relatedArticlesByCategory</h3>
+<h3 id="related-articles-by-category">.relatedArticlesByCategory</h3>
 <p>Only relevant for articles that have categories, is an object that catalogs other articles related to this article by its category.</p>
 
 <h3>.relatedArticlesByCategory<br>.category</h3>
@@ -75,7 +75,7 @@ activeDocIndexItem: 12
 <h3>.relatedArticlesByCategory<br>.related[nth].excerpt</h3>
 <p>The article's front matter's excerpt.</p>
 
-<h3>.relatedArticlesByTag</h3>
+<h3 id="related-articles-by-tag">.relatedArticlesByTag</h3>
 <p>Only relevant for articles that have tags. Is an array that catalogs other articles related to this article by its tags. Catalog items are in ascending alphabetical order by tag.</p>
 
 <h3>.relatedArticlesByTag[nth]<br>.tag</h3>
@@ -96,8 +96,8 @@ activeDocIndexItem: 12
 <h3>.relatedArticlesByTag[nth]<br>.related[nth].excerpt</h3>
 <p>The article's excerpt.</p>
 
-<h3>.relatedArticlesByTagFlattened</h3>
-<p>An array that catalogs all other articles related to this article and is similar to <em>fragment.relatedArticlesByTag</em> but flattened for when you aren't concerned about each related article's tag.</p>
+<h3 id="related-articles-by-tag-flattened">.relatedArticlesByTagFlattened</h3>
+<p>An array that catalogs all other articles related to this article and is similar to<a href="#related-articles-by-tag"><em>fragment.relatedArticlesByTag</em></a> but flattened for when you aren't concerned about each related article's tag.</p>
 
 <h3>.relatedArticlesByTagFlattened[nth]<br>.articleDate</h3>
 <p>The date of the article in "YYYY-MM-DD" format.</p>
@@ -123,22 +123,22 @@ activeDocIndexItem: 12
 <h2>userConfig</h2>
 <p>A copy of the project's <em>trio.json</em> file.</p>
 
-<h2>frags</h2>
-<p>An array of all non article fragments. See <a class="doc-page__decorated-link" href="./#fragment">Property fragment</a> above for information pertaining to each array item's format.</p>
+<h2 id="frags">frags</h2>
+<p>An array of all non article fragments. See <a class="doc-page__decorated-link" href="#fragment">fragment</a> above for information pertaining to each array item's format.</p>
 
 <h2>wipsCount</h2>
 <p>An integer, the site's total number of "work in progress" fragments.</p>
 
 <h2>wips</h2>
-<p>An array of all the "work in progress" fragments. See <a class="doc-page__decorated-link" href="./#fragment">Property fragment</a> above for information pertaining to each array item's format.</p>
+<p>An array of all the "work in progress" fragments. See <a class="doc-page__decorated-link" href="#fragment">fragment</a> above for information pertaining to each array item's format.</p>
 
 <h2>articlesCount</h2>
 <p>An integer, the total number of blog articles.</p>
 
-<h2>articlesCatalog</h2>
-<p>Only relevant for projects that have articles. Is an array that catalogs the site's blog article's in ascending alphabetical order by article date and article title. See <a class="doc-page__decorated-link" href="./#fragment">Property fragment</a> above for information pertaining to each array item's format.</p>
+<h2 id="articles-catalog">articlesCatalog</h2>
+<p>Only relevant for projects that have articles. Is an array that catalogs the site's blog article's in ascending alphabetical order by article date and article title. See <a class="doc-page__decorated-link" href="#fragment">fragment</a> above for information pertaining to each array item's format.</p>
 
-<h2>categoriesCatalog</h2>
+<h2 id="categories-catalog">categoriesCatalog</h2>
 <p>Only relevant for projects that have articles that have categories. Is an array that catalogs the site's blog articles in ascending alphabetical order by category.</p>
 
 <h3>categoriesCatalog[nth]<br>.category</h3>
@@ -159,7 +159,7 @@ activeDocIndexItem: 12
 <h3>categoriesCatalog<br>.related[nth].excerpt</h3>
 <p>The article's excerpt.</p>
 
-<h2>tagsCatalog</h2>
+<h2 id="tags-catalog">tagsCatalog</h2>
 <p>Only relevant for projects that have articles that have tags. Is an array that catalogs the site's blog articles in ascending alphabetical order by tag.</p>
 
 <h3>tagsCatalog[nth]<br>.tag</h3>
@@ -180,7 +180,7 @@ activeDocIndexItem: 12
 <h3>tagsCatalog<br>.related[nth].excerpt</h3>
 <p>The article's excerpt.</p>
 
-<h2>dataCatalog</h2>
+<h2 id="data-catalog">dataCatalog</h2>
 <p>A hash that catalogs the site's JSON data files in root/source/data along with their content. Each property in the hash represents a single JSON data file. You can access any JSON data file in your tag-based callbacks using the callback's <em>site</em> parameter's <em>dataCatalog</em> property. See <a class="doc-page__decorated-link" data-trio-link href="/docs/v1/jsondata">JSON Data</a> for more information.</p>
 
 <h2>See Also</h2>

@@ -8,14 +8,15 @@ activeDocIndexItem: 13
 
 <h1>Tag-Based Callbacks</h1>
 
-<p>Trio scans your composites for tags decorated with the <em>data-trio-callback</em> attribute and calls the modules they name in the root/source/callbacks folder <em>asynchronously</em> with a single object whose properties can be used along with cheerio to manipulate the composite <em>as if you were actually using jQuery to manipulate the DOM</em>.</p>
+<p>Trio scans your composites for tags that are decorated with the <a href="/docs/v1/tagattributes#data-trio-callback"><em>data-trio-callback</em></a> attribute and calls the JavaScript Node modules they name <em>asynchronously</em>, passing them a single object whose properties can be used along with <a target="_blank" href="https://cheerio.js.org/"><em>cheerio</em></a>'s selector API to augment the composites with dynamic content.</p>
 
 <ul>
     <li><strong>file location</strong>: root/source/callbacks</li>
     <li><strong>file type/content</strong>: .js/JavaScript Node Module</li>
 </ul>
 
-<blockquote class="note-tip"><p>Trio treats all you assets' markup as plain text, and parses it using the jQuery-like selector syntax provided by the awesome <a class="doc-page__decorated-link" target="_blank" href="https://www.npmjs.com/package/cheerio"><em>cheerio</em></a> OS library. If you have ever used jQuery then you should already know how to use cheerio's selector syntax. If you have never used jQuery then you can learn its selector syntax by visiting <a href="https://jquery.com/">jquery.com</a>.</p></blockquote>
+<blockquote class="note-tip"><p>Trio treats your project's markup as plain text, meaning there is no DOM involved and parses it using the <em>jQuery-like</em> selector API provided by the awesome <a class="doc-page__decorated-link" target="_blank" href="https://cheerio.js.org/"><em>cheerio</em></a> OS library.
+jQuery's selector API documentation can be found at <a target="_blank" href="https://jquery.com/">jquery.com</a>.</p></blockquote>
 
 <figure>
 <pre><code class="JavaScript">/*
@@ -38,18 +39,25 @@ module.exports = ({ $tag, site }) => {
 <figcaption>Tag-Based Callback Example</figcaption>
 </figure>
 
-<h2>Declaring Tag-Based Callbacks</h2>
+<h2>Declaring Tag-Based Callbacks In Your Markup</h2>
 
-<p>Declaring a tag-based callback is as simple as picking any tag in a template, fragment or include asset and decorating it with the <em>data-trio-callback</em> attribute and assigning it the name of a callback in the <em>root/source/callbacks</em> folder:</p>
+<p>To declare tag-based callbacks in your markup you decorate the tags you want to target in <em>template</em>, <em>fragment</em> and <em>include</em> assets with <em>data-trio-callback</em> attributes, and assign them the names of the callbacks located in the <em>root/source/callbacks</em> folder:</p>
 
 <figure>
     <pre><code class="html">&lt;ul data-trio-callback="blogtaglist"&gt;&lt;/ul&gt;</code></pre>
     <figcaption>Declaring A Tag-Based Callback Example</figcaption>
 </figure>
 
-<h2>Implementing Tag-Based Callbacks</h2>
+<p>The callbacks can then reference the decorated tags to augment them with dynamic content using the <em>$tag</em> property. See <a href="#implementing-tag-based-callbacks">Implementing Tag Based Callbacks</a> below for more information.</p>
 
-<p>Each module must export a single function which, when called by Trio, is passed a single argument which can be destructured to access its properties.</p>
+<h2 id="implementing-tag-based-callbacks">Implementing Tag-Based Callbacks</h2>
+
+<p>Each module must export a single function which, when called by Trio, is passed a single argument</p>
+<pre><code class="javascript">{ $tag, $page, asset, site, cheerio }</code></pre>
+
+<p>which can be <em>destructured</em></p>
+<pre><code class="javascript">({ $tag, $page, asset, site, cheerio })</code></pre>
+<p> to access its properties. See <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment#Unpacking_fields_from_objects_passed_as_function_parameter">Unpacking fields from objects passed as function parameter </a> for more information.</p>
 
 <p>Callbacks can be implemented to run <em>synchronously</em></p>
 
@@ -88,7 +96,7 @@ module.exports = ({ $tag, site }) => {
 
 <h3>$page</h3>
 <blockquote class="note-important"><p>Please note that this property was originally named <em>$</em> but was renamed to <em>$page</em> in v1.0.0-rc.5.</p></blockquote>
-<p>The <em>cheerio function</em> (equivalent to the <em>$</em> in jQuery). Use when targeting the composite's content.</p>
+<p>$page is a <em>cheerio function</em>. It is equivalent to jQuery's <em>$</em> and <em>jQuery()</em> functions and can be used to return a collection of matched tags tags in the composite when you are targeting tags other than $tag.</p>
 <figure>
     <pre><code class="js">module.exports = ({ $page, site }) => {
     site.tagsCatalog.forEach(item => {
@@ -105,7 +113,7 @@ module.exports = ({ $tag, site }) => {
 </figure>
 
 <h3>$tag</h3>
-<p>A <em>cheerio wrapper</em> around the tag. Use when targeting the tag and its content.</p>
+<p>$tag is a <em>cheerio wrapper</em> for the tag which was decorated with the <em>data-trio-callback</em> attribute. It can be used to target the tag with dynamic content.</p>
 <figure>
     <pre><code class="js">module.exports = ({ $tag }) => {
     $tag.append(new Date().toDateString());
@@ -114,7 +122,7 @@ module.exports = ({ $tag, site }) => {
 </figure>
 
 <h3>site</h3>
-<p>Contains the site's complete collection of <a href="/docs/v1/metadata"><em>metadata</em></a>.</p>
+<p>site exposes the organized collection of <a href="/docs/v1/metadata"><em>metadata</em></a> that Trio creates from your project's assets. It's catalogs - <a href="/docs/v1/metadata#frags">frags</a>, <a href="/docs/v1/metadata#articles-catalog">articlesCatalog</a>, <a href="/docs/v1/metadata#categories-catalog">categoriesCatalog</a>, <a href="/docs/v1/metadata#tags-catalog">tagsCatalog</a>, <a href="/docs/v1/metadata#data-catalog">dataCatalog</a> - as well as it other properties can be used to augment your composites with dynamic data.</p>
 <figure>
     <pre><code class="js">module.exports = ({ $tag, site }) => {
     site.tagsCatalog.forEach(item => {
@@ -126,18 +134,18 @@ module.exports = ({ $tag, site }) => {
         `);
     });
 };</code></pre>
-<figcaption>Targeting A Tag's Content Using $tag Example</figcaption>
+<figcaption>Targeting A Tag's Content With Data From site.tagsCatalog Example</figcaption>
 </figure>
 
 <h3>asset</h3>
-<p>Contains the <a href="/docs/v1/fragment"><em>fragment</em></a>'s metadata.</p>
+<p>asset exposes the <a href="/docs/v1/metadata#fragment"><em>metadata specific to the fragment</em></a>, including its <em>front matter</em>. It's catalogs - <a href="/docs/v1/metadata#related-articles-by-category">relatedArticlesByCategory</a>, <a href="/docs/v1/metadata#related-articles-by-tag">relatedArticlesByTag</a>, <a href="/docs/v1/metadata#related-articles-by-tag-flattened">relatedArticlesByTagFlattened</a> - as well as its other properties can be used to augment your composites with dynamic data.</p>
 <figure>
     <pre><code class="js">module.exports = ({ $tag, asset }) => {
     const data = asset.matter.data;
     $tag.find("h1.article__title").append(data.title);
     $tag.find("span.article__category").append(`"${data.category}"`);
     $tag.find("span.article__date").append(asset.articleDate);
-    $tag.find("img.article__img").attr("src", `/media/${asset.matter.data.image}`);
+    $tag.find("img.article__img").attr("src", `/media/${data.image}`);
 };</code></pre>
 <figcaption>Targeting A Tag's Content Using $tag Example</figcaption>
 </figure>

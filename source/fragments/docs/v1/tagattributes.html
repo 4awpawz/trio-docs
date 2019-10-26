@@ -11,14 +11,14 @@ activeDocIndexItem: 7
 <p><em>data-trio-*</em> tag attributes are used as markers to indicate that a specific action is associated with its HTML
     tag.</p>
 
-<h2>data-trio-fragment</h2>
+<h2 id="data-trio-fragment">data-trio-fragment</h2>
 
 <ul>
     <li>Applicable in <em>template</em> assets.</li>
     <li>Is used to indicate that the HTML tag is the target of a <em>fragment</em> asset's content.</li>
 </ul>
 
-<h2>data-trio-include="name of include"</h2>
+<h2 id="data-trio-include">data-trio-include="name of include"</h2>
 
 <ul>
     <li>Requires a file extension (e.g. <em>.html | .md</em>).</li>
@@ -26,15 +26,16 @@ activeDocIndexItem: 7
     <li>Is used to indicate that the HTML tag is the target of the named <em>include</em> asset's content.</li>
 </ul>
 
-<h2>data-trio-callback="name of tag-based callback"</h2>
+<h2 id="data-trio-callback">data-trio-callback="name of tag-based callback"</h2>
 
 <ul>
     <li>File extension is not required; it is assumed that it is <em>.js</em>.</li>
     <li>Applicable in <em>template</em>, <em>fragment</em> and <em>include</em> assets.</li>
     <li>Is used to indicate that the HTML tag is requesting that Trio call the named <em>tag-based callback</em>.</li>
+    <li>The named callback can reference this tag using the <em>$tag</em> parameter. See <a href="/docs/v1/tagbasedcallbacks">Tag-Based Callbacks</a> for more information.</li>
 </ul>
 
-<h2>data-trio-link</h2>
+<h2 id="data-trio-link">data-trio-link</h2>
 
 <ul>
     <li>Applicable when your Web hosting services hosts your site in a <em>subfolder</em> and requires that your URLs be prepended with a base URL.</li>
