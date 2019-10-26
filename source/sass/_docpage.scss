@@ -164,14 +164,10 @@ $linkcolor: rgb(63, 93, 255);
 
             h2 {
                 font-size: 1.25rem;
-                &:before {
-                    content: "";
-                    display: block;
-                    width: 100%;
-                    height: 1px;
-                    background-color: rgba($color: #000000, $alpha: 0.25);
-                    margin-bottom: 3rem;
-                }
+                border-top: 1px solid rgba($color: #000000, $alpha: 0.25);
+                margin-top: 1.5rem;
+                margin-bottom: 1.5rem;
+                padding-top: 3rem;
             }
 
             h3,
