@@ -121,8 +121,8 @@ module.exports = ({ $tag, site }) => {
 <figcaption>Targeting A Tag's Content Using $tag Example</figcaption>
 </figure>
 
-<h3>site</h3>
-<p>site exposes the organized collection of <a href="/docs/v1/metadata"><em>metadata</em></a> that Trio creates from your project's assets. Its catalogs - <a href="/docs/v1/metadata#frags">frags</a>, <a href="/docs/v1/metadata#articles-catalog">articlesCatalog</a>, <a href="/docs/v1/metadata#categories-catalog">categoriesCatalog</a>, <a href="/docs/v1/metadata#tags-catalog">tagsCatalog</a>, <a href="/docs/v1/metadata#data-catalog">dataCatalog</a> - as well as it other properties can be used to augment your composites with dynamic data.</p>
+<h3 id="site">site</h3>
+<p>site exposes the organized collection of <a href="/docs/v1/metadata#site"><em>metadata</em></a> that Trio creates from your project's assets. Its catalogs - <a href="/docs/v1/metadata#frags">frags</a>, <a href="/docs/v1/metadata#articles-catalog">articlesCatalog</a>, <a href="/docs/v1/metadata#categories-catalog">categoriesCatalog</a>, <a href="/docs/v1/metadata#tags-catalog">tagsCatalog</a>, <a href="/docs/v1/metadata#data-catalog">dataCatalog</a> - as well as its other properties can be used to augment your composites with dynamic data.</p>
 <figure>
     <pre><code class="js">module.exports = ({ $tag, site }) => {
     site.tagsCatalog.forEach(item => {
@@ -137,8 +137,8 @@ module.exports = ({ $tag, site }) => {
 <figcaption>Targeting A Tag's Content With Data From site.tagsCatalog Example</figcaption>
 </figure>
 
-<h3>asset</h3>
-<p>asset exposes the <a href="/docs/v1/metadata#fragment"><em>metadata specific to the fragment</em></a>, including its <em>front matter</em>. It's catalogs - <a href="/docs/v1/metadata#related-articles-by-category">relatedArticlesByCategory</a>, <a href="/docs/v1/metadata#related-articles-by-tag">relatedArticlesByTag</a>, <a href="/docs/v1/metadata#related-articles-by-tag-flattened">relatedArticlesByTagFlattened</a> - as well as its other properties can be used to augment your composites with dynamic data.</p>
+<h3 id="asset">asset</h3>
+<p>asset exposes the <a href="/docs/v1/metadata#asset"><em>metadata specific to the fragment</em></a>, including its <em>front matter</em>. It's catalogs - <a href="/docs/v1/metadata#related-articles-by-category">relatedArticlesByCategory</a>, <a href="/docs/v1/metadata#related-articles-by-tag">relatedArticlesByTag</a>, <a href="/docs/v1/metadata#related-articles-by-tag-flattened">relatedArticlesByTagFlattened</a> - as well as its other properties can be used to augment your composites with dynamic data.</p>
 <figure>
     <pre><code class="js">module.exports = ({ $tag, asset }) => {
     const data = asset.matter.data;
@@ -147,19 +147,19 @@ module.exports = ({ $tag, site }) => {
     $tag.find("span.article__date").append(asset.articleDate);
     $tag.find("img.article__img").attr("src", `/media/${data.image}`);
 };</code></pre>
-<figcaption>Targeting A Tag's Content Using $tag Example</figcaption>
+<figcaption>Targeting A Tag's Content With Data From asset Example</figcaption>
 </figure>
 
 <h2 id="declaringinternaldependencies">Declaring Internal Dependencies To Trigger Incremental Builds</h2>
 
-<p>When using incremental build, Trio will detect that you have made modifications to your tag-based callbacks, and it will trigger a build to regenerate only those composites whose assets relate by way of their chains of dependencies to the modified callback. However, Trio will not automatically trigger a build when:</p>
+<p>When building incrementally, Trio will detect that you have made modifications to your tag-based callbacks, and it will trigger a build to regenerate only those composites whose assets relate by way of their chains of dependencies to the modified callback. However, Trio will not automatically trigger a build when:</p>
 
 <ul>
-    <li> it detects that you have made modifications to modules that your tag-based callbacks might requires, such as to a library that you created in root/source/callbacks/lib</li>
-    <li> it detects that you have made modifications to JSON files in the root/source/data folder that your tag-based callbacks might require</li>
+    <li>You have made modifications to modules that your tag-based callbacks might requires, such as to a library that you created in root/source/callbacks/lib.</li>
+    <li>You have made modifications to JSON files in the root/source/data folder that your tag-based callbacks might require</li>
 </ul>
 
-<p>To remedy these 2 situations, you can optionally add front matter to your tag-based callbacks, and include in them the properties discussed below, that will inform Trio to trigger a build whenever these internal dependencies are modified.</p>
+<p>To remedy these 2 situations, you can optionally add front matter to your tag-based callbacks with the properties discussed below that will inform Trio to trigger a build whenever these internal dependencies are modified.</p>
 
 <h3>Declaring Your Module Dependencies</h3>
 <p>Declare your module dependencies using the <mark>moduleDependencies</mark> property.</p>
@@ -185,10 +185,11 @@ dataDependencies:
 
 <h2 id="declaringexternaldependencies">Declaring External Dependencies On Metadata To Trigger Incremental Builds</h2>
 
-<p>When using incremental build, Trio will detect that you have made modifications to your fragment, include, template and tag-based callback assets, and it will trigger a build to regenerate only those composites whose assets relate by way of their chains of dependencies to those modified assets. However, Trio will not regenerate composites whose own assets haven't changed but which consume the metadata generated from modified assets unrelated to these composites, such as when generating pages that contain lists of other pages (e.g. blog pages, tag pages, category pages, catalog pages, portfolio pages, etc.).</p>
+<p>When building incrementally, Trio will detect that you have made modifications to your fragment, include, template and tag-based callback assets, and it will trigger a build to regenerate only those composites whose assets relate by way of their chains of dependencies to those modified assets. However, Trio will not regenerate composites whose own assets haven't changed but which consume the metadata generated from unrelated modified assets, such as when generating pages that contain lists of other pages (e.g. blog pages, tag pages, category pages, catalog pages, portfolio pages, etc.).</p>
 
-<p>To remedy this situation, you can add the front matter <em>alwaysBuild</em> property to your fragment's front matter, which will cause Trio to always regenerate the composite related to the fragment.</p>
+<p>To remedy this situation, you can add the <em>alwaysBuild</em> property to your fragment's front matter which will cause Trio to always mark this fragment as stale.</p>
 
+<blockquote class="note-tip"><p>Using <a href="/docs/v1/collections"><em>collections</em></a>, which was introduced in v2.0.0, can often eliminate having to use this.</p></blockquote>
 <figure>
 <pre><code class="html">&lt;!--
 template: blogpage

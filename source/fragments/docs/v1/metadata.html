@@ -8,7 +8,7 @@ activeDocIndexItem: 12
 
 <h1>Metadata</h1>
 
-<p>When building your site, Trio creates an organized collection of metadata objects that it creates from your <a href="/docs/v1/keyconcepts">project's assets</a>. Trio makes this metadata available for you to use in your project's <a href="/docs/v1/tagbasedcallbacks">tag-based callbacks</a>.</p>
+<p>When building your site, Trio generates a collection of metadata objects that it creates from your <a href="/docs/v1/keyconcepts">project's assets</a>. Trio organizes this metadata, making it easy to reason about, and exposes it your project's <a href="/docs/v1/tagbasedcallbacks">tag-based callbacks</a> through the <a href="#site">site</a> and <a href="#asset">asset</a> properties which they can use to add dynamic content to your pages.</p>
 
 <blockquote class="note-tip"><p>After each build of your project, Trio persists most of the metadata that it has collected to a file named <em>root/trio.manifest.json</em>. You can view the contents of this file to assist you when coding tag-based callbacks.</p></blockquote>
 
@@ -16,9 +16,87 @@ activeDocIndexItem: 12
 
 <blockquote class="note-important"><p>Please note that beginning with v1.0.0-rc.5, Trio no longer generates a unique <em>id</em> property for fragments due to the expense in terms of the development time required to maintain their integrity during incremental builds. In its place, you should now use the fragment's <em>url</em> property, which is guaranteed to always be intrinsically unique per fragment.</p></blockquote>
 
+<h2 id="site">site</h2>
+<p>See <a href="/docs/v1/tagbasedcallbacks#site">Tag-Based Callbacks - Argument Properties</a> for more information..</p>
+
+<h3>site.timestamp</h3>
+<p>The date and time of the current build in "YYYY-MM-DD HH:MM:SS" format.</p>
+
+<h3>site.version</h3>
+<p>The version of Trio used to build the project in semantic versioning format.</p>
+
+<h3>site.buildType</h3>
+<p>Either "development" or "release".</p>
+
+<h3>site.userConfig</h3>
+<p>The contents of the <em>root/trio.json</em> file.</p>
+
+<h3 id="frags">site.frags</h3>
+<p>An array of all non article fragments. See <a class="doc-page__decorated-link" href="#fragment">fragment</a> below for details.</p>
+
+<h3>site.wipsCount</h3>
+<p>An integer, the site's total number of "work in progress" fragments.</p>
+
+<h3>site.wips</h3>
+<p>An array of all the "work in progress" fragments. See <a class="doc-page__decorated-link" href="#fragment">fragment</a> below for details.</p>
+
+<h3>site.articlesCount</h3>
+<p>An integer, the total number of blog articles.</p>
+
+<h3 id="articles-catalog">site.articlesCatalog</h3>
+<p>Only relevant for projects that have articles. Is an array that catalogs the site's blog article's in ascending alphabetical order by article date and article title. See <a class="doc-page__decorated-link" href="#fragment">fragment</a> below for details.</p>
+
+<h3 id="categories-catalog">site.categoriesCatalog</h3>
+<p>Only relevant for projects that have articles that have categories. Is an array that catalogs the site's blog articles in ascending alphabetical order by category.</p>
+
+<h4>site.categoriesCatalog[nth]<br>.category</h4>
+<p>The article's category.</p>
+
+<h4>site.categoriesCatalog[nth]<br>.related</h4>
+<p>An array of related articles in descending alphabetical order by article date and article title.</p>
+
+<h4>site.categoriesCatalog[nth]<br>.related[nth].articleDate</h4>
+<p>The date of the article in "YYYY-MM-DD" format.</p>
+
+<h4>site.categoriesCatalog[nth]<br>.related[nth].url</h4>
+<p>The article's URL.</p>
+
+<h4>site.categoriesCatalog<br>.related[nth].title</h4>
+<p>The article's title.</p>
+
+<h4>site.categoriesCatalog<br>.related[nth].excerpt</h4>
+<p>The article's excerpt.</p>
+
+<h3 id="tags-catalog">site.tagsCatalog</h3>
+<p>Only relevant for projects that have articles that have tags. Is an array that catalogs the site's blog articles in ascending alphabetical order by tag.</p>
+
+<h4>site.tagsCatalog[nth]<br>.tag</h4>
+<p>The tag.</p>
+
+<h4>site.tagsCatalog[nth]<br>.related</h4>
+<p>An array of related articles in descending alphabetical order by article date and article title.</p>
+
+<h4>site.tagsCatalog[nth]<br>.related[nth].articleDate</h4>
+<p>The date of the article in "YYYY-MM-DD" format.</p>
+
+<h4>site.tagsCatalog[nth]<br>.related[nth].url</h4>
+<p>The article's URL.</p>
+
+<h4>site.tagsCatalog<br>.related[nth].title</h4>
+<p>The article's title.</p>
+
+<h4>site.tagsCatalog<br>.related[nth].excerpt</h4>
+<p>The article's excerpt.</p>
+
+<h3 id="data-catalog">site.dataCatalog</h3>
+<p>A hash that catalogs the site's JSON data files in root/source/data along with their content. Each property in the hash represents a single JSON data file. See <a class="doc-page__decorated-link" data-trio-link href="/docs/v1/jsondata">JSON Data</a> for more information.</p>
+
+<h2 id="asset">asset</h2>
+<p>The fragment associated with the compsite. See <a class="doc-page__decorated-link" href="#fragment">fragment</a> below and <a href="/docs/v1/tagbasedcallbacks#asset">Tag-Based Callbacks - Argument Properties</a> for more information..</p>
+
 <h2 id="fragment">fragment</h2>
 <p>An object that contains all the metadata associated with a fragment.</p>
-<blockquote class="note-tip"><p>You can access the current fragment in your tag-based callbacks using the callback's <em>asset</em> parameter. You can access all non article fragments in your tag-based callbacks using the callback's <em>site</em> parameter's <em>frags</em> property. You can access all article fragments in your tag-based callbacks using the callback's <em>site</em> parameter's <em>articlesCatalog</em> property.</p></blockquote>
+<blockquote class="note-tip"><p>You can access the current fragment in your tag-based callbacks using the callback's <em>asset</em> property. You can access all non article fragments in your tag-based callbacks using the callback's <em>site.frags</em> property. You can access all article fragments in your tag-based callbacks using the callback's <em>site.articlesCatalog</em> property.</p></blockquote>
 
 <h3>.path</h3>
 <p>The path to the fragment file in the source/fragment folder. It is used internally by Trio during page generation.</p>
@@ -110,78 +188,6 @@ activeDocIndexItem: 12
 
 <h3>.relatedArticlesByTagFlattened[nth]<br>.excerpt</h3>
 <p>The article's excerpt.</p>
-
-<h2>timestamp</h2>
-<p>The date and time of the current build in "YYYY-MM-DD HH:MM:SS" format.</p>
-
-<h2>version</h2>
-<p>The version of Trio used to build the project in semantic versioning format.</p>
-
-<h2>buildType</h2>
-<p>Either "development" or "release".</p>
-
-<h2>userConfig</h2>
-<p>A copy of the project's <em>trio.json</em> file.</p>
-
-<h2 id="frags">frags</h2>
-<p>An array of all non article fragments. See <a class="doc-page__decorated-link" href="#fragment">fragment</a> above for information pertaining to each array item's format.</p>
-
-<h2>wipsCount</h2>
-<p>An integer, the site's total number of "work in progress" fragments.</p>
-
-<h2>wips</h2>
-<p>An array of all the "work in progress" fragments. See <a class="doc-page__decorated-link" href="#fragment">fragment</a> above for information pertaining to each array item's format.</p>
-
-<h2>articlesCount</h2>
-<p>An integer, the total number of blog articles.</p>
-
-<h2 id="articles-catalog">articlesCatalog</h2>
-<p>Only relevant for projects that have articles. Is an array that catalogs the site's blog article's in ascending alphabetical order by article date and article title. See <a class="doc-page__decorated-link" href="#fragment">fragment</a> above for information pertaining to each array item's format.</p>
-
-<h2 id="categories-catalog">categoriesCatalog</h2>
-<p>Only relevant for projects that have articles that have categories. Is an array that catalogs the site's blog articles in ascending alphabetical order by category.</p>
-
-<h3>categoriesCatalog[nth]<br>.category</h3>
-<p>The article's category.</p>
-
-<h3>categoriesCatalog[nth]<br>.related</h3>
-<p>An array of related articles in descending alphabetical order by article date and article title.</p>
-
-<h3>categoriesCatalog[nth]<br>.related[nth].articleDate</h3>
-<p>The date of the article in "YYYY-MM-DD" format.</p>
-
-<h3>categoriesCatalog[nth]<br>.related[nth].url</h3>
-<p>The article's URL.</p>
-
-<h3>categoriesCatalog<br>.related[nth].title</h3>
-<p>The article's title.</p>
-
-<h3>categoriesCatalog<br>.related[nth].excerpt</h3>
-<p>The article's excerpt.</p>
-
-<h2 id="tags-catalog">tagsCatalog</h2>
-<p>Only relevant for projects that have articles that have tags. Is an array that catalogs the site's blog articles in ascending alphabetical order by tag.</p>
-
-<h3>tagsCatalog[nth]<br>.tag</h3>
-<p>The tag.</p>
-
-<h3>tagsCatalog[nth]<br>.related</h3>
-<p>An array of related articles in descending alphabetical order by article date and article title.</p>
-
-<h3>tagsCatalog[nth]<br>.related[nth].articleDate</h3>
-<p>The date of the article in "YYYY-MM-DD" format.</p>
-
-<h3>tagsCatalog[nth]<br>.related[nth].url</h3>
-<p>The article's URL.</p>
-
-<h3>tagsCatalog<br>.related[nth].title</h3>
-<p>The article's title.</p>
-
-<h3>tagsCatalog<br>.related[nth].excerpt</h3>
-<p>The article's excerpt.</p>
-
-<h2 id="data-catalog">dataCatalog</h2>
-<p>A hash that catalogs the site's JSON data files in root/source/data along with their content. Each property in the hash represents a single JSON data file. You can access any JSON data file in your tag-based callbacks using the callback's <em>site</em> parameter's <em>dataCatalog</em> property. See <a class="doc-page__decorated-link" data-trio-link href="/docs/v1/jsondata">JSON Data</a> for more information.</p>
 
 <h2>See Also</h2>
 
