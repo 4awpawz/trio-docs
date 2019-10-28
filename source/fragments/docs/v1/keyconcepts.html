@@ -13,7 +13,7 @@ activeDocIndexItem: 3
 
 <p>Creating web pages with Trio involves the use of project <em>assets</em> to create and augment <em>composites</em> which Trio eventually saves to your computer's file system as HTML files. The following project assets are available to you to compose your pages:</p>
 
-<blockquote class="note-tip"><p>It helps to think of composites as pages that haven't been written to the file system yet, that only exist in your computer's memmory.</p></blockquote>
+<blockquote class="note-tip"><p>It helps to think of composites as pages that haven't been written to the file system yet, that only exist in your computer's memory.</p></blockquote>
 
 <h3>Fragments</h3>
 <p><a href="/docs/v1/fragment">Fragments</a> are either <em>.html or .md</em> file types that you create in the <em>root/source/fragments</em> folder. Fragments must always include front matter at the very top of the file and they can, though it isn't required, also have their own content that is inserted into templates.</p>
@@ -46,7 +46,7 @@ activeDocIndexItem: 3
     <li>Create links to other pages on your web site.</li>
     <li>Generate content based on JSON data or from custom front matter properties.</li>
     <li>Make lists of blog articles related by their categories and tags.</li>
-    <li>Construct links to the next and and previous blog article based on their published dates.</li>
+    <li>Construct links to the next and previous blog article based on their published dates.</li>
 </ul>
 
 <blockquote class="note-tip"><p>After each build of your project, Trio persists most of the metadata that it collects to a file named <em>root/trio.manifest.json</em>. You can use this file as a reference to assist you when you are coding your <a href="/docs/v1/collections#collection-filter-functions">collection filter functions</a> and <a href="/docs/v1/tagbasedcallbacks">tag-based callbacks</a>.</p></blockquote>
@@ -100,7 +100,7 @@ When generating pages, Trio executes the following for each fragment and its ass
 
 <h2>Front Matter</h2>
 
-<p>YAML is a human readable data serialization language (don't let that intimidate you -- it is actually very simple to use) that you use to add configuration data to your project's fragment, include and tag-based Javascript callback assets. Because it's required to be added to the very top of a file, it can also just be called "front matter", which is a convention that you will often see used throughout Trio's documentation.</p>
+<p>YAML is a human readable data serialization language (don't let that intimidate you -- it is actually very simple to use) that you use to add configuration data to your project's fragment, include and tag-based JavaScript callback assets. Because it's required to be added to the very top of a file, it can also just be called "front matter", which is a convention that you will often see used throughout Trio's documentation.</p>
 
 <p>Trio predefines numerous front matter properties that it expects to find in your assets, which it uses internally when creating its composites. For example, Trio expects to find the name of the template that a fragment is associated with in its front matter <em>template</em> property.</p>
 
