@@ -17,7 +17,7 @@ activeDocIndexItem: 16
 
 <p>Without collections, you would have to manually create one fragment for each team member's detail page. If there are only a few team members that wouldn't be too difficult. But suppose there are dozens of team members! Having to manually create and maintain all those fragments would quickly become a burden.<p>
 
-<p>That's where collections come to the rescue; they do all the "heavy lifting" for you. You only need to create one <a href="#collection-fragments">fragment</a>, and one collection <a href="#collection-filter-functions">filter function</a> that returns a <a href="#collection-datasets"><em>collection dataset</em></a> and Trio will create a "clone" of that fragment for every member of the team.</p>
+<p>That's where collections come to the rescue; they do all the "heavy lifting" for you. You only need to create one <a href="#collection-fragments">fragment</a>, and one collection <a href="#collection-filter-functions">filter function</a> that returns a <a href="#collection-datasets">collection dataset</a> and Trio will create a "clone" of that fragment for every member of the team.</p>
 
 <h2 id="collection-fragments">Implementing Collection Fragments</h2>
 <p>To create a collection, add a <em>collection hash</em> to a fragment's front matter and assign its <em>filterFn</em> property the name of a filter function located in the <em>/source/filters</em> folder.</p>
@@ -66,7 +66,7 @@ appendToTarget: true
 <pre><code>({ collection, site })</code></pre>
 <p> to access its properties:</p>
 <h3>site</h3>
-<p>site exposes the organized collection of <a href="/docs/v1/metadata#site"><em>metadata</em></a> that Trio creates from your project's assets. Its catalogs - <a href="/docs/v1/metadata#frags">frags</a>, <a href="/docs/v1/metadata#articles-catalog">articlesCatalog</a>, <a href="/docs/v1/metadata#categories-catalog">categoriesCatalog</a>, <a href="/docs/v1/metadata#tags-catalog">tagsCatalog</a>, <a href="/docs/v1/metadata#data-catalog">dataCatalog</a> - as well as its other properties can all be used to create a collection dataset.</p>
+<p>site exposes the organized collection of <a href="/docs/v1/metadata#site">metadata</a> that Trio creates from your project's assets. Its catalogs - <a href="/docs/v1/metadata#frags">frags</a>, <a href="/docs/v1/metadata#articles-catalog">articlesCatalog</a>, <a href="/docs/v1/metadata#categories-catalog">categoriesCatalog</a>, <a href="/docs/v1/metadata#tags-catalog">tagsCatalog</a>, <a href="/docs/v1/metadata#data-catalog">dataCatalog</a> - as well as its other properties can all be used to create a collection dataset.</p>
 <h3>collection</h3>
 <p>collection is a reference to the fragment's front matter's <a href="#collection-fragments">collection hash</a>.</p>
 
@@ -80,7 +80,7 @@ appendToTarget: true
 
 <h2 id="tag-based-callbacks">Tag-Based Callbacks</h2>
 
-<p>In tag-based callbacks for collection pages, the <a href="/docs/v1/metadata#collection"><em>asset.collection</em></a> property exposes the following properties:</p>
+<p>In tag-based callbacks for collection pages, the <a href="/docs/v1/metadata#collection">asset.collection</a> property exposes the following properties:</p>
 
 <h3>[a single item of data]</h3>
 <p>The data item associated with this collection item.</p>

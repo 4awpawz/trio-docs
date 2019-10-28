@@ -8,14 +8,14 @@ activeDocIndexItem: 13
 
 <h1>Tag-Based Callbacks</h1>
 
-<p>Trio scans your composites for tags that are decorated with the <a href="/docs/v1/tagattributes#data-trio-callback"><em>data-trio-callback</em></a> attribute and calls the JavaScript Node modules they name <em>asynchronously</em>, passing them a single object whose properties can be used along with <a target="_blank" href="https://cheerio.js.org/"><em>cheerio</em></a>'s selector API to augment the composites with dynamic content.</p>
+<p>Trio scans your composites for tags that are decorated with the <a href="/docs/v1/tagattributes#data-trio-callback">data-trio-callback</a> attribute and calls the JavaScript Node modules they name <em>asynchronously</em>, passing them a single object whose properties can be used along with <a target="_blank" href="https://cheerio.js.org/">cheerio</a>'s selector API to augment the composites with dynamic content.</p>
 
 <ul>
     <li><em>file location</em>: root/source/callbacks</li>
     <li><em>file type/content</em>: .js/JavaScript Node Module</li>
 </ul>
 
-<blockquote class="note-tip"><p>Trio treats your project's markup as plain text, meaning there is no DOM involved and parses it using the <em>jQuery-like</em> selector API provided by the awesome <a class="doc-page__decorated-link" target="_blank" href="https://cheerio.js.org/"><em>cheerio</em></a> OS library.
+<blockquote class="note-tip"><p>Trio treats your project's markup as plain text, meaning there is no DOM involved and parses it using the <em>jQuery-like</em> selector API provided by the awesome <a class="doc-page__decorated-link" target="_blank" href="https://cheerio.js.org/">cheerio</a> OS library.
 jQuery's selector API documentation can be found at <a target="_blank" href="https://jquery.com/">jquery.com</a>.</p></blockquote>
 
 <figure>
@@ -122,7 +122,7 @@ module.exports = ({ $tag, site }) => {
 </figure>
 
 <h3 id="site">site</h3>
-<p>site exposes the organized collection of <a href="/docs/v1/metadata#site"><em>metadata</em></a> that Trio creates from your project's assets. Its catalogs - <a href="/docs/v1/metadata#frags">frags</a>, <a href="/docs/v1/metadata#articles-catalog">articlesCatalog</a>, <a href="/docs/v1/metadata#categories-catalog">categoriesCatalog</a>, <a href="/docs/v1/metadata#tags-catalog">tagsCatalog</a>, <a href="/docs/v1/metadata#data-catalog">dataCatalog</a> - as well as its other properties can be used to augment your composites with dynamic data.</p>
+<p>site exposes the organized collection of <a href="/docs/v1/metadata#site">metadata</a> that Trio creates from your project's assets. Its catalogs - <a href="/docs/v1/metadata#frags">frags</a>, <a href="/docs/v1/metadata#articles-catalog">articlesCatalog</a>, <a href="/docs/v1/metadata#categories-catalog">categoriesCatalog</a>, <a href="/docs/v1/metadata#tags-catalog">tagsCatalog</a>, <a href="/docs/v1/metadata#data-catalog">dataCatalog</a> - as well as its other properties can be used to augment your composites with dynamic data.</p>
 <figure>
     <pre><code class="js">module.exports = ({ $tag, site }) => {
     site.tagsCatalog.forEach(item => {
@@ -138,7 +138,7 @@ module.exports = ({ $tag, site }) => {
 </figure>
 
 <h3 id="asset">asset</h3>
-<p>asset exposes the <a href="/docs/v1/metadata#asset"><em>metadata specific to the fragment</em></a>, including its <em>front matter</em>. It's catalogs - <a href="/docs/v1/metadata#related-articles-by-category">relatedArticlesByCategory</a>, <a href="/docs/v1/metadata#related-articles-by-tag">relatedArticlesByTag</a>, <a href="/docs/v1/metadata#related-articles-by-tag-flattened">relatedArticlesByTagFlattened</a> - as well as its other properties can be used to augment your composites with dynamic data.</p>
+<p>asset exposes the <a href="/docs/v1/metadata#asset">metadata specific to the fragment</a>, including its <em>front matter</em>. It's catalogs - <a href="/docs/v1/metadata#related-articles-by-category">relatedArticlesByCategory</a>, <a href="/docs/v1/metadata#related-articles-by-tag">relatedArticlesByTag</a>, <a href="/docs/v1/metadata#related-articles-by-tag-flattened">relatedArticlesByTagFlattened</a> - as well as its other properties can be used to augment your composites with dynamic data.</p>
 <figure>
     <pre><code class="js">module.exports = ({ $tag, asset }) => {
     const data = asset.matter.data;
@@ -189,7 +189,7 @@ dataDependencies:
 
 <p>To remedy this situation, you can add the <em>alwaysBuild</em> property to your fragment's front matter which will cause Trio to always mark this fragment as stale.</p>
 
-<blockquote class="note-tip"><p>Using <a href="/docs/v1/collections"><em>collections</em></a>, which was introduced in v2.0.0, can often eliminate having to use this.</p></blockquote>
+<blockquote class="note-tip"><p>Using <a href="/docs/v1/collections">collections</a>, which was introduced in v2.0.0, can often eliminate having to use this.</p></blockquote>
 <figure>
 <pre><code class="html">&lt;!--
 template: blogpage
