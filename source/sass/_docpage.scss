@@ -250,13 +250,14 @@ $linkcolor: rgb(63, 93, 255);
 
                 figcaption {
                     text-align: center;
-                    background-color: #000;
-                    color: #fff;
+                    background-color: rgba($secondary-text-color, 0.45);
+                    color: #000;
                     font-weight: bold;
-                    border-bottom-left-radius: 5px;
-                    border-bottom-right-radius: 5px;
-                    box-shadow: 0 5px 5px rgba(black, 0.2);
+                    border-bottom-left-radius: 3px;
+                    border-bottom-right-radius: 3px;
+                    box-shadow: 0 2px 3px rgba($secondary-text-color, 0.2);
                     padding: 0.5rem;
+                    letter-spacing: 1px;
                 }
             }
 
@@ -268,6 +269,7 @@ $linkcolor: rgb(63, 93, 255);
 
                 code {
                     padding: 1rem;
+                    background-color: #fff;
                 }
             }
 
