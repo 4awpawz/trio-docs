@@ -103,6 +103,9 @@ activeDocIndexItem: 12
 
 <h3>.mtimeMs</h3>
 <p>The timestamp that represent the time, in milliseconds, when the fragment was last modified. It is used internally by Trio to determine the files to be included when building incrementally. See <a href="/docs/v1/incrementalbuild">Incremental Build</a> for more information.</p>
+<blockquote class="note-tip"><p>You can also use <em>mtimeMs</em> for showing the date and time your pages were last updated.</p>
+    <pre class="javascript"><code>$tag.append(new Date(asset.mtimeMs).toLocaleString());</code></pre>
+</blockquote>
 
 <h3>.type</h3>
 <p>A string that indicates the type of the fragment. It is used internally by Trio for determining the paths of dependencies between project assets when building incrementally.</p>
