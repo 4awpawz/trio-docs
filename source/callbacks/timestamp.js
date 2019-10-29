@@ -1,3 +1,3 @@
-module.exports = ({ $tag, site }) => {
-    $tag.append(`${site.timestamp}.`);
+module.exports = ({ $tag, asset }) => {
+    $tag.append(new Date(asset.mtimeMs).toLocaleString());
 };
