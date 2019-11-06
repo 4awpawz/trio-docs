@@ -12,16 +12,16 @@ activeDocIndexItem: 17
 
 <h2>Help</h2>
 <h3>General Help Information</h3>
-<pre><code class="hljs shell">trio --help | -h</code></pre>
+<pre><code class="hljs shell">$ trio --help | -h</code></pre>
 <h3>Command Specific Help Information</h3>
-<pre><code class="hljs shell">trio --help | -h &lt;command&gt;</code></pre>
+<pre><code class="hljs shell">$ trio --help | -h &lt;command&gt;</code></pre>
 
 <h2>Create A New Project</h2>
 <h3>Create A Bare Project In Path</h3>
-<pre><code class="hljs shell">trio new | n &lt;path/to/project&gt;</code></pre>
+<pre><code class="hljs shell">$ trio new | n &lt;path/to/project&gt;</code></pre>
 <h3>Create A Project With Scaffolding In Path</h3>
 <blockquote class="note-tip"><p>A scaffold project when built generates a styled site that contains a full-featured <a href="/docs/v1/blogging">blog</a> and uses <a href="/docs/v1/collections">collections</a>, so examining its code while reading through the documentation is a great way to learn and master Trio.</p></blockquote>
-<pre><code class="hljs shell">trio new | n -s &lt;path/to/project&gt;</code></pre>
+<pre><code class="hljs shell">$ trio new | n -s &lt;path/to/project&gt;</code></pre>
 
 <h2>Build Your Site</h2>
 
@@ -33,36 +33,46 @@ activeDocIndexItem: 17
 <p>Running <code><em>release</em></code> targets the root/release folder. Run this prior to deploying your site. Trio doesn't generate a CSS map file and doesn't generate pages whose fragments are marked as a <a href="/docs/v1/pagegeneration#wip">WIP</a>. Trio will clean your site's pages of all their <em>data-trio-*</em> tag attributes and provides the option to cache bust the generated site.</p>
 </blockquote>
 
+<blockquote class="note-tip">
+    <p>You can append <em>-m</em> to the following build commands to print out timing metrics.</p>
+</blockquote>
+
 <h3>Build Your Site For Development</h3>
-<pre><code class="hljs shell">trio build | b</code></pre>
+<pre><code class="hljs shell">$ trio build | b</code></pre>
 
 <h3>Build Your Site For Development Incrementally</h3>
-<pre><code class="hljs shell">trio build | b -i</code></pre>
+<pre><code class="hljs shell">$ trio build | b -i</code></pre>
 
 <h3>Build Your Site For Development With Watch</h3>
-<pre><code class="hljs shell">trio build | b -w</code></pre>
+<pre><code class="hljs shell">$ trio build | b -w</code></pre>
 
 <h3>Build Your Site For Development Incrementally With Watch</h3>
-<pre><code class="hljs shell">trio build | b -iw</code></pre>
+<pre><code class="hljs shell">$ trio build | b -iw</code></pre>
 
 <h3>Build Your Site For Development With Watch And Serve It In The Default Browser</h3>
-<pre><code class="hljs shell">trio build | b -ws</code></pre>
+<pre><code class="hljs shell">$ trio build | b -ws</code></pre>
 
 <h3>Build Your Site For Development Incrementally With Watch And Serve It In The Default Browser</h3>
-<pre><code class="hljs shell">trio build | b -iws</code></pre>
+<pre><code class="hljs shell">$ trio build | b -iws</code></pre>
+<blockquote class="note-tip"><p>You can replace <em>-iws</em> above with the shortcut <em>-I</em></p></blockquote>
 
 <h3>Build Your Site For Release</h3>
-<pre><code class="hljs shell">trio release | r</code></pre>
+
+<blockquote class="note-tip">
+    <p>You can append <em>-m</em> to the following release commands to print out timing metrics.</p>
+</blockquote>
+
+<pre><code class="hljs shell">$ trio release | r</code></pre>
 
 <h3>Build Your Site For Release With Cache Busting</h3>
-<pre><code class="hljs shell">trio release | r -b</code></pre>
+<pre><code class="hljs shell">$ trio release | r -b</code></pre>
 
 <h2>Serve Your Site</h2>
 <h3>Serve Your Development Builds</h3>
-<pre><code class="hljs shell">trio serve | s</code></pre>
+<pre><code class="hljs shell">$ trio serve | s</code></pre>
 
 <h3>Serve Your Release Builds</h3>
-<pre><code class="hljs shell">trio release | r</code></pre>
+<pre><code class="hljs shell">$ trio release | r</code></pre>
 
 <h2>See Also</h2>
 
