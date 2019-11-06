@@ -39,7 +39,7 @@ appendToTarget: true
 &lt;/div&gt;
 
 &lt;a href="/"&gt;Main Page&lt;/a&gt;</code></pre>
-<figcaption>Fragment Used To Generate A Collection Example</figcaption>
+<figcaption>Example: Fragment Used To Generate A Collection</figcaption>
 </figure>
 
 <blockquote class="note-tip"><p>You can also add <em>custom properties</em> to the collection hash which will be accessible in your collection's filter function.</p></blockquote>
@@ -75,7 +75,7 @@ appendToTarget: true
 <pre><code class="javascript">module.exports = ({ <mark>site</mark>, <mark>collection</mark> }) =>
     site.dataCatalog.team.map(<mark>item</mark> =>
         ({ <mark>pageName</mark>: `${item.firstName} ${item.lastName}`, <mark>item</mark> }));</code></pre>
-<figcaption>Filter Function Returning A Collection Dataset Example</figcaption>
+<figcaption>Example: Filter Function Returning A Collection Dataset</figcaption>
 </figure>
 
 <h2 id="tag-based-callbacks">Tag-Based Callbacks</h2>
@@ -105,7 +105,7 @@ appendToTarget: true
     $tag.find("#name").append(`${item.firstName} ${item.lastName}`);
     $tag.find("#title").append(asset.collection.item.title);
     $tag.find("#bio").append(asset.collection.item.bio);</code></pre>
-<figcaption>/source/callbacks/teamMember.js Tag-Based Callback Function Example</figcaption>
+<figcaption>Example: /source/callbacks/teamMember.js Tag-Based Callback Function</figcaption>
 </figure>
 
 <h2>Demo</h2>

@@ -35,7 +35,7 @@ module.exports = ({ $tag, site }) => {
             `);
     });
 };</code></pre>
-<figcaption>Tag-Based Callback Example</figcaption>
+<figcaption>Example Tag-Based Callback</figcaption>
 </figure>
 
 <h2>Declaring Tag-Based Callbacks In Your Markup</h2>
@@ -44,7 +44,7 @@ module.exports = ({ $tag, site }) => {
 
 <figure>
     <pre><code class="html">&lt;ul data-trio-callback="blogtaglist"&gt;&lt;/ul&gt;</code></pre>
-    <figcaption>Declaring A Tag-Based Callback Example</figcaption>
+    <figcaption>Example: Declaring A Tag-Based Callback</figcaption>
 </figure>
 
 <p>The callbacks can then reference the decorated tags to augment them with dynamic content using the <em>$tag</em> property. See <a href="#implementing-tag-based-callbacks">Implementing Tag Based Callbacks</a> below for more information.</p>
@@ -71,7 +71,7 @@ module.exports = ({ $tag, site }) => {
         `);
     });
 };</code></pre>
-<figcaption>Synchronous JavaScript Callback Example</figcaption>
+<figcaption>Example: Synchronous JavaScript Callback</figcaption>
 </figure>
 
 <p>or <em>asynchronously</em>, using async/await.</p>
@@ -88,7 +88,7 @@ module.exports = ({ $tag, site }) => {
         `)
     });
 };</code></pre>
-<figcaption>Asynchronous JavaScript Callback Example</figcaption>
+<figcaption>Example: Asynchronous JavaScript Callback</figcaption>
 </figure>
 
 <h2>Argument Properties</h2>
@@ -108,7 +108,7 @@ module.exports = ({ $tag, site }) => {
     });
     $page("div.page-modified-date").append(new Date().toDateString());
 };</code></pre>
-<figcaption>Targeting A Composite's Content Using $page Example</figcaption>
+<figcaption>Example: Targeting A Composite's Content Using $page</figcaption>
 </figure>
 
 <h3>$tag</h3>
@@ -117,7 +117,7 @@ module.exports = ({ $tag, site }) => {
     <pre><code class="js">module.exports = ({ $tag }) => {
     $tag.append(new Date().toDateString());
 };</code></pre>
-<figcaption>Targeting A Tag's Content Using $tag Example</figcaption>
+<figcaption>Example: Targeting A Tag's Content Using $tag</figcaption>
 </figure>
 
 <h3 id="site">site</h3>
@@ -133,7 +133,7 @@ module.exports = ({ $tag, site }) => {
         `);
     });
 };</code></pre>
-<figcaption>Targeting A Tag's Content With Data From site.tagsCatalog Example</figcaption>
+<figcaption>Example: Targeting A Tag's Content With Data From site.tagsCatalog</figcaption>
 </figure>
 
 <h3 id="asset">asset</h3>
@@ -146,7 +146,7 @@ module.exports = ({ $tag, site }) => {
     $tag.find("span.article__date").append(asset.articleDate);
     $tag.find("img.article__img").attr("src", `/media/${data.image}`);
 };</code></pre>
-<figcaption>Targeting A Tag's Content With Data From asset Example</figcaption>
+<figcaption>Example: Targeting A Tag's Content With Data From asset</figcaption>
 </figure>
 
 <h2 id="declaringinternaldependencies">Declaring Internal Dependencies To Trigger Incremental Builds</h2>
@@ -168,7 +168,7 @@ moduleDependencies:
 - ./lib/getDate
 - ./lib/getTime
 */</code></pre>
-<figcaption>Declaring Module Dependencies Example</figcaption>
+<figcaption>Example: Declaring Module Dependencies</figcaption>
 </figure>
 
 <h3>Declaring Your JSON Data File Dependencies</h3>
@@ -179,7 +179,7 @@ dataDependencies:
 - contactInfo
 - portfolio
 */</code></pre>
-<figcaption>Declaring JSON File Dependencies Example</figcaption>
+<figcaption>Example: Declaring JSON File Dependencies</figcaption>
 </figure>
 
 <h2 id="declaringexternaldependencies">Declaring External Dependencies On Metadata To Trigger Incremental Builds</h2>
@@ -195,7 +195,7 @@ template: blogpage
 title: Trio Blog | Official blog for Trio static site generator.
 alwaysBuild: true
 --&gt;</code></pre>
-<figcaption>Using The Front Matter alwaysBuild Property Example</figcaption>
+<figcaption>Example: Using The Front Matter alwaysBuild Property</figcaption>
 </figure>
 <h2>See Also</h2>
 

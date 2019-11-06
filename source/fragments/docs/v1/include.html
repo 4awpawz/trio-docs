@@ -26,15 +26,18 @@ activeDocIndexItem: 10
 <p>File root/source/includes/footer.html:</p>
 
 <figure>
-<pre><code class="html">&lt;footer&gt;Copyright &copy;2019 All Rights Reserved&lt;/footer&gt;</code></pre>
-<figcaption>Include File Example</figcaption>
+<pre><code class="html">&lt;!--
+appendToTarget: true
+--&gt;
+Copyright &copy;2019 All Rights Reserved</code></pre>
+<figcaption>Example: Footer Include File</figcaption>
 </figure>
 
 <p>File root/source/templates/default.html:</p>
 
 <figure>
-<pre><code class="html">&lt;footer&gt;data-trio-include="footer.html"&lt;/footer&gt;</code></pre>
-<figcaption>Insertion Of Include Asset By File Name Example</figcaption>
+<pre><code class="html">&lt;footer&gt;data-trio-include="<mark>footer.html</mark>"&lt;/footer&gt;</code></pre>
+<figcaption>Example: Inclusion By File Name</figcaption>
 </figure>
 
 <h2>Inclusion By Indirect Value</h2>
@@ -46,9 +49,13 @@ activeDocIndexItem: 10
 <p>File root/source/includes/footer.html:</p>
 
 <figure>
-<pre><code class="html">&lt;footer&gt;Copyright &copy;2019 All Rights Reserved&lt;/footer&gt;</code></pre>
-<figcaption>Include File Example</figcaption>
+<pre><code class="html">&lt;!--
+appendToTarget: true
+--&gt;
+Copyright &copy;2019 All Rights Reserved</code></pre>
+<figcaption>Example: Footer Include File</figcaption>
 </figure>
+
 
 <p>File root/source/fragments/index.html:</p>
 
@@ -56,16 +63,16 @@ activeDocIndexItem: 10
 <pre><code class="html">&lt;!--
 template: default
 title: Hello World!
-myfooter: footer.html
+<mark>myfooter: footer.html</mark>
 --&gt; </code></pre>
-<figcaption>Fragment File Declaring Include File Name Example</figcaption>
+<figcaption>Example: Fragment Front Matter Declaring Name Of Include File</figcaption>
 </figure>
 
 <p>File root/source/templates/default.html:</p>
 
 <figure>
-<pre><code class="html">&lt;footer&gt;data-trio-include="myfooter"&lt;/footer&gt;</code></pre>
-<figcaption>Insertion Of Include Asset By Indirect Value Example</figcaption>
+<pre><code class="html">&lt;footer&gt;data-trio-include="<mark>myfooter</mark>"&lt;/footer&gt;</code></pre>
+<figcaption>Example: Inclusion By Indirect Value</figcaption>
 </figure>
 
 <h2>See Also</h2>
