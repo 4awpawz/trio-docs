@@ -1,0 +1,23 @@
+{
+  "name": "@jeffreyschwartz/trio-docs",
+  "version": "1.0.0",
+  "description": "Github Pages site is hosted at https://github.com/4awpawz/trio-docs-pages.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/4awpawz/trio-docs.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/4awpawz/trio-docs/issues"
+  },
+  "homepage": "https://github.com/4awpawz/trio-docs#readme",
+  "devDependencies": {
+    "@4awpawz/eslint-config-4awpawzconfig": "^1.0.4"
+  }
+}
