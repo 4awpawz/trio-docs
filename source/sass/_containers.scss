@@ -4,6 +4,15 @@
     position: relative;
 }
 
+.fixed-width-container {
+    max-width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin: 0 auto;
+}
+
+// @include media-query-up gc
+
 .media-object {
     width: 100%;
     display: flex;

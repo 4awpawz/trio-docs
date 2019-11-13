@@ -1,0 +1,312 @@
+// header {
+//     background-color: white;
+//     width: 100vw;
+//     height: 3.7rem;
+//     border-bottom: 1px solid black;
+// }
+
+.home-page {
+    width: 100%;
+}
+
+%hero {
+    display: flex;
+    flex-flow: column nowrap;
+    letter-spacing: 1px;
+    font-family: "Roboto", sans-serif;
+    width: 100%;
+    background-color: #33722b;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+.hero-primary {
+    &-container {
+        width: 100%;
+        background-color: #33722b;
+    }
+    @extend %hero;
+    align-items: flex-start;
+    height: 70%;
+    // padding: 3rem;
+    &__header {
+        // text-align: center;
+        color: white;
+        font-size: 2.5rem;
+        text-shadow: 2px 3px lightgreen;
+        text-transform: uppercase;
+        margin: 0;
+        // padding: 0 15px;
+    }
+    .buttons-tray {
+        display: none;
+        margin-top: 2.5rem;
+    }
+}
+
+.hero-secondary {
+    &-container {
+        width: 100%;
+        background-color: #33722b;
+    }
+    @extend %hero;
+    align-items: center;
+    // padding: 3rem 30px;
+    // flex-flow: column nowrap;
+    &__header {
+        color: white;
+        font-size: 1.8rem;
+        // margin-bottom: 1.5rem;
+        text-align: center;
+        text-shadow: 2px 3px lightgreen;
+        text-transform: uppercase;
+        margin: 0;
+    }
+    .buttons {
+        &-tray {
+            justify-content: center;
+        }
+    }
+    .button-primary {
+        width: 100%;
+        margin-top: 1.25rem;
+        margin-right: 0;
+    }
+}
+
+%flexbox {
+    display: flex;
+    width: 100vw;
+}
+
+.feature {
+    @extend %flexbox;
+    padding-top: 3rem;
+    padding-bottom: 6rem;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    border-bottom: 1px solid rgba(black, 0.1);
+
+    &__copy {
+        flex: initial;
+        line-height: 1.5;
+        padding-left: 15px;
+        padding-right: 15px;
+        padding-bottom: 3rem;
+        &-heading {
+            font-size: 2.4rem;
+            font-weight: 300;
+            color: rgba(black, 0.77);
+        }
+        &-body{
+            font-size: 1.1rem;
+            font-weight: 400;
+            color: rgba(black, 0.47);
+        }
+    }
+    &__img-container {
+        flex: initial;
+        align-self: flex-start;
+        padding-left: 15px;
+        padding-right: 15px;
+        .feature__img {
+            max-width: 400px;
+            width: 100%;
+            height: auto;
+        }
+        &--race-car {
+            align-self: center;
+        }
+    }
+}
+
+.featurettes {
+        @extend %flexbox;
+        flex-direction: column;
+        align-items: left;
+        justify-content: flex-start;
+        width: 100%;
+    .featurette {
+        padding-top: 2rem;
+
+        &__copy {
+            flex: initial;
+            line-height: 1.5;
+            &-heading {
+                font-size: 2rem;
+                font-weight: 300;
+                color: rgba(black, 0.77);
+            }
+            &-body{
+                font-size: 1.1rem;
+                font-weight: 400;
+                color: rgba(black, 0.47);
+            }
+        }
+    }
+}
+
+// >= 576px
+@include media-query-up(sm) {
+    .hero-primary, .hero-secondary {
+        &__header {
+            font-size: 2.8rem;
+        }
+    }
+    // .hero-secondary {
+    //     &__header {
+    //         align-self: center;
+    //     }
+    //     .buttons-tray {
+    //         .button-primary {
+    //             // width: 75%;
+    //             // margin: 0 auto;
+    //         }
+    //     }
+    // }
+    .features, .featurettes, .hero-primary, .hero-secondary {
+        width: 540px;
+    }
+    .feature {
+        &__copy {
+            &-body {
+                font-size: 1.3rem;
+            }
+        }
+    }
+}
+
+// >= 768px
+@include media-query-up(md) {
+    .hero-primary {
+        &__header {
+            font-size: 3.7rem;
+        }
+        // .buttons-tray {
+        //     justify-content: center;
+        //     .button-primary, .button-secondary {
+        //         width: 50%;
+        //     }
+        // }
+    }
+    .hero-secondary {
+        .buttons-tray {
+            justify-items: center;
+            .button-primary {
+                width: 75%;
+            }
+        }
+    }
+    .features, .featurettes, .hero-primary, .hero-secondary {
+        width: 720px;
+    }
+    .feature {
+        &__copy {
+            &-heading {
+                font-size: 2.6rem;
+            }
+        }
+    }
+    .hero-secondary {
+        margin-bottom: 3rem;
+    }
+    .featurettes {
+        flex-flow: row wrap;
+        justify-content: space-between;
+        .featurette {
+            padding-top: 0;
+            padding-bottom: 3rem;
+            max-width: 48%;
+            flex: 0 0 50%;
+        }
+    }
+}
+
+// >= 992px
+@include media-query-up(lg) {
+    .hero-primary {
+        &__header {
+            font-size: 4rem;
+        }
+        .buttons-tray {
+            display: flex;
+            justify-content: flex-start;
+            .button-primary, .button-secondary, .hero-secondary {
+                width: 40%;
+            }
+        }
+    }
+    .hero-secondary {
+        .buttons-tray {
+            .button-primary {
+                width: 40%;
+            }
+        }
+    }
+    .features, .featurettes, .hero-primary, .hero-secondary {
+        width: 960px;
+    }
+    .feature {
+        flex-direction: row;
+        &__copy {
+            flex: 0 0 60%;
+            justify-self: flex-start;
+            &-heading {
+                font-size: 2.8rem;
+                &--push-down {
+                    padding-top: 1.5rem;
+                }
+            }
+        }
+        &__img-container {
+            .feature__img {
+                max-width: 100%;
+                width: 100%;
+            }
+            &--race-car {
+                align-self: flex-start;
+            }
+        }
+        &--flip {
+            flex-direction: row-reverse;
+            .feature__img {
+                max-width: 319px;
+                width: 100%;
+                height: auto;
+            }
+        }
+    }
+    .featurettes {
+        .featurette {
+            max-width: 33%;
+            flex: 0 0 33.3333%;
+        }
+    }
+}
+
+// >= 1200
+@include media-query-up(xl) {
+    .hero-primary {
+        &__header {
+            font-size: 4.5rem;
+        }
+    }
+    .features, .featurettes, .hero-primary, .hero-secondary {
+        width: 1140px;
+    }
+    .feature {
+        &__copy {
+            &-heading, &-body {
+                max-width: 95%;
+            }
+            justify-self: flex-start;
+        }
+        &__img-container {
+            .feature__img {
+                width: 430px;
+            }
+        }
+    }
+}
