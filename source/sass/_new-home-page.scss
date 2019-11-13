@@ -1,10 +1,3 @@
-// header {
-//     background-color: white;
-//     width: 100vw;
-//     height: 3.7rem;
-//     border-bottom: 1px solid black;
-// }
-
 .home-page {
     width: 100%;
 }
@@ -28,15 +21,12 @@
     @extend %hero;
     align-items: flex-start;
     height: 70%;
-    // padding: 3rem;
     &__header {
-        // text-align: center;
         color: white;
         font-size: 2.5rem;
         text-shadow: 2px 3px lightgreen;
         text-transform: uppercase;
         margin: 0;
-        // padding: 0 15px;
     }
     .buttons-tray {
         display: none;
@@ -51,12 +41,9 @@
     }
     @extend %hero;
     align-items: center;
-    // padding: 3rem 30px;
-    // flex-flow: column nowrap;
     &__header {
         color: white;
         font-size: 1.8rem;
-        // margin-bottom: 1.5rem;
         text-align: center;
         text-shadow: 2px 3px lightgreen;
         text-transform: uppercase;
@@ -155,17 +142,6 @@
             font-size: 2.8rem;
         }
     }
-    // .hero-secondary {
-    //     &__header {
-    //         align-self: center;
-    //     }
-    //     .buttons-tray {
-    //         .button-primary {
-    //             // width: 75%;
-    //             // margin: 0 auto;
-    //         }
-    //     }
-    // }
     .features, .featurettes, .hero-primary, .hero-secondary {
         width: 540px;
     }
@@ -184,12 +160,6 @@
         &__header {
             font-size: 3.7rem;
         }
-        // .buttons-tray {
-        //     justify-content: center;
-        //     .button-primary, .button-secondary {
-        //         width: 50%;
-        //     }
-        // }
     }
     .hero-secondary {
         .buttons-tray {
