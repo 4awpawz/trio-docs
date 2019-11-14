@@ -8,7 +8,7 @@
     letter-spacing: 1px;
     font-family: "Roboto", sans-serif;
     width: 100%;
-    background-color: #33722b;
+    background-color: green;
     padding-top: 2rem;
     padding-bottom: 2rem;
 }
@@ -16,7 +16,7 @@
 .hero-primary {
     &-container {
         width: 100%;
-        background-color: #33722b;
+        background-color: green;
     }
     @extend %hero;
     align-items: flex-start;
@@ -24,7 +24,7 @@
     &__header {
         color: white;
         font-size: 2.5rem;
-        text-shadow: 2px 3px lightgreen;
+        text-shadow: 2px 3px darkgreen;
         text-transform: uppercase;
         margin: 0;
     }
@@ -37,7 +37,7 @@
 .hero-secondary {
     &-container {
         width: 100%;
-        background-color: #33722b;
+        background-color: green;
     }
     @extend %hero;
     align-items: center;
@@ -45,7 +45,7 @@
         color: white;
         font-size: 1.8rem;
         text-align: center;
-        text-shadow: 2px 3px lightgreen;
+        text-shadow: 2px 3px darkgreen;
         text-transform: uppercase;
         margin: 0;
     }
