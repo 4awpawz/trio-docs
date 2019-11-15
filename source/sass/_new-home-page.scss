@@ -18,6 +18,10 @@
         font-size: 1.2rem;
         font-weight: bold;
     }
+    .button-primary:focus, .button-secondary:focus {
+        background-color: #f7a854;
+        color: white;
+    }
 }
 
 .hero-primary {
