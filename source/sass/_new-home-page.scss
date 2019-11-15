@@ -1,16 +1,23 @@
 .home-page {
     width: 100%;
+    font-weight: normal;
 }
 
 %hero {
     display: flex;
     flex-flow: column nowrap;
     letter-spacing: 1px;
-    font-family: "Roboto", sans-serif;
     width: 100%;
     background-color: green;
     padding-top: 2rem;
     padding-bottom: 2rem;
+}
+
+.buttons-tray {
+    .button-primary, .button-secondary {
+        font-size: 1.2rem;
+        font-weight: bold;
+    }
 }
 
 .hero-primary {
@@ -85,7 +92,7 @@
         &-heading {
             font-size: 2.4rem;
             font-weight: 300;
-            color: rgba(black, 0.77);
+            color: #5a5a5a;
         }
         &-body{
             font-size: 1.1rem;
@@ -124,7 +131,7 @@
             &-heading {
                 font-size: 2rem;
                 font-weight: 300;
-                color: rgba(black, 0.77);
+                color: #5a5a5a;
             }
             &-body{
                 font-size: 1.1rem;
