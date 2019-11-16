@@ -308,27 +308,6 @@ $linkcolor: $docpageheadercolor;
                 }
             }
         }
-
-        &__footer {
-            margin-top: 100px;
-            border-top: 2px solid rgba(black, 0.25);
-            padding: 1.5rem 0;
-            font-size: 0.8rem;
-
-            &-heart {
-                color: red;
-            }
-
-            &-container {
-                padding: 1rem 10px;
-                background-color: rgba(#888, 0.07);
-                text-align: center;
-
-                a {
-                    text-decoration: underline;
-                }
-            }
-        }
     }
 }
 
