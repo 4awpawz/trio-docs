@@ -1,34 +1,66 @@
 .footer {
-    display: block;
-    width: 100%;
-    min-height: 300px;
-    padding: 40px 0;
-    background-color: rgba(#888, 0.07);
-    font-size: .8rem;
-    line-height: 1;
-    text-align: center;
-
-    &__copy {
-        margin-bottom: 1.3rem;
-        color: rgba(#000, .7);
-
+    &-container {
+        width: 100%;
+        margin-top: 3rem;
+        padding: 3rem 15px;
+        border-top: 1px solid rgba(0, 0, 0, .1);
+        font-size: 1rem;
+        line-height: 1;
+        color: #5a5a5a;
+    }
+    p {
+        margin-bottom: .7rem;
         a {
-            color: #000;
-            font-style: normal;
+            color: #5a5a5a;
             text-decoration: underline;
-
-            strong {
-                font-style: normal;
-                color: #000;
-            }
-
         }
-
+        .heart {
+            color: red;
+        }
     }
+}
 
-    .footer__heart {
-        color: red;
-        font-weight: bold;
+// >= 576px
+@include media-query-up(sm) {
+    .footer {
+        width: 540px;
     }
+}
 
+// >= 768px
+@include media-query-up(md) {
+    .footer {
+        width: 720px;
+        &-container {
+            margin-top: 0;
+        }
+        &__copy-middle {
+            display: flex;
+            justify-content: space-around;
+            &-left {
+                flex: 50%;
+                justify-self: flex-start;
+            }
+            &-right {
+                flex: 50%;
+                justify-self: flex-end;
+                text-align: right;
+
+            }
+        }
+    }
+}
+
+// >= 992px
+@include media-query-up(lg) {
+    .footer {
+        width: 960px;
+    }
+}
+
+// >= 1200
+@include media-query-up(xl) {
+    .footer {
+        width: 1140px;
+    }
 }
