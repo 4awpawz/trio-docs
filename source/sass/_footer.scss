@@ -5,7 +5,6 @@
         padding: 3rem 15px;
         border-top: 1px solid rgba(0, 0, 0, .1);
         font-size: 1rem;
-        line-height: 1;
         color: #5a5a5a;
     }
     p {
@@ -36,14 +35,17 @@
         }
         &__copy-middle {
             display: flex;
-            justify-content: space-around;
+            // justify-content: space-around;
+            justify-content: space-between;
             &-left {
+                max-width: 45%;
                 flex: 50%;
-                justify-self: flex-start;
+                // justify-self: flex-start;
             }
             &-right {
+                max-width: 45%;
                 flex: 50%;
-                justify-self: flex-end;
+                // justify-self: flex-end;
                 text-align: right;
 
             }
