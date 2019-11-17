@@ -16,28 +16,28 @@ activeDocIndexItem: 3
 <blockquote class="note-tip"><p>It helps to think of composites as pages that haven't been written to the file system yet, that only exist in your computer's memory.</p></blockquote>
 
 <h3>Fragments</h3>
-<p><a href="/docs/v1/fragment">Fragments</a> are either <em>.html or .md</em> file types that you create in the <em>root/source/fragments</em> folder. Fragments must always include front matter at the very top of the file and they can, though it isn't required, also have their own content that is inserted into templates.</p>
+<p><a href="/docs/v2/fragment">Fragments</a> are either <em>.html or .md</em> file types that you create in the <em>root/source/fragments</em> folder. Fragments must always include front matter at the very top of the file and they can, though it isn't required, also have their own content that is inserted into templates.</p>
 <p>At the top of the file you add front matter that includes a <em>template</em> property whose value is the name of the template the fragment is associated with.</p>
 <p>A fragment asset can only be associated with a single template asset.</p>
 
 <h3>Templates</h3>
-<p><a href="/docs/v1/template">Templates</a> are <em>.html</em> file types that you create in the <em>root/source/templates</em> folder. Templates define the overall layout of your site's pages (i.e. they include the !DOCTYPE document preamble, html, head and body sections typically found in an HTML document).</p>
+<p><a href="/docs/v2/template">Templates</a> are <em>.html</em> file types that you create in the <em>root/source/templates</em> folder. Templates define the overall layout of your site's pages (i.e. they include the !DOCTYPE document preamble, html, head and body sections typically found in an HTML document).</p>
 <p>You decorate a single HTML tag in the template asset with a <em>data-trio-fragment</em> tag attribute and Trio will target this tag when inserting a fragment asset's content.</p>
 <p>Templates never include front matter.</p>
 <p>A template asset can be associated with multiple fragment assets.</p>
 
 
 <h3>Includes</h3>
-<p><a href="/docs/v1/include">Includes</a> are either <em>.html or .md</em> file types that you create in the <em>root/source/includes</em> folder. They are used to add reusable blocks of  content to the composites created from fragment and template assets and can be shared across multiple pages (e.g. headers, footers, indexes, etc.). They can optionally include front matter at the very top of the file.</p>
+<p><a href="/docs/v2/include">Includes</a> are either <em>.html or .md</em> file types that you create in the <em>root/source/includes</em> folder. They are used to add reusable blocks of  content to the composites created from fragment and template assets and can be shared across multiple pages (e.g. headers, footers, indexes, etc.). They can optionally include front matter at the very top of the file.</p>
 <p>You can add as many include assets as needed into both template and fragment assets by decorating the tags you are targeting with the <em>data-trio-include="name of include file | front matter property whose value names the include file"</em> tag attribute.</p>
 
 <h3>JSON Data Files</h3>
-<p><a href="/docs/v1/jsondata">JSON data files</a> are <em>.json</em> file types that you create in the <em>root/source/data</em> folder. Tag-based callbacks can access these files' data through the metadata that is passed to them.</p>
+<p><a href="/docs/v2/jsondata">JSON data files</a> are <em>.json</em> file types that you create in the <em>root/source/data</em> folder. Tag-based callbacks can access these files' data through the metadata that is passed to them.</p>
 
 <blockquote class="note-tip"><p>You can <em>hand-code</em> these data files yourself or you can <em>create NPM tasks</em> that, for example, retrieve the data from a local database, CRM, or a remote service.</p></blockquote>
 
 <h3>Metadata</h3>
-<p><a href="/docs/v1/metadata">Metadata</a> is the collection of data that Trio derives from your project's other assets and from the root/trio.json configuration file and uses the metadata internally to build your site.</p>
+<p><a href="/docs/v2/metadata">Metadata</a> is the collection of data that Trio derives from your project's other assets and from the root/trio.json configuration file and uses the metadata internally to build your site.</p>
 <p>Trio also passes metadata to the tag-based callbacks it finds declared in your project's fragment, template and include assets, which they can use to further augment your composites. <mark>Trio organizes its metadata in a structured format that makes using it in your tag-based callbacks easier to reason about.</mark></p>
 
 <p>For example, you can use this metadata in your tag-based callbacks to:</p>
@@ -49,10 +49,10 @@ activeDocIndexItem: 3
     <li>Construct links to the next and previous blog article based on their published dates.</li>
 </ul>
 
-<blockquote class="note-tip"><p>After each build of your project, Trio persists most of the metadata that it collects to a file named <em>root/trio.manifest.json</em>. You can use this file as a reference to assist you when you are coding your <a href="/docs/v1/collections#collection-filter-functions">collection filter functions</a> and <a href="/docs/v1/tagbasedcallbacks">tag-based callbacks</a>.</p></blockquote>
+<blockquote class="note-tip"><p>After each build of your project, Trio persists most of the metadata that it collects to a file named <em>root/trio.manifest.json</em>. You can use this file as a reference to assist you when you are coding your <a href="/docs/v2/collections#collection-filter-functions">collection filter functions</a> and <a href="/docs/v2/tagbasedcallbacks">tag-based callbacks</a>.</p></blockquote>
 
 <h3>Tag-Based callbacks</h3>
-<p><a href="/docs/v1/tagbasedcallbacks">Tag-based JavaScript Callbacks</a> are JavaScript Node modules that you define in the <em>root/source/callbacks</em> folder that Trio calls to augment your composites with dynamic content residing in the metadata that is passed to them. Each module must export a single function which takes a single argument. See <a href="#advanced-page-composition">Advanced Page Composition</a> below for more information.</p>
+<p><a href="/docs/v2/tagbasedcallbacks">Tag-based JavaScript Callbacks</a> are JavaScript Node modules that you define in the <em>root/source/callbacks</em> folder that Trio calls to augment your composites with dynamic content residing in the metadata that is passed to them. Each module must export a single function which takes a single argument. See <a href="#advanced-page-composition">Advanced Page Composition</a> below for more information.</p>
 
 <h2>Page Composition Overview</h2>
 
@@ -60,13 +60,13 @@ When generating pages, Trio executes the following for each fragment and its ass
 
 <ul>
     <li>
-        <p>Trio creates a composite by merging the <a href="/docs/v1/fragment">fragment</a>'s content with the content in the <a href="/docs/v1/template">template's</a> tag that is decorated with the <a href="/docs/v1/tagattributes">data-trio-fragment</a> tag attribute.</p>
+        <p>Trio creates a composite by merging the <a href="/docs/v2/fragment">fragment</a>'s content with the content in the <a href="/docs/v2/template">template's</a> tag that is decorated with the <a href="/docs/v2/tagattributes">data-trio-fragment</a> tag attribute.</p>
     </li>
     <li>
-        <p>Trio then searches the composite for any tags that are decorated with the <a href="/docs/v1/tagattributes">data-trio-include</a> tag attribute, and merges their associated <a href="/docs/v1/include">include</a>'s content with the content in their respective tags in the order in which they are declared.</p>
+        <p>Trio then searches the composite for any tags that are decorated with the <a href="/docs/v2/tagattributes">data-trio-include</a> tag attribute, and merges their associated <a href="/docs/v2/include">include</a>'s content with the content in their respective tags in the order in which they are declared.</p>
     </li>
     <li>
-        <p>Trio then searches the composite for any tags decorated with the <a href="/docs/v1/tagattributes">data-trio-callback</a> tag attribute, and calls their respective <a href="/docs/v1/tagbasedcallbacks">callbacks</a> asynchronously in the order in which they are declared.</p>
+        <p>Trio then searches the composite for any tags decorated with the <a href="/docs/v2/tagattributes">data-trio-callback</a> tag attribute, and calls their respective <a href="/docs/v2/tagbasedcallbacks">callbacks</a> asynchronously in the order in which they are declared.</p>
     </li>
     <li>
         <p>Finally, Trio saves the composite to your computer's file system as an HTML file.</p>
@@ -117,13 +117,13 @@ When generating pages, Trio executes the following for each fragment and its ass
 <h2>See Also</h2>
 
 <ul>
-    <li><a href="/docs/v1/fragment" data-trio-link>Fragment</a></li>
-    <li><a href="/docs/v1/template" data-trio-link>Template</a></li>
-    <li><a href="/docs/v1/include" data-trio-link>Include</a></li>
-    <li><a href="/docs/v1/jsondata" data-trio-link>JSON Data</a></li>
-    <li><a href="/docs/v1/metadata" data-trio-link>Metadata</a></li>
-    <li><a href="/docs/v1/tagbasedcallbacks" data-trio-link>Tag-Based Callbacks</a></li>
-    <li><a href="/docs/v1/frontmatter" data-trio-link>Front Matter</a></li>
-    <li><a href="/docs/v1/tagattributes" data-trio-link>Tag Attributes</a></li>
-    <li><a href="/docs/v1/collections" data-trio-link>Collections</a></li>
+    <li><a href="/docs/v2/fragment" data-trio-link>Fragment</a></li>
+    <li><a href="/docs/v2/template" data-trio-link>Template</a></li>
+    <li><a href="/docs/v2/include" data-trio-link>Include</a></li>
+    <li><a href="/docs/v2/jsondata" data-trio-link>JSON Data</a></li>
+    <li><a href="/docs/v2/metadata" data-trio-link>Metadata</a></li>
+    <li><a href="/docs/v2/tagbasedcallbacks" data-trio-link>Tag-Based Callbacks</a></li>
+    <li><a href="/docs/v2/frontmatter" data-trio-link>Front Matter</a></li>
+    <li><a href="/docs/v2/tagattributes" data-trio-link>Tag Attributes</a></li>
+    <li><a href="/docs/v2/collections" data-trio-link>Collections</a></li>
 </ul>

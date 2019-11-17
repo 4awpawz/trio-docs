@@ -8,7 +8,7 @@ activeDocIndexItem: 13
 
 <h1>Tag-Based Callbacks</h1>
 
-<p>Trio scans your composites for tags that are decorated with the <a href="/docs/v1/tagattributes#data-trio-callback">data-trio-callback</a> attribute and calls the JavaScript Node modules they name <em>asynchronously</em>, passing them a single object whose properties can be used along with <a target="_blank" href="https://cheerio.js.org/">cheerio</a>'s selector API to augment the composites with dynamic content.</p>
+<p>Trio scans your composites for tags that are decorated with the <a href="/docs/v2/tagattributes#data-trio-callback">data-trio-callback</a> attribute and calls the JavaScript Node modules they name <em>asynchronously</em>, passing them a single object whose properties can be used along with <a target="_blank" href="https://cheerio.js.org/">cheerio</a>'s selector API to augment the composites with dynamic content.</p>
 
 <ul>
     <li><em>file location</em>: root/source/callbacks</li>
@@ -121,7 +121,7 @@ module.exports = ({ $tag, site }) => {
 </figure>
 
 <h3 id="site">site</h3>
-<p>site exposes the organized collection of <a href="/docs/v1/metadata#site">metadata</a> that Trio creates from your project's assets. Its catalogs - <a href="/docs/v1/metadata#frags">frags</a>, <a href="/docs/v1/metadata#articles-catalog">articlesCatalog</a>, <a href="/docs/v1/metadata#categories-catalog">categoriesCatalog</a>, <a href="/docs/v1/metadata#tags-catalog">tagsCatalog</a>, <a href="/docs/v1/metadata#data-catalog">dataCatalog</a> - as well as its other properties can be used to augment your composites with dynamic data.</p>
+<p>site exposes the organized collection of <a href="/docs/v2/metadata#site">metadata</a> that Trio creates from your project's assets. Its catalogs - <a href="/docs/v2/metadata#frags">frags</a>, <a href="/docs/v2/metadata#articles-catalog">articlesCatalog</a>, <a href="/docs/v2/metadata#categories-catalog">categoriesCatalog</a>, <a href="/docs/v2/metadata#tags-catalog">tagsCatalog</a>, <a href="/docs/v2/metadata#data-catalog">dataCatalog</a> - as well as its other properties can be used to augment your composites with dynamic data.</p>
 <figure>
     <pre><code class="js">module.exports = ({ $tag, site }) => {
     site.tagsCatalog.forEach(item => {
@@ -137,7 +137,7 @@ module.exports = ({ $tag, site }) => {
 </figure>
 
 <h3 id="asset">asset</h3>
-<p>asset exposes the <a href="/docs/v1/metadata#asset">metadata specific to the fragment</a>, including its <em>front matter</em>. It's catalogs - <a href="/docs/v1/metadata#related-articles-by-category">relatedArticlesByCategory</a>, <a href="/docs/v1/metadata#related-articles-by-tag">relatedArticlesByTag</a>, <a href="/docs/v1/metadata#related-articles-by-tag-flattened">relatedArticlesByTagFlattened</a> - as well as its other properties can be used to augment your composites with dynamic data.</p>
+<p>asset exposes the <a href="/docs/v2/metadata#asset">metadata specific to the fragment</a>, including its <em>front matter</em>. It's catalogs - <a href="/docs/v2/metadata#related-articles-by-category">relatedArticlesByCategory</a>, <a href="/docs/v2/metadata#related-articles-by-tag">relatedArticlesByTag</a>, <a href="/docs/v2/metadata#related-articles-by-tag-flattened">relatedArticlesByTagFlattened</a> - as well as its other properties can be used to augment your composites with dynamic data.</p>
 <figure>
     <pre><code class="js">module.exports = ({ $tag, asset }) => {
     const data = asset.matter.data;
@@ -188,7 +188,7 @@ dataDependencies:
 
 <p>To remedy this situation, you can add the <em>alwaysBuild</em> property to your fragment's front matter which will cause Trio to always mark this fragment as stale.</p>
 
-<blockquote class="note-tip"><p>Using <a href="/docs/v1/collections">collections</a>, which was introduced in v2.0.0, can often eliminate having to use this.</p></blockquote>
+<blockquote class="note-tip"><p>Using <a href="/docs/v2/collections">collections</a>, which was introduced in v2.0.0, can often eliminate having to use this.</p></blockquote>
 <figure>
 <pre><code class="html">&lt;!--
 template: blogpage
@@ -200,11 +200,11 @@ alwaysBuild: true
 <h2>See Also</h2>
 
 <ul>
-    <li><a data-trio-link href="/docs/v1/keyconcepts">Key Concepts</a></li>
-    <li><a data-trio-link href="/docs/v1/fragment">Fragment</a></li>
-    <li><a data-trio-link href="/docs/v1/tagattributes">Tag Attributes</a></li>
-    <li><a data-trio-link href="/docs/v1/frontmatter">Front Matter</a></li>
-    <li><a data-trio-link href="/docs/v1/metadata">Metadata</a></li>
-    <li><a data-trio-link href="/docs/v1/incrementalbuild">Incremental Build</a></li>
+    <li><a data-trio-link href="/docs/v2/keyconcepts">Key Concepts</a></li>
+    <li><a data-trio-link href="/docs/v2/fragment">Fragment</a></li>
+    <li><a data-trio-link href="/docs/v2/tagattributes">Tag Attributes</a></li>
+    <li><a data-trio-link href="/docs/v2/frontmatter">Front Matter</a></li>
+    <li><a data-trio-link href="/docs/v2/metadata">Metadata</a></li>
+    <li><a data-trio-link href="/docs/v2/incrementalbuild">Incremental Build</a></li>
     <li><a target="_blank" href="https://www.npmjs.com/package/cheerio">cheerio</a></li>
 </ul>
