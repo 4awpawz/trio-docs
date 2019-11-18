@@ -311,7 +311,7 @@ $linkcolor: $docpageheadercolor;
     }
 }
 
-@include media-query-up(md) {
+@include media-query-up(lg) {
     .doc-page {
         display: flex;
         flex-flow: row nowrap;
