@@ -290,10 +290,10 @@ $linkcolor: $docpageheadercolor;
                 &:before {
                     content: "Important";
                     display: block;
-                    color: black;
+                    color: darkorange;
                     font-weight: bold;
-                    font-size: 1.1rem;
-                    margin-bottom: 0.5rem;
+                    font-size: 2rem;
+                    margin-bottom: 1rem;
                 }
             }
             .note-tip {
