@@ -3,7 +3,7 @@ template: docpage
 title: Page Generation - Trio
 appendToTarget: true
 activeHeaderItem: 2
-activeDocIndexItem: 5
+activeDocIndexItem: 6
 -->
 
 <h1>Page Generation</h1>
@@ -43,26 +43,6 @@ activeDocIndexItem: 5
 <p><mark>As the examples above demonstrate, when Trio creates your blog article pages, Trio will create the appropriate parent folders for the page if they don't already exist.</mark></p>
 
 <blockquote class="note-tip"><p>You can change the name of the public blog folder to something other than "blog" by adding the <em>"blogFolderName"</em> property to your project's <em>root/trio.json</em> configuration file, and assign it a different name.</p></blockquote>
-
-<h2>Linking Conventions</h2>
-
-<p>The following linking conventions are supported:</p>
-
-    <h3>Absolute URLs</h3>
-    <p><em>https://4awpawz.github.io/trio-docs-pages/docs/</em> is appropriate to use when linking to remote/non-internal resource but inappropriate to use when linking to your site's internal resources because it is brittle; a change in the sites domain would require a global refactoring of your site to change each occurrence.
-Root Relative</p>
-
-    <h3>Site Relative URLs</h3>
-    <p><em>/docs</em> is appropriate for internal links; `/` means that the link is relative to the root of your site.</p>
-
-    <h3>Page Relative URLs</h3>
-    <p><em>../docs</em> is appropriate for internal links; `..` means it is relative to the page in which it is being used.</p>
-
-<h2 id="baseurl">Base URL</h2>
-
-<p>Some Web hosting services that host your site in a subfolder will require that your site's <em>root relative</em> URLs begin with the subfolder's name. For example, the site at <em>https://4awpawz.github.io/trio-docs-pages</em> is hosted on Github Pages and linking with <em>&lt;a href="/docs/v1"&gt;Documentation&lt;/a&gt;</em> wouldn't work but linking with <em>&lt;a href="/trio-docs-pages/docs/v1"&gt;Documentation&lt;/a&gt;</em> would work.</p>
-
-<p>In this case, you can decorate your links using the <em>data-trio-link</em> attribute (e.g <em>&lt;a data-trio-link href="/docs/v1"&gt;Documentation&lt;/a&gt;</em>) along with a base URL, such as <em>/trio-docs-pages</em>, that you define in your project's <em>root/trio.js</em> configuration file and Trio will prepend it to your link's URL to produce <em>&lt;a href="/trio-docs-pages/docs/v1"&gt;Documentation&lt;/a&gt;</em>.</p>
 
 <h2 id="wip">WIP Pages</h2>
 

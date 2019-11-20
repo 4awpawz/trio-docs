@@ -5,7 +5,7 @@ $linkcolor: $docpageheadercolor;
 
 .doc-page {
     &-index {
-        width: 100%;
+        width: 50%;
         &__header {
             display: inline-block;
             color: $docpageheadercolor;
@@ -41,26 +41,26 @@ $linkcolor: $docpageheadercolor;
                 }
             }
 
-            &-item:before {
-                content: "▪";
-                float: left;
-                margin-right: 0.5rem;
-                color: $linkcolor;
-                line-height: 100%;
-            }
+            // &-item:before {
+            //     content: "▪";
+            //     float: left;
+            //     margin-right: 0.5rem;
+            //     color: $linkcolor;
+            //     line-height: 100%;
+            // }
 
             &-item-link:hover,
             &-item-link:focus {
                 background-color: rgba($linkcolor, 0.1);
                 color: $linkcolor;
-                border-radius: 5px;
+                border-radius: 3px;
                 font-weight: bold;
                 border-color: $linkcolor;
             }
 
             &-item-link--current {
                 background-color: rgba($linkcolor, 0.1);
-                border-radius: 5px;
+                border-radius: 3px;
                 color: $linkcolor;
                 font-weight: bold;
             }
@@ -321,7 +321,7 @@ $linkcolor: $docpageheadercolor;
             width: 250px;
             padding-right: 10px;
             max-height: 100%;
-            padding-bottom: 6rem;
+            padding-bottom: 10rem;
 
             &__list-container {
                 padding-right: 10px;
