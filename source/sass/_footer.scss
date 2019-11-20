@@ -1,20 +1,28 @@
+%footer-shared {
+    // &extend @include full-width-margins;
+    width: 100%;
+    margin-top: 3rem;
+    padding: 3rem 15px;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+    font-size: 0.8rem;
+    color: #5a5a5a;
+    line-height: 1.3rem;
+}
+
 .footer {
-    &-container {
-        width: 100%;
-        margin-top: 3rem;
-        padding: 3rem 15px;
-        border-top: 1px solid rgba(0, 0, 0, .1);
-        font-size: 1rem;
-        color: #5a5a5a;
-    }
+    @extend %footer-shared;
     p {
-        margin-bottom: .7rem;
         a {
             color: #5a5a5a;
             text-decoration: underline;
         }
         .heart {
             color: red;
+        }
+    }
+    &--hide-the-love {
+        .show-the-love {
+            display: none;
         }
     }
 }
@@ -33,23 +41,6 @@
         &-container {
             margin-top: 0;
         }
-        &__copy-middle {
-            display: flex;
-            // justify-content: space-around;
-            justify-content: space-between;
-            &-left {
-                max-width: 45%;
-                flex: 50%;
-                // justify-self: flex-start;
-            }
-            &-right {
-                max-width: 45%;
-                flex: 50%;
-                // justify-self: flex-end;
-                text-align: right;
-
-            }
-        }
     }
 }
 
@@ -65,4 +56,10 @@
     .footer {
         width: 1140px;
     }
+}
+
+.docpagefooter {
+    @extend %footer-shared;
+    padding-left: 0;
+    padding-right: 0;
 }
