@@ -103,11 +103,11 @@ $color-purple: rgba($purple, 1);
                 color: inherit;
                 letter-spacing: 1px;
 
-                &:focus {
-                    background-color: rgba($hoverbgcolor-darkgreen, $menuhoveropacity);
-                    color: $bgcolor-white;
-                    border-radius: 3px;
-                }
+                // &:focus {
+                //     background-color: rgba($hoverbgcolor-darkgreen, $menuhoveropacity);
+                //     color: $bgcolor-white;
+                //     border-radius: 3px;
+                // }
             }
         }
     }
