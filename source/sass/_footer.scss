@@ -1,7 +1,6 @@
 %footer-shared {
     width: 100%;
     margin-top: 3rem;
-    padding: 3rem 15px;
     border-top: 1px solid rgba(0, 0, 0, 0.05);
     font-size: 0.8rem;
     color: #5a5a5a;
@@ -10,6 +9,7 @@
 
 .footer {
     @extend %footer-shared;
+    padding: 3rem 15px;
     p {
         a {
             color: #5a5a5a;
@@ -54,5 +54,24 @@
 @include media-query-up(xl) {
     .footer {
         width: 1140px;
+    }
+}
+
+.docfooter {
+    @extend %footer-shared;
+    padding: 3rem 15px 3rem 0;
+    p {
+        a {
+            color: #5a5a5a;
+            text-decoration: underline;
+        }
+        .heart {
+            color: red;
+        }
+    }
+    &--hide-the-love {
+        .show-the-love {
+            display: none;
+        }
     }
 }
