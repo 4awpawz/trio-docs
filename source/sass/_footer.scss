@@ -57,7 +57,7 @@
     }
 }
 
-.docfooter {
+.docfooter, .blogfooter {
     @extend %footer-shared;
     padding: 3rem 15px 3rem 0;
     p {
