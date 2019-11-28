@@ -71,11 +71,25 @@ appendToTarget: true
 <p>collection is a reference to the fragment's front matter's <a href="#collection-fragments">collection hash</a>.</p>
 
 <blockquote class="note-important"><p>Filter functions are called <em>synchronously</em>.</p></blockquote>
+
 <figure>
 <pre><code class="javascript">module.exports = ({ <mark>site</mark>, <mark>collection</mark> }) =>
     site.dataCatalog.team.map(<mark>item</mark> =>
         ({ <mark>pageName</mark>: `${item.firstName} ${item.lastName}`, <mark>item</mark> }));</code></pre>
 <figcaption>Example: Filter Function Returning A Collection Dataset</figcaption>
+</figure>
+
+<h2>Importing Uncached Internal Module Dependencies</h2>
+
+<p>When your filter functions have their own internal module dependencies, you should import them using <a target="_blank" href="https://www.npmjs.com/package/require-uncached"><em>require-uncached</em></a> (or some similar package) to guarantee that you are always importing fresh, uncached copies of them and they reflect your most recent changes.</p>
+
+<figure>
+<pre><code class="JavaScript"><mark>const requireUncached = require('require-uncached');</mark>
+<mark>const pageName = requireUncached("./lib/pageName");</mark>
+module.exports = ({ site, collection }) =>
+    site.dataCatalog.team.map(item =>
+        ({ pageName: `${<mark>pageName</mark>(item.firstName, item.lastName)}`, item }));</code></pre>
+<figcaption>Example: Filter Function Importing Uncached Module Dependency</figcaption>
 </figure>
 
 <h2 id="tag-based-callbacks">Tag-Based Callbacks</h2>
