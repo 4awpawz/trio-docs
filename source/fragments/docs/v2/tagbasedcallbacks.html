@@ -17,27 +17,6 @@ activeDocIndexItem: 15
 
 <blockquote class="note-tip"><p>Trio treats your project's markup as plain text, meaning there is no DOM involved and parses it using the <em>jQuery-like</em> selector API provided by the awesome <a target="_blank" href="https://cheerio.js.org/">cheerio</a> OS library. jQuery's selector API documentation can be found at <a target="_blank" href="https://jquery.com/">jquery.com</a>.</p></blockquote>
 
-<figure>
-<pre><code class="JavaScript">/*
-moduleDependencies: ./lib/capitalize
-*/
-const capitalize = require("./lib/capitalize");
-
-module.exports = ({ $tag, site }) => {
-    site.articlesCount && site.articlesCatalog.forEach(item => {
-        const data = item.matter.data;
-        $tag.append(`
-                &lt;li&gt;
-                    &lt;a data-trio-link href="${item.url}"&gt;
-                        ${data.title} - Posted to ${capitalize(data.category[0])} - ${item.articleDate}
-                    &lt;/a&gt;
-                &lt;/li&gt;
-            `);
-    });
-};</code></pre>
-<figcaption>Example: Tag-Based Callback</figcaption>
-</figure>
-
 <h2>Declaring Tag-Based Callbacks In Your Markup</h2>
 
 <p>To declare tag-based callbacks in your markup you decorate the tags you want to target in <em>template</em>, <em>fragment</em> and <em>include</em> assets with <em>data-trio-callback</em> attributes, and assign them the names of the callbacks located in the <em>root/source/callbacks</em> folder:</p>
@@ -149,51 +128,92 @@ module.exports = ({ $tag, site }) => {
 <figcaption>Example: Targeting A Tag's Content With Data From asset</figcaption>
 </figure>
 
+<h2>Importing Uncached Internal Module Dependencies</h2>
+
+<p>When your tag-based-callbacks have their own internal module dependencies, you should import them using <a target="_blank" href="https://www.npmjs.com/package/require-uncached"><em>require-uncached</em></a> (or some similar package) to guarantee that you are always importing fresh, uncached copies of them and they reflect your most recent changes.</p>
+
+<figure>
+<pre><code class="JavaScript"><mark>const requireUncached = require('require-uncached');</mark>
+<mark>const capitalize = requireUncached("./lib/capitalize");</mark>
+
+module.exports = ({ $tag, site }) => {
+    site.articlesCount && site.articlesCatalog.forEach(item => {
+        const data = item.matter.data;
+        $tag.append(`
+                &lt;li&gt;
+                    &lt;a data-trio-link href="${item.url}"&gt;
+                        ${data.title} - Posted to ${<mark>capitalize</mark>(data.category[0])} - ${item.articleDate}
+                    &lt;/a&gt;
+                &lt;/li&gt;
+            `);
+    });
+};</code></pre>
+<figcaption>Example: Tag-Based Callback Importing Uncached Module Dependency</figcaption>
+</figure>
+
 <h2 id="declaringinternaldependencies">Declaring Internal Dependencies To Trigger Incremental Builds</h2>
 
 <p>When building incrementally, Trio will detect that you have made modifications to your tag-based callbacks, and it will trigger a build to regenerate only those composites whose assets relate by way of their chains of dependencies to the modified callback. However, Trio will not automatically trigger a build when:</p>
 
 <ul>
-    <li>You have made modifications to modules that your tag-based callbacks might requires, such as to a library that you created in root/source/callbacks/lib.</li>
+    <li>You have made modifications to modules that your tag-based callbacks might require (internal module dependencies), such as to a library that you created in root/source/callbacks/lib.</li>
     <li>You have made modifications to JSON files in the root/source/data folder that your tag-based callbacks might require</li>
 </ul>
 
 <p>To remedy these 2 situations, you can optionally add front matter to your tag-based callbacks with the properties discussed below that will inform Trio to trigger a build whenever these internal dependencies are modified.</p>
 
 <h3>Declaring Your Module Dependencies</h3>
-<p>Declare your module dependencies using the <mark>moduleDependencies</mark> property.</p>
+<p>You can declare a single module dependency using the <mark>moduleDependencies</mark> property</p>
+<figure>
+<pre><code class="js">/*
+moduleDependencies: ./lib/getDate
+*/</code></pre>
+<figcaption>Example: Declaring A Single Module Dependency</figcaption>
+</figure>
+
+<p>and you can declare multiple module dependencies.</p>
+
 <figure>
 <pre><code class="js">/*
 moduleDependencies:
 - ./lib/getDate
 - ./lib/getTime
 */</code></pre>
-<figcaption>Example: Declaring Module Dependencies</figcaption>
+<figcaption>Example: Declaring Multiple Module Dependencies</figcaption>
 </figure>
 
 <h3>Declaring Your JSON Data File Dependencies</h3>
-<p>Declare your JSON file dependencies using the <mark>dataDependencies</mark> property.</p>
+<p>You can declare a single JSON file dependency using the <mark>dataDependencies</mark> property.</p>
+<figure>
+<pre><code class="js">/*
+dataDependencies: contactInfo
+*/</code></pre>
+<figcaption>Example: Declaring A Single JSON File Dependencies</figcaption>
+</figure>
+
+<p>and you can declare multiple JSON file dependencies.</p>
+
 <figure>
 <pre><code class="js">/*
 dataDependencies:
 - contactInfo
 - portfolio
 */</code></pre>
-<figcaption>Example: Declaring JSON File Dependencies</figcaption>
+<figcaption>Example: Declaring Multiple JSON File Dependencies</figcaption>
 </figure>
 
 <h2 id="declaringexternaldependencies">Declaring External Dependencies On Metadata To Trigger Incremental Builds</h2>
 
-<p>When building incrementally, Trio will detect that you have made modifications to your fragment, include, template and tag-based callback assets, and it will trigger a build to regenerate only those composites whose assets relate by way of their chains of dependencies to those modified assets. However, Trio will not regenerate composites whose own assets haven't changed but which consume the metadata generated from unrelated modified assets, such as when generating pages that contain lists of other pages (e.g. blog pages, tag pages, category pages, catalog pages, portfolio pages, etc.).</p>
+<p>When building incrementally, Trio will detect that you have made modifications to your fragment, include, template and tag-based callback assets, and it will trigger a build to regenerate only those composites whose assets relate by way of their chains of dependencies to those modified assets. However, Trio will not regenerate composites whose own assets haven't changed but which consume the metadata generated from unrelated modified assets, such as for pages that contain lists of other pages (e.g. blog index pages, tag pages, category pages, catalog pages, portfolio pages, etc.).</p>
 
 <p>To remedy this situation, you can add the <em>alwaysBuild</em> property to your fragment's front matter which will cause Trio to always mark this fragment as stale.</p>
 
-<blockquote class="note-tip"><p>Using <a href="/docs/v2/collections">collections</a>, which was introduced in v2.0.0, can often eliminate having to use this.</p></blockquote>
+<blockquote class="note-tip"><p>Using <a href="/docs/v2/collections">collections</a>, which were introduced in v2.0.0, can eliminate having to use <em>alwaysBuild</em>.</p></blockquote>
 <figure>
 <pre><code class="html">&lt;!--
 template: blogpage
 title: Trio Blog | Official blog for Trio static site generator.
-alwaysBuild: true
+<mark>alwaysBuild: true</mark>
 --&gt;</code></pre>
 <figcaption>Example: Using The Front Matter alwaysBuild Property</figcaption>
 </figure>
