@@ -81,11 +81,11 @@ appendToTarget: true
 
 <h2>Importing Uncached Internal Module Dependencies</h2>
 
-<p>When your filter functions have their own internal module dependencies, you should import them using <a target="_blank" href="https://www.npmjs.com/package/require-uncached"><em>require-uncached</em></a> (or some similar package) to guarantee that you are always importing fresh, uncached copies of them and they reflect your most recent changes.</p>
+<p>When your filter functions have their own internal module dependencies, you should import those dependencies using <a target="_blank" href="https://www.npmjs.com/package/import-fresh"><em>import-fresh</em></a> (or some similar package) to guarantee that you are always importing fresh, uncached copies of them and they reflect your most recent changes.</p>
 
 <figure>
-<pre><code class="JavaScript"><mark>const requireUncached = require('require-uncached');</mark>
-<mark>const pageName = requireUncached("./lib/pageName");</mark>
+<pre><code class="JavaScript"><mark>const importFresh = require('import-fresh');</mark>
+<mark>const pageName = importFresh("./lib/pageName");</mark>
 module.exports = ({ site, collection }) =>
     site.dataCatalog.team.map(item =>
         ({ pageName: `${<mark>pageName</mark>(item.firstName, item.lastName)}`, item }));</code></pre>

@@ -130,11 +130,11 @@ activeDocIndexItem: 15
 
 <h2>Importing Uncached Internal Module Dependencies</h2>
 
-<p>When your tag-based-callbacks have their own internal module dependencies, you should import them using <a target="_blank" href="https://www.npmjs.com/package/require-uncached"><em>require-uncached</em></a> (or some similar package) to guarantee that you are always importing fresh, uncached copies of them and they reflect your most recent changes.</p>
+<p>When your tag-based-callbacks have their own internal module dependencies, you should import those dependencies using <a target="_blank" href="https://www.npmjs.com/package/import-fresh"><em>import-fresh</em></a> (or some similar package) to guarantee that you are always importing fresh, uncached copies of them and they reflect your most recent changes.</p>
 
 <figure>
-<pre><code class="JavaScript"><mark>const requireUncached = require('require-uncached');</mark>
-<mark>const capitalize = requireUncached("./lib/capitalize");</mark>
+<pre><code class="JavaScript"><mark>const importFresh = require('import-fresh');</mark>
+<mark>const capitalize = importFresh("./lib/capitalize");</mark>
 
 module.exports = ({ $tag, site }) => {
     site.articlesCount && site.articlesCatalog.forEach(item => {
