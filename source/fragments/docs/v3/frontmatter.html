@@ -8,7 +8,7 @@ activeDocIndexItem: 8
 
 <h1>Front Matter</h1>
 
-<p>The inclusion of front matter is required for <a data-trio-link href="/docs/v2/fragment">fragment</a> assets and is optional for <a data-trio-link href="/docs/v2/include">include</a> and <a data-trio-link href="/docs/v2/tagbasedcallbacks">tag-based callback</a> assets.</p>
+<p>The inclusion of front matter is required for <a data-trio-link href="/docs/v3/fragment">fragment</a> assets and is optional for <a data-trio-link href="/docs/v3/include">include</a> and <a data-trio-link href="/docs/v3/tagbasedcallbacks">tag-based callback</a> assets.</p>
 
 <p>Front matter must be placed at the very top of the file and it must be surrounded by opening and closing delimiters that are appropriate for the asset's file type.</p>
 
@@ -57,7 +57,7 @@ This will be in the excerpt.
 <h3>template</h3>
 <ul>
     <li><em>required</em>, type <em>string</em></h3></li>
-    <li>Names the <a data-trio-link href="/docs/v2/template">template</a> (<mark>as of v2, the `.html` file extension isn't required</mark>) that the fragment is associated with.</li>
+    <li>Names the <a data-trio-link href="/docs/v3/template">template</a> (<mark>as of v2, the `.html` file extension isn't required</mark>) that the fragment is associated with.</li>
 </ul>
 
 <h3>title</h3>
@@ -78,14 +78,14 @@ This will be in the excerpt.
 <blockquote class="note-tip"><p>Fragments that include the <em>collections</em> property in their front matter are always treated as if they are stale and therefore they never need to include the <em>alwaysBuild</em> property.</p></blockquote>
 <ul>
     <li><em>optional</em>, type <em>hash</em>, default value <em>none</em></li>
-    <li>See <a href="/docs/v2/collections">Collections</a> for more information.</li>
+    <li>See <a href="/docs/v3/collections">Collections</a> for more information.</li>
 </ul>
 
 <h3>collection<br>.filterFn</h3>
 <ul>
     <li><em>required</em>, type <em>string</em>, default value <em>none</em></li>
     <li>Names the JavaScript module in the <em>source/filters</em> folder that Trio calls to return the data it will use to create the pages in the collection.</li>
-    <li>See <a href="/docs/v2/collections">Collections</a> for more information.</li>
+    <li>See <a href="/docs/v3/collections">Collections</a> for more information.</li>
 </ul>
 
 <h3>alwaysBuild</h3>
@@ -93,7 +93,7 @@ This will be in the excerpt.
     <li><em>optional</em>, type <em>boolean</em>, default value <em>false</em></li>
     <li>If <em>true</em> then Trio will always treat this fragment as if it is <em>stale</em> when building your project incrementally.</li>
     <li>This should be used when generating composites that consume the metadata generated from assets that are <em>unrelated to this composite</em>, such as when generating pages that contain lists of other pages (e.g. blog pages, tag pages, category pages, catalog pages, portfolio pages, etc.).</li>
-    <li>See <a href="/docs/v2/tagbasedcallbacks#declaringexternaldependencies" data-trio-link>Declaring External Dependencies To Trigger Incremental Builds</a> for details.</li>
+    <li>See <a href="/docs/v3/tagbasedcallbacks#declaringexternaldependencies" data-trio-link>Declaring External Dependencies To Trigger Incremental Builds</a> for details.</li>
 </ul>
 
 <h3>custom properties</h3>
@@ -118,7 +118,7 @@ This will be in the excerpt.
 <h2>Predefined Front Matter Properties For Tag Page Fragments</h2>
 
 <h3>forTag</h3>
-<blockquote class="note-important"><p>The <em>forTag</em> property is no longer supported as of v2.0.0. Please use <a href="/docs/v2/collections">Collections</a> for similar use cases instead.</p></blockquote>
+<blockquote class="note-important"><p>The <em>forTag</em> property is no longer supported as of v2.0.0. Please use <a href="/docs/v3/collections">Collections</a> for similar use cases instead.</p></blockquote>
 <ul>
     <li><em>optional</em>, type <em>string</em>, default value <em>none</em></li>
     <li>Can be used in tag-based callbacks to filter blog articles by their <em>tag property</em>.</li>
@@ -127,7 +127,7 @@ This will be in the excerpt.
 <h2>Predefined Front Matter Properties For Category Page Fragments</h2>
 
 <h3>forCategory</h3>
-<blockquote class="note-important"><p>The <em>forCategory</em> property is no longer supported as of v2.0.0. Please use <a href="/docs/v2/collections">Collections</a> for similar use cases instead.</p></blockquote>
+<blockquote class="note-important"><p>The <em>forCategory</em> property is no longer supported as of v2.0.0. Please use <a href="/docs/v3/collections">Collections</a> for similar use cases instead.</p></blockquote>
 <ul>
     <li><em>optional</em>, type <em>string</em>, default value <em>none</em></li>
     <li>Can be used in tag-based callbacks to filter articles by their <em>category property</em>.</li>
@@ -153,25 +153,25 @@ This will be in the excerpt.
 <ul>
     <li><em>optional</em>, type <em>string | array</em>, default value <em>none</em></li>
     <li>Used to declare one or more JSON data file dependencies.</li>
-    <li>See <a href="/docs/v2/tagbasedcallbacks#declaringinternaldependencies" data-trio-link="">Declaring Internal Dependencies To Trigger Incremental Builds</a> for details.</li>
+    <li>See <a href="/docs/v3/tagbasedcallbacks#declaringinternaldependencies" data-trio-link="">Declaring Internal Dependencies To Trigger Incremental Builds</a> for details.</li>
 </ul>
 
 <h3>moduleDependencies</h3>
 <ul>
     <li><em>optional</em>, type <em>string | array</em>, default value <em>none</em></li>
     <li>Used to declare one or more Node module dependencies.</li>
-    <li>See <a href="/docs/v2/tagbasedcallbacks#declaringinternaldependencies" data-trio-link="">Declaring Internal Dependencies To Trigger Incremental Builds</a> for details.</li>
+    <li>See <a href="/docs/v3/tagbasedcallbacks#declaringinternaldependencies" data-trio-link="">Declaring Internal Dependencies To Trigger Incremental Builds</a> for details.</li>
 </ul>
 
 <h2>See Also</h2>
 
 <ul>
-<li><a data-trio-link href="/docs/v2/keyconcepts">Key Concepts</a></li>
-<li><a data-trio-link href="/docs/v2/fragment">Fragment</a></li>
-<li><a data-trio-link href="/docs/v2/include">Include</a></li>
-<li><a data-trio-link href="/docs/v2/metadata">Metadata</a></li>
-<li><a data-trio-link href="/docs/v2/tagbasedcallbacks">Tag-Based Callbacks</a></li>
-<li><a data-trio-link href="/docs/v2/blogging">Blogging</a></li>
-<li><a data-trio-link href="/docs/v2/collections">Collections</a></li>
-<li><a data-trio-link href="/docs/v2/incrementalbuild">Incremental Build</a></li>
+<li><a data-trio-link href="/docs/v3/keyconcepts">Key Concepts</a></li>
+<li><a data-trio-link href="/docs/v3/fragment">Fragment</a></li>
+<li><a data-trio-link href="/docs/v3/include">Include</a></li>
+<li><a data-trio-link href="/docs/v3/metadata">Metadata</a></li>
+<li><a data-trio-link href="/docs/v3/tagbasedcallbacks">Tag-Based Callbacks</a></li>
+<li><a data-trio-link href="/docs/v3/blogging">Blogging</a></li>
+<li><a data-trio-link href="/docs/v3/collections">Collections</a></li>
+<li><a data-trio-link href="/docs/v3/incrementalbuild">Incremental Build</a></li>
 </ul>
