@@ -8,13 +8,15 @@ activeDocIndexItem: 20
 
 <h1>Incremental Build</h1>
 
-<p>Using Trio's incremental build feature can significantly reduce the amount of time that it takes to build your site. The actual performance gains that you experience, though, for your own projects, greatly depends on a number of arbitrary factors, such as the hardware that you are running it on, the number of pages that need to be built, the amount of time that it takes your tag-based callbacks to complete, etc.</p>
+<p>Using Trio's incremental build feature can significantly reduce the amount of time that it takes to build your site. The actual performance gains that you experience for your own projects greatly depends on a number of arbitrary factors, such as the hardware that you are running it on, the number of pages that need to be built, the amount of time that it takes your tag-based callbacks to complete, etc.</p>
 
-<p>The incremental build feature does incur some additional overhead of its own, so  smaller projects may not experience as much of a performance advantage as do larger projects.</p>
+<p>The incremental build feature does incur some additional overhead of its own, so  smaller projects may not experience as much of a performance advantage as do larger projects and may in fact build faster without it.</p>
 
-<p>As an anecdotal example, building a site having 44 pages without incremental build took approximately 4.5 seconds. Building the same site with one stale fragment using incremental build took approximately 1.2 seconds, and of that 1.2 seconds, approximately 30 milliseconds seconds of that can be attributed directly to the overhead incurred by the incremental build process itself.</p>
+<blockquote class="note-important"><p>Deleting or renaming files while Trio is not running (while off-line) will cause Trio's cache to be out of sync with the actual state of your project, which will cause subsequent incremental builds to fail. In such cases, you are advised to delete and rename your files while off-line, and then, prior to running an incremental build, to first run a one-off build using <code>trio build | b</code>, which will trigger Trio to regenerate its cache.</p></blockquote>
 
-<p>These tests were repeated 10 times on a 13 inch 2009 late model classic white 2.26 GHz Intel Core 2 Duo MacBook with 8 gigabytes of memory and a spinning hard drive. Had these tests been performed running on a more modern hardware setup, one with quad core processors, faster internal memory and an SSD, the actual performance gains realized would obviously have been significantly greater.</p>
+<p>As an anecdotal example, building a site having 56 pages without incremental build took approximately 5 seconds. Building the same site with one stale fragment using incremental build took approximately 1 seconds, and of that 1 seconds, approximately 400 milliseconds seconds of that can be attributed directly to the overhead incurred by the incremental build process itself.</p>
+
+<p>These tests were repeated 10 times on a 13 inch 2009 late model classic white 2.26 GHz Intel Core 2 Duo MacBook with 8 gigabytes of memory and a spinning hard drive. Had these tests been performed running on a more modern hardware setup, one with current generation multi core processors, faster internal memory and an SSD, the actual performance gains realized would obviously have been significantly greater.</p>
 
 <h2>See Also</h2>
 

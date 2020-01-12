@@ -8,7 +8,7 @@ activeDocIndexItem: 6
 
 <h1>Page Generation</h1>
 
-<p>When Trio outputs pages to the file system, either to the public or to the release folders, it employs a folder structure and file naming convention that results in URLs that are <a href="https://en.wikipedia.org/wiki/Permalink" target="_blank">permalink</a> friendly and easy to share externally, such as on social media or via email.</p>
+<p>When Trio outputs pages to the file system, either to the public or to the release folders, it employs a folder structure and file naming convention that results in <a href="https://en.wikipedia.org/wiki/Clean_URL" target="_blank">clean, user-friendly URLs</a> that are easy to share externally, such as on social media or via email.</p>
 
 <p>For the remainder of this discussion, the folder named <em>target</em> is used to represent both the public and the release folders that Trio writes to. In both instances, Trio employs the same conventions which are explained below.</p>
 
@@ -16,11 +16,11 @@ activeDocIndexItem: 6
 
 <p>File <em>source/fragments/index.md</em> would be written to <em>target/index.html</em> and its URL would be <em>/</em>.</p>
 
-<p>File <em>source/fragments/about.md</em> would be written to <em>target/about/index.html</em> and its URL would be <em>/about</em>.</p>
+<p>File <em>source/fragments/about.md</em> would be written to <em>target/about/index.html</em> and its URL would be <em>/about/</em>.</p>
 
-<p>File <em>source/fragments/abc/index.md</em> would be written to <em>target/abc/index.html</em> and its URL would be <em>/abc</em>.</p>
+<p>File <em>source/fragments/abc/index.md</em> would be written to <em>target/abc/index.html</em> and its URL would be <em>/abc/</em>.</p>
 
-<p>File <em>source/fragments/abc/contact.md</em> would be written to <em>target/abc/contact/index.html</em> and its URL would be <em>/abc/contact</em>.</p>
+<p>File <em>source/fragments/abc/contact.md</em> would be written to <em>target/abc/contact/index.html</em> and its URL would be <em>/abc/contact/</em>.</p>
 
 <p><mark>As the examples above demonstrate, when Trio creates your non blog-related pages, Trio will create the appropriate parent folders for the page if they don't already exist.</mark></p>
 
@@ -35,20 +35,20 @@ activeDocIndexItem: 6
     </ul>
 </blockquote>
 
-<p>File <em>source/fragments/blog/articles/2018-11-18-articlename.md</em> would be written to <em>target/blog/2018/11/18/articlename/index.html</em> and its URL would be <em>/blog/2018/11/18/articlename/</em>.
+<p>File <em>source/fragments/articles/2018-11-18-articlename.md</em> would be written to <em>target/2018/11/18/articlename/index.html</em> and its URL would be <em>/2018/11/18/articlename/</em>.
 </p>
 
-<p>File <em>source/fragments/blog/articles/2018-11-18-articlename.md</em> declares <em>category: abc</em> in its front matter and would be written to <em>target/blog/abc/2018/11/18/articlename/index.html</em> and its URL would be <em>/blog/abc/2018/11/18/articlename/</em>.</p>
+<p>File <em>source/fragments/articles/2018-11-18-articlename.md</em> declares <em>category: abc</em> in its front matter and would be written to <em>target/abc/2018/11/18/articlename/index.html</em> and its URL would be <em>/abc/2018/11/18/articlename/</em>.</p>
 
 <p><mark>As the examples above demonstrate, when Trio creates your blog article pages, Trio will create the appropriate parent folders for the page if they don't already exist.</mark></p>
 
-<blockquote class="note-tip"><p>You can change the name of the public blog folder to something other than "blog" by adding the <em>"blogFolderName"</em> property to your project's <em>root/trio.json</em> configuration file, and assign it a different name.</p></blockquote>
+<blockquote class="note-tip"><p>"THIS NEEDS TO UPDATING ONCE THE NEW PERMALINK PAGE IS IN PLACE" You can change the name of the public blog folder to something other than "blog" by adding the <em>"blogFolderName"</em> property to your project's <em>root/trio.json</em> configuration file, and assign it a different name.</p></blockquote>
 
 <h2 id="wip">WIP Pages</h2>
 
-<p>Fragment file name's that you prepend with an underscore (i.e. "_") marks them as a "<em>work in progress</em>" and will be ignored during a release build of your project. This allows you to develop new pages without impacting your release builds.</p>
+<p>Fragment file name's that you prepend with an underscore (i.e. "_") marks them as a "<em>work in progress</em>", and will be ignored during a release build of your project. This allows you to develop new pages without impacting your release builds.</p>
 
-<p><mark>For example, during a release build, article `source/fragments/blog/articles/_2019-01-01-about2019.md` would be ignored.</mark></p>
+<p><mark>For example, during a release build, article `source/fragments/articles/_2019-01-01-articlename.md` would be ignored.</mark></p>
 
 <h2>See Also</h2>
 
@@ -59,5 +59,4 @@ activeDocIndexItem: 6
     <li><a data-trio-link href="/docs/v3/include">Include</a></li>
     <li><a data-trio-link href="/docs/v3/tagbasedcallbacks">Tag-Based Callbacks</a></li>
     <li><a data-trio-link href="/docs/v3/blogging">Blogging</a></li>
-    <li><a data-trio-link href="/docs/v3/configuration">Configuration</a></li>
-</ul>
+    <li><a data-trio-link href="/docs/v3/configuration">Configuration</a></li> </ul>
