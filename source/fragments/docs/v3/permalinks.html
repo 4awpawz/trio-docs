@@ -1,0 +1,92 @@
+<!--
+template: docpage
+title: Collections - Trio
+appendToTarget: true
+activeHeaderItem: 2
+activeDocIndexItem: 19
+-->
+<h1>Permalinks</h1>
+
+<p><mark>Introduced in v3.0.0</mark></p>
+
+<p>Permalinks are used to modify how Trio generates the destination paths and ultimately the URLs of pages that it generates for your site.</p>
+
+<p>Permalinks can be defined in trio.json as well as in the front matter of individual fragment files.</p>
+
+<p>Though originally intended to provide flexibility as to where you wish to target the generation of your blog article pages, Trio's permalink implementation is general enough to be used for other use cases as well, such as grouping your fragment files into easily recognizable sub folders of root/source/fragments.</p>
+
+<blockquote class="note-tip">
+<p>All fragments generated for collections that are targets of permalinks share the same permalink.</p>
+</blockquote>
+
+<h2 id="configuration-based-permalinks">Defining Permalinks In trio.json</h2>
+
+<p>Permalinks that are defined in trio.json must declare one or more <em>target folders</em>, which Trio interprets as being relative to the root/source/fragments folder.</p>
+
+<p>In addition, each permalink must declare the <em>destination path</em> that Trio should apply to all the fragments it finds in the target folders as well as their descendant folders. The destination paths of these permalinks are interpreted as being relative to the root/public (or root/release, if generating a release build) folder.</p>
+
+<p>Parmalinks are defined in trio.json using <em>targets: destination</em> pairs surrounded by either single or double quotes (<em>'</em> or <em>"</em>), where <em>targets</em> is one or more target folders and where <em>destination</em> is the destination path that Trio should apply.
+
+<figure>
+<pre><code class="json"> "permalinks": [
+    "articles: blog"
+]</code></pre>
+<figcaption>Example: Targeting A Single Folder With A Permalink</figcaption>
+</figure>
+
+<p>The permalink defined in the above example directs Trio to apply `/blog` as the destination path for all the fragments that it finds in the root/source/fragments/articles folder and its descendant folders.</p>
+
+<p>You can also use a single permalink to target multiple folders in root/source/fragments with the same destination path as shown below:</p>
+
+<figure>
+<pre><code class="json"> "permalinks": [
+    "articles, categories, tags: blog"
+]</code></pre>
+<figcaption>Example: Targeting Multiple Folders With A Permalink</figcaption>
+</figure>
+
+<p>The permalink defined in the above example directs Trio to apply `/blog` as the destination path for all the fragments that it finds in the root/source/fragments/articles, the root/source/fragments/categories, and the root/source/fragments/tags folders as well as in all their descendant folders.</p>
+
+<h2 id="fragment-based-permalinks">Defining A Permalink In Fragment Front Matter.</h2>
+
+<p>Permalinks defined in fragment front matter only affect the destination paths and ultimately the URLs that are generated for those particular fragments.</p>
+
+<p>The destination paths are interpreted as being relative to the root/public (or root/release, if generating a release build) folder.</p>
+
+<p>To define a permalink in a fragment's front matter, you include the <em>permalink</em> front matter property and assign it the <em>destination path</em> that Trio will use when it generates the destination path for the fragment.</p>
+
+<p>The summary.md fragment in the following example provides summary information for the year 2019, and is located in the <em>source/fragments/history/2019/</em> folder along with other fragment files related to that year. Besides the 2019 folder, the history folder also contains numerous other folders for other prior years:</p>
+
+<figure>
+<pre><code class="html">&lt;!--
+template: default
+title: 2019 Recap
+appendToTarget: true
+permalink: yearinreview/2019
+--&gt;</code></pre>
+<figcaption>Example: Targeting A Single Fragment With A Permalink</figcaption>
+</figure>
+
+<p>The permalink defined in the above example directs Trio to apply <em>/yearinreview/2019</em> as the destination path for the fragment.</p>
+
+<p>As the above example also demonstrates, fragment-based permalinks provide you great flexibility over how you organize the fragments in your projects and how they will be hosted on the generated site.</p>
+
+<h2>Permalink Precedence</h2>
+
+<p>Permalinks defined in fragment front matter always take precedence over those defined in trio.json, which allows you to "fine tune" your site's permalink strategy to fit your specific domain requirements.</p>
+
+
+<!-- ## V3 Breaking Changes -->
+
+<!-- 1. `blog, tags, categories and archive` folders are no longer supported. Use permalinks instead. -->
+<!-- 2. `"blogFolderName"` trio.json configuration option is no longer supported. Use permalink instead. -->
+
+<h2>See Also</h2>
+
+<ul>
+    <li><a data-trio-link href="/docs/v3/configuration">Configuration</a></li>
+    <li><a data-trio-link href="/docs/v3/fragment">Fragment</a></li>
+    <li><a data-trio-link href="/docs/v3/pagegeneration">Page Generation</a></li>
+    <li><a data-trio-link href="/docs/v3/linkingconventions">Linking Conventions</a></li>
+</ul>
+

@@ -12,6 +12,8 @@ activeDocIndexItem: 6
 
 <p>For the remainder of this discussion, the folder named <em>target</em> is used to represent both the public and the release folders that Trio writes to. In both instances, Trio employs the same conventions which are explained below.</p>
 
+<blockquote class="note-tip"><p>You can override how Trio outputs your pages to the file system using <a href="/docs/v3/permalinks">Permalinks</a>.</p></blockquote>
+
 <h2>For Non Blog Article Pages</h2>
 
 <p>File <em>source/fragments/index.md</em> would be written to <em>target/index.html</em> and its URL would be <em>/</em>.</p>
@@ -41,8 +43,6 @@ activeDocIndexItem: 6
 <p>File <em>source/fragments/articles/2018-11-18-articlename.md</em> declares <em>category: abc</em> in its front matter and would be written to <em>target/abc/2018/11/18/articlename/index.html</em> and its URL would be <em>/abc/2018/11/18/articlename/</em>.</p>
 
 <p><mark>As the examples above demonstrate, when Trio creates your blog article pages, Trio will create the appropriate parent folders for the page if they don't already exist.</mark></p>
-
-<blockquote class="note-tip"><p>"THIS NEEDS TO UPDATING ONCE THE NEW PERMALINK PAGE IS IN PLACE" You can change the name of the public blog folder to something other than "blog" by adding the <em>"blogFolderName"</em> property to your project's <em>root/trio.json</em> configuration file, and assign it a different name.</p></blockquote>
 
 <h2 id="wip">WIP Pages</h2>
 
