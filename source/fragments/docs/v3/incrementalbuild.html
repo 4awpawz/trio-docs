@@ -12,7 +12,7 @@ activeDocIndexItem: 21
 
 <p>The incremental build feature does incur some additional overhead of its own, so  smaller projects may not experience as much of a performance advantage as do larger projects and may in fact build faster without it.</p>
 
-<blockquote class="note-important"><p>Deleting or renaming files while Trio is not running (while off-line) will cause Trio's cache to be out of sync with the actual state of your project, which will cause subsequent incremental builds to fail. In such cases, you are advised to delete and rename your files while off-line, and then, prior to running an incremental build, to first run a one-off build using <code>trio build | b</code>, which will trigger Trio to regenerate its cache.</p></blockquote>
+<blockquote class="note-important"><p>Deleting or renaming files while Trio is not running (while off-line) will cause Trio's cache to get out of sync with the actual state of your project, and will cause subsequent incremental builds to fail. In such cases where you delete and rename files while off-line you are advised to first run a one-off build using <code>trio build | b</code> before running incrementally, which will trigger Trio to regenerate its cache.</p></blockquote>
 
 <p>As an anecdotal example, building a site having 56 pages without incremental build took approximately 5 seconds. Building the same site with one stale fragment using incremental build took approximately 1 seconds, and of that 1 seconds, approximately 400 milliseconds seconds of that can be attributed directly to the overhead incurred by the incremental build process itself.</p>
 

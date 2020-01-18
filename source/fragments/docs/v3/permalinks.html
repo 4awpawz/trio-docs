@@ -13,7 +13,7 @@ activeDocIndexItem: 19
 
 <p>Permalinks can be defined in trio.json as well as in the front matter of individual fragment files.</p>
 
-<p>Though originally intended to provide flexibility as to where you wish to target the generation of your blog article pages, Trio's permalink implementation is general enough to be used for other use cases as well, such as grouping your fragment files into easily recognizable sub folders of root/source/fragments.</p>
+<p>Though originally intended to provide flexibility as to where you wish to target the generation of your article pages, Trio's permalink implementation is general enough to be used for other use cases as well, such as grouping your fragment files into easily recognizable and manageable sub folders of root/source/fragments.</p>
 
 <blockquote class="note-tip">
 <p>All fragments generated for collections that are targets of permalinks share the same permalink.</p>
@@ -25,7 +25,7 @@ activeDocIndexItem: 19
 
 <p>In addition, each permalink must declare the <em>destination path</em> that Trio should apply to all the fragments it finds in the target folders as well as their descendant folders. The destination paths of these permalinks are interpreted as being relative to the root/public (or root/release, if generating a release build) folder.</p>
 
-<p>Parmalinks are defined in trio.json using <em>targets: destination</em> pairs surrounded by either single or double quotes (<em>'</em> or <em>"</em>), where <em>targets</em> is one or more target folders and where <em>destination</em> is the destination path that Trio should apply.
+<p>Parmalinks are defined in trio.json using <em>targets: destination pairs</em> surrounded by either single or double quotes (<em>'</em> or <em>"</em>), where <em>targets</em> is one or more target folders and where <em>destination</em> is the destination path that Trio should apply.</p>
 
 <figure>
 <pre><code class="json"> "permalinks": [
@@ -37,6 +37,8 @@ activeDocIndexItem: 19
 <p>The permalink defined in the above example directs Trio to apply `/blog` as the destination path for all the fragments that it finds in the root/source/fragments/articles folder and its descendant folders.</p>
 
 <p>You can also use a single permalink to target multiple folders in root/source/fragments with the same destination path as shown below:</p>
+
+<blockquote class="note-tip"><p>You can target multiple folders with the same destination path by using a comma separated list of target folders.</p></blockquote>
 
 <figure>
 <pre><code class="json"> "permalinks": [
