@@ -8,7 +8,5 @@ activeDocIndexItem: 1
 
 <h1>Upgrading</h1>
 
-<h2>From v1 To v2</h2>
-
-<p>The schema for the <em>cache</em> has changed for v2.0.0, and <em>is incompatible with prior versions</em>. Therefore, if you are upgrading your projects from v1 to v2, you will have to regenerate your project's cache, which you can do by running the following <em>build command</em> in the terminal:</p><pre><code class="shell">$ trio build | b</code></pre></p>
+<p>After upgrading Trio to a newer version and prior to running an incremental build, you should regenerate your project's cache to insure that it is compatible with the newer version. To regenerate your project's cache, you can simply run a one-off build as per the following: </p><pre><code class="shell">$ trio build | b</code></pre></p>
 
