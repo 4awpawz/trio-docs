@@ -52,9 +52,9 @@ appendToTarget: true
 
 <h3>pageName</h3>
 <p>The name that will be used for the page.</p>
-<h3 id="a-single-item-of-data">[a single item of data]</h3>
+<h3 id="data">data</h3>
 <p>The data that the composite's <a href="#tag-based-callbacks">tag-based callbacks</a> will use to add dynamic content to the page.</p>
-<blockquote class="note-important"><p>You can name this property anything you want as long as it adheres to JavaScript's object property naming conventions.</p></blockquote>
+<blockquote class="note-important"><p>Prior to v3, you were able to name this property anything as long as it adhered to JavaScript's object property naming conventions. However, this ambiguity prevented Trio from validating each dataset item. To remedy this, beginning with v3, Trio requires that this must now be named "data".</p></blockquote>
 <blockquote class="note-tip"><p>You can use any of the data that is exposed by the <a href="/docs/v3/metadata#site">metadata site</a> object.</p></blockquote>
 <blockquote class="note-tip"><p>You can add your own <em>custom properties</em> to the items in a collection dataset and they will be accessible in the composite's tag-based callbacks.</p></blockquote>
 
@@ -96,9 +96,9 @@ module.exports = ({ site, collection }) =>
 
 <p>In tag-based callbacks for collection pages, the <a href="/docs/v3/metadata#collection">asset.collection</a> property exposes the following properties:</p>
 
-<h3>[a single item of data]</h3>
+<h3>data</h3>
 <p>The data item associated with this collection item.</p>
-<p>See <a href="#a-single-item-of-data">[a single item of data]</a> above.</p>
+<p>See <a href="#data">dataset item data property</a> above.</p>
 
 <h3>pageName</h3>
 <p>The name of this page associated with this collection item.</p>
