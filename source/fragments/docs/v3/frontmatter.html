@@ -70,7 +70,7 @@ This will be in the excerpt.
 <ul>
     <li><em>optional</em>, type <em>boolean</em>, default value <em>false</em></li>
     <li>If <em>true</em> Trio appends the fragment's content to the tag in the template that is decorated with the <em>data-trio-fragment</em> attribute.</li>
-    <li>If <em>false</em> Trio replaces the tag in the template that is decorated with the <em>data-trio-fragment</em> attribute with the fragment's content.</li>
+    <li>If <em>false</em> Trio replaces the tag in the template that is decorated with the <em>data-trio-fragment</em> attribute with the fragment's content. <mark>Beginning with v3.1.0, if building for development, Trio will also preserve the target tag in the generated markup as a comment.</mark></li>
 </ul>
 
 <h3>collection</h3>
@@ -132,7 +132,7 @@ This will be in the excerpt.
 <ul>
     <li><em>optional</em>, type <em>boolean</em>, default value <em>false</em></li>
     <li>If <em>true</em> Trio appends the include's content to the tag in the fragment or template that is decorated with the <em>data-trio-include</em> attribute that names the include.</li>
-    <li>If <em>false</em> Trio replaces the tag in the fragment or template that is decorated with the <em>data-trio-include</em> attribute that names the include with the include's content.</li>
+    <li>If <em>false</em> Trio replaces the tag in the fragment or template that is decorated with the <em>data-trio-include</em> attribute that names the include with the include's content. <mark>Beginning with v3.1.0, if building for development, Trio will also preserve the target tag in the generated markup as a comment.</mark></li>
 </ul>
 
 <h3>custom properties</h3>
