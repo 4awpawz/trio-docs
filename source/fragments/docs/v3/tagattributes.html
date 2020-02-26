@@ -8,8 +8,13 @@ activeDocIndexItem: 9
 
 <h1>Tag Attributes</h1>
 
-<p><em>data-trio-*</em> tag attributes are used as markers to indicate that a specific action is associated with its HTML
-    tag.</p>
+<p><em>data-trio-*</em> tag attributes are used as markers to indicate that a specific action is associated with its HTML tag.</p>
+
+<blockquote class="note-tip"><p>When building for release Trio removes all the data-trio-* attributes from the generated pages.</p></blockquote>
+
+<blockquote class="note-tip"><p>You can add your own custom data-trio-* attributes to your markup which you can then target in your tag-based callbacks:</p>
+<pre><code>$page("[data-trio-myattribute]").addClass("someCssClass")</code></pre>
+</blockquote>
 
 <h2 id="data-trio-fragment">data-trio-fragment</h2>
 

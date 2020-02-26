@@ -28,10 +28,31 @@
             font-weight: 700;
         }
 
-        &__subtitle {
-            font-size: 1.2rem;
+        &__categories {
+            list-style: none;
             margin-top: .5rem;
+            margin-left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+
+        &__category {
+            font-size: 1.2rem;
+            margin: 0 10px;
             color: rgba(#fff, 0.65);
+
+            & a {
+                color: rgba(#fff, 0.65);
+            }
+
+            &--active {
+                color: #fff;
+
+                & a {
+                    color: #fff;
+                }
+            }
         }
     }
 

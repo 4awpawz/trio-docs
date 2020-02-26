@@ -1,5 +1,6 @@
 {
     "permalinks": [
-        "articles: blog"
+        "articles: blog",
+        "category/releases: /blog/releases"
     ]
 }

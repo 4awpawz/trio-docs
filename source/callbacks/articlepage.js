@@ -3,8 +3,11 @@ moduleDependencies: ./lib/blogPostMetaContainer
 */
 const blogPostMetaContainer = require("./lib/blogPostMetaContainer");
 
-module.exports = ({ $tag, asset }) => {
+module.exports = ({ $tag, $page, asset }) => {
     const data = asset.matter.data;
+    // set the correct blog menu category as active
+    $page(`[data-trio-${data.category}]`).addClass("blog-masthead__category--active");
+    // add the article
     $tag.find("h1.blog-post__article-title").append(data.articleTitle);
     $tag.find("div.blog-post__meta-container")
         .append(blogPostMetaContainer(asset.matter.data.category[0], asset.articleDate));

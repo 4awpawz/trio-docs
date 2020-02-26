@@ -75,7 +75,7 @@ appendToTarget: true
 <figure>
 <pre><code class="javascript">module.exports = ({ <mark>site</mark>, <mark>collection</mark> }) =>
     site.dataCatalog.team.map(<mark>item</mark> =>
-        ({ <mark>pageName</mark>: `${item.firstName} ${item.lastName}`, <mark>item</mark> }));</code></pre>
+        ({ <mark>pageName</mark>: `${item.firstName} ${item.lastName}`, <mark>data</mark>: item }));</code></pre>
 <figcaption>Example: Filter Function Returning A Collection Dataset</figcaption>
 </figure>
 
@@ -88,7 +88,7 @@ appendToTarget: true
 <mark>const pageName = importFresh("./lib/pageName");</mark>
 module.exports = ({ site, collection }) =>
     site.dataCatalog.team.map(item =>
-        ({ pageName: `${<mark>pageName</mark>(item.firstName, item.lastName)}`, item }));</code></pre>
+        ({ pageName: `${<mark>pageName</mark>(item.firstName, item.lastName)}`, <mark>data</mark>: item }));</code></pre>
 <figcaption>Example: Filter Function Importing Uncached Module Dependency</figcaption>
 </figure>
 
@@ -112,13 +112,11 @@ module.exports = ({ site, collection }) =>
 <blockquote class="note-tip"><p>In addition to the above properties, any custom properties that you added to the items in the collection dataset are also accessible.</p></blockquote>
 
 <figure>
-<pre><code class="javascript">module.exports = ({ $tag, $page, <mark>asset</mark> }) => {
-    const item = <mark>asset.collection</mark>.item;
-    $page("title").append(` ${item.firstName} ${item.lastName}`);
-    $tag.find("#page-title").append(` #${<mark>asset.collection</mark>.index + 1}`);
-    $tag.find("#name").append(`${item.firstName} ${item.lastName}`);
-    $tag.find("#title").append(asset.collection.item.title);
-    $tag.find("#bio").append(asset.collection.item.bio);</code></pre>
+<pre><code class="javascript">module.exports = ({ $tag, <mark>asset</mark> }) => {
+    const data = <mark>asset.collection.data</mark>;
+    $tag.find("#name").append(`${data.firstName} ${data.lastName}`);
+    $tag.find("#title").append(data.title);
+    $tag.find("#bio").append(data.bio);</code></pre>
 <figcaption>Example: /source/callbacks/teamMember.js Tag-Based Callback Function</figcaption>
 </figure>
 

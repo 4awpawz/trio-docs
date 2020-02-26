@@ -3,7 +3,11 @@ moduleDependencies: ./lib/blogPostMetaContainer
 */
 const blogPostMetaContainer = require("./lib/blogPostMetaContainer");
 
-module.exports = ({ $tag, site }) => {
+module.exports = ({ $tag, $page, asset, site }) => {
+    // set the correct blog menu category as active
+    !asset.collection && $page("[data-trio-latest]").addClass("blog-masthead__category--active") ||
+        $page(`[data-trio-${asset.collection.data.category}]`).addClass("blog-masthead__category--active");
+    // add the article
     site.articlesCount && site.articlesCatalog.forEach(item => {
         const data = item.matter.data;
         $tag.append(/* html */ `
