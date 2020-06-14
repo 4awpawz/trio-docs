@@ -128,9 +128,9 @@ activeDocIndexItem: 15
 <figcaption>Example: Targeting A Tag's Content With Data From asset</figcaption>
 </figure>
 
-<h2>Importing Uncached Internal Module Dependencies</h2>
+<h2>Internal Module Dependencies And Caching</h2>
 
-<p>When your tag-based-callbacks have their own internal module dependencies, you should import those dependencies using <a target="_blank" href="https://www.npmjs.com/package/import-fresh"><em>import-fresh</em></a> (or some similar package) to guarantee that you are always importing fresh, uncached copies of them and they reflect your most recent changes.</p>
+<p>Tag-based-callbacks can, of course, have their own internal module dependencies. When they do, though, you should import them using <a target="_blank" href="https://www.npmjs.com/package/import-fresh"><em>import-fresh</em></a> (or some similar package) to guarantee that you are always importing uncached copies of them.</p>
 
 <figure>
 <pre><code class="JavaScript"><mark>const importFresh = require('import-fresh');</mark>
@@ -151,7 +151,11 @@ module.exports = ({ $tag, site }) => {
 <figcaption>Example: Tag-Based Callback Importing Uncached Module Dependency</figcaption>
 </figure>
 
-<h2 id="declaringinternaldependencies">Declaring Internal Dependencies To Trigger Incremental Builds</h2>
+<p>In the above example, if you had used <em>require</em> instead of <em>import-fresh</em>, and you were running any of Trio's build commands with the <em>watch option</em>, then any changes you make to the module <em>./lib/capitalize</em> would be ignored because Node will import the module from its cache.</p>
+
+<blockquote class="note-tip"><p>Trio uses <em>import-fresh</em> internally to import uncached tag-based callbacks.</p></blockquote>
+
+<h2 id="declaringinternaldependencies">Declaring Internal Module Dependencies To Trigger Incremental Builds</h2>
 
 <p>When building incrementally, Trio will detect that you have made modifications to your tag-based callbacks, and it will trigger a build to regenerate only those composites whose assets relate by way of their chains of dependencies to the modified callback. However, Trio will not automatically trigger a build when:</p>
 
@@ -162,7 +166,7 @@ module.exports = ({ $tag, site }) => {
 
 <p>To remedy these 2 situations, you can optionally add front matter to your tag-based callbacks with the properties discussed below that will inform Trio to trigger a build whenever these internal dependencies are modified.</p>
 
-<h3>Declaring Your Module Dependencies</h3>
+<h3>Declaring Your Internal Module Dependencies</h3>
 <p>You can declare a single module dependency using the <mark>moduleDependencies</mark> property</p>
 <figure>
 <pre><code class="js">/*
