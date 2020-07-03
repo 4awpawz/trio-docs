@@ -16,20 +16,20 @@ activeDocIndexItem: 4
 <blockquote class="note-tip"><p>It helps to think of composites as pages that haven't been written to the file system yet, that only exist in your computer's memory.</p></blockquote>
 
 <h3>Fragments</h3>
-<p><a href="/docs/v3/fragment">Fragments</a> are either <em>.html or .md</em> file types that you create in the <em>root/source/fragments</em> folder. Fragments must always include front matter at the very top of the file and they can, though it isn't required, also have their own content that is inserted into templates.</p>
-<p>At the top of the file you add front matter that includes a <em>template</em> property whose value is the name of the template the fragment is associated with.</p>
+<p><a href="/docs/v3/fragment">Fragments</a> are either <em>.html or .md</em> file types that you create in the <em>root/source/fragments</em> folder. Fragments must always include front matter at the very top of the file and optionally can have their own content.</p>
+<p>Fragment front matter must include the <em>template</em> property to which is assigned the name of the template that the fragment is associated with.</p>
 <p>A fragment asset can only be associated with a single template asset.</p>
 
 <h3>Templates</h3>
 <p><a href="/docs/v3/template">Templates</a> are <em>.html</em> file types that you create in the <em>root/source/templates</em> folder. Templates define the overall layout of your site's pages (i.e. they include the !DOCTYPE document preamble, html, head and body sections typically found in an HTML document).</p>
-<p>You decorate a single HTML tag in the template asset with a <em>data-trio-fragment</em> tag attribute and Trio will target this tag when inserting a fragment asset's content.</p>
+<p>Optionally, you can decorate a single HTML tag in the template asset with a <em>data-trio-fragment</em> tag attribute and Trio will copy the fragment's content to this tag.</p>
 <p>Templates never include front matter.</p>
 <p>A template asset can be associated with multiple fragment assets.</p>
 
 
 <h3>Includes</h3>
-<p><a href="/docs/v3/include">Includes</a> are either <em>.html or .md</em> file types that you create in the <em>root/source/includes</em> folder. They are used to add reusable blocks of  content to the composites created from fragment and template assets and can be shared across multiple pages (e.g. headers, footers, indexes, etc.). They can optionally include front matter at the very top of the file.</p>
-<p>You can add as many include assets as needed into both template and fragment assets by decorating the tags you are targeting with the <em>data-trio-include="name of include file | front matter property whose value names the include file"</em> tag attribute.</p>
+<p><a href="/docs/v3/include">Includes</a> are either <em>.html or .md</em> file types that you create in the <em>root/source/includes</em> folder. They are used to add reusable blocks of  content to the composites created from fragment and template assets and can be used across multiple pages (e.g. headers, footers, indexes, etc.). They can optionally include front matter at the very top of the file.</p>
+<p>You can add as many include assets as needed into both template and fragment assets by decorating the tags you are targeting with the <em>data-trio-include="name + file type" of the include file  or data-trio-include="the name of a property declared in the fragment's front matter" whose value is the name of the include file</em>.</p>
 
 <h3>JSON Data Files</h3>
 <p><a href="/docs/v3/jsondata">JSON data files</a> are <em>.json</em> file types that you create in the <em>root/source/data</em> folder. Tag-based callbacks can access these files' data through the metadata that is passed to them.</p>
