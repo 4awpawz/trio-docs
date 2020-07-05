@@ -91,12 +91,15 @@ $linkcolor: $docpageheadercolor;
 
             p + p,
             ul + p,
+            ol + p,
             p + pre,
             p + figure,
             ul + figure,
+            ol + figure,
             figure + figure,
             pre + p,
-            p + ul {
+            p + ul,
+            p + ol {
                 margin-top: 1rem;
             }
 
@@ -127,6 +130,7 @@ $linkcolor: $docpageheadercolor;
             }
 
             figure + ul,
+            figure + ol,
             figure + h2,
             figure + h3,
             figure + h4,
@@ -135,6 +139,7 @@ $linkcolor: $docpageheadercolor;
             figure + p,
             pre + p,
             ul + h2,
+            ol + h2,
             p + h2,
             p + h3 {
                 margin-top: 3rem;
@@ -144,6 +149,10 @@ $linkcolor: $docpageheadercolor;
             ul + h4,
             ul + h5,
             ul + h6,
+            ol + h3,
+            ol + h4,
+            ol + h5,
+            ol + h6,
             p + h4,
             p + h5,
             p + h6 {
@@ -188,7 +197,6 @@ $linkcolor: $docpageheadercolor;
                     background-color: rgba($secondary-text-color, 0.15);
                     border-bottom: 1px solid rgba($secondary-text-color, 0.9);
                     font-weight: 600;
-
                 }
             }
 
@@ -217,11 +225,16 @@ $linkcolor: $docpageheadercolor;
                 list-style: none;
             }
 
-            ul > ul {
+            ul > ul,
+            ol > ol {
                 margin-left: 1rem;
             }
 
-            li:before {
+            ol {
+                margin-left: 1rem;
+            }
+
+            ul li:before {
                 content: "▪";
                 float: left;
                 margin-right: 0.5rem;
