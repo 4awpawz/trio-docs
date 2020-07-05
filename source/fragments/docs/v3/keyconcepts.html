@@ -9,7 +9,7 @@ activeDocIndexItem: 4
 
 <p>Understanding the key concepts presented on this page will enable you to use Trio to its fullest potential.</p>
 
-<h2>Project Assets</h2>
+<h2 id="project-assets">Project Assets</h2>
 
 <p>Creating web pages with Trio involves the use of project <em>assets</em> to create and augment <em>composites</em> which Trio eventually saves to your computer's file system as HTML files. The following project assets are available to you to compose your pages:</p>
 
@@ -34,7 +34,7 @@ activeDocIndexItem: 4
 <h3>JSON Data Files</h3>
 <p><a href="/docs/v3/jsondata">JSON data files</a> are <em>.json</em> file types that you create in the <em>root/source/data</em> folder. Tag-based callbacks can access these files' data through the metadata that is passed to them.</p>
 
-<blockquote class="note-tip"><p>You can <em>hand-code</em> these data files yourself or you can <em>create NPM tasks</em> that, for example, retrieve the data from a local database, CRM, or a remote service.</p></blockquote>
+<blockquote class="note-tip"><p>You can <em>hand-code</em> these data files yourself or you can <em>create NPM tasks</em> that, for example, retrieve the data from a local database, a content management system, or a remote service.</p></blockquote>
 
 <h3>Metadata</h3>
 <p><a href="/docs/v3/metadata">Metadata</a> is the collection of data that Trio derives from your project's other assets and from the root/trio.json configuration file and uses the metadata internally to build your site.</p>
@@ -54,24 +54,36 @@ activeDocIndexItem: 4
 <h3>Tag-Based callbacks</h3>
 <p><a href="/docs/v3/tagbasedcallbacks">Tag-based JavaScript Callbacks</a> are JavaScript Node modules that you define in the <em>root/source/callbacks</em> folder that Trio calls to augment your composites with dynamic content residing in the metadata that is passed to them. Each module must export a single function which takes a single argument. See <a href="#advanced-page-composition">Advanced Page Composition</a> below for more information.</p>
 
-<h2>Page Composition Overview</h2>
+<h2>A Page Composition Overview - Anatomy Of A Generated Page</h2>
 
-When generating pages, Trio executes the following for each fragment and its associated template:
+<p>Trio's approach to page generation (also called page composition throughout these document pages) is quite different from other static site generators and it is what makes Trio the flexible and powerful tool that it is. </p>
 
-<ul>
-    <li>
-        <p>Trio creates a composite by merging the <a href="/docs/v3/fragment">fragment</a>'s content with the content in the <a href="/docs/v3/template">template's</a> tag that is decorated with the <a href="/docs/v3/tagattributes">data-trio-fragment</a> tag attribute.</p>
-    </li>
-    <li>
-        <p>Trio then searches the composite for any tags that are decorated with the <a href="/docs/v3/tagattributes">data-trio-include</a> tag attribute, and merges their associated <a href="/docs/v3/include">include</a>'s content with the content in their respective tags in the order in which they are declared.</p>
-    </li>
-    <li>
-        <p>Trio then searches the composite for any tags decorated with the <a href="/docs/v3/tagattributes">data-trio-callback</a> tag attribute, and calls their respective <a href="/docs/v3/tagbasedcallbacks">callbacks</a> asynchronously in the order in which they are declared.</p>
-    </li>
-    <li>
-        <p>Finally, Trio saves the composite to your computer's file system as an HTML file.</p>
-    </li>
-</ul>
+<ol>
+    <li>First and foremost, every web page (.html file) that is generated must have a template asset and a fragment asset (see <a href="#project-assets">project assets</a> above). Trio uses the markup from the template asset identified by the <em>template</em> property in the fragment's front matter (see <a href="#front-matter">front matter</a> below) to initialize a brand new composite.</li>
+    <li>Trio then searches the newly created composite's content for a single tag that has the "data-trio-fragment" attribute (see <a href="#tag-attributes">tag attributes</a> below). If one is found, Trio will copy any content that the fragment may have to that tag. If the fragment's content is in markdown format, Trio will convert the markdown to markup prior to copying.</li>
+    <li>Trio then searches the composite for all the tags that have "data-trio-include" attributes (see <a href="#tag-attributes">tag attributes</a> below), which name the include files (see <a href="#project-assets">project assets</a> above) whose content is copied to their respective tags in the composite. If an include file's content is in markdown format, Trio will convert the markdown to markup prior to copying.</li>
+    <li>Trio then searches the composite for all the tags that have "data-trio-callback" attributes (see <a href="#tag-attributes">tag attributes</a> below), which name the Node modules that Trio calls to dynamically add content derived from Trio's metadata to the composite (see <a href="#advanced-page-composition">advanced page composition</a> below).</li>
+    <li>Finally, page composition is complete and Trio writes the composite to an .html file using Trio's file naming conventions (see <a href="/docs/v3/pagegeneration/">page generation</a>).</li>
+</ol>
+
+<p>Trio repeats this process for every fragment/template pair declared in the project.</p>
+
+<!-- When generating pages, Trio executes the following for each fragment and its associated template: -->
+
+<!-- <ul> -->
+<!--     <li> -->
+<!--         <p>Trio creates a composite by merging the <a href="/docs/v3/fragment">fragment</a>'s content with the content in the <a href="/docs/v3/template">template's</a> tag that is decorated with the <a href="/docs/v3/tagattributes">data-trio-fragment</a> tag attribute.</p> -->
+<!--     </li> -->
+<!--     <li> -->
+<!--         <p>Trio then searches the composite for any tags that are decorated with the <a href="/docs/v3/tagattributes">data-trio-include</a> tag attribute, and merges their associated <a href="/docs/v3/include">include</a>'s content with the content in their respective tags in the order in which they are declared.</p> -->
+<!--     </li> -->
+<!--     <li> -->
+<!--         <p>Trio then searches the composite for any tags decorated with the <a href="/docs/v3/tagattributes">data-trio-callback</a> tag attribute, and calls their respective <a href="/docs/v3/tagbasedcallbacks">callbacks</a> asynchronously in the order in which they are declared.</p> -->
+<!--     </li> -->
+<!--     <li> -->
+<!--         <p>Finally, Trio saves the composite to your computer's file system as an HTML file.</p> -->
+<!--     </li> -->
+<!-- </ul> -->
 
 <figure>
     <img data-trio-link src="/media/composite.png" alt="composite image">
@@ -94,11 +106,11 @@ When generating pages, Trio executes the following for each fragment and its ass
 
 <p>You can add as many tag-based callback assets as needed to a template, fragment and include assets by decorating the tags you are targeting with the <em>data-trio-callback="name of module"</em> tag attribute.</p>
 
-<h2>Tag Attributes</h2>
+<h2 id="tag-attributes">Tag Attributes</h2>
 
-<p>Tag attributes are markers that indicate to Trio that it should take certain actions when it encounters them, such as, for example, targeting a tag with an include asset's content (e.g. <em>data-trio-include</em>) or with a fragment asset's content (e.g. <em>data-trio-fragment</em>) or calling a JavaScript Node module (e.g. <em>data-trio-callback</em>) to augment a composite with dynamic content.</p>
+<p>Tag attributes that start with <em>data-trio-*</em> are markers that indicate to Trio that it should take certain actions when it encounters them, such as, for example, targeting a tag with an include asset's content (e.g. <em>data-trio-include</em>) or with a fragment asset's content (e.g. <em>data-trio-fragment</em>) or calling a JavaScript Node module (e.g. <em>data-trio-callback</em>) to augment a composite with dynamic content.</p>
 
-<h2>Front Matter</h2>
+<h2 id="front-matter">Front Matter</h2>
 
 <p>YAML is a human readable data serialization language (don't let that intimidate you -- it is actually very simple to use) that you use to add configuration data to your project's fragment, include and tag-based JavaScript callback assets. Because it's required to be added to the very top of a file, it can also just be called "front matter", which is a convention that you will often see used throughout Trio's documentation.</p>
 
