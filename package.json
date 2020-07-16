@@ -18,6 +18,6 @@
   },
   "homepage": "https://github.com/4awpawz/trio-docs#readme",
   "devDependencies": {
-    "@4awpawz/eslint-config-4awpawzconfig": ">=1.0.5"
+    "@4awpawz/eslint-config-4awpawzconfig": "^1.0.6"
   }
 }
