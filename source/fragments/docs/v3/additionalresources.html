@@ -9,12 +9,15 @@ activeDocIndexItem: 24
 <p>On this page are additional resources that you may find beneficial.</p>
 
 <h2>ESLint Support For Your JavaScript</h2>
-<p>A <a target="_blank" href="https://eslint.org/docs/developer-guide/shareable-configs">shareable ESLint configuration</a> package has been made available for you to install and use in your Trio projects. It will install ESLint, its dependencies and create an <em>.eslintrc.json</em> file in your project's root folder. This package extends <em>eslint-config-standard</em>, so out of the box it comes with sensible default rules, which of course, you are able to override and extend.</p>
+<p>A <a target="_blank" href="https://eslint.org/docs/developer-guide/shareable-configs">shareable ESLint configuration</a> package is available for you to install and use in your Trio projects, which will install ESLint and all its dependencies. This package extends <em>eslint-config-standard</em>, so out of the box it comes with sensible default rules which, of course, you are able to override and extend.</p>
 <p>To install this package in your projects, please follow the instructions below:</p>
 
 <ul>
     <li>If your project doesn't already have a <em>package.json</em> file, create one by opening a terminal, navigating to your project's root folder, and running the following command: <pre><code class="shell">npm init -y</code></pre></li>
     <li>Now run the following command in your terminal to install the shareable ESLint configuration package: <pre><code class="shell">npm i --save-dev @4awpawz/eslint-config-4awpawzconfig</code></pre></li>
+        <li>In your project's root folder create a new file and name it <em>.eslintrc.json</em>. Now copy the following <pre><code class="javascript">{
+    "extends": "@4awpawz/eslint-config-4awpawzconfig"
+}</code></pre> into this new file and save this file.</li>
 </ul>
 
 <h2>An NPM Package For Importing Uncached Modules</h2>
