@@ -13,17 +13,32 @@ activeDocIndexItem: 19
 
 <p>Permalinks can be defined in trio.json as well as in the front matter of individual fragment files.</p>
 
-<p>Though originally intended to provide flexibility as to where you wish to target the generation of your article pages, Trio's permalink implementation is general enough to be used for other use cases as well, such as grouping your fragment files into easily recognizable and manageable sub folders of root/source/fragments.</p>
+<p>Though originally intended to provide flexibility as to where you wish to target the generation of your article pages, Trio's permalink implementation is general enough to be used for other use cases as well, such as:</p>
 
-<blockquote class="note-tip">
-<p>All fragments generated for collections that are targets of permalinks share the same permalink.</p>
-</blockquote>
+<ul>
+    <li>Hoisting your blog's category pages to the blog's root folder.</li>
+    <li>Providing you greater flexibility in how you structure the files in your project's fragment folder, such as grouping your fragment files into easily recognizable and manageable sub folders.</li>
+</ul>
 
 <h2 id="configuration-based-permalinks">Defining Permalinks In trio.json</h2>
 
+<blockquote class="note-important">
+    <p>Prior to v4.0.0, the destination paths generated for the children of a permalink's target folder were all flattened, meaning they were all set to what was defined for the permalink's destination path. The result of this behaviour is that all files that match a permalink's target folder (either directly or are child folders of the target folder) all have the same destination path. This behaviour severely limited the usefulness of permalinks and didn't support all the imagined use cases for permalinks.</p>
+    <p>Beginning with v4.0.0, this behaviour has changed, and now the destination paths generated for children of a permalink's target folder are no longer flattened, and now reflect their relative path to the target folder's path.</p>
+    <p>As an example of v4's new permalink behavior, imagine that our project's <em>source/fragments</em> folder contains <em>subfolder/alpha.md</em>, <em>subfolder/beta.md</em>, and <em>subfolder/gamma.md</em> and our project's trio.json file contains a permalink defined as "subfolder: /". When Trio generates our project, the root folder will contain <em>public/alpha/index.html</em>, <em>public/beta/index.html</em>, and <em>public/gamma/index.html</em>. Notice how Trio now preserves the subpaths of child folders relative to their target folder defined in the permalink.</p>
+</blockquote>
+
+<blockquote class="note-tip">
+<p>All fragments that are generated for a <em><a data-trio-link href="/docs/v3/collections">collection</a></em> that is also targeted by a permalink's target folder will share the same permalink.</p>
+</blockquote>
+
 <p>Permalinks that are defined in trio.json must declare one or more <em>target folders</em>, which Trio interprets as being relative to the root/source/fragments folder.</p>
 
-<p>In addition, each permalink must declare the <em>destination path</em> that Trio should apply to all the fragments it finds in the target folders as well as their descendant folders. The destination paths of these permalinks are interpreted as being relative to the root/public (or root/release, if generating a release build) folder.</p>
+<p>In addition, each permalink must declare the <em>destination path</em> that Trio should apply as the root path to all the fragments it finds in the target folders as well as their descendant folders. The destination paths of these permalinks are interpreted as being relative to the root/public (or root/release, if generating a release build) folder.</p>
+
+<blockquote class="note-tip">
+    <p>Beginning with v4, the destination paths that Trio generates for children of a permalink's target folder now reflect their relative path to the target folder's path.</p>
+</blockquote>
 
 <p>Parmalinks are defined in trio.json using <em>targets: destination pairs</em> surrounded by either single or double quotes (<em>'</em> or <em>"</em>), where <em>targets</em> is one or more target folders and where <em>destination</em> is the destination path that Trio should apply.</p>
 
@@ -34,9 +49,9 @@ activeDocIndexItem: 19
 <figcaption>Example: Targeting A Single Folder With A Permalink</figcaption>
 </figure>
 
-<p>The permalink defined in the above example directs Trio to apply `/blog` as the destination path for all the fragments that it finds in the root/source/fragments/articles folder and its descendant folders.</p>
+<p>The permalink defined in the above example directs Trio to apply `/blog` as the root path for all the fragments that it finds in the root/source/fragments/articles folder and its descendant folders.</p>
 
-<p>You can also use a single permalink to target multiple folders in root/source/fragments with the same destination path as shown below:</p>
+<p>You can also use a single permalink to target multiple folders in the root/source/fragments folder with the same destination path as shown below:</p>
 
 <blockquote class="note-tip"><p>You can target multiple folders with the same destination path by using a comma separated list of target folders.</p></blockquote>
 
@@ -47,7 +62,7 @@ activeDocIndexItem: 19
 <figcaption>Example: Targeting Multiple Folders With A Permalink</figcaption>
 </figure>
 
-<p>The permalink defined in the above example directs Trio to apply `/blog` as the destination path for all the fragments that it finds in the root/source/fragments/articles, the root/source/fragments/categories, and the root/source/fragments/tags folders as well as in all their descendant folders.</p>
+<p>The permalink defined in the above example directs Trio to apply `/blog` as the root path for all the fragments that it finds in the root/source/fragments/articles, the root/source/fragments/categories, and the root/source/fragments/tags folders as well as in all their descendant folders.</p>
 
 <h2 id="fragment-based-permalinks">Defining A Permalink In Fragment Front Matter.</h2>
 
@@ -77,18 +92,13 @@ permalink: yearinreview/2019
 
 <p>Permalinks defined in fragment front matter always take precedence over those defined in trio.json, which allows you to "fine tune" your site's permalink strategy to fit your specific domain requirements.</p>
 
-
-<!-- ## V3 Breaking Changes -->
-
-<!-- 1. `blog, tags, categories and archive` folders are no longer supported. Use permalinks instead. -->
-<!-- 2. `"blogFolderName"` trio.json configuration option is no longer supported. Use permalink instead. -->
-
 <h2>See Also</h2>
 
 <ul>
+    <li><a data-trio-link href="/docs/v3/collections">Collections</a></li>
     <li><a data-trio-link href="/docs/v3/configuration">Configuration</a></li>
     <li><a data-trio-link href="/docs/v3/fragment">Fragment</a></li>
-    <li><a data-trio-link href="/docs/v3/pagegeneration">Page Generation</a></li>
     <li><a data-trio-link href="/docs/v3/linkingconventions">Linking Conventions</a></li>
+    <li><a data-trio-link href="/docs/v3/pagegeneration">Page Generation</a></li>
 </ul>
 
