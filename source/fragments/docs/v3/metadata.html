@@ -8,7 +8,7 @@ activeDocIndexItem: 14
 
 <h1>Metadata</h1>
 
-<p>When building your site, Trio generates a collection of metadata objects that it creates from your <a href="/docs/v3/keyconcepts">project's assets</a>. Trio organizes this metadata, making it easy to reason about, and exposes it your project's <a href="/docs/v3/tagbasedcallbacks">tag-based callbacks</a> through the <a href="#site">site</a> and <a href="#asset">asset</a> properties which they can use to add dynamic content to your pages.</p>
+<p>When building your site, Trio generates a collection of metadata objects that it creates from your <a href="/docs/v3/keyconcepts">project's assets</a> and <a href="/docs/v3/configuration">configuration file</a>. Trio organizes this metadata, making it easy to reason about, and exposes it your project's <a href="/docs/v3/tagbasedcallbacks">tag-based callbacks</a> through the <a href="#site">site</a> and <a href="#asset">asset</a> properties which they can use to add dynamic content to your pages.</p>
 
 <blockquote class="note-tip"><p>After each build of your project, Trio persists most of the metadata that it has collected to a file named <em>root/trio.manifest.json</em>. You can view the contents of this file to assist you when coding tag-based callbacks.</p></blockquote>
 
@@ -16,8 +16,10 @@ activeDocIndexItem: 14
 
 <blockquote class="note-important"><p>Please note that beginning with v1.0.0-rc.5, Trio no longer generates a unique <em>id</em> property for fragments due to the expense in terms of the development time required to maintain their integrity during incremental builds. In its place, you should now use the fragment's <em>url</em> property, which is guaranteed to always be intrinsically unique per fragment.</p></blockquote>
 
+<blockquote class="note-important"><p>Prior to v4.0.0, depending on your site's fragment assets, both the <em>site</em> argument and the <em>trio.manifest.json</em> file may not have include one or more of the following properties: <em>frags</em>, <em>wipsCount</em>, <em>wips</em>, <em>articlesCount</em>,<em>articlesCatalog</em>, <em>tagsCatalog</em>, and <em>categoriesCatalog</em>. Beginning with v4.0.0, Trio now assigns meaningful default values for all these properties.</p></blockquote>
+
 <h2 id="site">site</h2>
-<p>See <a href="/docs/v3/tagbasedcallbacks#site">Tag-Based Callbacks - Argument Properties</a> for more information..</p>
+<p>Exposes the global collection of metadata objects for the entire project. See <a href="/docs/v3/tagbasedcallbacks#site">Tag-Based Callbacks - Argument Properties</a> for more information..</p>
 
 <h3>site.timestamp</h3>
 <p>The date and time of the current build in "YYYY-MM-DD HH:MM:SS" format.</p>
@@ -92,7 +94,7 @@ activeDocIndexItem: 14
 <p>A hash that catalogs the site's JSON data files in root/source/data along with their content. Each property in the hash represents a single JSON data file. See <a data-trio-link href="/docs/v3/jsondata">JSON Data</a> for more information.</p>
 
 <h2 id="asset">asset</h2>
-<p>The fragment associated with the composite. See <a href="#fragment">fragment</a> below and <a href="/docs/v3/tagbasedcallbacks#asset">Tag-Based Callbacks - Argument Properties</a> for more information..</p>
+<p>Exposes the metadata object associated with the composite's fragment asset. See <a href="#fragment">fragment</a> below and <a href="/docs/v3/tagbasedcallbacks#asset">Tag-Based Callbacks - Argument Properties</a> for more information..</p>
 
 <h2 id="fragment">fragment</h2>
 <p>An object that contains all the metadata associated with a fragment.</p>
