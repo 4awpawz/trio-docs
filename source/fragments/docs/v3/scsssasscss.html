@@ -12,12 +12,15 @@ activeDocIndexItem: 16
 
 <h2>.scss and .sass</h2>
 <ul>
-    <li>These  files reside in the <em>root/source/sass</em> folder.</li>
-    <li>When generating your site, Trio compiles your Sass to the public/css folder and applies <em>vendor prefixing</em> and <em>file minification</em> for non-release and release builds and <em>CSS map file generation</em> for non release builds.</li>
+    <li>These files reside in the <em>root/source/sass</em> folder.</li>
+    <li>When generating your site, Trio <em>compiles</em> your Sass to the public/css folder and applies <em>vendor prefixing</em> and <em>file minification</em> for non-release and release builds and <em>CSS map file generation</em> for non release builds.</li>
 </ul>
 
 <h2>.css</h2>
+
+<blockquote class="note-tip"><p>If you rename your *.css files to *.scss and maintain them in the root/source/sass folder your style sheets can take advantage of Sass build features, such as vendor prefixing, file minification, and CSS map file generation. This is possible because <em>CSS is a subset of Sass</em>.</p></blockquote>
+
 <ul>
     <li>These files reside in the <em>root/source/css</em> folder.</li>
-    <li>When generating your site, Trio copies these files to the public/css folder.</li>
+    <li>When generating your site, Trio <em>copies</em> these files to the public/css folder.</li>
 </ul>
