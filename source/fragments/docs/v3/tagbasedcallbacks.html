@@ -134,7 +134,7 @@ activeDocIndexItem: 15
 
 <figure>
 <pre><code class="JavaScript"><mark>const importFresh = require('import-fresh');</mark>
-<mark>const capitalize = importFresh("./lib/capitalize");</mark>
+<mark>const capitalize = importFresh("../lib/capitalize");</mark>
 
 module.exports = ({ $tag, site }) => {
     site.articlesCount && site.articlesCatalog.forEach(item => {
@@ -170,7 +170,7 @@ module.exports = ({ $tag, site }) => {
 <p>You can declare a single module dependency using the <mark>moduleDependencies</mark> property</p>
 <figure>
 <pre><code class="js">/*
-moduleDependencies: ./lib/getDate
+moduleDependencies: ../lib/getDate
 */</code></pre>
 <figcaption>Example: Declaring A Single Module Dependency</figcaption>
 </figure>
@@ -180,8 +180,8 @@ moduleDependencies: ./lib/getDate
 <figure>
 <pre><code class="js">/*
 moduleDependencies:
-- ./lib/getDate
-- ./lib/getTime
+- ../lib/getDate
+- ../lib/getTime
 */</code></pre>
 <figcaption>Example: Declaring Multiple Module Dependencies</figcaption>
 </figure>

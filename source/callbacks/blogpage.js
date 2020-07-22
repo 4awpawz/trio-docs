@@ -1,7 +1,7 @@
 /*
-moduleDependencies: ./lib/blogPostMetaContainer
+moduleDependencies: ../lib/blogPostMetaContainer
 */
-const blogPostMetaContainer = require("./lib/blogPostMetaContainer");
+const blogPostMetaContainer = require("../lib/blogPostMetaContainer");
 
 module.exports = ({ $tag, $page, asset, site }) => {
     // set the correct blog menu category as active
