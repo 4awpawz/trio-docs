@@ -55,7 +55,7 @@ appendToTarget: true
 <h3 id="data">data</h3>
 <p>The data that the composite's <a href="#tag-based-callbacks">tag-based callbacks</a> will use to add dynamic content to the page.</p>
 <blockquote class="note-important"><p>Prior to v3, you were able to name this property anything as long as it adhered to JavaScript's object property naming conventions. However, this ambiguity prevented Trio from validating each dataset item. To remedy this, beginning with v3, Trio requires that this must now be named "data".</p></blockquote>
-<blockquote class="note-tip"><p>You can use any of the data that is exposed by the <a href="/docs/v3/metadata#site">metadata site</a> object.</p></blockquote>
+<blockquote class="note-tip"><p>You can use any of the data that is exposed by the <a href="/docs/v4/metadata#site">metadata site</a> object.</p></blockquote>
 <blockquote class="note-tip"><p>You can add your own <em>custom properties</em> to the items in a collection dataset and they will be accessible in the composite's tag-based callbacks.</p></blockquote>
 
 <h2 id="collection-filter-functions">Implementing Collection Filter Functions</h2>
@@ -66,7 +66,7 @@ appendToTarget: true
 <pre><code>({ collection, site })</code></pre>
 <p> to access its properties:</p>
 <h3>site</h3>
-<p>site exposes the organized collection of <a href="/docs/v3/metadata#site">metadata</a> that Trio creates from your project's assets. Its catalogs - <a href="/docs/v3/metadata#frags">frags</a>, <a href="/docs/v3/metadata#articles-catalog">articlesCatalog</a>, <a href="/docs/v3/metadata#categories-catalog">categoriesCatalog</a>, <a href="/docs/v3/metadata#tags-catalog">tagsCatalog</a>, <a href="/docs/v3/metadata#data-catalog">dataCatalog</a> - as well as its other properties can all be used to create a collection dataset.</p>
+<p>site exposes the organized collection of <a href="/docs/v4/metadata#site">metadata</a> that Trio creates from your project's assets. Its catalogs - <a href="/docs/v4/metadata#frags">frags</a>, <a href="/docs/v4/metadata#articles-catalog">articlesCatalog</a>, <a href="/docs/v4/metadata#categories-catalog">categoriesCatalog</a>, <a href="/docs/v4/metadata#tags-catalog">tagsCatalog</a>, <a href="/docs/v4/metadata#data-catalog">dataCatalog</a> - as well as its other properties can all be used to create a collection dataset.</p>
 <h3>collection</h3>
 <p>collection is a reference to the fragment's front matter's <a href="#collection-fragments">collection hash</a>.</p>
 
@@ -96,7 +96,7 @@ module.exports = ({ site, collection }) =>
 
 <h2 id="tag-based-callbacks">Tag-Based Callbacks</h2>
 
-<p>In tag-based callbacks for collection pages, the <a href="/docs/v3/metadata#collection">asset.collection</a> property exposes the following properties:</p>
+<p>In tag-based callbacks for collection pages, the <a href="/docs/v4/metadata#collection">asset.collection</a> property exposes the following properties:</p>
 
 <h3>data</h3>
 <p>The data item associated with this collection item.</p>
@@ -134,7 +134,7 @@ module.exports = ({ site, collection }) =>
 <h2>See Also</h2>
 
 <ul>
-    <li><a data-trio-link href="/docs/v3/fragment">Fragment</a></li>
-    <li><a data-trio-link href="/docs/v3/metadata">Metadata</a></li>
-    <li><a data-trio-link href="/docs/v3/tagbasedcallbacks">Tag-Based Callbacks</a></li>
+    <li><a data-trio-link href="/docs/v4/fragment">Fragment</a></li>
+    <li><a data-trio-link href="/docs/v4/metadata">Metadata</a></li>
+    <li><a data-trio-link href="/docs/v4/tagbasedcallbacks">Tag-Based Callbacks</a></li>
 </ul>

@@ -8,7 +8,7 @@ activeDocIndexItem: 14
 
 <h1>Metadata</h1>
 
-<p>When building your site, Trio generates a collection of metadata objects that it creates from your <a href="/docs/v3/keyconcepts">project's assets</a> and <a href="/docs/v3/configuration">configuration file</a>. Trio organizes this metadata, making it easy to reason about, and exposes it your project's <a href="/docs/v3/tagbasedcallbacks">tag-based callbacks</a> through the <a href="#site">site</a> and <a href="#asset">asset</a> properties which they can use to add dynamic content to your pages.</p>
+<p>When building your site, Trio generates a collection of metadata objects that it creates from your <a href="/docs/v4/keyconcepts">project's assets</a> and <a href="/docs/v4/configuration">configuration file</a>. Trio organizes this metadata, making it easy to reason about, and exposes it your project's <a href="/docs/v4/tagbasedcallbacks">tag-based callbacks</a> through the <a href="#site">site</a> and <a href="#asset">asset</a> properties which they can use to add dynamic content to your pages.</p>
 
 <blockquote class="note-tip"><p>After each build of your project, Trio persists most of the metadata that it has collected to a file named <em>root/trio.manifest.json</em>. You can view the contents of this file to assist you when coding tag-based callbacks.</p></blockquote>
 
@@ -19,7 +19,7 @@ activeDocIndexItem: 14
 <blockquote class="note-important"><p>Prior to v4.0.0, depending on your site's fragment assets, both the <em>site</em> argument and the <em>trio.manifest.json</em> file may not have include one or more of the following properties: <em>frags</em>, <em>wipsCount</em>, <em>wips</em>, <em>articlesCount</em>,<em>articlesCatalog</em>, <em>tagsCatalog</em>, and <em>categoriesCatalog</em>. Beginning with v4.0.0, Trio now assigns meaningful default values for all these properties.</p></blockquote>
 
 <h2 id="site">site</h2>
-<p>Exposes the global collection of metadata objects for the entire project. See <a href="/docs/v3/tagbasedcallbacks#site">Tag-Based Callbacks - Argument Properties</a> for more information..</p>
+<p>Exposes the global collection of metadata objects for the entire project. See <a href="/docs/v4/tagbasedcallbacks#site">Tag-Based Callbacks - Argument Properties</a> for more information..</p>
 
 <h3>site.timestamp</h3>
 <p>The date and time of the current build in "YYYY-MM-DD HH:MM:SS" format.</p>
@@ -91,10 +91,10 @@ activeDocIndexItem: 14
 <p>The article's excerpt.</p>
 
 <h3 id="data-catalog">site.dataCatalog</h3>
-<p>A hash that catalogs the site's JSON data files in root/source/data along with their content. Each property in the hash represents a single JSON data file. See <a data-trio-link href="/docs/v3/jsondata">JSON Data</a> for more information.</p>
+<p>A hash that catalogs the site's JSON data files in root/source/data along with their content. Each property in the hash represents a single JSON data file. See <a data-trio-link href="/docs/v4/jsondata">JSON Data</a> for more information.</p>
 
 <h2 id="asset">asset</h2>
-<p>Exposes the metadata object associated with the composite's fragment asset. See <a href="#fragment">fragment</a> below and <a href="/docs/v3/tagbasedcallbacks#asset">Tag-Based Callbacks - Argument Properties</a> for more information..</p>
+<p>Exposes the metadata object associated with the composite's fragment asset. See <a href="#fragment">fragment</a> below and <a href="/docs/v4/tagbasedcallbacks#asset">Tag-Based Callbacks - Argument Properties</a> for more information..</p>
 
 <h2 id="fragment">fragment</h2>
 <p>An object that contains all the metadata associated with a fragment.</p>
@@ -104,7 +104,7 @@ activeDocIndexItem: 14
 <p>The path to the fragment file in the source/fragment folder. It is used internally by Trio during page generation.</p>
 
 <h3>.mtimeMs</h3>
-<p>The timestamp that represent the time, in milliseconds, when the fragment was last modified. It is used internally by Trio to determine the files to be included when building incrementally. See <a href="/docs/v3/incrementalbuild">Incremental Build</a> for more information.</p>
+<p>The timestamp that represent the time, in milliseconds, when the fragment was last modified. It is used internally by Trio to determine the files to be included when building incrementally. See <a href="/docs/v4/incrementalbuild">Incremental Build</a> for more information.</p>
 <blockquote class="note-tip"><p>You can also use <em>mtimeMs</em> for showing the date and time your pages were last updated.</p>
     <pre class="javascript"><code>$tag.append(new Date(asset.mtimeMs).toLocaleString());</code></pre>
 </blockquote>
@@ -116,7 +116,7 @@ activeDocIndexItem: 14
 <p>A boolean that indicates if the fragment was marked as stale. It is used internally by Trio when building incrementally.</p>
 
 <h3>.matter</h3>
-<p>The fragment's front matter. See <a href="/docs/v3/frontmatter">Front Matter</a> for more information.</p>
+<p>The fragment's front matter. See <a href="/docs/v4/frontmatter">Front Matter</a> for more information.</p>
 
 <h3>.destPath</h3>
 <p>The path to the page in the public folder.</p>
@@ -126,7 +126,7 @@ activeDocIndexItem: 14
 <p>The URL of the page.</p>
 
 <h3 id="collection">.collection</h3>
-<p>Only relevant for fragments that are part of a collection. See <a href="/docs/v3/collections">Collections</a> for more information. <mark>Introduced in v2.0.0.</mark></p>
+<p>Only relevant for fragments that are part of a collection. See <a href="/docs/v4/collections">Collections</a> for more information. <mark>Introduced in v2.0.0.</mark></p>
 
 <h3>.articleDate</h3>
 <p>Only relevant for articles, is a string which contains the date of the article in "YYYY-MM-DD" format.</p>
@@ -197,11 +197,11 @@ activeDocIndexItem: 14
 <h2>See Also</h2>
 
 <ul>
-	<li><a data-trio-link href="/docs/v3/blogging">Blogging</a></li>
-	<li><a data-trio-link href="/docs/v3/collections">Collections</a></li>
-	<li><a data-trio-link href="/docs/v3/frontmatter">Front Matter</a></li>
-	<li><a data-trio-link href="/docs/v3/incrementalbuild">Incremental Build</a></li>
-	<li><a data-trio-link href="/docs/v3/jsondata">JSON Data</a></li>
-	<li><a data-trio-link href="/docs/v3/keyconcepts">Key Concepts</a></li>
-	<li><a data-trio-link href="/docs/v3/tagbasedcallbacks">Tag-Based Callbacks</a></li>
+	<li><a data-trio-link href="/docs/v4/blogging">Blogging</a></li>
+	<li><a data-trio-link href="/docs/v4/collections">Collections</a></li>
+	<li><a data-trio-link href="/docs/v4/frontmatter">Front Matter</a></li>
+	<li><a data-trio-link href="/docs/v4/incrementalbuild">Incremental Build</a></li>
+	<li><a data-trio-link href="/docs/v4/jsondata">JSON Data</a></li>
+	<li><a data-trio-link href="/docs/v4/keyconcepts">Key Concepts</a></li>
+	<li><a data-trio-link href="/docs/v4/tagbasedcallbacks">Tag-Based Callbacks</a></li>
 </ul>
