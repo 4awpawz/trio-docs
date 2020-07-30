@@ -1,6 +1,7 @@
 {
     "permalinks": [
         "articles: blog",
-        "category/releases: /blog/releases"
-    ]
+        "category: blog"
+    ],
+    "articlesPerPage": 10
 }

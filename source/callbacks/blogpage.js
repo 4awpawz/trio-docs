@@ -1,14 +1,24 @@
 /*
-moduleDependencies: ../lib/blogPostMetaContainer
+moduleDependencies:
+- ../lib/blogPostMetaContainer
+- ../lib/capitalize
 */
-const blogPostMetaContainer = require("../lib/blogPostMetaContainer");
+
+const importFresh = require("import-fresh");
+const blogPostMetaContainer = importFresh("../lib/blogPostMetaContainer");
+const capitalize = importFresh("../lib/capitalize");
 
 module.exports = ({ $tag, $page, asset, site }) => {
+    // set the title tag text
+    const title = asset.collection.category === "latest" &&
+        "Trio Blog | Official blog for Trio static site generator" ||
+        `${capitalize(asset.collection.category)} | Trio Blog`;
+    $page("title").text(title);
     // set the correct blog menu category as active
-    !asset.collection && $page("[data-trio-latest]").addClass("blog-masthead__category--active") ||
-        $page(`[data-trio-${asset.collection.data.category}]`).addClass("blog-masthead__category--active");
-    // add the article
-    site.articlesCount && site.articlesCatalog.forEach(item => {
+    $page(`[data-trio-${asset.collection.category}]`).addClass("blog-masthead__category--active");
+    // add the articles
+    const articles = asset.collection && asset.collection.data || site.articlesCatalog;
+    site.articlesCount && articles.forEach(item => {
         const data = item.matter.data;
         $tag.append(/* html */ `
             <article class="blog-post">

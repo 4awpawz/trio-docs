@@ -3,5 +3,8 @@ template: blogpage
 title: Trio Blog | Official blog for Trio static site generator.
 alwaysBuild: true
 activeHeaderItem: 3
+collection:
+    filterFn: latest
 -->
 <section data-trio-callback="blogpage" class="blog-posts"></section>
+<div data-trio-include="navigator.html" data-trio-callback="categoryPagesNavigator" class="navigator">
