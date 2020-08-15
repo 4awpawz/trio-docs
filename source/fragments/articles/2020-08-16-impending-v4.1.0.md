@@ -1,0 +1,43 @@
+<!--
+template: tutorialpage
+title: "What's Coming In Trio v4.1.0"
+appendToTarget: true
+category: releases
+tag: metadata
+articleTitle: "What's Coming In Trio v4.1.0"
+activeHeaderItem: 3
+socialMediaMetaTags:
+- <meta property="og:type" content="article">
+- <meta property="og:title" content="What's Coming In Trio v4.1.0">
+- <meta property="og:description" content="What to expect from Trio v4.1.0">
+- <meta property="og:url" content="https://gettriossg.com/blog/releases/2020-08-16-impending-v4.1.0.md">
+- <meta property="og:image" content="https://gettriossg.com/media/trio-social-media-image.png">
+- <meta name="twitter:card" content="summary_large_image">
+- <meta name="twitter:site" content="@gettriossg">
+- <meta name="twitter:creator" content="@jefftschwartz">
+- <meta name="twitter:title" content="What's Coming In Trio v4.1.0">
+- <meta name="twitter:description" content="What to expect from Trio v4.1.0">
+- <meta name="twitter:image" content="https://gettriossg.com/media/trio-social-media-image.png">
+-->
+
+While you are enjoying the recently released Trio v4.0.0 we want you to know that Trio _v4.1.0_ is already in the testing phase and will be released shortly.
+
+Although it wasn't explicitly stated in the documentation, tag-based callbacks that are declared on tags that are replaced by an include's or a fragment's content are never registered and therefore never called. _Trio V4.1.0 corrects this omission and now supports tag-based callbacks on these tags_.
+
+Support for these callbacks will allows you to directly target these tags in your tag-based callbacks using the callback's _$tag_ parameter.
+
+Please note that this new behavior doesn't impact how Trio outputs these tags for development and release builds. As always, when building for development, Trio will still comment out these tags in the generated HTML document, and when building for release, Trio will not output these tags in the generated HTML document.
+
+If you would like to be notified when Trio v4.1.0 drops then please consider following _@gettriossg_ on Twitter.
+
+<!-- end -->
+
+## Your Financial Support Of This Project Is Greatly Appreciated.
+
+<p>Trio is an open source project and is therefore free of charge to use both for noncommercial and commercial use, but when you use Trio to create a new website, please consider donating a few bucks. It doesn't take very long, the process is secure, and it will allow us to continue to support the community and to maintain and enhance Trio going forward.</p>
+<br>
+<div data-trio-include="paypaldonatebutton.html"></div>
+<br>
+<p><a target="_blank" href="https://github.com/4awpawz/trio">Show your ❤️, add your ★ to the Github repo.</a></p>
+
+

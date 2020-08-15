@@ -74,6 +74,15 @@
             border-bottom: none;
         }
 
+        dt {
+            font-weight: bold;
+        }
+
+        dl,
+        dd {
+            font-size: .9rem;
+        }
+
         em {
             font-weight: normal;
             color: darkgreen;
@@ -128,6 +137,11 @@
         &__article-date, &__article-category {
             color: rgba(#000, 0.70);
         }
+
+        ul, ol {
+            margin-bottom: 1rem;
+        }
+
         p {
             font-size: 1.15rem;
             opacity: .8;

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script data-trio-include="analytics.html"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta data-trio-include="metatags.html">
+    <meta data-trio-callback="socialmediametatags">
+    <title>Document</title>
+    <link data-trio-link rel="shortcut icon" type="image/x-icon" href="/favicon.png">
+    <link href="https://fonts.googleapis.com/css?family=Lora|Open+Sans" rel="stylesheet">
+    <link data-trio-link rel="stylesheet" href="/css/libs/github/github-markdown.css">
+    <link data-trio-link rel="stylesheet" href="/css/libs/highlight/github.css">
+    <link data-trio-link rel="stylesheet" href="/css/main.css">
+    <script data-trio-link src="/scripts/highlight.pack.js"></script>
+</head>
+<body>
+    <header data-trio-include="header.html" class="header header--fixed header--green"></header>
+    <div data-trio-include="blogmasthead.html"></div>
+    <main class="container blog-container">
+        <article data-trio-callback="articlepage" class="blog-post">
+            <h1 class="blog-post__article-title"></h1>
+            <div class="blog-post__meta-container"></div>
+            <section data-trio-fragment>
+        </article>
+        <div data-trio-include="navigator.html" data-trio-callback="articlePagesNavigator" class="navigator">
+    </main>
+    <footer data-trio-include="footer.html" class="container blog-container blogfooter"></footer>
+    <script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>
+
+
