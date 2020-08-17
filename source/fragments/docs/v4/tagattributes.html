@@ -22,16 +22,18 @@ activeDocIndexItem: 9
     <li>Optional</li>
     <li>Applicable in <em>template</em> assets.</li>
     <li>Is used to indicate that the HTML tag is the target of a <em>fragment</em> asset's content.</li>
-    <li>See <a data-trio-link href="/docs/v4/frontmatter#append-to-target">appendToTarget</a> for more information.</li>
+    <li>See <a data-trio-link href="/docs/v4/frontmatter#append-to-target">appendToTarget</a> and <a data-trio-link href="/docs/v4/fragment">fragment</a> for more information.</li>
 </ul>
 
-<h2 id="data-trio-include">data-trio-include="name of include"</h2>
+<h2 id="data-trio-include">data-trio-include="[filename] | [fragment front matter property]"</h2>
 
 <ul>
     <li>Optional</li>
     <li>Applicable in <em>template</em> and <em>fragment</em> assets.</li>
-    <li>Requires a file extension (e.g. <em>.html | .md</em>).</li>
+    <li>The name of the file to be included can be directly assigned or can be determined indirectly by assigning the name of a fragment front matter property whose value names the file to be included.</li>
+    <li>The name of the file to be included requires a file extension (e.g. <em>.html | .md</em>).</li>
     <li>Is used to indicate that the HTML tag is the target of the named <em>include</em> asset's content.</li>
+    <li>See <a href="/docs/v4/include">Include</a> for more information.</li>
 </ul>
 
 <h2 id="data-trio-callback">data-trio-callback="name of tag-based callback"</h2>
@@ -41,7 +43,8 @@ activeDocIndexItem: 9
     <li>Applicable in <em>template</em>, <em>fragment</em> and <em>include</em> assets.</li>
     <li>File extension is not required; it is assumed that it is <em>.js</em>.</li>
     <li>Is used to indicate that the HTML tag is requesting that Trio call the named <em>tag-based callback</em>.</li>
-    <li>The named callback can reference this tag using the <em>$tag</em> parameter. See <a href="/docs/v4/tagbasedcallbacks">Tag-Based Callbacks</a> for more information.</li>
+    <li>The named callback can reference this tag using the <em>$tag</em> parameter.</li>
+    <li>See <a href="/docs/v4/tagbasedcallbacks">Tag-Based Callbacks</a> for more information.</li>
 </ul>
 
 <h2 id="data-trio-link">data-trio-link</h2>
