@@ -1,5 +1,5 @@
 <!--
-template: tutorialpage
+template: articlepage
 title: "What's Coming In Trio v4.1.0"
 appendToTarget: true
 category: releases
