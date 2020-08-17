@@ -10,7 +10,7 @@ socialMediaMetaTags:
 - <meta property="og:type" content="article">
 - <meta property="og:title" content="What's Coming In Trio v4.1.0">
 - <meta property="og:description" content="While you are enjoying the recently released Trio v4.0.0 we want you to know that Trio v4.1.0 is already in the testing phase and will be released shortly.">
-- <meta property="og:url" content="https://gettriossg.com/blog/releases/2020-08-16-impending-v4.1.0.md">
+- <meta property="og:url" content="https://gettriossg.com/blog/releases/2020/08/16/impending-v4.1.0/">
 - <meta property="og:image" content="https://gettriossg.com/media/trio-social-media-image.png">
 - <meta name="twitter:card" content="summary_large_image">
 - <meta name="twitter:site" content="@gettriossg">
