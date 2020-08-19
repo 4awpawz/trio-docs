@@ -3,21 +3,21 @@ template: tutorialpage
 title: "A Series Of Tutorials On Page Composition"
 appendToTarget: true
 category: tutorials
-tag: metadata
+tag: composition
 articleTitle: "A Series Of Tutorials On Page Composition"
 activeHeaderItem: 3
 socialMediaMetaTags:
-- <meta property="og:type" content="article">
-- <meta property="og:title" content="A Series Of Tutorials On Page Composition">
-- <meta property="og:description" content="Announcing a series of tutorials which will teach you how to compose your site's pages with dynamic content.">
-- <meta property="og:url" content="https://gettriossg.com/blog/tutorials/2020/08/15/announcing-page-composition-tutorials/">
-- <meta property="og:image" content="https://gettriossg.com/media/trio-social-media-image.png">
-- <meta name="twitter:card" content="summary_large_image">
-- <meta name="twitter:site" content="@gettriossg">
-- <meta name="twitter:creator" content="@jefftschwartz">
-- <meta name="twitter:title" content="A Series Of Tutorials On Page Composition">
-- <meta name="twitter:description" content="Announcing a series of tutorials which will teach you how to compose your site's pages with dynamic content.">
-- <meta name="twitter:image" content="https://gettriossg.com/media/trio-social-media-image.png">
+- "<meta property='og:type' content='article'>"
+- "<meta property='og:title' content='A Series Of Tutorials On Page Composition'>"
+- "<meta property='og:description' content='Announcing a series of tutorials which will teach you how to compose your site's pages with dynamic content.'>"
+- "<meta property='og:url' content='https://gettriossg.com/blog/tutorials/2020/08/15/announcing-page-composition-tutorials/'>"
+- "<meta property='og:image' content='https://gettriossg.com/media/trio-social-media-image.png'>"
+- "<meta name='twitter:card' content='summary_large_image'>"
+- "<meta name='twitter:site' content='@gettriossg'>"
+- "<meta name='twitter:creator' content='@jefftschwartz'>"
+- "<meta name='twitter:title' content='A Series Of Tutorials On Page Composition'>"
+- "<meta name='twitter:description' content='Announcing a series of tutorials which will teach you how to compose your site's pages with dynamic content.'>'"
+- <meta name="twitter:image' content='https://gettriossg.com/media/trio-social-media-image.png'>
 -->
 
 <div class="video-container">
@@ -40,13 +40,3 @@ _To that end I am very pleased to announce that a series of tutorials will be po
 If you would like to be notified when these tutorials are posted here then please consider following _@gettriossg_ on Twitter.
 
 <!-- end -->
-
-## Your Financial Support Of This Project Is Greatly Appreciated.
-
-<p>Trio is an open source project and is therefore free of charge to use both for noncommercial and commercial use, but when you use Trio to create a new website, please consider donating a few bucks. It doesn't take very long, the process is secure, and it will allow us to continue to support the community and to maintain and enhance Trio going forward.</p>
-<br>
-<div data-trio-include="paypaldonatebutton.html"></div>
-<br>
-<p><a target="_blank" href="https://github.com/4awpawz/trio">Show your ❤️, add your ★ to the Github repo.</a></p>
-
-

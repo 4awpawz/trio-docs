@@ -14,5 +14,5 @@ module.exports = ({ $tag, $page, asset }) => {
     // add the article
     $tag.find("h1.blog-post__article-title").append(data.articleTitle);
     $tag.find("div.blog-post__meta-container")
-        .append(blogPostMetaContainer(asset.matter.data.category[0], asset.articleDate));
+        .append(blogPostMetaContainer(data.category[0], asset.articleDate));
 };

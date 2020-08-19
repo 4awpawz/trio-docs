@@ -1,0 +1,24 @@
+.blog-post + .donation-request {
+    padding-bottom: 3rem;
+    margin-bottom: 3rem;
+    border-bottom: 1px solid $border-color;
+    a {
+        color: inherit;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+.doc-page-content__copy .donation-request {
+    padding-bottom: 0;
+    margin-bottom: 0;
+    border-bottom: none;
+}
+
+.doc-page-content__copy .donation-request h2 {
+    border-top: 1px solid rgba($color: #000000, $alpha: 0.25);
+    margin-top: 3rem;
+    margin-bottom: 1.5rem;
+    padding-top: 3rem;
+}

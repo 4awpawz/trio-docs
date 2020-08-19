@@ -7,17 +7,17 @@ tag: metadata
 articleTitle: "What's Coming In Trio v4.1.0"
 activeHeaderItem: 3
 socialMediaMetaTags:
-- <meta property="og:type" content="article">
-- <meta property="og:title" content="What's Coming In Trio v4.1.0">
-- <meta property="og:description" content="While you are enjoying the recently released Trio v4.0.0 we want you to know that Trio v4.1.0 is already in the testing phase and will be released shortly.">
-- <meta property="og:url" content="https://gettriossg.com/blog/releases/2020/08/16/impending-v4.1.0/">
-- <meta property="og:image" content="https://gettriossg.com/media/trio-social-media-image.png">
-- <meta name="twitter:card" content="summary_large_image">
-- <meta name="twitter:site" content="@gettriossg">
-- <meta name="twitter:creator" content="@jefftschwartz">
-- <meta name="twitter:title" content="What's Coming In Trio v4.1.0">
-- <meta name="twitter:description" content="While you are enjoying the recently released Trio v4.0.0 we want you to know that Trio v4.1.0 is already in the testing phase and will be released shortly.">
-- <meta name="twitter:image" content="https://gettriossg.com/media/trio-social-media-image.png">
+- "<meta property='og:type' content='article'>"
+- "<meta property='og:title' content='What's Coming In Trio v4.1.0'>"
+- "<meta property='og:description' content='While you are enjoying the recently released Trio v4.0.0 we want you to know that Trio v4.1.0 is already in the testing phase and will be released shortly.'>"
+- "<meta property='og:url' content='https://gettriossg.com/blog/releases/2020/08/16/impending-v4.1.0/'>"
+- "<meta property='og:image' content='https://gettriossg.com/media/trio-social-media-image.png'>"
+- "<meta name='twitter:card' content='summary_large_image'>"
+- "<meta name='twitter:site' content='@gettriossg'>"
+- "<meta name='twitter:creator' content='@jefftschwartz'>"
+- "<meta name='twitter:title' content='What's Coming In Trio v4.1.0'>"
+- "<meta name='twitter:description' content='While you are enjoying the recently released Trio v4.0.0 we want you to know that Trio v4.1.0 is already in the testing phase and will be released shortly.'>"
+- "<meta name='twitter:image' content='https://gettriossg.com/media/trio-social-media-image.png'>"
 -->
 
 While you are enjoying the recently released Trio v4.0.0 we want you to know that Trio _v4.1.0_ is already in the testing phase and will be released shortly.
@@ -31,13 +31,3 @@ Please note that this new behavior doesn't impact how Trio outputs these tags fo
 If you would like to be notified when Trio v4.1.0 drops then please consider following _@gettriossg_ on Twitter.
 
 <!-- end -->
-
-## Your Financial Support Of This Project Is Greatly Appreciated.
-
-<p>Trio is an open source project and is therefore free of charge to use both for noncommercial and commercial use, but when you use Trio to create a new website, please consider donating a few bucks. It doesn't take very long, the process is secure, and it will allow us to continue to support the community and to maintain and enhance Trio going forward.</p>
-<br>
-<div data-trio-include="paypaldonatebutton.html"></div>
-<br>
-<p><a target="_blank" href="https://github.com/4awpawz/trio">Show your ❤️, add your ★ to the Github repo.</a></p>
-
-

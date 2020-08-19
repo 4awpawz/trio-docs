@@ -1,13 +1,13 @@
 <!--
 template: docpage
-title: Key Concepts - Trio
+title: Core Concepts - Trio
 appendToTarget: true
 activeHeaderItem: 2
 activeDocIndexItem: 4
 -->
-<h1>Key Concepts</h1>
+<h1>Core Concepts</h1>
 
-<p>Understanding the key concepts presented on this page will enable you to use Trio to its fullest potential.</p>
+<p>Understanding the core concepts presented on this page will enable you to use Trio to its fullest potential.</p>
 
 <h2 id="project-assets">Project Assets</h2>
 
@@ -52,7 +52,7 @@ activeDocIndexItem: 4
 <blockquote class="note-tip"><p>After each build of your project, Trio persists most of the metadata that it collects to a file named <em>root/trio.manifest.json</em>. You can use this file as a reference to assist you when you are coding your <a href="/docs/v4/collections#collection-filter-functions">collection filter functions</a> and <a href="/docs/v4/tagbasedcallbacks">tag-based callbacks</a>.</p></blockquote>
 
 <h3>Tag-Based callbacks</h3>
-<p><a href="/docs/v4/tagbasedcallbacks">Tag-based JavaScript Callbacks</a> are JavaScript Node modules that you define in the <em>root/source/callbacks</em> folder that Trio calls to augment your composites with dynamic content residing in the metadata that is passed to them. Each module must export a single function which takes a single argument. See <a href="#advanced-page-composition">Advanced Page Composition</a> below for more information.</p>
+<p><a href="/docs/v4/tagbasedcallbacks">Tag-based JavaScript Callbacks</a> are JavaScript Node modules that you define in the <em>root/source/callbacks</em> folder that Trio calls to augment your composites with dynamic content residing in the metadata (see above) that is passed to them. Each module must export a single function which takes a single argument. See <a href="#advanced-page-composition">Advanced Page Composition</a> below for more information.</p>
 
 <h2>A Page Composition Overview</h2>
 
@@ -69,23 +69,6 @@ activeDocIndexItem: 4
 
 <p>Trio repeats this process for every fragment/template pair declared in the project.</p>
 
-<!-- When generating pages, Trio executes the following for each fragment and its associated template: -->
-
-<!-- <ul> -->
-<!--     <li> -->
-<!--         <p>Trio creates a composite by merging the <a href="/docs/v4/fragment">fragment</a>'s content with the content in the <a href="/docs/v4/template">template's</a> tag that is decorated with the <a href="/docs/v4/tagattributes">data-trio-fragment</a> tag attribute.</p> -->
-<!--     </li> -->
-<!--     <li> -->
-<!--         <p>Trio then searches the composite for any tags that are decorated with the <a href="/docs/v4/tagattributes">data-trio-include</a> tag attribute, and merges their associated <a href="/docs/v4/include">include</a>'s content with the content in their respective tags in the order in which they are declared.</p> -->
-<!--     </li> -->
-<!--     <li> -->
-<!--         <p>Trio then searches the composite for any tags decorated with the <a href="/docs/v4/tagattributes">data-trio-callback</a> tag attribute, and calls their respective <a href="/docs/v4/tagbasedcallbacks">callbacks</a> asynchronously in the order in which they are declared.</p> -->
-<!--     </li> -->
-<!--     <li> -->
-<!--         <p>Finally, Trio saves the composite to your computer's file system as an HTML file.</p> -->
-<!--     </li> -->
-<!-- </ul> -->
-
 <figure>
     <img data-trio-link src="/media/composite.png" alt="composite image">
     <figcaption>A Composite Of Project Assets</figcaption>
@@ -98,6 +81,8 @@ activeDocIndexItem: 4
 <p>Basic page composition allows template assets to provide the overall layout of pages, fragment assets to augments those pages with their own unique content, and include assets to add blocks of commonly repeated content.</p>
 
 <p>Basic page composition produces pages that don't vary much in the way of content other than what each fragment, template and include asset contributes. Often you will find that your pages require <em>dynamic content</em>, which is what advanced page composition provides through the use of tag-based callbacks and metadata.</p>
+
+<p><mark>Perhaps what distinguishes basic page composition the most is that, unlike advanced page composition (see below), it doesn't require the use of tag-based callbacks and JavaScript Node modules.</mark></p>
 
 <h3 id="advanced-page-composition">Anatomy Of A Generated Page, Step 4: Advanced Page Composition</h3>
 
