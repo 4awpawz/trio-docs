@@ -130,7 +130,7 @@ activeDocIndexItem: 15
 
 <h2>Internal Module Dependencies And Caching</h2>
 
-<p>Tag-based-callbacks can, of course, have their own internal module dependencies. When they do, though, you should import them using <a target="_blank" href="https://www.npmjs.com/package/import-fresh"><em>import-fresh</em></a> (or some similar package) to guarantee that you are always importing uncached copies of them.</p>
+<p>Tag-Based-callbacks can, of course, have their own internal module dependencies. When they do, though, you should import them using <a target="_blank" href="https://www.npmjs.com/package/import-fresh"><em>import-fresh</em></a> (or some similar package) to guarantee that you are always importing uncached copies of them.</p>
 
 <figure>
 <pre><code class="JavaScript"><mark>const importFresh = require('import-fresh');</mark>
@@ -155,7 +155,7 @@ module.exports = ({ $tag, site }) => {
 
 <blockquote class="note-tip"><p>Trio uses <em>import-fresh</em> internally to import uncached tag-based callbacks.</p></blockquote>
 
-<h2 id="declaringinternaldependencies">Declaring Internal Module Dependencies To Trigger Incremental Builds</h2>
+<h2 id="declaringinternaldependencies">Declaring Your Tag-Based Callback Module's Internal Dependencies To Trigger Incremental Builds</h2>
 
 <p>When building incrementally, Trio will detect that you have made modifications to your tag-based callbacks, and it will trigger a build to regenerate only those composites whose assets relate by way of their chains of dependencies to the modified callback. However, Trio will not automatically trigger a build when:</p>
 
@@ -166,7 +166,7 @@ module.exports = ({ $tag, site }) => {
 
 <p>To remedy these 2 situations, you can optionally add front matter to your tag-based callbacks with the properties discussed below that will inform Trio to trigger a build whenever these internal dependencies are modified.</p>
 
-<h3>Declaring Your Internal Module Dependencies</h3>
+<h3>Declaring Your Tag-Based Callback Module's Internal Module Dependencies</h3>
 <p>You can declare a single module dependency using the <mark>moduleDependencies</mark> property</p>
 <figure>
 <pre><code class="js">/*
@@ -186,7 +186,7 @@ moduleDependencies:
 <figcaption>Example: Declaring Multiple Module Dependencies</figcaption>
 </figure>
 
-<h3>Declaring Your JSON Data File Dependencies</h3>
+<h3>Declaring Your Tag-Based Callback Module's Internal JSON Data File Dependencies</h3>
 <p>You can declare a single JSON file dependency using the <mark>dataDependencies</mark> property.</p>
 <figure>
 <pre><code class="js">/*
