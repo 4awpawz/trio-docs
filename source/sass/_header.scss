@@ -56,11 +56,15 @@ $color-purple: rgba($purple, 1);
         }
 
         &-text {
-            text-transform: uppercase;
             color: $color-darkgreen;
             font-size: 1rem;
             font-weight: 700;
             letter-spacing: 1px;
+
+            &-smallcaps {
+                font-variant:  small-caps;
+                font-weight: 700;
+            }
 
             &-version {
                 text-transform: lowercase;
