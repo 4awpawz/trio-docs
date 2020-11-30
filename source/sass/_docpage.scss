@@ -6,7 +6,10 @@
             color: $docpageheadercolor;
             margin-top: 2rem;
             font-size: 200%;
-            text-transform: uppercase;
+            // text-transform: uppercase;
+            &-smallcaps {
+                font-variant:  small-caps;
+            }
 
             &__version {
                 text-transform: lowercase;
