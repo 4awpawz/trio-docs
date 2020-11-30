@@ -13,7 +13,7 @@ socialMediaMetaTags:
 - "<meta property=\"og:type\" content=\"article\">"
 - "<meta property=\"og:url\" content=\"https://gettriossg.com/blog/tutorials/2020/11/05/composition-tut-01/\">"
 - "<meta property=\"og:title\" content=\"Basic Page Composition With Templates, Fragments And Includes\">"
-- "<meta property=\"og:description\" content=\"Teaches you how to create web pages using Trio's template, fragment and include project assets.\">"
+- "<meta property=\"og:description\" content=\"This tutorial teaches you how to create web pages using Trio's template, fragment and include project assets.\">"
 - "<meta property=\"og:image\" content=\"https://gettriossg.com/media/composite.png\">"
 -->
 
@@ -29,7 +29,7 @@ Before proceeding with this tutorial, please familiarize yourself with Trio's <a
 
 In this tutorial we will explore Trio's basic page composition. Unlike advanced page composition, which will be the subject of the next tutorial, basic page composition centers around the use of template, fragment and include project assets to compose your HTML documents, and doesn't involve the use of any tag-based callbacks.
 
-Our use case for this tutorial is trivial, we want Trio to generate an HTML page that contains a page header and a list containing the names of artist and their relevant information. If we were to hand code this HTML page, this is what it would look like:
+Our use case for this tutorial is trivial. We want Trio to generate an HTML page that contains a page header and a list containing the names of artist and their relevant information. If we were to hand code this HTML page, this is what it would look like:
 
 ```html
 <!DOCTYPE html>

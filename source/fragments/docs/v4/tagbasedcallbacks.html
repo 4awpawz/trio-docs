@@ -100,7 +100,7 @@ activeDocIndexItem: 15
 </figure>
 
 <h3 id="site">site</h3>
-<p>site exposes the organized collection of <a href="/docs/v4/metadata#site">metadata</a> that Trio creates from your project's assets. Its catalogs - <a href="/docs/v4/metadata#frags">frags</a>, <a href="/docs/v4/metadata#articles-catalog">articlesCatalog</a>, <a href="/docs/v4/metadata#categories-catalog">categoriesCatalog</a>, <a href="/docs/v4/metadata#tags-catalog">tagsCatalog</a>, <a href="/docs/v4/metadata#data-catalog">dataCatalog</a> - as well as its other properties can be used to augment your composites with dynamic data.</p>
+<p>site exposes the organized collection of <a href="/docs/v4/metadata#site">metadata</a> that Trio creates from your project's assets. Its catalogs - <a href="/docs/v4/metadata#frags">frags</a>, <a href="/docs/v4/metadata#articles-catalog">articlesCatalog</a>, <a href="/docs/v4/metadata#categories-catalog">categoriesCatalog</a>, <a href="/docs/v4/metadata#tags-catalog">tagsCatalog</a>, <a href="/docs/v4/metadata#data-catalog">dataCatalog</a> - as well as its other properties can be used to augment your composites with dynamic content.</p>
 <figure>
     <pre><code class="js">module.exports = ({ $tag, site }) => {
     site.tagsCatalog.forEach(item => {
@@ -116,7 +116,7 @@ activeDocIndexItem: 15
 </figure>
 
 <h3 id="asset">asset</h3>
-<p>asset exposes the <a href="/docs/v4/metadata#asset">metadata specific to the fragment</a>, including its <em>front matter</em>. It's catalogs - <a href="/docs/v4/metadata#related-articles-by-category">relatedArticlesByCategory</a>, <a href="/docs/v4/metadata#related-articles-by-tag">relatedArticlesByTag</a>, <a href="/docs/v4/metadata#related-articles-by-tag-flattened">relatedArticlesByTagFlattened</a> - as well as its other properties can be used to augment your composites with dynamic data.</p>
+<p>asset exposes the <a href="/docs/v4/metadata#asset">metadata specific to the fragment</a>, including its <em>front matter</em>. Its catalogs - <a href="/docs/v4/metadata#related-articles-by-category">relatedArticlesByCategory</a>, <a href="/docs/v4/metadata#related-articles-by-tag">relatedArticlesByTag</a>, <a href="/docs/v4/metadata#related-articles-by-tag-flattened">relatedArticlesByTagFlattened</a> - as well as its other properties can be used to augment your composites with dynamic content.</p>
 <figure>
     <pre><code class="js">module.exports = ({ $tag, asset }) => {
     const data = asset.matter.data;
@@ -127,6 +127,22 @@ activeDocIndexItem: 15
 };</code></pre>
 <figcaption>Example: Targeting A Tag's Content With Data From asset</figcaption>
 </figure>
+
+<h3 id="asset">cheerio</h3>
+<p>cheerio exposes a constructor function that can be used to <a target="_blank" href="https://cheerio.js.org/#loading">load and manipulate dynamic tag structures</a>, such as:</p>
+<figure>
+    <pre><code class="js">const $ = cheerio.load('&lt;h2 class="title"&gt;Hello world&lt;/h2&gt;');
+
+$('h2.title').text('Hello there!');
+$('h2').addClass('welcome');
+
+$.html();
+//=> &lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;h2 class="title welcome"&gt;Hello there!&lt;/h2&gt;&lt;/body&gt;&lt;/html&gt;
+};</code></pre>
+<figcaption>Example: Using The Cheerio Constructor Function To Load And Manipulate Dynamic Tag Structures</figcaption>
+</figure>
+
+<blockquote class="note-important">Since both <em>$page</em> and <em>$tag</em> also provide methods for creating and manipulating dynamic tag structures the <em>cheerio</em> property is therefore basically redundant. It is currently being maintained for legacy sake but you are advised that <em>the cheerio property is a strong candidate for deprecation</em> in a future release of Trio.</blockquote>
 
 <h2>Internal Module Dependencies And Caching</h2>
 
