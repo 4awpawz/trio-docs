@@ -36,5 +36,5 @@ If you don't already have Trio and Node installed then please follow the instruc
 __Please follow _@gettriossg_ on Twitter to get notified when new articles in this series become available!__
 
 1. <a data-trio-link href="/blog/tutorials/2020/11/16/page-composition-tut-01/">Basic Page Composition With Templates, Fragments And Includes</a> - posted on 2020/11/16
-
+1. <a data-trio-link href="/blog/tutorials/2020/12/10/page-composition-tut-02/">Advanced Page Composition With Fragment Front Matter</a> - posted on 2020/12/10
 <!-- end -->
