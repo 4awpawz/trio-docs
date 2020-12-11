@@ -37,4 +37,5 @@ __Please follow _@gettriossg_ on Twitter to get notified when new articles in th
 
 1. <a data-trio-link href="/blog/tutorials/2020/11/16/page-composition-tut-01/">Basic Page Composition With Templates, Fragments And Includes</a> - posted on 2020/11/16
 1. <a data-trio-link href="/blog/tutorials/2020/12/10/page-composition-tut-02/">Advanced Page Composition With Fragment Front Matter</a> - posted on 2020/12/10
+1. <a data-trio-link href="/blog/tutorials/2020/12/11/page-composition-tut-03/">Advanced Page Composition With JSON Data</a> - posted on 2020/12/11
 <!-- end -->

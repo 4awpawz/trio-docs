@@ -1,19 +1,19 @@
 <!--
 template: tutorialpage
-title: Advanced Page Composition With Fragment Front Matter
+title: Advanced Page Composition With JSON Data
 appendToTarget: true
 category: tutorials
 tag: tutorial
-articleTitle: Advanced Page Composition With Fragment Front Matter
+articleTitle: Advanced Page Composition With JSON Data
 activeHeaderItem: 3
 socialMediaMetaTags:
 - "<meta name=\"twitter:card\" content=\"summary_large_image\">"
 - "<meta name=\"twitter:site\" content=\"@gettriossg\">"
 - "<meta name=\"twitter:creator\" content=\"@jefftschwartz\">"
 - "<meta property=\"og:type\" content=\"article\">"
-- "<meta property=\"og:url\" content=\"https://gettriossg.com/blog/tutorials/2020/12/10/page-composition-tut-02/\">"
-- "<meta property=\"og:title\" content=\"Advanced Page Composition With Fragment Front Matter\">"
-- "<meta property=\"og:description\" content=\"This tutorial teaches you how to use Trio's advanced page composition to add dynamic content from fragment front matter to your web pages.\">"
+- "<meta property=\"og:url\" content=\"https://gettriossg.com/blog/tutorials/2020/12/11/page-composition-tut-03/\">"
+- "<meta property=\"og:title\" content=\"Advanced Page Composition With JSON Data\">"
+- "<meta property=\"og:description\" content=\"This tutorial teaches you how to use Trio's advanced page composition to add dynamic content from JSON Data to your web pages.\">"
 - "<meta property=\"og:image\" content=\"https://gettriossg.com/media/composite.png\">"
 -->
 
@@ -27,9 +27,10 @@ Before proceeding with this tutorial, please familiarize yourself with Trio's <a
 
 ## Intention Of This Tutorial
 
-In this tutorial we will explore Trio's advanced page composition. Unlike basic page composition, which was the subject of the previous tutorial, <a data-trio-link href="/blog/tutorials/2020/11/16/page-composition-tut-01/">Basic Page Composition With Templates, Fragments And Includes</a>, advanced page composition does require the use of tag-based Node callback modules.
+In this tutorial we will continue to explore Trio's advanced page composition but now we will be using the data found in the JSON files located in the _root/source/data_ folder to add dynamic content to your site's HTML pages.
 
-Our use case for this tutorial is again trivial and is the same as it was for the previous tutorial. We want Trio to generate an HTML page that contains a page header and a list containing the names of artist and their relevant information. If we were to hand code this HTML page, this is what it would look like:
+Once again our use case for this tutorial is trivial and is the same as it was for the previous tutorial. We want Trio to generate an HTML page that contains a page header and a list containing the names of artist and their relevant information. If we were to hand code this HTML page, this is what it would look like:
+
 
 ```html
 <!DOCTYPE html>
@@ -149,43 +150,12 @@ In the project's _root/source/fragments_ folder, create a new __fragment file__ 
 ```html
 <!--
 template: default
-title: Coded Using Front Matter & Tag-based Callback
+title: Coded Using JSON Data & Tag-based Callback
 appendToTarget: true
-artists:
-- name: Terry Shannon
-  medium: Oil
-  style: Impressionism
-- name: Glen Miller
-  medium: Watercolor
-  style: Impressionism
-- name: Kris Jay
-  medium: Oil
-  style: Pop Art
-- name: Riley Webb
-  medium: Oil
-  style: Cubism
-- name: Vic Christy
-  medium: Oil
-  style: Art Deco
-- name: Caden Ray
-  medium: Watercolor
-  style: Art Nouveau
-- name: Steff Hammer
-  medium: Oil
-  style: Impressionism
-- name: Billie Noble
-  medium: Oil
-  style: Post-Impressionism
-- name: Danni Powell
-  medium: Watercolor
-  style: Pop Art
-- name: Blair Gordonlist
-  medium: Oil
-  style: Pop Art
 -->
 
 <h2>Artists</h2>
-<ul data-trio-callback="artistlistfromfrontmatter"></ul>
+<ul data-trio-callback="artistlistfromjsondata"></ul>
 ```
 
 Please notice how the above fragment project asset declares front matter at the very top of the file, in which it defines:
@@ -193,31 +163,91 @@ Please notice how the above fragment project asset declares front matter at the 
 1. The required front matter property _template_ with the name of the template file it is associated with and
 1. The required front matter property _title_ with the title to be assigned to the generated document's title tag and
 1. The optional front matter property _appendToTarget_ which Trio uses to determine if it should append to or replace the tag in the template that is decorated with the _data-trio-fragment_ attribute with the fragment's content. By assigning true, Trio will append whatever content it finds in the associated fragment to this tag.
-1. The front matter property _artists_, which is an array of artists and their relevant data.
 
 Also, please notice that the fragment's markup contains an _unordered list tag_ decorated with the _data-trio-callback_ attribute and that it is assigned the _name of the tag-based callback_ (see below) which is located in the _root/source/callbacks_ folder.
 
 
 ```html
-<ul data-trio-callback="artistlistfromfrontmatter"></ul>
+<ul data-trio-callback="artistlistfromjsondata"></ul>
 ```
 
 Notice also that the _file type_ of the tag-based callback is always assumed to be '_.js_' and can be omitted.
 
-Tags decorated with the _data-trio-callback_ attribute direct Trio to call the tag-based callbacks that they name, which in this case is _root/source/callbacks/artistlistfromfrontmatter.js_.
+Tags decorated with the _data-trio-callback_ attribute direct Trio to call the tag-based callbacks that they name, which in this case is _root/source/callbacks/artistlistfromjsondata.js_.
 
+## Create The JSON File
+
+In the project's _root/source/data_ folder, create a new _JSON file_ named _artists.json_ and copy and paste the following into that:
+
+```JSON
+[
+    {
+        "name": "Terry Shannon",
+        "medium": "Oil",
+        "style": "impressionism"
+    },
+    {
+        "name": "Glen Miller",
+        "medium": "Watercolor",
+        "style": "Impressionism"
+    },
+    {
+        "name": "Kris Jay",
+        "medium": "Oil",
+        "style": "Pop Art"
+    },
+    {
+        "name": "Riley Webb",
+        "medium": "Oil",
+        "style": "Cubism"
+    },
+    {
+        "name": "Vic Christy",
+        "medium": "Oil",
+        "style": "Art Deco"
+    },
+    {
+        "name": "Caden Ray",
+        "medium": "Watercolor",
+        "style": "Art Nouveau"
+    },
+    {
+        "name": "Steff Hammer",
+        "medium": "Oil",
+        "style": "Impressionism"
+    },
+    {
+        "name": "Billie Noble",
+        "medium": "Oil",
+        "style": "Post-Impressionism"
+    },
+    {
+        "name": "Danni Powell",
+        "medium": "Watercolor",
+        "style": "Pop Art"
+    },
+    {
+        "name": "Blair Gordonlist",
+        "medium": "Oil",
+        "style": "Pop Art"
+    }
+]
+```
 
 ## Create The Tag-Based Callback
 
-In the project's _root/source/callbacks_ folder, create a new __javascript file__ named _artistlistfromfrontmatter.js_ and copy and paste the following into that:
+In the project's _root/source/callbacks_ folder, create a new __javascript file__ named _artistlistfromjsondata.js_ and copy and paste the following into that:
 
 ```js
-module.exports = ({ $tag, asset }) => {
-    // get a reference to the artists array from the fragment's front matter
-    const artists = asset.matter.data.artists;
-    // sort the list by the artist's name
-    artists.sort((a, b) => a.name.localeCompare(b.name)).forEach(artist => {
-        // append each artist's name and relevant data to $tag
+/*
+dataDependencies:  artists
+*/
+
+module.exports = ({ $tag, site }) => {
+    // access the artists array from the artists.json file via site.catalog
+    // and sort the list by the artist's name
+    site.dataCatalog.artists.sort((a, b) => a.name.localeCompare(b.name)).forEach(artist => {
+    // and append each artist's name and relevant data to $tag
         $tag.append(`
             <li>${artist.name}</li>
             <ul>
@@ -231,16 +261,16 @@ module.exports = ({ $tag, asset }) => {
 
 This _tag-based callback does the following:
 
-1. It accesses the array of artists declared in the fragments front matter using:
+1. It accesses the array of artists declared in the root/source/data/artists.json file using site.dataCatalog:
 
 ```javascript
-const artists = asset.matter.data.artists;
+site.dataCatalog.artists
 ```
 
 2. Then sorts the artists array by artist name using:
 
 ```javascript
-artists.sort((a, b) => a.name.localeCompare(b.name))
+site.dataCatalog.artists.sort((a, b) => a.name.localeCompare(b.name))
 ```
 
 3. Then appends each artist's data to the tag that was decorated with the _data-trio-callback_ attribute using:
@@ -320,7 +350,7 @@ You can also view the content of the generated HTML document, which resides in _
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coded Using Front Matter &amp; Tag-based Callback</title>
+    <title>Coded Using JSON Data &amp; Tag-based Callback</title>
     <link rel="stylesheet" href="/css/main.css">
 </head>
 
@@ -330,7 +360,7 @@ You can also view the content of the generated HTML document, which resides in _
     </header>
     <main data-trio-fragment>
         <h2>Artists</h2>
-        <ul data-trio-callback="artistlistfromfrontmatter">
+        <ul data-trio-callback="artistlistfromjsondata">
             <li>Billie Noble</li>
             <ul>
                 <li>Medium: Oil</li>
@@ -382,7 +412,7 @@ You can also view the content of the generated HTML document, which resides in _
             <li>Terry Shannon</li>
             <ul>
                 <li>Medium: Oil</li>
-                <li>Style: Impressionism</li>
+                <li>Style: impressionism</li>
             </ul>
 
             <li>Vic Christy</li>
@@ -401,12 +431,12 @@ From the above we can see that Trio in fact did as we had requested it to do by 
 
 Also note that because we built the project for development using Trio's _build_ command, Trio preserved all the data-trio-* attributes. If we had instead built the project using Trio's _release_ command, which is used to build your project prior to its release, Trio would have removed all the _data-trio-*_ attributes from the generated pages.
 
-And of course please note that the tag-based callback _root/source/callbacks/artistlistfromfrontmatter.js_ declared by the _&lt;ul&gt;_ tag that is decorated with the _data-trio-callback_ attribute in the fragment
+And of course please note that the tag-based callback _root/source/callbacks/artistlistfromjsondata.js_ declared by the _&lt;ul&gt;_ tag that is decorated with the _data-trio-callback_ attribute in the fragment
 
 ```html
-<ul data-trio-callback="artistlistfromfrontmatter"></ul>
+<ul data-trio-callback="artistlistfromjsondata"></ul>
 ```
-was called and that it did dynamically generate list items from the artists array defined in the fragment's front matter and appended them as content to the _&lt;ul&gt;_ tag.
+was called and that it did dynamically generate list items from the artists array defined in the root/source/data/artists.json file and appended them as content to the _&lt;ul&gt;_ tag.
 
 ### Extra Credit
 
@@ -425,6 +455,6 @@ Also, please refer to the <a data-trio-link href="/docs/v4/metadata/">Metadata</
 
 ## Conclusion
 
-This tutorial examined how you can use Trio's advanced page composition to add _dynamic content contributed by a fragment's front matter_ to your site's HTML documents.
+This tutorial examined how you can use Trio's advanced page composition to add _dynamic content contributed by a JSON file located in the root/source/data folder_ to your site's HTML documents.
 
-In the next tutorial in this series we will examine how you can add _dynamic content contributed by JSON files located in the root/source/data folder of your project_ to your site's HTML documents.
+In the next tutorial in this series we will finally leave the trivial use cases behind and create something much more substantial that combines basic and advanced page composition along with <a data-trio-link href="/docs/v4/collections/">collections</a>, which are groups of pages that are dynamically generated by Trio that you would otherwise have to manually create yourself. Collections are one of if not Trio's most powerful and dynamic feature and it's what makes Trio an awesome platform for creating blogs, portfolios, and catalogs.
