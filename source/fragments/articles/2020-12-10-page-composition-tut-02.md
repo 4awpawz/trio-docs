@@ -11,7 +11,7 @@ socialMediaMetaTags:
 - "<meta name=\"twitter:site\" content=\"@gettriossg\">"
 - "<meta name=\"twitter:creator\" content=\"@jefftschwartz\">"
 - "<meta property=\"og:type\" content=\"article\">"
-- "<meta property=\"og:url\" content=\"https://gettriossg.com/blog/tutorials/2020/11/05/composition-tut-02/\">"
+- "<meta property=\"og:url\" content=\"https://gettriossg.com/blog/tutorials/2020/12/10/page-composition-tut-02/\">"
 - "<meta property=\"og:title\" content=\"Advanced Page Composition With Fragment Front Matter\">"
 - "<meta property=\"og:description\" content=\"This tutorial teaches you how to use Trio's advanced page composition to add dynamic content from fragment front matter to your web pages.\">"
 - "<meta property=\"og:image\" content=\"https://gettriossg.com/media/composite.png\">"
