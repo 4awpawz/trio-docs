@@ -11,7 +11,7 @@ socialMediaMetaTags:
 - "<meta name=\"twitter:site\" content=\"@gettriossg\">"
 - "<meta name=\"twitter:creator\" content=\"@jefftschwartz\">"
 - "<meta property=\"og:type\" content=\"article\">"
-- "<meta property=\"og:url\" content=\"https://gettriossg.com/blog/tutorials/2020/11/05/composition-tut-01/\">"
+- "<meta property=\"og:url\" content=\"https://gettriossg.com/blog/tutorials/2020/11/16/page-composition-tut-01/\">"
 - "<meta property=\"og:title\" content=\"Basic Page Composition With Templates, Fragments And Includes\">"
 - "<meta property=\"og:description\" content=\"This tutorial teaches you how to create web pages using Trio's template, fragment and include project assets.\">"
 - "<meta property=\"og:image\" content=\"https://gettriossg.com/media/composite.png\">"
