@@ -130,6 +130,10 @@
             }
         }
 
+        li > ul, li > ol {
+            margin-left: 2rem;
+        }
+
         p a, li a {
             text-decoration: none;
             background-color: rgba($secondary-text-color, 0.08);

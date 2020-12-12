@@ -14,7 +14,9 @@ activeDocIndexItem: 21
 
 <blockquote class="note-important"><p>Deleting or renaming files or making changes to trio.json while Trio is not running (while off-line) will cause Trio's cache to get out of sync with the actual state of your project, and will cause subsequent incremental builds to fail. In such cases where you delete and rename files or make changes to trio.json while off-line, you are advised to first run a one-off build using <code>trio build | b</code> prior to building incrementally, which will trigger Trio to regenerate its cache.</p></blockquote>
 
-<blockquote class="note-tip"><p>Beginning with v3, when running incremental build, deleting and renaming files as well as making changes to trio.json will trigger a one-off build.</p></blockquote>
+<blockquote class="note-tip"><p>Beginning with v3.0.0, when running incremental build, deleting and renaming files as well as making changes to trio.json will trigger a one-off build.</p></blockquote>
+
+<blockquote class="note-tip"><p>Beginning with v4.3.0, when running incremental build, adding files will trigger a one-off build.</p></blockquote>
 
 <blockquote class="note-tip"><p>You can influence the incremental build process by <a data-trio-link href="/docs/v4/tagbasedcallbacks#declaringinternaldependencies">declaring your tag-based callback module's internal dependencies to trigger incremental builds</a>.</p></blockquote>
 

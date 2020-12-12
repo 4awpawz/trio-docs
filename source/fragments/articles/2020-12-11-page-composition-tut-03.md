@@ -261,13 +261,13 @@ module.exports = ({ $tag, site }) => {
 
 This _tag-based callback does the following:
 
-1. It accesses the array of artists declared in the root/source/data/artists.json file using site.dataCatalog:
+1. It accesses the array of artists declared in the _root/source/data/artists.json_ file using _site.dataCatalog_:
 
 ```javascript
 site.dataCatalog.artists
 ```
 
-2. Then sorts the artists array by artist name using:
+2. Then sorts the artists array by artist _name_ using:
 
 ```javascript
 site.dataCatalog.artists.sort((a, b) => a.name.localeCompare(b.name))
