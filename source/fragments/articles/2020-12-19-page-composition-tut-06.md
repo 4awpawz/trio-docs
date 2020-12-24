@@ -248,4 +248,4 @@ was called and that it did dynamically generate the flag details from the indivi
 
 This tutorial concludes our examination of Trio's advanced page composition with collections and demonstrates how we can _dynamically generate HTML documents from metadata_, such as from the root/source/data/world.json file used in this tutorial.
 
-We really hope that you have enjoyed all the tutorials in the this series on Page Composition with Trio as much as we have had making them. Please consider a small donation to this project (see below) so that we can continue to bring you similar quality content.
+We really hope that you have enjoyed all the tutorials in this series on Page Composition with Trio as much as we have had making them. Please consider a small donation to this project (see below) so that we can continue to bring you similar quality content.
