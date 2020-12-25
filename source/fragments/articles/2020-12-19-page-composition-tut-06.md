@@ -196,7 +196,7 @@ trio b; trio s
 
 The _build_ command instructs Trio to do a one-off build of your site _for development_ and to place the site's generated output into the project's _public/_ folder. The _serve_ command instructs Trio to serve the project's _public/_ folder's content in the browser.
 
-Now that we have implemented the 249 detail flag pages using a collection, please click on any one of the flags listed in the landing page to render its detail page, which, depending on the flag you clicked on, will look similar to the following:
+Now that we have implemented the 249 detail flag pages using a collection, please click on any one of the flags listed in the landing page to render its detail page which, depending on the flag you clicked on, will look similar to the following:
 
 <img data-trio-link src="/media/tutorials/composition/fotwdetailpage.png" alt="image of Flags Of The World detail page">
 
