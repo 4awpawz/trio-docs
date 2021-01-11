@@ -16,15 +16,19 @@
     <script data-trio-link src="/scripts/highlight.pack.js"></script>
 </head>
 <body>
+    <!-- facebook JavaScript SDK -->
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v9.0" nonce="6AlX9x9d"></script>
     <header data-trio-include="header.html" class="header header--fixed header--green"></header>
     <div data-trio-include="blogmasthead.html"></div>
     <main class="container blog-container">
         <article data-trio-callback="articlepage" class="blog-post">
             <h1 class="blog-post__article-title"></h1>
             <div class="blog-post__meta-container"></div>
-            <section data-trio-fragment>
+            <section data-trio-fragment></section>
         </article>
         <section data-trio-include="donation-request.html"></section>
+        <div data-trio-callback="fbcomments" class="fb-comments" data-href="" data-width="100%" data-numposts="5"></div>
         <div data-trio-include="navigator.html" data-trio-callback="articlePagesNavigator" class="navigator">
     </main>
     <footer data-trio-include="footer.html" class="container blog-container blogfooter"></footer>
