@@ -1,12 +1,14 @@
 %button-placeholder {
     text-align: center;
     display: inline-block;
-    border: solid 1px #cfcfcf;
+    border: solid 2px #f6f646;
+    outline: solid 2px #f6f646;
+    outline-offset: -2px;
     border-radius: $border-radius;
     margin: 0;
     width: 100%;
     background-color: #fff;
-    color: #404040;
+    color: #f7a855;
     font-size: 1.4rem;
     font-weight: 800;
 }
@@ -18,31 +20,12 @@
     text-transform: uppercase;
 }
 
-.button-primary {
+.button-primary, .button-secondary {
     @extend %button-placeholder;
-    border: solid 2px lightgreen;
-    color: green;
-    margin-bottom: .75rem;
+    transition: outline-offset 250ms ease;
 
     &:hover {
-        border-color: green;
-        color: #fff;
-        background-color: #f7a854;
-        transition: border-color .25s, color .25s, background-color .25s;
-    }
-}
-
-.button-secondary {
-    @extend %button-placeholder;
-    border: solid 2px lightgreen;
-    color: green;
-    margin-top: .75rem;
-
-    &:hover {
-        border-color: green;
-        color: #fff;
-        background-color: #f7a854;
-        transition: border-color .25s, color .25s, background-color .25s;
+        outline-offset: -8px;
     }
 }
 

@@ -13,17 +13,6 @@
     padding-bottom: 2rem;
 }
 
-.buttons-tray {
-    .button-primary, .button-secondary {
-        font-size: 1.2rem;
-        font-weight: bold;
-    }
-    .button-primary:focus, .button-secondary:focus {
-        background-color: #f7a854;
-        color: white;
-    }
-}
-
 .hero-primary {
     &-container {
         width: 100%;
@@ -60,10 +49,8 @@
         text-transform: uppercase;
         margin: 0;
     }
-    .buttons {
-        &-tray {
-            justify-content: center;
-        }
+    .buttons-tray {
+        justify-content: center;
     }
     .button-primary {
         width: 100%;
