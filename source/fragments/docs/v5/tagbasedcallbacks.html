@@ -8,7 +8,7 @@ activeDocIndexItem: 15
 
 <h1>Tag-Based Callbacks</h1>
 
-<p>Trio scans your composites for HTML tags that are decorated with the <a href="/docs/v4/tagattributes#data-trio-callback">data-trio-callback</a> attribute and <em>asynchronously</em> calls the JavaScript Node modules they name, passing them a single object whose properties can be used along with <a target="_blank" href="https://cheerio.js.org/">cheerio</a>'s selector API to augment the composites with dynamic content.</p>
+<p>Trio scans your composites for HTML tags that are decorated with the <a href="/docs/v5/tagattributes#data-trio-callback">data-trio-callback</a> attribute and <em>asynchronously</em> calls the JavaScript Node modules they name, passing them a single object whose properties can be used along with <a target="_blank" href="https://cheerio.js.org/">cheerio</a>'s selector API to augment the composites with dynamic content.</p>
 
 <ul>
     <li><em>file location</em>: root/source/callbacks</li>
@@ -100,7 +100,7 @@ activeDocIndexItem: 15
 </figure>
 
 <h3 id="site">site</h3>
-<p>site exposes the organized collection of <a href="/docs/v4/metadata#site">metadata</a> that Trio creates from your project's assets. Its catalogs - <a href="/docs/v4/metadata#frags">frags</a>, <a href="/docs/v4/metadata#articles-catalog">articlesCatalog</a>, <a href="/docs/v4/metadata#categories-catalog">categoriesCatalog</a>, <a href="/docs/v4/metadata#tags-catalog">tagsCatalog</a>, <a href="/docs/v4/metadata#data-catalog">dataCatalog</a> - as well as its other properties can be used to augment your composites with dynamic content.</p>
+<p>site exposes the organized collection of <a href="/docs/v5/metadata#site">metadata</a> that Trio creates from your project's assets. Its catalogs - <a href="/docs/v5/metadata#frags">frags</a>, <a href="/docs/v5/metadata#articles-catalog">articlesCatalog</a>, <a href="/docs/v5/metadata#categories-catalog">categoriesCatalog</a>, <a href="/docs/v5/metadata#tags-catalog">tagsCatalog</a>, <a href="/docs/v5/metadata#data-catalog">dataCatalog</a> - as well as its other properties can be used to augment your composites with dynamic content.</p>
 <figure>
     <pre><code class="js">module.exports = ({ $tag, site }) => {
     site.tagsCatalog.forEach(item => {
@@ -116,7 +116,7 @@ activeDocIndexItem: 15
 </figure>
 
 <h3 id="asset">asset</h3>
-<p>asset exposes the <a href="/docs/v4/metadata#asset">metadata specific to the fragment</a>, including its <em>front matter</em>. Its catalogs - <a href="/docs/v4/metadata#related-articles-by-category">relatedArticlesByCategory</a>, <a href="/docs/v4/metadata#related-articles-by-tag">relatedArticlesByTag</a>, <a href="/docs/v4/metadata#related-articles-by-tag-flattened">relatedArticlesByTagFlattened</a> - as well as its other properties can be used to augment your composites with dynamic content.</p>
+<p>asset exposes the <a href="/docs/v5/metadata#asset">metadata specific to the fragment</a>, including its <em>front matter</em>. Its catalogs - <a href="/docs/v5/metadata#related-articles-by-category">relatedArticlesByCategory</a>, <a href="/docs/v5/metadata#related-articles-by-tag">relatedArticlesByTag</a>, <a href="/docs/v5/metadata#related-articles-by-tag-flattened">relatedArticlesByTagFlattened</a> - as well as its other properties can be used to augment your composites with dynamic content.</p>
 <figure>
     <pre><code class="js">module.exports = ({ $tag, asset }) => {
     const data = asset.matter.data;
@@ -228,7 +228,7 @@ dataDependencies:
 
 <p>To remedy this situation, you can add the <em>alwaysBuild</em> property to your fragment's front matter which will cause Trio to always mark this fragment as stale.</p>
 
-<blockquote class="note-tip"><p>Using <a href="/docs/v4/collections">collections</a>, which were introduced in v2.0.0, can eliminate having to use <em>alwaysBuild</em>.</p></blockquote>
+<blockquote class="note-tip"><p>Using <a href="/docs/v5/collections">collections</a>, which were introduced in v2.0.0, can eliminate having to use <em>alwaysBuild</em>.</p></blockquote>
 <figure>
 <pre><code class="html">&lt;!--
 template: blogpage
@@ -241,10 +241,10 @@ title: Trio Blog | Official blog for Trio static site generator.
 
 <ul>
     <li><a target="_blank" href="https://www.npmjs.com/package/cheerio">cheerio</a></li>
-    <li><a data-trio-link href="/docs/v4/fragment">Fragment</a></li>
-    <li><a data-trio-link href="/docs/v4/frontmatter">Front Matter</a></li>
-    <li><a data-trio-link href="/docs/v4/incrementalbuild">Incremental Build</a></li>
-    <li><a data-trio-link href="/docs/v4/coreconcepts">Core Concepts</a></li>
-    <li><a data-trio-link href="/docs/v4/metadata">Metadata</a></li>
-    <li><a data-trio-link href="/docs/v4/tagattributes">Tag Attributes</a></li>
+    <li><a data-trio-link href="/docs/v5/fragment">Fragment</a></li>
+    <li><a data-trio-link href="/docs/v5/frontmatter">Front Matter</a></li>
+    <li><a data-trio-link href="/docs/v5/incrementalbuild">Incremental Build</a></li>
+    <li><a data-trio-link href="/docs/v5/coreconcepts">Core Concepts</a></li>
+    <li><a data-trio-link href="/docs/v5/metadata">Metadata</a></li>
+    <li><a data-trio-link href="/docs/v5/tagattributes">Tag Attributes</a></li>
 </ul>

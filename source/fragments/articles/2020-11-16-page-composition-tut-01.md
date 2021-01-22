@@ -23,7 +23,7 @@ socialMediaMetaTags:
 
 ## Prerequisites
 
-Before proceeding with this tutorial, please familiarize yourself with Trio's <a data-trio-link href="/docs/v4/coreconcepts/">Core Concepts</a>.
+Before proceeding with this tutorial, please familiarize yourself with Trio's <a data-trio-link href="/docs/v5/coreconcepts/">Core Concepts</a>.
 
 ## Intention Of This Tutorial
 

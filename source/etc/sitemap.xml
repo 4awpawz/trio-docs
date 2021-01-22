@@ -4,28 +4,8 @@
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-  <url>
-    <loc>https://gettriossg.com/</loc>
-    <changefreq>Monthly</changefreq>
-    <priority>1</priority>
-    <lastmod>2019-11-20</lastmod>
-  </url>
-  <url>
-    <loc>https://gettriossg.com/docs/v4/</loc>
-    <changefreq>Monthly</changefreq>
-    <priority>1</priority>
-    <lastmod>2019-11-20</lastmod>
-  </url>
-  <url>
-    <loc>https://gettriossg.com/docs/v4/gettingstarted/</loc>
-    <changefreq>Monthly</changefreq>
-    <priority>1</priority>
-    <lastmod>2019-11-20</lastmod>
-  </url>
-  <url>
-    <loc>https://gettriossg.com/blog/</loc>
-    <changefreq>Monthly</changefreq>
-    <priority>1</priority>
-    <lastmod>2019-11-21</lastmod>
-  </url>
+  <url><loc>https://gettriossg.com/</loc></url>
+  <url><loc>https://gettriossg.com/docs/v5/</loc></url>
+  <url><loc>https://gettriossg.com/docs/v5/gettingstarted/</loc></url>
+  <url><loc>https://gettriossg.com/blog/</loc></url>
 </urlset>

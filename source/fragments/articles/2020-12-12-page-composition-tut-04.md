@@ -23,7 +23,7 @@ socialMediaMetaTags:
 
 ## Prerequisites
 
-Before proceeding with this tutorial, please familiarize yourself with Trio's <a data-trio-link href="/docs/v4/coreconcepts/">Core Concepts</a>, <a data-trio-link href="/docs/v4/tagbasedcallbacks/"> Tag-Based Callbacks</a>, <a data-trio-link href="/docs/v4/metadata/">Metadata</a>, and <a data-trio-link href="/docs/v4/collections/">Collections</a>.
+Before proceeding with this tutorial, please familiarize yourself with Trio's <a data-trio-link href="/docs/v5/coreconcepts/">Core Concepts</a>, <a data-trio-link href="/docs/v5/tagbasedcallbacks/"> Tag-Based Callbacks</a>, <a data-trio-link href="/docs/v5/metadata/">Metadata</a>, and <a data-trio-link href="/docs/v5/collections/">Collections</a>.
 
 ## Intention Of This Tutorial
 
