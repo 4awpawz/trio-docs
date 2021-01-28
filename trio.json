@@ -1,7 +1,6 @@
 {
     "permalinks": [
-        "articles: blog",
-        "category: blog"
+        "articles, category: blog"
     ],
     "articlesPerPage": 10,
     "fbCommentsHrefBaseDevelopment": "localhost/3000",

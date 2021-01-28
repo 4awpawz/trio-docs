@@ -1,0 +1,12 @@
+.faq {
+    &__in-page-anchor {
+        display: inline-block;
+        margin: .25rem;
+    }
+    &__question, &__answer {
+        display: block;
+    }
+    &__answer pre code {
+        margin-bottom: 5rem;
+    }
+}

@@ -20,7 +20,7 @@ activeDocIndexItem: 21
 
 <blockquote class="note-tip"><p>You can influence the incremental build process by <a data-trio-link href="/docs/v5/tagbasedcallbacks#declaringinternaldependencies">declaring your tag-based callback module's internal dependencies to trigger incremental builds</a>.</p></blockquote>
 
-<p>As an anecdotal example, building a site having 56 pages without incremental build took approximately 5 seconds. Building the same site with one stale fragment using incremental build took approximately 1 seconds, and of that 1 seconds, approximately 400 milliseconds of that can be attributed directly to the overhead incurred by the incremental build process itself.</p>
+<p>As an anecdotal example, building a site having 56 pages without incremental build took approximately 5 seconds. Building the same site with one stale fragment using incremental build took approximately 1 second, and of that 1 second, approximately 400 milliseconds of that can be attributed directly to the overhead incurred by the incremental build process itself.</p>
 
 <p>These tests were repeated 10 times on a 13 inch 2009 late model classic white 2.26 GHz Intel Core 2 Duo MacBook with 8 gigabytes of memory and a spinning hard drive. Had these tests been performed running on a more modern hardware setup, one with current generation multi core processors, faster internal memory and an SSD, the actual performance gains realized would obviously have been significantly greater.</p>
 
