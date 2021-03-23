@@ -7,17 +7,17 @@ tag: v5.0.0
 articleTitle: "Next Feature Release"
 activeHeaderItem: 3
 socialMediaMetaTags:
-- "<meta property='og:type' content='article'>"
-- "<meta property='og:title' content='Next Feature Release'>"
-- "<meta property='og:description' content='What/'s coming in the next feature release'>"
-- "<meta property='og:url' content='https://gettriossg.com/blog/releases/2021/03/23/next-feature-release/'>"
-- "<meta property='og:image' content='https://gettriossg.com/media/trio-social-media-image.png'>"
-- "<meta name='twitter:card' content='summary_large_image'>"
-- "<meta name='twitter:site' content='@gettriossg'>"
-- "<meta name='twitter:creator' content='@jefftschwartz'>"
-- "<meta name='twitter:title' content='Next Feature Release'>"
-- "<meta name='twitter:description' content='What/'s coming in the next feature release'>"
-- "<meta name='twitter:image' content='https://gettriossg.com/media/trio-social-media-image.png'>"
+- "<meta property=\"og:type\" content=\"article\">"
+- "<meta property=\"og:title\" content=\"Next Feature Release\">"
+- "<meta property=\"og:description\" content=\"What's coming in the next feature release\">"
+- "<meta property=\"og:url\" content=\"https://gettriossg.com/blog/releases/2021/03/23/next-feature-release/\">"
+- "<meta property=\"og:image\" content=\"https://gettriossg.com/media/trio-social-media-image.png\">"
+- "<meta name=\"twitter:card\" content=\"summary_large_image\">"
+- "<meta name=\"twitter:site\" content=\"@gettriossg\">"
+- "<meta name=\"twitter:creator\" content=\"@jefftschwartz\">"
+- "<meta name=\"twitter:title\" content=\"Next Feature Release\">"
+- "<meta name=\"twitter:description\" content=\"What's coming in the next feature release\">"
+- "<meta name=\"twitter:image\" content=\"https://gettriossg.com/media/trio-social-media-image.png\">"
 -->
 
 ## What's coming in the next release
