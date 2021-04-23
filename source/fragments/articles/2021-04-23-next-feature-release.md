@@ -24,9 +24,9 @@ socialMediaMetaTags:
 
 ## What's Coming In The Next Release
 
-### Improved Integrating Support For JavaScript Bundling Tools
+### Improved Integration Support For JavaScript Bundling Tools
 
-I am very pleased to announce that the next release of Trio will provide improved integrating support for your preferred JavaScript bundling tools (e.g. Parcel) into its build and release processing.
+I am very pleased to announce that the next release of Trio will provide improved integration support for your preferred JavaScript bundling tools (e.g. Parcel) into its build and release processing.
 
 ### Improved Cache Busting
 
