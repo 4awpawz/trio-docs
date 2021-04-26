@@ -24,9 +24,15 @@ socialMediaMetaTags:
 
 ## What's Coming In The Next Release
 
-### Improved Integration Support For JavaScript Bundling Tools
+I am very pleased to announce that the next release of Trio will provide the following enhancements:
 
-I am very pleased to announce that the next release of Trio will provide improved integration support for your preferred JavaScript bundling tools (e.g. Parcel) into its build and release processing.
+### JavaScript Bundling
+
+Support for integrating your preferred JavaScript bundling tools (e.g. Parcel) into Trio's build and release processing.
+
+### CSS Source Map Generation Options
+
+New SASS configuration options for controlling CSS source map generation for both build and release processing.
 
 ### Improved Cache Busting
 
