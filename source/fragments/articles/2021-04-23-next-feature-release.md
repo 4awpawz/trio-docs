@@ -3,7 +3,7 @@ template: articlepage
 title: Next Feature Release
 appendToTarget: true
 category: news
-tag: v5.0.0
+tag: v6.0.0
 articleTitle: "Next Feature Release"
 activeHeaderItem: 3
 socialMediaMetaTags:

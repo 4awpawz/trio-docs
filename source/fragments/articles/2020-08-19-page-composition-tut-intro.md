@@ -19,7 +19,7 @@ socialMediaMetaTags:
 
 The process of assembling your site's web pages with Trio is referred to as composition.
 
-Trio's use of project assets, namely <a data-trio-link href="/docs/v5/template">templates</a>, <a data-trio-link href="/docs/v5/fragment">fragments</a>, <a data-trio-link href="/docs/v5/include">includes</a>, <a data-trio-link href="/docs/v5/jsondata">JSON data files</a>, and <a data-trio-link href="/docs/v5/metadata">metadata</a>, all of which are exposed to <a data-trio-link href="/docs/v5/tagbasedcallbacks">tag-based callbacks</a>, allow Trio to excel as a web page composition tool. This is perhaps best demonstrated by the following abstract:
+Trio's use of project assets, namely <a data-trio-link href="/docs/v6/template">templates</a>, <a data-trio-link href="/docs/v6/fragment">fragments</a>, <a data-trio-link href="/docs/v6/include">includes</a>, <a data-trio-link href="/docs/v6/jsondata">JSON data files</a>, and <a data-trio-link href="/docs/v6/metadata">metadata</a>, all of which are exposed to <a data-trio-link href="/docs/v6/tagbasedcallbacks">tag-based callbacks</a>, allow Trio to excel as a web page composition tool. This is perhaps best demonstrated by the following abstract:
 
 <img data-trio-link src="/media/composite.png" alt="a web page composition abstract">
 
@@ -29,7 +29,7 @@ The tutorials in this series will teach you how to use Trio's project assets to 
 
 ## Requirements
 
-If you don't already have Trio and Node installed then please follow the instructions at <a href="/docs/v5/gettingstarted">Getting Started</a> to install them.
+If you don't already have Trio and Node installed then please follow the instructions at <a href="/docs/v6/gettingstarted">Getting Started</a> to install them.
 
 ## Available Tutorials
 

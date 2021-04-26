@@ -23,7 +23,7 @@ socialMediaMetaTags:
 
 ## Prerequisites
 
-Before proceeding with this tutorial, please familiarize yourself with Trio's <a data-trio-link href="/docs/v5/coreconcepts/">Core Concepts</a>, <a data-trio-link href="/docs/v5/tagbasedcallbacks/"> Tag-Based Callbacks</a>, <a data-trio-link href="/docs/v5/metadata/">Metadata</a>, and <a data-trio-link href="/docs/v5/collections/">Collections</a>.
+Before proceeding with this tutorial, please familiarize yourself with Trio's <a data-trio-link href="/docs/v6/coreconcepts/">Core Concepts</a>, <a data-trio-link href="/docs/v6/tagbasedcallbacks/"> Tag-Based Callbacks</a>, <a data-trio-link href="/docs/v6/metadata/">Metadata</a>, and <a data-trio-link href="/docs/v6/collections/">Collections</a>.
 
 Also, if you haven't already installed this tutorial's starter project then please follow the instructions given in the <a data-trio-link href="/blog/tutorials/2020/12/12/page-composition-tut-04/">Advanced Page Composition And Collections: Part 1) Tutorial Introduction And Starter Project Setup</a> tutorial.
 

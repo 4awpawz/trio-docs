@@ -23,7 +23,7 @@ socialMediaMetaTags:
 
 ## Prerequisites
 
-Before proceeding with this tutorial, please familiarize yourself with Trio's <a data-trio-link href="/docs/v5/coreconcepts/">Core Concepts</a>, <a data-trio-link href="/docs/v5/tagbasedcallbacks/"> Tag-Based Callbacks</a>, and <a data-trio-link href="/docs/v5/metadata/">Metadata</a>.
+Before proceeding with this tutorial, please familiarize yourself with Trio's <a data-trio-link href="/docs/v6/coreconcepts/">Core Concepts</a>, <a data-trio-link href="/docs/v6/tagbasedcallbacks/"> Tag-Based Callbacks</a>, and <a data-trio-link href="/docs/v6/metadata/">Metadata</a>.
 
 ## Intention Of This Tutorial
 
@@ -414,7 +414,7 @@ After each development build of your project, Trio persists most of the metadata
 
 The cool thing about this file is that you can reference it when you are coding your tag-based callbacks, like when you can't remember where to look for a particular piece of metadata that you are interested in.
 
-Also, please refer to the <a data-trio-link href="/docs/v5/metadata/">Metadata</a> doc page whenever you have a question about some aspect of Trio's collection of metadata.
+Also, please refer to the <a data-trio-link href="/docs/v6/metadata/">Metadata</a> doc page whenever you have a question about some aspect of Trio's collection of metadata.
 
 ## Takeaways From This Tutorial
 

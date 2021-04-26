@@ -5,7 +5,7 @@
         xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
   <url><loc>https://gettriossg.com/</loc></url>
-  <url><loc>https://gettriossg.com/docs/v5/</loc></url>
-  <url><loc>https://gettriossg.com/docs/v5/gettingstarted/</loc></url>
+  <url><loc>https://gettriossg.com/docs/v6/</loc></url>
+  <url><loc>https://gettriossg.com/docs/v6/gettingstarted/</loc></url>
   <url><loc>https://gettriossg.com/blog/</loc></url>
 </urlset>

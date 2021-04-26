@@ -1,0 +1,79 @@
+<!--
+template: docpage
+title: Project Structure - Trio
+appendToTarget: true
+activeHeaderItem: 2
+activeDocIndexItem: 5
+-->
+
+<h1>Project Structure</h1>
+
+<p>The following describes a Trio project's file and folder structure:</p>
+
+<h2>Project Folders And Files</h2>
+
+<h3>root/.cache/</h3>
+<p>Contains metadata that Trio maintains and uses to implement incremental building of your project.</p>
+
+<h3>root/trio.json</h3>
+<p>Project configuration file. See <a href="/docs/v6/configuration" data-trio-link="">Configuration</a> for more information.</p>
+
+<h3>root/trio.manifest.json</h3>
+<p>File which contains collections of metadata that are generated every time Trio builds the project.</p>
+
+<h3>root/public/</h3>
+<p>Folder targeted by the <em>build</em> command. See <a data-trio-link href="/docs/v6/commandline">Command Line</a> for details.</p>
+
+<h3>root/release/</h3>
+<p>Folder targeted by the <em>release</em> command. See <a data-trio-link href="/docs/v6/commandline">Command Line</a> for details.</p>
+
+<h3>root/source/</h3>
+<p>Contains the following folders which are used for the development of your web site.</p>
+
+<h3>root/source/callbacks/</h3>
+<p>Contains tag-based callback modules, which are referenced by HTML tags in templates, fragments and includes using the <em>data-trio-callback</em> tag attribute. See <a data-trio-link href="/docs/v6/tagbasedcallbacks">Tag-Based Callbacks</a> for more information.</p>
+
+<h3>root/source/css/</h3>
+<p>Contains .css files. See <a data-trio-link href="/docs/v6/scsssasscss">SCSS/SASS/CSS</a> for more information.</p>
+
+<h3>root/source/data/</h3>
+<p>Contains <em>JSON</em> data files that are exposed to tag-based callbacks. See <a data-trio-link href="/docs/v6/jsondata">JSON Data</a> for more information.</p>
+
+<h3>root/source/etc/</h3>
+<p>Contains files, such as <em>favicon.ico, 404.html, robots.txt, sitemaps, .nojekyll, .etc</em>, for example, that are copied "as is" to the site's root folder.</p>
+
+<h3>root/source/filters/</h3>
+<p>Contains collection filter function modules <mark>introduced in v2.0.0.</mark>. See <a data-trio-link href="/docs/v6/collections">Collections</a> for more information.</p>
+
+<h3>root/source/fragments/</h3>
+<p>Contains .md and .html fragment files and folders. See <a data-trio-link href="/docs/v6/fragment">Fragment</a> for more information.</p>
+
+<h3>root/source/fragments/articles/</h3>
+<p>Contains blog-specific article .md and .html fragment files and folders. See <a data-trio-link href="/docs/v6/blogging">Blogging</a> for more information.</p>
+
+<h3>root/source/includes/</h3>
+<p>Contains .md and .html include files. See <a data-trio-link href="/docs/v6/include">Include</a> for more information.</p>
+
+<h3>root/source/lib/</h3>
+<p>Contains JavaScript modules that are required by tag-based callback modules and collection filter function modules. <em>Introduced in v4.0.0</em>. See <a data-trio-link href="/docs/v6/tagbasedcallbacks">Tag-Based Callbacks</a> and <a data-trio-link href="/docs/v6/collections">Collections</a> for more information.</p>
+
+<h3>root/source/media/</h3>
+<p>Contains media specific files (e.g. .jpg, .gif, .pdf, .etc).</p>
+
+<h3>root/source/sass/</h3>
+<p>Contains .sass and .scsss files. See <a data-trio-link href="/docs/v6/scsssasscss">SCSS/SASS/CSS</a> for more information.</p>
+
+<h3>root/source/scripts/</h3>
+<p>Contains run-time JavaScript files. When building your site Trio copies these JavaScript files to either <em>root/public/scripts</em> or <em>root/release/scripts</em>.</p>
+
+<blockquote class="note-tip">If your site uses a JavaScript bundler (e.g. Parcel, Browserify, Webpack) to package its runtime JavaScript then do not host those modules in root/source/scripts. Instead, create a new folder in root/source, for example <em>jsBundle</em>, and host them there.</blockquote>
+
+<h3>root/source/templates/</h3>
+<p>Contains .html template files.</p>
+
+<h2>See Also</h2>
+
+<ul>
+    <li><a data-trio-link href="/docs/v6/commandline">Command Line</a></li>
+    <li><a data-trio-link href="/docs/v6/incrementalbuild">Incremental Build</a></li>
+</ul>
