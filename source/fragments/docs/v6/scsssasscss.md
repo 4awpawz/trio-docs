@@ -14,9 +14,9 @@ SCSS, SASS, and CSS are supported.
 
 These files reside in the _root/source/sass_ folder.
 
-When generating your site, Trio compiles your Sass to the _public/css_ or _release/css_ folders and appends _vendor prefixing_ and performs _file minification_ for both development and release builds.
+When generating your site, Trio compiles your Sass to the _public/css_ or _release/css_ folders with _vendor prefixing_, _minification_, and _CSS source maps_ (please see below) for both development and release builds.
 
-<blockquote class="note-tip">Beginning with Trio v6.0.0 <em>CSS source map file generation</em> is configurable for both <em>development</em> and <em>release</em> builds. Trio will generate CSS source map files for both development and release builds by default. You can override this behavior by declaring the following in your <em>trio.json</em> file and setting the <em>development</em> and <em>release</em> properties accordingly:
+<blockquote class="note-tip">Beginning with Trio v6.0.0 <em>CSS source map file generation</em> is configurable for both <em>development</em> and <em>release</em> builds. By default, Trio will generate CSS source map files for both development and release builds. You can, however, override this default behavior by declaring the following in your <em>trio.json</em> file and setting the <em>development</em> and <em>release</em> properties accordingly:
 
 ```json
 "sassSourceMaps": {
