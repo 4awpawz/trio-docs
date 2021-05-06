@@ -4,9 +4,5 @@
     ],
     "articlesPerPage": 10,
     "fbCommentsHrefBaseDevelopment": "localhost/3000",
-    "fbCommentsHrefBaseRelease": "https://gettriossg.com",
-    "sassSourceMaps": {
-        "development": true,
-        "release": true
-    }
+    "fbCommentsHrefBaseRelease": "https://gettriossg.com"
 }
