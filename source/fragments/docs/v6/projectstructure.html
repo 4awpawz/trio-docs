@@ -68,7 +68,7 @@ activeDocIndexItem: 5
 <h3>root/source/scripts/</h3>
 <p>Contains run-time JavaScript files. When building your site Trio copies these JavaScript files to either <em>root/public/scripts</em> or <em>root/release/scripts</em>.</p>
 
-<blockquote class="note-tip">If your site uses a JavaScript bundler (e.g. Parcel, Browserify, Webpack) to package its runtime JavaScript then do not host those modules in root/source/scripts. Instead, create a new folder, <em>jsBundle</em> for example, in root/source/ and host them there. You must also configure Trio to ignore these folders to prevent them from polluting Trio's metadata and from interfering with Trio's build and release workflows. See <a href="#project-structure">above</a> for more information.</blockquote>
+<blockquote class="note-tip">If your site uses a JavaScript bundler (e.g. Webpack, Parcel, Browserify) to package its runtime JavaScript then do not host those modules in root/source/scripts. Instead, create a new folder, <em>jsBundle</em> for example, in root/source/ and host them there. You must also configure Trio to ignore these folders to prevent them from polluting Trio's metadata and from interfering with Trio's build and release workflows. See <a href="#project-structure">above</a> for more information.</blockquote>
 
 <h3>root/source/templates/</h3>
 <p>Contains .html template files.</p>
