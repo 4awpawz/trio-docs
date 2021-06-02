@@ -14,7 +14,7 @@ socialMediaMetaTags:
 - "<meta property=\"og:url\" content=\"https://gettriossg.com/blog/tutorials/2021/06/02/javascript-bundling/\">"
 - "<meta property=\"og:title\" content=\"Bundling Your Site's Runtime JavaScript\">"
 - "<META property=\"og:description\" content=\"In this tutorial you will learn how to bundle your site's runtime JavaScript.\">"
-- "<meta property=\"og:image\" content=\"https://gettriossg.com/media/javascriptbundling/javascriptbundler.jpg\">"
+- "<meta property=\"og:image\" content=\"https://gettriossg.com/media/tutorials/javascriptbundling/javascriptbundler.jpg\">"
 -->
 
 <img data-trio-link src="/media/tutorials/javascriptbundling/javascriptbundler.jpg" alt="javascript packages">
