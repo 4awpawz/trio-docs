@@ -172,8 +172,13 @@
         }
 
         img {
+            margin: auto;
             display: block;
             max-width: 100%;
+        }
+
+        img + img {
+            margin-top: 2rem;
         }
 
         img + p {

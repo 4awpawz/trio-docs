@@ -4,6 +4,15 @@ title: SCSS/SASS/CSS - Trio
 appendToTarget: true
 activeHeaderItem: 2
 activeDocIndexItem: 16
+socialMediaMetaTags:
+- "<meta property=\"og:type\" content=\"article\">"
+- "<meta property=\"og:title\" content=\"SCSS/SASS/CSS\">"
+- "<meta property=\"og:description\" content=\"SCSS/SASS/CSS\">"
+- "<meta property=\"og:url\" content=\"https://gettriossg.com/docs/v6/scsssasscss/\">"
+- "<meta property=\"og:image\" content=\"https://gettriossg.com/media/trio-social-media-image.jpg\">"
+- "<meta name=\"twitter:card\" content=\"summary_large_image\">"
+- "<meta name=\"twitter:site\" content=\"@gettriossg\">"
+- "<meta name=\"twitter:creator\" content=\"@jefftschwartz\">"
 -->
 
 # SCSS/SASS/CSS
