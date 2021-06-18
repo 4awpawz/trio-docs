@@ -7,7 +7,7 @@ activeDocIndexItem: 24
 socialMediaMetaTags:
 - "<meta property=\"og:type\" content=\"article\">"
 - "<meta property=\"og:title\" content=\"FAQ\">"
-- "<meta property=\"og:description\" content=\"Frequently Asked Questions\">"
+- "<meta property=\"og:description\" content=\"FAQ page.\">"
 - "<meta property=\"og:url\" content=\"https://gettriossg.com/docs/v6/faq/\">"
 - "<meta property=\"og:image\" content=\"https://gettriossg.com/media/trio-social-media-image.png\">"
 - "<meta name=\"twitter:card\" content=\"summary_large_image\">"
