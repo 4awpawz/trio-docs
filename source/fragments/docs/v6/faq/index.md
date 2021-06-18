@@ -18,11 +18,14 @@ socialMediaMetaTags:
 
 <div class="faq">
 
-<a class="faq__in-page-anchor" href="#howdoigetthetotalnumberofpagesexcludingarticles">How do I get the total number of pages, excluding articles?</a>
-<a class="faq__in-page-anchor" href="#howdoigetthetotalnumberofarticlepages">How do I get the total number of article pages?</a>
+<a class="faq__in-page-anchor" href="#0001">How do I get the total number of pages, excluding articles?</a>
+<a class="faq__in-page-anchor" href="#0002">How do I get the total number of article pages?</a>
+<a class="faq__in-page-anchor" href="#0003">How do I get a reference to the list of all the pages, excluding articles?</a>
+<a class="faq__in-page-anchor" href="#0004">How do I get a reference to the list of all the article pages?</a>
+<a class="faq__in-page-anchor" href="#0005">My site has too many articles to display on a single page. How can I display them using multiple pages and limit the number of articles per page and provide links to the previous and next pages?</a>
 
 
-<p id="howdoigetthetotalnumberofpagesexcludingarticles" class="faq__question">Q) How do I get the total number of pages, excluding articles?</p>
+<p id="0001" class="faq__question">Q) How do I get the total number of pages, excluding articles?</p>
 
 <p class="faq__answer">A) The following works in both collection filter functions and tag-based callbacks:</p>
 
@@ -30,7 +33,7 @@ socialMediaMetaTags:
 site.frags.length;
 ```
 
-<p id="howdoigetthetotalnumberofarticlepages" class="faq__question">Q) How do I get the total number of article pages?</p>
+<p id="0002" class="faq__question">Q) How do I get the total number of article pages?</p>
 
 <p class="faq__answer">A) The following works in both collection filter functions and tag-based callbacks:</p>
 
@@ -38,7 +41,7 @@ site.frags.length;
 site.articlesCount;
 ```
 
-<p class="faq__question">Q) How do I get a reference to the list of all the pages, excluding articles?</p>
+<p id="0003" class="faq__question">Q) How do I get a reference to the list of all the pages, excluding articles?</p>
 
 <p class="faq__answer">A) The following works in both collection filter functions and tag-based callbacks:</p>
 
@@ -46,15 +49,15 @@ site.articlesCount;
 const frags = site.frags;
 ```
 
-<p class="faq__question">Q) How do I get a reference to the list of all the article pages?</p>
+<p id="0004" class="faq__question">Q) How do I get a reference to the list of all the article pages?</p>
 
-<p class="faq__answer">A) The following works in both collection filter functions and tag-based callbacks:</p>
+<p class="faq__answer">A) The following works in both collection, filter functions, and tag-based callbacks:</p>
 
 ```javascript
 const articles = site.articlesCatalog;
 ```
 
-<p class="faq__question">Q) My site has too many articles to display on a single page. How can I display them using multiple pages and limit the number of articles per page and provide links to the previous and next pages?</p>
+<p id="0005" class="faq__question">Q) My site has too many articles to display on a single page. How can I display them using multiple pages and limit the number of articles per page and provide links to the previous and next pages?</p>
 
 <p class="faq__answer">A) The following is an example of how to accomplish this using a collection filter function:</p>
 
