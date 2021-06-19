@@ -1,2 +1,2 @@
 module.exports = (articleCategory, articleDate) =>
-    `Posted under <span class="blog-post__article-category">${articleCategory}</span> on <span class="blog-post__article-date">${articleDate}</span> </div>`;
+    `<div>Posted under <a data-trio-link class="blog-post__article-category blog-post__link" href="/blog/${articleCategory.toLowerCase()}">${articleCategory}</a> on <span class="blog-post__article-date">${articleDate}</span></div>`;
