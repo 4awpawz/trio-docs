@@ -9,6 +9,11 @@
         }
     }
 }
+.donation-request {
+    &__copy, form {
+        margin-bottom: 1rem;
+    }
+}
 
 .doc-page-content__copy .donation-request {
     padding-bottom: 0;
