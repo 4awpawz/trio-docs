@@ -21,11 +21,11 @@ socialMediaMetaTags:
 
 <p>Trio supports the following linking conventions for pages:</p>
 
-<li>Absolute URLs (e.g. &lt;a href="https://somesite.com/blog/"&gt;) are appropriate to use when linking to both remote pages and to your site's internal pages.</li>
+<li>Absolute URLs (e.g. &lt;a href="<em>https://somesite.com/blog/</em>"&gt;) are appropriate to use when linking to both remote pages and to your site's internal pages.</li>
 
-<li>Site Relative URLS (e.g. &lt;a href="/blog/"&gt;) are appropriate to use when linking to your site's internal pages.</li>
+<li>Site Relative URLS (e.g. &lt;a href="<em>/blog/</em>"&gt;) are appropriate to use when linking to your site's internal pages.</li>
 
-<li>Page Relative URLs (e.g. &lt;a href="../blog/"&gt;) are appropriate to use when linking to your site's internal pages.</li>
+<li>Page Relative URLs (e.g. &lt;a href="<em>../blog/</em>"&gt;) are appropriate to use when linking to your site's internal pages.</li>
 
 <h2>Linking Conventions For Assets</h2>
 
@@ -33,17 +33,17 @@ socialMediaMetaTags:
 
 <blockquote class="note-important"><p>If you intend to <a data-trio-link href="/docs/v6/commandline#cache-bust">cache bust your site's assets</a> then you are required to construct your site's asset URLs using either <em>site relative</em> or <em>absolute</em> URLs.</p></blockquote>
 
-<li>Absolute URLs (e.g. &lt;a href="https://somesite.com/media/roaringlion.jpg"&gt;) are appropriate to use when linking to both remote assets and to your site's internal assets and when used to link to your site's internal assets are compatible with Trio's cache busting feature.</li>
+<li>Absolute URLs (e.g. &lt;a href="<em>https://somesite.com/media/roaringlion.jpg</em>"&gt;) are appropriate to use when linking to both remote assets and to your site's internal assets and when used to link to your site's internal assets are compatible with Trio's cache busting feature.</li>
 
-<li>Site Relative URLS (e.g. &lt;a href="/media/roaringlion.jpg"&gt;) are appropriate to use when linking to your site's internal assets and are compatible with Trio's cache busting feature.</li>
+<li>Site Relative URLS (e.g. &lt;a href="<em>/media/roaringlion.jpg</em>"&gt;) are appropriate to use when linking to your site's internal assets and are compatible with Trio's cache busting feature.</li>
 
-<li>Page Relative URLs (e.g. &lt;a href="../media/roaringlion.jpg"&gt;) are appropriate to use when linking to your site's internal assets but are not compatible with Trio's cache busting feature.</li>
+<li>Page Relative URLs (e.g. &lt;a href="<em>../media/roaringlion.jpg</em>"&gt;) are appropriate to use when linking to your site's internal assets but are not compatible with Trio's cache busting feature.</li>
 
 <h2 id="baseurl">Base URL</h2>
 
 <p>Some Web hosting services deploy sites in subfolders, and require that their <em>site relative</em> URLs begin with the subfolder's path.</p>
 
-<p>For example, the site at <em>https://4awpawz.github.io/trio-docs-pages</em> is hosted on Github Pages, and linking internally with <em>&lt;a href="/docs/v1"&gt;Documentation&lt;/a&gt;</em> wouldn't work but linking with <em>&lt;a href="/trio-docs-pages/docs/v1"&gt;Documentation&lt;/a&gt;</em> would work.</p>
+<p>For example, the site at <em>https://4awpawz.github.io/trio-docs-pages</em> is hosted on Github Pages, and linking internally with &lt;a href="<em>/docs/v1</em>"&gt;Documentation&lt;/a&gt; wouldn't work but linking with &lt;a href="<em>/trio-docs-pages/docs/v1</em>"&gt;Documentation&lt;/a&gt; would work.</p>
 
 <p>In this case, you can decorate any HTML tag that has a <em>src</em> or <em>href</em> attribute using the <em>data-trio-link</em> attribute,</p>
 
