@@ -88,7 +88,7 @@
         &-body{
             font-size: 1.1rem;
             font-weight: 400;
-            color: rgba(black, 0.47);
+            color: $copy-color;
         }
     }
     &__img-container {
@@ -127,7 +127,7 @@
             &-body{
                 font-size: 1.1rem;
                 font-weight: 400;
-                color: rgba(black, 0.47);
+                color: $copy-color;
             }
         }
     }

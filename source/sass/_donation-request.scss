@@ -11,6 +11,7 @@
 }
 .donation-request {
     &__copy, form {
+        color: $copy-color;
         margin-bottom: 1rem;
     }
 }
