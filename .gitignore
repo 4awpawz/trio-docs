@@ -4,3 +4,4 @@ release
 trio.manifest.json
 buster.manifest.json
 .cache
+.DS_Store

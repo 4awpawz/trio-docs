@@ -20,5 +20,8 @@
   "devDependencies": {
     "@4awpawz/eslint-config-4awpawzconfig": "^1.0.6",
     "import-fresh": "^3.2.1"
+  },
+  "dependencies": {
+    "caniuse-lite": "^1.0.30001300"
   }
 }

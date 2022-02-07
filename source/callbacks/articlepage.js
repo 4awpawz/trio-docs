@@ -1,7 +1,6 @@
 /*
 moduleDependencies: ../lib/blogPostMetaContainer
 */
-
 const importFresh = require("import-fresh");
 const blogPostMetaContainer = importFresh("../lib/blogPostMetaContainer");
 
